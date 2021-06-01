@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Product Details{% endblock %}
+{% load static %}
+{% block content %}
+
+<style>
+    .rating {
+    margin-left: 7%
+
+</style>
+
+<div class="container">
+
+    <div class="card bg-warning text-white">
+        <div class="card-header"><h4>{{product.title}}</h4></div>
+    </div>
+         <div class="card-header">{{product.keyfeatures}}</div>
+    <div>
+        <p>
+            {% if product.author == user %}
+            <a class="btn btn-secondary btn-sm mt-1 bmb-1" href="{% url 'cart-update' product.id %}">Update</a>
+            <a class="btn btn-danger btn-sm mt-1 bmb-1" href="{% url 'cart-delete' product.id %}">Delete</a></p>
+        {% endif %}
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="{{product.image.url}}" target="_blank"><img src="{{product.image.url}}" alt=""
+                                                                 class="img-fluid"></a>
+            <div class="row">
+                {% for pi in product.productimage_set.all %}
+                <div class="col-md-4 p-4">
+                    <a href="{{pi.image.url}}" target="_blank">
+                        <img src="{{pi.image.url}}" class="img-fluid" style="height: 100px; object-fit: contain;"
+                             alt="">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-7 ">
+            <div>
+                <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
+                Seller in-{{ product.author.profile.country.name }} <i
+                    class="{{ product.author.profile.country.flag_css }}"></i>
+                <h6>(Viewed {{product.view_count}} times)</h6>
+                <small>({{product.category}})</small>
+                <h8></h8>
+                <h6>Selling Price: <strike>Rs. {{product.marked_price}}</strike></h6>
+                <h6>Our Price: Rs. {{product.selling_price}}</h6>
+                <a href="{% url 'addtocart' product.id %}" class="btn btn-primary">Add To Cart</a>
+                <hr>
+                <p class="text-info">Warranty: {{product.warranty}}</p>
+                <p class="text-info">Return Policy:{{product.return_policy}}</p>
+                <hr>
+                <p>{{product.description|safe}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-lg-3 mx-auto">
+        <div>
+            <div class="container">
+                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">
+                    Terms & Conditions
+                </button>
+                <hr>
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Terms & Conditions....</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Taxation as per country rules and regulations will apply.</p>
+                                <p>Delivery Time : Minimum 15 Days. </p>
+                                <p> Transportation free for large quantity</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            {% if user.is_authenticated %}
+            <a href="{% url 'prodcomment' product.id  %}" class="btn btn-danger btn-sm mt-1 bmb-1">
+                Send your message to this seller</a>
+            {% else %}
+            <small><a href="{% url 'login' %}">Login to contact buyers/sellers</a></small>
+            {% endif %}
+            <hr>
+            <button type="button" class="btn btn-success btn-sm mt-1 bmb-1" data-toggle="collapse" data-target="#demo">Merchandise Info
+            </button>
+            <div id="demo" class="collapse">
+                <p class="text-info rating ">{{product.author.profile.bio}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 mx-auto">
+        <div class="card card-cascade card-ecommerce wider shadow mb- ">
+            <p class="text-info rating ">
+                <strong>Seller based in :-{{product.author.profile.country.name}}. </strong>
+            </p>
+            <p class="text-info rating ">
+                <strong>Merchandised by
+                    :-{{product.author.profile.organization}}</strong>
+            </p>
+            <p class="text-info rating"><strong>Brand :-{{product.brand}}</strong></p>
+        </div>
+    </div>
+
+    <div class="col-lg-4 mx-auto">
+        <div class="card card-cascade card-ecommerce wider shadow mb- ">
+            <p class="text-info rating"><strong>Unit Of Measure :-{{product.uom}}</strong></p>
+            <p class="text-info rating"><strong>Minimum Order Quantity :-{{product.moq}}</strong></p>
+            <p class="text-info rating"><strong> No. of packs in one cartoon
+                :-{{product.noofpacksinonecartoon}}</strong></p>
+            <p class="text-info rating"><strong>Min. Storage Temperature :-{{product.storagetemp}}</strong></p>
+            <p class="text-info rating"><strong>Shelf Life in days :-{{product.shelflife}}</strong></p>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
+
+

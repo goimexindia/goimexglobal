@@ -1,0 +1,131 @@
+{% load static %}
+
+
+<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+<meta name="description" content="Connecting Bussiness to Bussiness, Country to Country">
+<meta name="keywords" content="eCommerce, Buyer, Seller, Indian Manufactorer">
+<meta name="author" content="Goimex Global Pvt Ltd.">
+<title>Goimex Global Pvt Ltd</title>
+
+<link href="{% static 'css/app_min.css' %}" media="all" rel="stylesheet" type="text/css">
+<link href="{% static 'fonts/icomoon1.ttf?smr7yk' %}" as="font" rel="preload" type="font/ttf">
+<link href="{% static 'fonts/fa-solid-900.woff2' %}" rel="preload" type="font/woff2">
+<link href="{% static 'fonts/fa-brands-400 .woff2' %}" rel="preload" type="font/woff2">
+<link href="{% static 'fonts/fa-regular-400 .woff2' %}" rel="preload" type="font/woff2">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="{% static 'fonts/lato-v15-latin-300.woff2' %}" rel="preload" type="font/woff2">
+<!-- <link href="{% static 'css/renderBlocking.min.css' %}" media="all" rel="stylesheet" type="text/css"> -->
+
+<link href="{% static 'css/responsive.min.css' %}" id="responsiveCss" media="screen and (max-width: 1199px)"
+      rel="stylesheet" type="text/css">
+
+{% include 'buyerseller/header1.html' %}
+
+
+{% include 'blog/snippets/base_css.html' %}
+
+
+<body>
+<div>
+    <section class="top-bar-head-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 d-md-flex justify-content-md-center text-center">
+                    {% if user.is_authenticated %}
+                    <h6 class="mr-3"> Hello, {{user.username}}, you are a part of the fastest growing B2B Network</h6><a
+                        href="accounts/logout">LOGOUT</a>
+                    {% else %}
+                    <h6 class="mr-3">Join today and be a part of the fastest growing B2B Network</h6><a
+                        href="accounts/register">Join Now</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<section class="top-nav">
+    <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <button aria-expanded="true" class="navbar-toggler navbar-toggler-left" data-target="#nav-top-left"
+                    data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+            <div class="navbar-collapse collapse hide" id="nav-top-left">
+                <ul class="navbar-nav left">
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" title="Premium Services"><span><i class="fa fa-star"></i> Premium Services</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" title="Buyers">Buyers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product" title="Products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" title="Companies">Companies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)" title="Manufacturers">Manufacturers</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">Need Help?</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                           data-toggle="dropdown" href="javascript:;" id="language-dropdown"><span
+                                class="flag-icon flag-icon-us"></span> English</a>
+                        <div aria-labelledby="language-dropdown" class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:void(0)" title="English"><span
+                                    class="flag-icon flag-icon-us"
+                                    style="background-image: url('static/flags/us.svg')"></span> English</a>
+                            <!-- <a class="dropdown-item" href="javascript:void(0)" title="Chinese"><span class="flag-icon flag-icon-cn"></span> Chinese</a> -->
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+
+
+<div class="logo100">
+
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-xl-3 d-flex justify-content-center justify-content-md-start mb-md-0 mb-3">
+            <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." class="logo w-100 mt-0"
+                                                             src="{%  static  'images/logo2.png' %}"></a>
+        </div>
+        <div class="col-md-3 col-xl-3 pr-md-0">
+            <div class="row">
+                {% if user.is_authenticated %}
+                <a href="{% url 'companyproduct' user.id %}" title="My Company">
+                    <h4>{{user.profile.organization}}</h4></a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-3 col-xl-3 pr-md-0">
+            <div class="row">
+                <a href="rfq"><i class="fa fa-envelope fa-3x"></i><h6>-</h6></a><span><h4>RFQ</h4></span>
+            </div>
+        </div>
+        <div class="col-md-4 col-xl-3 d-flex justify-content-center justify-content-md-end mt-md-0 mt-2 header-list">
+            {% if user.is_authenticated %}
+            <i class="fa fa-user-circle fa-3x"></i><a href="accounts/logout"><h4>Sign Out</h4></a>
+            {% else %}
+            <li><i class="fa fa-user-circle"></i> <small><a href="accounts/login">Sign In</a> <sub
+                    class="headerLoginRegisterSeperator">/</sub> <a
+                    href="javascript:registerPopup('Join%20Free');" title="Join Free">Join Free</a></small>
+                <span>My Account</span></li>
+            {% endif %}
+        </div>
+    </div>
+</div>

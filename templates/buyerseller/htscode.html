@@ -1,0 +1,399 @@
+{% extends "blog\base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}eCommerce{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+{% include 'buyerseller/header1.html' %}
+
+<div class="bread">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Harmonized Tariff Schedule - HTS Codes - Imports and Exports Trade Data
+            </li>
+        </ol>
+    </div>
+</div>
+<main class="hts-code-categories-page mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="hd-rd-brdr">HTS Code</h1>
+                <div class="hts-code-listing">
+                    <div class="row">
+                        <ul class="col-md-6">
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="01 - Live Animals"><span class="htsCode">01</span> - <span class="htsName">Live Animals</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="02 - Meat And Edible Meat Offal"><span class="htsCode">02</span> - <span
+                                    class="htsName">Meat And Edible Meat Offal</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="03 - Fish, Crustaceans &amp; Aquatic Invertebrates"><span
+                                    class="htsCode">03</span> - <span class="htsName">Fish, Crustaceans &amp; Aquatic Invertebrates</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="04 - Dairy Prods; Birds Eggs; Honey; Ed Animal Pr Nesoi"><span
+                                    class="htsCode">04</span> - <span class="htsName">Dairy Prods; Birds Eggs; Honey; Ed Animal Pr Nesoi</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="05 - Products Of Animal Origin, Nesoi"><span class="htsCode">05</span> - <span
+                                    class="htsName">Products Of Animal Origin, Nesoi</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title=" - Live Trees, Plants, Bulbs Etc.; Cut Flowers Etc."><span class="htsCode">06</span>
+                                - <span class="htsName">Live Trees, Plants, Bulbs Etc.; Cut Flowers Etc.</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="07 - Edible Vegetables And Certain Roots And Tubers"><span
+                                    class="htsCode">07</span> - <span class="htsName">Edible Vegetables And Certain Roots And Tubers</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="08 - Edible Fruit And Nuts; Peel Of Citrus Fruit Or Melons"><span
+                                    class="htsCode">08</span> - <span class="htsName">Edible Fruit And Nuts; Peel Of Citrus Fruit Or Melons</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="09 - Coffee, Tea, Mate And Spices"><span class="htsCode">09</span> - <span
+                                    class="htsName">Coffee, Tea, Mate And Spices</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="10 - Cereals"><span class="htsCode">10</span> - <span
+                                    class="htsName">Cereals</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="11 - Milling Products; Malt; Starch; Inulin; Wht Gluten"><span
+                                    class="htsCode">11</span> - <span class="htsName">Milling Products; Malt; Starch; Inulin; Wht Gluten</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="12 - Oil Seeds Etc.; Misc Grain, Seed, Fruit, Plant Etc"><span
+                                    class="htsCode">12</span> - <span class="htsName">Oil Seeds Etc.; Misc Grain, Seed, Fruit, Plant Etc</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="13 - Lac; Gums; Resins And Other Vegetable Saps And Extracts"><span
+                                    class="htsCode">13</span> - <span class="htsName">Lac; Gums; Resins And Other Vegetable Saps And Extracts</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="14 - Vegetable Plaiting Materials And Vegetable Products, Nesoi"><span
+                                    class="htsCode">14</span> - <span class="htsName">Vegetable Plaiting Materials And Vegetable Products, Nesoi</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="15 - Animal Or Vegetable Fats, Oils Etc. &amp; Waxes"><span
+                                    class="htsCode">15</span> - <span class="htsName">Animal Or Vegetable Fats, Oils Etc. &amp; Waxes</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="16 - Edible Preparations Of Meat, Fish, Crustaceans Etc"><span
+                                    class="htsCode">16</span> - <span class="htsName">Edible Preparations Of Meat, Fish, Crustaceans Etc</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="17 - Sugars And Sugar Confectionary"><span class="htsCode">17</span> - <span
+                                    class="htsName">Sugars And Sugar Confectionary</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="18 - Cocoa And Cocoa Preparations"><span class="htsCode">18</span> - <span
+                                    class="htsName">Cocoa And Cocoa Preparations</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="19 - Prep Cereal, Flour, Starch Or Milk; Bakers Wares"><span class="htsCode">19</span>
+                                - <span class="htsName">Prep Cereal, Flour, Starch Or Milk; Bakers Wares</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="20 - Prep Vegetables, Fruit, Nuts Or Other Plant Parts"><span class="htsCode">20</span>
+                                - <span class="htsName">Prep Vegetables, Fruit, Nuts Or Other Plant Parts</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="21 - Miscellaneous Edible Preparations"><span class="htsCode">21</span> -
+                                <span class="htsName">Miscellaneous Edible Preparations</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="22 - Beverages, Spirits And Vinegar"><span class="htsCode">22</span> - <span
+                                    class="htsName">Beverages, Spirits And Vinegar</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="23 - Food Industry Residues &amp; Waste; Prep Animal Feed"><span
+                                    class="htsCode">23</span> - <span class="htsName">Food Industry Residues &amp; Waste; Prep Animal Feed</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="24 - Tobacco And Manufactured Tobacco Substitutes"><span
+                                    class="htsCode">24</span> - <span class="htsName">Tobacco And Manufactured Tobacco Substitutes</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="25 - Salt; Sulfur; Earth &amp; Stone; Lime &amp; Cement Plaster"><span
+                                    class="htsCode">25</span> - <span class="htsName">Salt; Sulfur; Earth &amp; Stone; Lime &amp; Cement Plaster</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="26 - Ores, Slag And Ash"><span class="htsCode">26</span> - <span
+                                    class="htsName">Ores, Slag And Ash</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="27 - Mineral Fuel, Oil Etc.; Bitumin Subst; Mineral Wax"><span
+                                    class="htsCode">27</span> - <span class="htsName">Mineral Fuel, Oil Etc.; Bitumin Subst; Mineral Wax</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="28 - Inorg Chem; Prec &amp; Rare-earth Met &amp; Radioact Compd"><span
+                                    class="htsCode">28</span> - <span class="htsName">Inorg Chem; Prec &amp; Rare-earth Met &amp; Radioact Compd</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="29 - Organic Chemicals"><span class="htsCode">29</span> - <span
+                                    class="htsName">Organic Chemicals</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="30 - Pharmaceutical Products"><span class="htsCode">30</span> - <span
+                                    class="htsName">Pharmaceutical Products</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="31 - Fertilizers"><span class="htsCode">31</span> - <span class="htsName">Fertilizers</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="32 - Tanning &amp; Dye Ext Etc; Dye, Paint, Putty Etc; Inks"><span
+                                    class="htsCode">32</span> - <span class="htsName">Tanning &amp; Dye Ext Etc; Dye, Paint, Putty Etc; Inks</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="33 - Essential Oils Etc; Perfumery, Cosmetic Etc Preps"><span class="htsCode">33</span>
+                                - <span class="htsName">Essential Oils Etc; Perfumery, Cosmetic Etc Preps</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="34 - Soap Etc; Waxes, Polish Etc; Candles; Dental Preps"><span
+                                    class="htsCode">34</span> - <span class="htsName">Soap Etc; Waxes, Polish Etc; Candles; Dental Preps</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="35 - Albuminoidal Substances; Modified Starches; Glues; Enzymes"><span
+                                    class="htsCode">35</span> - <span class="htsName">Albuminoidal Substances; Modified Starches; Glues; Enzymes</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="36 - Explosives; Pyrotechnics; Matches; Pyro Alloys Etc"><span
+                                    class="htsCode">36</span> - <span class="htsName">Explosives; Pyrotechnics; Matches; Pyro Alloys Etc</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="37 - Photographic Or Cinematographic Goods"><span class="htsCode">37</span> -
+                                <span class="htsName">Photographic Or Cinematographic Goods</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="38 - Miscellaneous Chemical Products"><span class="htsCode">38</span> - <span
+                                    class="htsName">Miscellaneous Chemical Products</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="39 - Plastics And Articles Thereof"><span class="htsCode">39</span> - <span
+                                    class="htsName">Plastics And Articles Thereof</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="40 - Rubber And Articles Thereof"><span class="htsCode">40</span> - <span
+                                    class="htsName">Rubber And Articles Thereof</span></a></li>
+                            <li><a href="#41/" class="d-block text-truncate"
+                                   title="41 - Raw Hides And Skins (other Than Furskins) And Leather"><span
+                                    class="htsCode">41</span> - <span class="htsName">Raw Hides And Skins (other Than Furskins) And Leather</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="42 - Leather Art; Saddlery Etc; Handbags Etc; Gut Art"><span class="htsCode">42</span>
+                                - <span class="htsName">Leather Art; Saddlery Etc; Handbags Etc; Gut Art</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="43 - Furskins And Artificial Fur; Manufactures Thereof"><span class="htsCode">43</span>
+                                - <span class="htsName">Furskins And Artificial Fur; Manufactures Thereof</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="44 - Wood And Articles Of Wood; Wood Charcoal"><span class="htsCode">44</span>
+                                - <span class="htsName">Wood And Articles Of Wood; Wood Charcoal</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="45 - Cork And Articles Of Cork"><span class="htsCode">45</span> - <span
+                                    class="htsName">Cork And Articles Of Cork</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="46 - Mfr Of Straw, Esparto Etc.; Basketware &amp; Wickerwrk"><span
+                                    class="htsCode">46</span> - <span class="htsName">Mfr Of Straw, Esparto Etc.; Basketware &amp; Wickerwrk</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="47 - Wood Pulp Etc; Recovd (waste &amp; Scrap) Ppr &amp; Pprbd"><span
+                                    class="htsCode">47</span> - <span class="htsName">Wood Pulp Etc; Recovd (waste &amp; Scrap) Ppr &amp; Pprbd</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="48 - Paper &amp; Paperboard &amp; Articles (inc Papr Pulp Artl)"><span
+                                    class="htsCode">48</span> - <span class="htsName">Paper &amp; Paperboard &amp; Articles (inc Papr Pulp Artl)</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="49 - Printed Books, Newspapers Etc; Manuscripts Etc"><span
+                                    class="htsCode">49</span> - <span class="htsName">Printed Books, Newspapers Etc; Manuscripts Etc</span></a>
+                            </li>
+                        </ul>
+                        <ul class="col-md-6">
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="50 - Silk, Including Yarns And Woven Fabrics Thereof"><span
+                                    class="htsCode">50</span> - <span class="htsName">Silk, Including Yarns And Woven Fabrics Thereof</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="51 - Wool &amp; Animal Hair, Including Yarn &amp; Woven Fabric"><span
+                                    class="htsCode">51</span> - <span class="htsName">Wool &amp; Animal Hair, Including Yarn &amp; Woven Fabric</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="52 - Cotton, Including Yarns And Woven Fabrics Thereof"><span class="htsCode">52</span>
+                                - <span class="htsName">Cotton, Including Yarns And Woven Fabrics Thereof</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="53 - Veg Text Fib Nesoi; Veg Fib &amp; Paper Yns &amp; Wov Fab"><span
+                                    class="htsCode">53</span> - <span class="htsName">Veg Text Fib Nesoi; Veg Fib &amp; Paper Yns &amp; Wov Fab</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="54 - Manmade Filaments, Including Yarns And Woven Fabrics Thereof"><span
+                                    class="htsCode">54</span> - <span class="htsName">Manmade Filaments, Including Yarns And Woven Fabrics Thereof</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="55 - Manmade Staple Fibers, Incl Yarns &amp; Woven Fabrics"><span
+                                    class="htsCode">55</span> - <span class="htsName">Manmade Staple Fibers, Incl Yarns &amp; Woven Fabrics</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="56 - Wadding, Felt Etc; Sp Yarn; Twine, Ropes Etc."><span
+                                    class="htsCode">56</span> - <span class="htsName">Wadding, Felt Etc; Sp Yarn; Twine, Ropes Etc.</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="57 - Carpets And Other Textile Floor Coverings"><span
+                                    class="htsCode">57</span> - <span class="htsName">Carpets And Other Textile Floor Coverings</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="58 - Spec Wov Fabrics; Tufted Fab; Lace; Tapestries Etc"><span
+                                    class="htsCode">58</span> - <span class="htsName">Spec Wov Fabrics; Tufted Fab; Lace; Tapestries Etc</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="59 - Impregnated Etc Text Fabrics; Tex Art For Industry"><span
+                                    class="htsCode">59</span> - <span class="htsName">Impregnated Etc Text Fabrics; Tex Art For Industry</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="60 - Knitted Or Crocheted Fabrics"><span class="htsCode">60</span> - <span
+                                    class="htsName">Knitted Or Crocheted Fabrics</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="61 - Apparel Articles And Accessories, Knit Or Crochet"><span class="htsCode">61</span>
+                                - <span class="htsName">Apparel Articles And Accessories, Knit Or Crochet</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="62 - Apparel Articles And Accessories, Not Knit Etc."><span
+                                    class="htsCode">62</span> - <span class="htsName">Apparel Articles And Accessories, Not Knit Etc.</span></a>
+                            </li>
+                            <li><a href="#/" class="d-block text-truncate"
+                                   title="63 - Textile Art Nesoi; Needlecraft Sets; Worn Text Art"><span
+                                    class="htsCode">63</span> - <span class="htsName">Textile Art Nesoi; Needlecraft Sets; Worn Text Art</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="64 - Footwear, Gaiters And The Like; Parts Of Such Articles"><span
+                                    class="htsCode">64</span> - <span class="htsName">Footwear, Gaiters And The Like; Parts Of Such Articles</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="65 - Headgear And Parts Thereof"><span class="htsCode">65</span> - <span
+                                    class="htsName">Headgear And Parts Thereof</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="66 - Umbrellas, Walking-sticks, Riding-crops Etc, Parts"><span
+                                    class="htsCode">66</span> - <span class="htsName">Umbrellas, Walking-sticks, Riding-crops Etc, Parts</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="67 - Prep Feathers, Down Etc; Artif Flowers; H Hair Art"><span
+                                    class="htsCode">67</span> - <span class="htsName">Prep Feathers, Down Etc; Artif Flowers; H Hair Art</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="68 - Art Of Stone, Plaster, Cement, Asbestos, Mica Etc."><span
+                                    class="htsCode">68</span> - <span class="htsName">Art Of Stone, Plaster, Cement, Asbestos, Mica Etc.</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="69 - Ceramic Products"><span class="htsCode">69</span> - <span
+                                    class="htsName">Ceramic Products</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="70 - Glass And Glassware"><span class="htsCode">70</span> - <span
+                                    class="htsName">Glass And Glassware</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="71 - Nat Etc Pearls, Prec Etc Stones, Pr Met Etc; Coin"><span class="htsCode">71</span>
+                                - <span class="htsName">Nat Etc Pearls, Prec Etc Stones, Pr Met Etc; Coin</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="72 - Iron And Steel"><span class="htsCode">72</span> - <span class="htsName">Iron And Steel</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="73 - Articles Of Iron Or Steel"><span class="htsCode">73</span> - <span
+                                    class="htsName">Articles Of Iron Or Steel</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="74 - Copper And Articles Thereof"><span class="htsCode">74</span> - <span
+                                    class="htsName">Copper And Articles Thereof</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="75 - Nickel And Articles Thereof"><span class="htsCode">75</span> - <span
+                                    class="htsName">Nickel And Articles Thereof</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="76 - Aluminum And Articles Thereof"><span class="htsCode">76</span> - <span
+                                    class="htsName">Aluminum And Articles Thereof</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="78 - Lead And Articles Thereof"><span class="htsCode">78</span> - <span
+                                    class="htsName">Lead And Articles Thereof</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="79 - Zinc And Articles Thereof"><span class="htsCode">79</span> - <span
+                                    class="htsName">Zinc And Articles Thereof</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="80 - Tin And Articles Thereof"><span class="htsCode">80</span> - <span
+                                    class="htsName">Tin And Articles Thereof</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="81 - Base Metals Nesoi; Cermets; Articles Thereof"><span
+                                    class="htsCode">81</span> - <span class="htsName">Base Metals Nesoi; Cermets; Articles Thereof</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="82 - Tools, Cutlery Etc. Of Base Metal &amp; Parts Thereof"><span
+                                    class="htsCode">82</span> - <span class="htsName">Tools, Cutlery Etc. Of Base Metal &amp; Parts Thereof</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="83 - Miscellaneous Articles Of Base Metal"><span class="htsCode">83</span> -
+                                <span class="htsName">Miscellaneous Articles Of Base Metal</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="84 - Nuclear Reactors, Boilers, Machinery Etc.; Parts"><span class="htsCode">84</span>
+                                - <span class="htsName">Nuclear Reactors, Boilers, Machinery Etc.; Parts</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="85 - Electric Machinery Etc; Sound Equip; Tv Equip; Pts"><span
+                                    class="htsCode">85</span> - <span class="htsName">Electric Machinery Etc; Sound Equip; Tv Equip; Pts</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="86 - Railway Or Tramway Stock Etc; Traffic Signal Equip"><span
+                                    class="htsCode">86</span> - <span class="htsName">Railway Or Tramway Stock Etc; Traffic Signal Equip</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="87 - Vehicles, Except Railway Or Tramway, And Parts Etc"><span
+                                    class="htsCode">87</span> - <span class="htsName">Vehicles, Except Railway Or Tramway, And Parts Etc</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="88 - Aircraft, Spacecraft, And Parts Thereof"><span class="htsCode">88</span>
+                                - <span class="htsName">Aircraft, Spacecraft, And Parts Thereof</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="89 - Ships, Boats And Floating Structures"><span class="htsCode">89</span> -
+                                <span class="htsName">Ships, Boats And Floating Structures</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="90 - Optic, Photo Etc, Medic Or Surgical Instrments Etc"><span
+                                    class="htsCode">90</span> - <span class="htsName">Optic, Photo Etc, Medic Or Surgical Instrments Etc</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="91 - Clocks And Watches And Parts Thereof"><span class="htsCode">91</span> -
+                                <span class="htsName">Clocks And Watches And Parts Thereof</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="92 - Musical Instruments; Parts And Accessories Thereof"><span
+                                    class="htsCode">92</span> - <span class="htsName">Musical Instruments; Parts And Accessories Thereof</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="93 - Arms And Ammunition; Parts And Accessories Thereof"><span
+                                    class="htsCode">93</span> - <span class="htsName">Arms And Ammunition; Parts And Accessories Thereof</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="94 - Furniture; Bedding Etc; Lamps Nesoi Etc; Prefab Bd"><span
+                                    class="htsCode">94</span> - <span class="htsName">Furniture; Bedding Etc; Lamps Nesoi Etc; Prefab Bd</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="95 - Toys, Games &amp; Sport Equipment; Parts &amp; Accessories"><span
+                                    class="htsCode">95</span> - <span class="htsName">Toys, Games &amp; Sport Equipment; Parts &amp; Accessories</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="96 - Miscellaneous Manufactured Articles"><span class="htsCode">96</span> -
+                                <span class="htsName">Miscellaneous Manufactured Articles</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="97 - Works Of Art, Collectors Pieces And Antiques"><span
+                                    class="htsCode">97</span> - <span class="htsName">Works Of Art, Collectors Pieces And Antiques</span></a>
+                            </li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="98 - Special Classification Provisions, Nesoi"><span class="htsCode">98</span>
+                                - <span class="htsName">Special Classification Provisions, Nesoi</span></a></li>
+                            <li><a href="#" class="d-block text-truncate"
+                                   title="99 - Special Import Reporting Provisions, Nesoi"><span
+                                    class="htsCode">99</span> - <span class="htsName">Special Import Reporting Provisions, Nesoi</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+</main>
+
+<script type="text/javascript" src="/2K19/js/app.min.784a848f3e2f7558f6e49877a0d17172.js"></script>
+
+<style id="zsiqcustomcss">
+    .zsiq_theme9 .siqico-offline{ background-color:#268cf2}.zsiq_theme9 .zsiq_cnt:after{background-color:#0066cc !important;} .zsiq_cnt { background-color: #0066cc !important; }.zsiq_theme9 .zsiq_min .zsiq_flt_rel { background-color : #0066cc !important}
+</style>
+
+<div class="siq_media"></div>
+<script class="iti-load-utils" async="" src="/2K19/js/utils.js"></script>
+
+{% endblock %}

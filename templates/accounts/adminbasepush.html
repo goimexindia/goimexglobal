@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    {% if title %}
+    <title>Giomex - {{ title }}</title>
+    {% else %}
+    <title>Giomex </title>
+    {% endif %}
+    <link href="{% static 'css/app_min.css' %}" media="all" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/responsive.min.css' %}" id="responsiveCss" media="screen and (max-width: 1199px)"
+          rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<style>
+    .container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1
+}
+
+</style>
+
+<body>
+{% include 'accounts/snippets/sidebarpush.html' %}
+   {% include 'blog/snippets/base_css.html' %}
+<div id="main">
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Profile</span>
+
+    <main role="main" class="container">
+        <div class="row">
+            <div class="left-column col-lg-12 offset-lg-1  ">
+                <div class="main">
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+
+</html>
+

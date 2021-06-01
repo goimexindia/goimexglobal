@@ -1,0 +1,290 @@
+{% extends "blog/newbase.html" %}
+{% load crispy_forms_tags %}
+{% block title %}All Company{% endblock %}
+{% load static %}
+{% block content %}
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+</style>
+<style type="text/css">
+    .company-index-banner{
+        background-image: url("https://www.eworldtrade.com/assets/images/company/company-banner.jpg");
+         background-image: url("https://www.eworldtrade.com/assets/images/company/company-banner.jpg");
+        background-position: center center;
+        background-size: cover;
+    }
+    .company-join-banner{
+        background-image: linear-gradient(0deg,rgba(230, 29, 36, 0.6),rgba(33, 37, 41, 0.6)), url("https://www.eworldtrade.com/assets/img/disp-banner.jpg");
+        background-position: center center;
+        background-size: cover;
+    }
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+<!------
+<section class="inner-banner-leftnav company-index-banner">
+    <div class="mx-auto w-75 text-center">
+        <h1>Find Companies</h1>
+        <span>Around the World and Grow Your Business</span>
+        <div>
+            <div class="row">
+                <div class="mx-auto">
+                    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                        <form class="form-inline my-2 my-lg-0" action="{% url 'allcompany' %}" method="GET">
+                            <input class="form-control mr-sm-2" type="search"
+                                   placeholder="Search here........................" aria-label="Search" name="search">
+                            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+---->
+<button class="open-button" onclick="openForm()">TELL US WHAT YOU NEED</button>
+
+<div class="form-popup" id="myForm">
+    <form action="" class="form-container">
+        <strong>Tell us what you need?</strong>
+        <input type="text" name="input_requirement"
+               class="contact_input contact_input_name requirement"
+               placeholder="Requirement (Enter Service /Product Name)" required="required">
+        <input type="text" name="input_name"
+               class="contact_input contact_input_name inpt"
+               placeholder="Your Name" required="required">
+        <input type="text" name="input_name1"
+               class="contact_input contact_input_name inpt"
+               placeholder="Your eMail" required="required">
+        <input type="text" name="input_name2"
+               class="contact_input contact_input_name inpt"
+               placeholder="Contact Number" required="required">
+        <input type="text" name="input_name3"
+               class="contact_input contact_input_name inpt"
+               placeholder="Company Name" required="required">
+        <label>I am a</label>
+        <select class="form-control" name="type" required="" aria-required="true">
+            <option value="seller" selected="">Seller</option>
+            <option value="buyer">Buyer</option>
+        </select>
+
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+</div>
+
+{% for profiles in profile %}
+<div class="buyer-listing-result-row buyer-tab-company">
+    <div class="row">
+        <div class="col-sm-12 col-md-2 pr-md-0">
+            <div class="com-flex">
+                <a href=" {% url 'companyproduct' profiles.user.id %} "
+                   data-detail-link="" data-event-type="Company"
+                   title={{profiles.organization}} class="text-center"> <img
+                        src="{{profiles.img.url}}" class="lazy"
+                        alt="{{ profiles.organization}}" style=""></a>
+            </div>
+            <small>{{profiles.user}}</small>
+        </div>
+        <div class="col-sm-12 col-md-5 pr-md-0 pl-md-2">
+            <h5 class="text-truncate"><a href=" {% url 'companyproduct' profiles.user.id %} "
+                                         title="{{ profiles.organization}}"> {{ profiles.organization}}
+            </a></h5>
+
+            <p>{{ profiles.bio}} <a href=" {% url 'companyproduct' profiles.user.id %} ">Show
+                More........</a></p>
+
+            <ul class="buyer-listing-info li-width-50 full-with-ul">
+                <li>
+                    Business Type:
+                    <span class="text-truncate">{{ profiles.type}}</span>
+                </li>
+
+                <li>
+                    Main Products:
+                    <span class="text-truncate">{{ profiles.products}}</span>
+                </li>
+                <li>
+                    Category:
+                    <span class="text-truncate">{{ profiles.industry}}</span>
+                </li>
+
+                <li>
+                    Other Products:
+                    <span class="text-truncate">{{ profiles.otherproducts}}</span>
+                </li>
+
+            </ul>
+        </div>
+        <div class="col-sm-12 col-md-5 pr-md-0 pl-md-0 company-item">
+            <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
+            Country-{{ profiles.country.name }} <i
+                class="{{ profiles.country.flag_css }}"></i>
+            <ul class="tab-company-item-lst">
+                <li>
+                    <a href="#">
+                        <img src="{{profiles.img1.url}}" class="lazy"
+                             alt="" style="">
+                        <h6 class="text-truncate">Company Review Photos</h6>
+                        <span>- View Details -</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{{profiles.img2.url}}" class="lazy"
+                             alt="" style="">
+                        <h6 class="text-truncate">Company Review Photos</h6>
+                        <span>- View Details -</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{{profiles.img3.url}}" class="lazy"
+                             alt="" style="">
+                        <h6 class="text-truncate">Company Review Photos</h6>
+                        <span>- View Details -</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="buyer-listing-action full-with-div mg-top-10">
+                <a href="#" class="membership-tag-sm">
+                    <img src="https://www.eworldtrade.com/assets/svg/package/lg_free.svg" class="lazy" alt="Free"
+                         width="112" height="34" style="">
+                </a>
+                <a href="#" class=" buyer-listing-btn">Contact Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% if is_paginated %}
+
+{% if page_obj.has_previous %}
+<a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+{% endif %}
+
+{% for num in page_obj.paginator.page_range %}
+{% if page_obj.number == num %}
+<a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+<a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+{% endif %}
+{% endfor %}
+
+{% if page_obj.has_next %}
+<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+{% endif %}
+
+{% endif %}
+
+
+{% if profile.has_other_pages %}
+<nav aria-label="Page navigation conatiner"></nav>
+<ul class="pagination justify-content-center">
+    {% if profile.has_previous %}
+    <li><a href="?page={{ profile.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+    {% endif %}
+    {% if profile.has_next %}
+    <li><a href="?page={{ profile.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+    {% endif %}
+</ul>
+</nav>
+{% endif %}
+
+
+<script type="text/javascript">
+        document.getElementById("id_q").value = "{{query}}"
+</script>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+
+</script>
+
+{% endblock content %}

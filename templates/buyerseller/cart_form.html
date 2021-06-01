@@ -1,0 +1,69 @@
+{% extends "buyerseller/newbase.html" %}
+{% load crispy_forms_tags %}
+{% block title %}New Product{% endblock %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div id='info' class="col-lg-8 mx-auto">
+            <div>
+                <div class="content-section">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <legend class="border-bottom mb-4">Add new product</legend>
+                            <font color="blue">
+                                <h6>Fill out the form below to add a new product to your product list</h6>
+                                <h3>Product Information</h3>
+                                <h6>Information to help define your product</h6>
+                            </font>
+                            <hr>
+                            {{ form.media }}
+                            {{ form|crispy }}
+                            <!------- {% crispy form %}--->
+                        </fieldset>
+
+                        <div class="form-group">
+                            <p>
+                                <strong>
+                                    Add images of your product to engage customers.
+                                    Images should be square with minimum allowed dimensions to be 400x400.
+                                    Allowed file extensions are (png, bmp, jpeg, jpg and gif)
+                                </strong>
+                            </p>
+
+                            <button class="btn btn-outline-info" type="submit">Send For Review</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id='info1' class="col-lg-4 mx-auto">
+
+            <div class="content-section" style="background-image: {%  static  'images/logo4.png' %};">
+                <img src="{%  static  'images/logo2.png' %}">
+                <hr>
+                <h3><font color="bluessh-keygen.exe
+">Upgrade to become a Verified Supplier and get 10 times more sales leads!</font>
+                </h3><br>
+                <h5><p width="82%" class="GSV">Buyers overwhelmingly prefer <a
+                        href="#">Goimex
+                    Verified Suppliers</a>, because they've been
+                    pre-screened by our team.<br>
+                    <hr>
+                    IF you are currently NOT a Verified Supplier then make an
+                    appointment with a Goimex sales consultant to
+                    become a Verified Supplier today to win the buyers'
+                    trust.
+                    </p></h5>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,77 @@
+{% extends 'accounts/adminbase.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Add New Category{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <hr>
+    <a class="btn btn-primary btn-lg mt-1 bmb-1" href="{% url 'admincat'  %}">Add Category</a>
+    <hr>
+    <div class="card bg-warning text-white">
+        <div class="card-header"><h4>All Category</h4></div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>SN</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Slug</th>
+                    <th>Parent</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for cat in allcat %}
+                <tr class="table-primary">
+                    <td>{{forloop.counter}}</td>
+                    <td>{{cat.id}}</td>
+                    <td>{{cat.title}}</td>
+                    <td>{{cat.parent.title}}</td>
+
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <nav aria-label="...">
+            <ul class="pagination">
+                {% if allcat.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ allcat.previous_page_number }}">Previous</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                {% endif %}
+                {% for i in allcat.paginator.page_range %}
+                {% if i == allcat.number %}
+                <li class="page-item active"><a class="page-link">{{i}}</a></li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if allcat.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{  allcat.next_page_number }}">Next</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+
+
+
+    {% endblock %}

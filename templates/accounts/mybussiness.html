@@ -1,0 +1,55 @@
+{% extends "accounts/adminprofilebase.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Profile{% endblock %}
+{% load static %}
+
+{% block content %}
+
+<style>
+      table,
+      td,
+      th {
+        padding: 10px;
+        border: 2px solid #1c87c9;
+        border-radius: 5px;
+        background-color: #e5e5e5;
+        text-align: center;
+      }
+
+
+
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <div class="card bg-warning text-white">
+                        <div class="card-header"><h4>Organization - {{ user.profile.organization }}</h4></div>
+                    </div>
+                    <hr>
+                    {{ form.media }}
+                    {{ p_form|crispy }}
+                    <div class="card bg-warning text-white">
+                        <div class="card-header">Company Brochures / Product Images</div>
+                    </div>
+                    {{ u_form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <p>
+                        <button class="btn btn-danger" type="Submit">Update</button>
+                    <p><strong>Once your documents have been verified they will no longer be editable. To make
+                        changes
+                        contact
+                        support@goimex.com</strong></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends "accounts/adminprofilebase.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Profile{% endblock %}
+
+
+{% block content %}
+
+<style>
+      table,
+      td,
+      th {
+        padding: 10px;
+        border: 2px solid #1c87c9;
+        border-radius: 5px;
+        background-color: #e5e5e5;
+        text-align: center;
+      }
+
+
+</style>
+<div class="container-fluid mt-3">
+    <div id='products' class="col-lg-12 mx-auto">
+        <div class="row mx-auto">
+            {% include 'accounts/snippets/profilerfq.html' %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

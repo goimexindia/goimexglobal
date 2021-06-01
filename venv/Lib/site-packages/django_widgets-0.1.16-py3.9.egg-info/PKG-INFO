@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: django-widgets
+Version: 0.1.16
+Summary: A widget that autocompletes (without ajax)
+Home-page: https://www.rug.nl/rus/cit/
+Author: Research and Innovation Support
+Author-email: H.T.Kruitbosch@rug.nl
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6

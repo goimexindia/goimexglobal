@@ -1,0 +1,73 @@
+{% extends 'accounts/adminbase.html' %}
+
+{% block title %}All Orders {% endblock %}
+
+{% block content %}
+
+<div class="card bg-primary text-white">
+    <div class="card-header"><h4>All ORDERS</h4>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <hr>
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>SN</th>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Ordered On</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for order in allorders %}
+                <tr class="table-primary">
+                    <td>{{forloop.counter}}</td>
+                    <td><a href="{% url 'adminorderdetail' order.id %}">#ORDER_{{order.id}}</a></td>
+                    <td>{{order.ordered_by}}</td>
+                    <td>{{order.created_at}}</td>
+                    <td>{{order.total}}</td>
+                    <td>{{order.order_status}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <nav aria-label="...">
+        <ul class="pagination">
+            {% if allorders.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{allorders.previous_page_number }}">Previous</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            {% endif %}
+            {% for i in allorders.paginator.page_range %}
+            {% if i == allorders.number %}
+            <li class="page-item active"><a class="page-link">{{i}}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if allorders.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ allorders.next_page_number }}">Next</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+{% endblock %}

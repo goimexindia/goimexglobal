@@ -1,0 +1,60 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<div class="content-section">
+    <div class="row no-gutters">
+        <div class="col-md-6 col-lg-6 col-xl-5 d-md-block d-none register-content">
+            <div>
+                <a href="#"
+                   title="Global B2B Marketplace for Worldwide Manufacturers and Suppliers – Goimex Global">
+                    <img src="https://www.eworldtrade.com/2K19/images/eworldtrade-icon.png"
+                         alt="Global B2B Marketplace for Worldwide Manufacturers and Suppliers – Goimex Global">
+                </a>
+            </div>
+            <div class="description">
+                <h1 class="main-heading">Welcome to </h1>
+                <h1 class="main-heading">Goimex Global</h1>
+                <p><h6>To achieve our mission we provide all the necessary functionalities to buyers and sellers that
+                help them in developing the voice of their business and to expand worldwide.</h6></p>
+            </div>
+            <hr>
+            <span class="font18">Please  read our
+            <a href="{% url 'policy' %}" target="_blank">Privacy Statement</a> and
+                <a href="{% url 'terms' %}" target="_blank">Terms &amp; Conditions</a></span>
+            <hr>
+            <a href="{% url 'password_reset' %}">Forgot Password?</a>
+            <hr>
+            <div>
+                <strong>
+                    Need An Account? <a class="ml-2" href="{% url 'register' %}">New Account</a><br><br>
+                </strong>
+            </div>
+
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-7 register-form login-page-form">
+            <form action="login" method="post">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Sign In</legend>
+                    <label for="username">User Name:</label><br>
+                    <input type="text" name="username" placeholder="username"><br>
+                    <label for="password">Password:</label><br>
+                    <input type="password" name="password" placeholder="password"><br>
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit"><small class="text-muted"></small>Login</button>
+                    <hr>
+                    <small class="text-muted ml-2">
+                        <p><strong>By login into this website, you agree to our Terms and that you have read our Data
+                            UsePolicy,
+                            including our Cookie Use.</strong></p>
+                        <hr>
+                    </small>
+                </div>
+            </form>
+         </div>
+    </div>
+</div>
+{% endblock content %}
+

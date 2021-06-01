@@ -1,0 +1,77 @@
+{% extends "buyerseller/newbase.html" %}
+{% load humanize %}
+
+{% block title %} My cart{% endblock %}
+
+{% block content %}
+
+
+{% if cart.cartproduct_set.all %}
+<div>
+    <div>
+        <a class="btn btn-primary" href="{% url 'ecomerce' %}">Continue Shopping......</a>
+        <hr>
+    </div>
+</div>
+
+                            <div class="card card-cascade card-ecommerce wider shadow mb-8  ">
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-11">
+            <h4>Items in my cart</h4><hr>
+            <table class="table" id="customers">
+                <thead>
+                    <tr>
+                        <th>SN</th>
+                        <th>Product</th>
+                        <th>Rate</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for cp in cart.cartproduct_set.all %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td><a target="_blank" href="{% url 'productdetail' cp.product.slug %}">
+                            {{cp.product.title}}</a></td>
+                        <td>{{cp.rate|intcomma}}/-</td>
+                        <td>{{cp.quantity|intcomma}}</td>
+                        <td>{{cp.subtotal|intcomma}}/- </td>
+                        <td>
+                            <a href="{% url 'managecart' cp.id %}?action=inc"  class="btn btn-primary"> + </a>
+                            <a href="{% url 'managecart' cp.id %}?action=dcr" class="btn btn-warning"> - </a>
+                            <a href="{% url 'managecart' cp.id %}?action=rmv" class="btn btn-danger"> x </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                         Rs. {{cart.total|intcomma}}/-
+                        <th colspan="4" class="text-right">Total</th>
+                        <th>Rs. {{cart.total|intcomma}}/-</th>
+                        {% if cart.cartproduct_set.all %}
+                        <th><a class="btn btn-danger" href="{% url 'emptycart'  %}">Empty Cart</a></th>
+                        {% endif %}
+                    </tr>
+                {% endif %}
+
+                </tbody>
+            </table>
+            <hr>
+            <div>
+                {% if cart.cartproduct_set.all %}
+                    <tr>
+                        <th><a class="btn btn-danger" href="{% url 'checkout'  %}"> Checkout </a></th>
+                    </tr>
+           </div>
+    </div>
+</div>
+</div>
+{% else  %}
+{% include 'buyerseller/snippets/emptycart.html' %}
+{% endif %}
+
+{% endblock %}

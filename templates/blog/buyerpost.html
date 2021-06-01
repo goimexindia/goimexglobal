@@ -1,0 +1,108 @@
+{% extends "blog/newbase.html" %}
+{% load static  %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+
+<!---------
+{% include 'blog/snippets/body_snippet.html' %}
+------>
+{{type}}-xxx
+<div class="row mx-auto" style="background-color:powderblue;">
+    <hr>
+    {% for post in posts %}
+
+    <article class="media content-section" >
+        <img class="rounded-circle article-img" src="{{ post.author.profile.img.url }}"
+             title="{{post.author.profile.bio}}">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+                <small class="text-muted">
+                    <a class="mr-2" href="{% url 'category' post.category %}">{{ post.category }}</a>
+                </small>
+                <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                <small class="text-mutted">{{ post.author.profile.country.name }}</small>
+                <!---<small class="text-muted"><a class="btn btn-default btn-xs mt-1 bmb-1" href="#">co.info&rarr;</a></small>---->
+            </div>
+            <h2><a class="article-title" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></h2>
+
+            <div class="container-fluid">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-3 col-md-6 col-lg-5 bg-success">
+                            <p class="article-content">
+                            <blockquote>{{post.content|slice:":300"|safe }}</blockquote>
+                            blockquote</p>
+                        </div>
+                        <div class="col-sm-9 col-md-6 col-lg-7 bg-warning">
+                            <img class="card-img-top" src="{{post.image.url}}"
+                                 alt="" style="height: 200px; object-fit: contain;">
+                            <p class="article-content">
+                            <blockquote>{{post.snippet|slice:":200"|safe }}</blockquote>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <button type="button" class="btn btn-success btn-sm mt-1 bmb-1" data-toggle="collapse"
+                        data-target="#demo">Read More..
+                </button>
+                <div id="demo" class="collapse">
+                    {{post.content|safe}}
+                </div>
+                <a href="{% url 'post-detail' post.id  %}" class="btn btn-primary btn-sm mt-1 bmb-1">Show More...</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'pt' post.id  %}" class="btn btn-danger btn-sm mt-1 bmb-1">Contact Now</a>
+                {% else %}
+                <small><a href="{% url 'login' %}">Login to contact buyers/sellers</a></small>
+            </div>
+            {% endif %}
+            {{post.status}}
+        </div>
+    </article>
+    {% endfor %}
+</div>
+<hr>
+
+{% if is_paginated %}
+
+{% if page_obj.has_previous %}
+<a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+{% endif %}
+
+{% for num in page_obj.paginator.page_range %}
+{% if page_obj.number == num %}
+<a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+<a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+{% endif %}
+{% endfor %}
+
+{% if page_obj.has_next %}
+<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+{% endif %}
+
+{% endif %}
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.your-class').slick({
+        setting-name: setting-value
+      });
+    });
+  </script>
+
+<script type="text/javascript">
+        document.getElementById("id_q").value = "{{query}}"
+</script>
+
+{% endblock content %}

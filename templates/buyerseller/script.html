@@ -1,0 +1,424 @@
+<script type="text/javascript" src="https://www.eworldtrade.com/assets/js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.eworldtrade.com/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+        src="https://esimg.eworldtrade.com/assets/vendor/jquery.toast/js/jquery.toast.js"></script>
+<script type="text/javascript" src="https://esimg.eworldtrade.com/assets/js/form/file-uploader.js"></script>
+<script type="text/javascript" src="https://esimg.eworldtrade.com/assets/js/form/progress-bar.js"></script>
+
+<script>
+
+
+        $( "#inStep2" ).change(function() {
+            $('#stepIndustry3append').html('<div class="loader-window" id="ldCat3"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span></div>');
+            $('#ldCat3').show();
+            var selected = $(this);
+            $.ajax({
+                url: 'https://www.eworldtrade.com/industry/get-industry-info/',
+                data: {industry_id: selected.val()},
+                type: 'get',
+                dataType: 'json',
+                beforeSend: function(){
+                    /*  $('body,html').animate({
+                     scrollTop: searchIndustry.offset().top - 100
+                     }, 800);
+                     searchIndustry.addClass('loading').append('<div class="loader"></div>');*/
+                },
+                success: function(response) {
+
+                    if(response.data.length == 0){
+                        // alert('root');
+                        document.getElementById('is_root').value = 1;
+                        document.getElementById('ind_error').innerHTML = "";
+                        // updateIndustry($("#inStep3"),true);
+                    }else{
+                        // alert('not Root');
+                        document.getElementById('is_root').value = 0;
+                    }
+
+                    if(response.status == true){
+                        $('#ldCat3').hide();
+
+                        $('#stepIndustry3append').html('<select class="industrySet" id="inStep3" size="7" tabindex="1" autocomplete="off" name="industry_id" onchange="updateIndustry(this)" ></select>');
+                        $("#inStep3").empty();
+
+                        $.each(response.data, function(id,arr) {
+                            var options = $('<option value="' + arr.id + '">' + arr.name + '</option>');
+                            if(arr.child =="no")
+                            {
+                              var options = $('<option class="no-arrow" option" value="' + arr.id + '">' + arr.name + '</option>');
+                            }
+                            $('#inStep3').append(options);
+                        });
+                    }else {
+                        $('#stepIndustry3append').html('<div class="messagerrr"></div>');
+                    }
+
+                },
+                error : function ( jqXhr ){
+                }
+            });
+        });
+
+        function inStep2() {
+        $( "#inStep2" ).change(function() {
+            $('#stepIndustry3append').html('<div class="loader-window" id="ldCat3"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span></div>');
+            $('#ldCat3').show();
+            var selected = $(this);
+            $.ajax({
+                url: 'https://www.eworldtrade.com/industry/get-industry-info/',
+                data: {industry_id: selected.val()},
+                type: 'get',
+                dataType: 'json',
+                beforeSend: function(){
+                    /*  $('body,html').animate({
+                     scrollTop: searchIndustry.offset().top - 100
+                     }, 800);
+                     searchIndustry.addClass('loading').append('<div class="loader"></div>');*/
+                },
+                success: function(response) {
+
+                    if(response.data.length == 0){
+                        // alert('root');
+                        document.getElementById('is_root').value = 1;
+                        document.getElementById('ind_error').innerHTML = "";
+                        updateIndustry($("#inStep2"),true);
+                    }else{
+                        // alert('not Root');
+                        document.getElementById('is_root').value = 0;
+                    }
+
+                    if(response.status == true){
+                        $('#ldCat3').hide();
+
+                        $('#stepIndustry3append').html('<select class="industrySet customSelectBox" id="inStep3" size="7" tabindex="1" autocomplete="off" name="industry_id" onchange="updateIndustry(this,true)" ></select>');
+                        $("#inStep3").empty();
+
+                        $.each(response.data, function(id, arr) {
+                            var options = $('<option value="' + arr.id + '">' + arr.name + '</option>');
+                            if(arr.child =="no")
+                            {
+                              var options = $('<option class="no-arrow" option" value="' + arr.id + '">' + arr.name + '</option>');
+                            }
+                            $('#inStep3').append(options);
+                        });
+                    } else {
+                        $('#stepIndustry3append').html('<div class="messagerrr"></div>');
+                    }
+
+                },
+                error : function ( jqXhr ){
+                }
+            });
+        });
+    }
+
+
+    $( "#inStep1" ).change(function() {
+        $('#stepIndustry2append').html('<div class="loader-window" id="ldCat2"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span></div>');
+        $('#stepIndustry3append').html('<div class="loader-window" id="ldCat3"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span></div>');
+
+        $('#ldCat2').show();
+        var selected = $(this);
+        $.ajax({
+            url: 'https://www.eworldtrade.com/industry/get-industry-info/',
+            data: {industry_id: selected.val()},
+            type: 'get',
+            dataType: 'json',
+            beforeSend: function(){
+
+            },
+            success: function(response) {
+
+                if(response.status == true) {
+                    $('#ldCat2').hide();
+                    $('#stepIndustry3append').html('');
+
+                    $('#stepIndustry2append').html('<select class="industrySet customSelectBox" id="inStep2" size="7" tabindex="1" autocomplete="off" name="industry_id" onchange="updateIndustry(this)" ></select>').ready(function () {
+                        inStep2();
+                    });
+                    $("#inStep2").empty();
+
+                    $.each(response.data, function (id, arr) {
+                        var options = $('<option value="' + arr.id + '">' + arr.name + '</option>');
+                        if(arr.child =="no")
+                        {
+                          var options = $('<option class="no-arrow" option" value="' + arr.id + '">' + arr.name + '</option>');
+                        }
+
+                        $('#inStep2').append(options);
+                    });
+                } else {
+                    $('#stepIndustry2append').html('<div class="messagerrr"></div>');
+                }
+            },
+            error : function ( jqXhr ){
+            }
+        });
+    });
+
+    function updateIndustry(elem,selection)
+    {
+        updateIndustryLabel(elem);
+        if(selection == true)
+        {
+            $("#industry_name").val('');
+            $("#industry_id").val('');
+            var industryBreadcrumb = $("#stepIndustry1append").find('option:selected').text();
+            if($("#stepIndustry2append").find('option:selected').length > 0 )
+            {
+              industryBreadcrumb += ' => ' + $("#stepIndustry2append").find('option:selected').text();
+              if($("#stepIndustry3append").find('option:selected').length > 0 )
+              {
+                industryBreadcrumb += ' => ' + $("#stepIndustry3append").find('option:selected').text();
+              }
+            }
+
+            $("#industry_name").val(industryBreadcrumb);
+            $("#industry_id").val($(elem).find('option:selected').val());
+            $("#industry_name").trigger('change');
+            $("#modal_btn_close").prop('disabled',false);
+
+            var div_id = "search_suggestions";
+            document.getElementById(div_id).innerHTML = '';
+            $("#" + div_id).hide();
+            // $("#industrySelectModal").modal('hide');
+
+        }
+        else
+        {
+          $("#modal_btn_close").prop('disabled',true);
+        }
+    }
+    function updateIndustryLabel(elem)
+    {
+      elem  = $(elem);
+      if( elem.attr('id') == 'inStep1'){
+        $("#industryLabel1 span").text(elem.find('option:selected').text());
+        $("#industryLabel2 span").text('');
+        $("#industryLabel3 span").text('');
+      }
+      else if( elem.attr('id') == 'inStep2'){
+          $("#industryLabel2 span").text(elem.find('option:selected').text());
+          $("#industryLabel3 span").text('');
+      }
+      else if( elem.attr('id') == 'inStep3'){
+          $("#industryLabel3 span").text(elem.find('option:selected').text());
+      }
+    }
+
+    $(document).ready(function(){
+
+        var timeoutID = null;
+
+
+        function search_industry(str) {
+            var url = "/get_search_industries";
+
+            var token = "XdMWZDeasL50xBmVXGudvQnQs1uasb6eW4B9dsIe";
+            var dataString = "industry="+str+"&_token="+token;
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: dataString,
+                success: function (data) {
+                    var industries_obj = JSON.parse(data);
+
+                    var html = "";
+                    $.each(industries_obj, function(index,value){
+                        var str = value['url'];
+                        str = str.replace(/\//g, ' => ');
+                        str = str.slice(0, -2);
+                        str = str.slice(0, -2);
+
+                        temp_str = '"'+str+'"';
+
+                        html += "<div onclick='set_industry("+value['id']+","+temp_str+")' class='ind_txt'>"+str+"</div>";
+
+                    })
+                    html += "<div class='ind_txt' onclick='show_industry_modal()'>View All</div>";
+
+                    var div_id = "search_suggestions";
+                    if(html != '') {
+                        document.getElementById(div_id).innerHTML = html;
+                        $("#" + div_id).show();
+                    }
+                }
+            });
+        }
+
+        $('.search_industry').keyup(function(e) {
+            clearTimeout(timeoutID);
+            timeoutID = setTimeout(() => search_industry(e.target.value), 500);
+        });
+
+        $("#industry_btnmod").click(function(){
+            $("#industrySelectModal").modal('show');
+        });
+
+        $("body").click
+        (
+            function(e)
+            {
+                if(e.target.className !== "searcharea")
+                {
+                    $(".searcharea").hide();
+                }
+            }
+        );
+
+    });
+
+function show_industry_modal() {
+    $("#industrySelectModal").modal('show');
+}
+
+
+function set_industry(id,str){
+            var div_id = "industry_id";
+            document.getElementById(div_id).value = id;
+
+            var div_id = "industry_name";
+            document.getElementById(div_id).value = str;
+
+
+            var div_id = "search_suggestions";
+            document.getElementById(div_id).innerHTML = "";
+            $("#"+div_id).hide();
+}
+
+function validateFormInput()
+{
+    var status = false;
+
+    if ($("#industry_id").val() == '')
+    {
+        $("#industry_id_label").addClass('label_error');
+        focusFormInput($("#industry_id_label"));
+        $("#industry_name").addClass('error');
+    }
+    else
+    {
+        $("#industry_id_label").removeClass('label_error');
+        $("#industry_name").removeClass('error');
+        if ($("#buyoffer_name").val() == '')
+        {
+            $("#name_label").addClass('label_error');
+            $("#buyoffer_name").addClass('error');
+            focusFormInput($("#buyoffer_name"));
+        }
+        else
+        {
+            $("#name_label").removeClass('label_error');
+            $("#buyoffer_name").removeClass('error');
+            if ($("#buyoffer_description").val() == '')
+            {
+                $("#description_label").addClass('label_error');
+                $("#buyoffer_description").addClass('error');
+                focusFormInput($("#buyoffer_description"));
+            }
+            else
+            {
+                $("#description_label").removeClass('label_error');
+                $("#buyoffer_description").removeClass('error');
+                if ($("#quantity").val() == '')
+                {
+                    $("#quantity_label").addClass('label_error');
+                    $("#quantity").addClass('error');
+                    focusFormInput($("#quantity"));
+                }
+                else
+                {
+                    $("#quantity_label").removeClass('label_error');
+                    $("#quantity").removeClass('error');
+                    if ($("#quantity_unit").val() == '')
+                    {
+                        $("#quantity_label").addClass('label_error');
+                        $("#quantity_unit").addClass('error');
+                        focusFormInput($("#quantity_unit"));
+                    }
+                    else
+                    {
+                        $("#quantity_label").removeClass('label_error');
+                        $("#quantity_unit").removeClass('error');
+                        if ($("#frequency").val() == '' || $("#frequency").val() == '0')
+                        {
+                            $("#frequency_label").addClass('label_error');
+                            $("#frequency").addClass('error');
+                            focusFormInput($("#frequency"));
+                        }
+                        else
+                        {
+                            $("#frequency_label").removeClass('label_error');
+                            $("#frequency").removeClass('error');
+                            if($("#terms-condition").prop('checked') === false)
+                            {
+                                $("#terms_condition_label").removeClass('hidden');
+                                focusFormInput($("#terms_condition_label"));
+                                return status;
+                            }
+                            else
+                            {
+                                $("#terms_condition_label").addClass('hidden');
+                                status = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return status;
+}
+
+function focusFormInput(elem)
+{
+    $('html, body').animate(
+    {
+        scrollTop: elem.offset().top - 100
+    }, 1000, function()
+    {
+        elem.focus();
+    });
+}
+function closeAllCustomBoxes(elem){
+  $(".customSelectBox").each(function(){
+    if(elem !== $(this) )
+    {
+      $(this).removeClass('open');
+    }
+  });
+}
+$(document).ready(function()
+{
+    $("#rfq-form").submit(function(e)
+    {
+        if (validateFormInput())
+        {
+          return true;
+        }
+
+        e.preventDefault();
+
+        return false;
+    });
+
+    $("#modal_btn_close").click(function(){
+      closeAllCustomBoxes($(this));
+    });
+});
+
+$(document).on('click', ".customSelectBox", function(e) {
+  // closeAllCustomBoxes($(this));
+  $(this).toggleClass('open');
+});
+
+
+
+
+
+
+
+
+</script>

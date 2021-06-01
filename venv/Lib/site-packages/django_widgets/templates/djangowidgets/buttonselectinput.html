@@ -1,0 +1,13 @@
+<div class="input-group django-widget-buttonselectinput" data-name="{{ name }}" {% if select_multiple %}select-multiple{% endif %} role="group">
+    <span class="input-group-btn">
+        {% for option in widget.choices_toggled %}
+        <button type="button" data-value="{{ option.0 }}" class="btn btn-{% if option.2 %}success{% else %}default{% endif %}" >
+            {% if forloop.first %}
+            <input type="hidden" name="{{ name }}" {% if value %}value="{{ value }}"{% endif %} class="django-widget-value"/>
+            {% endif %}
+            {{ option.1 }}
+        </button>
+        {% endfor %}
+    </span>
+    <input type="text" class="form-control django-widget-new-item" placeholder="New value">
+</div>

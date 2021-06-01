@@ -1,0 +1,5403 @@
+<div class="card-body d-flex justify-content-center flex-column px-xl-5 px-lg-4 px-md-3 px-sm-3 py-xl-5 py-lg-5 py-md-5 py-sm-5 py-3 page-container"> <!-- START PAGE CONTAINER  -->
+
+
+<!--BREADCRUMBS-->
+<div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/courses/">Courses</a></li>
+      <li class="breadcrumb-item"><a href="/courses/building-a-website-django-python/">Building a Website with Django (Python)</a></li>
+      <li class="breadcrumb-item active">Creating a Custom User Model</li>
+    </ol>
+  </nav>
+</div>
+<!--END BREADCRUMBS-->
+
+
+<!--START BODY OF POST -->
+<div class="main-container d-flex flex-row">
+
+  <div class="content-container d-flex flex-column pr-xl-3 pr-lg-3" id="id_content_container" style="width: 75%;">
+
+     <!-- If there is a video lecture -->
+    <div class="embed-responsive embed-responsive-16by9 video-container">
+      <iframe id="player" class="embed-responsive-item" src="https://www.youtube.com/embed/eCeRC7E8Z7Y?enablejsapi=1" allowfullscreen="" allow="autoplay"></iframe>
+    </div>
+
+
+    <div class="d-flex flex-column p-1 p-sm-0">
+      <style type="text/css">
+.date-updated{
+  font-size: 12px;
+  color: #636363;
+  font-weight: 380;
+  padding-left: 2px;
+}
+.video-title{
+  font-size: 24px;
+  margin-bottom: 0px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 10px;
+  font-weight: 420;
+}
+.next-video-link{
+  font-size: 17px;
+  margin-bottom: 0px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 10px;
+  font-weight: 380;
+}
+.video-description{
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  color: #000;
+  font-weight: 400;
+
+}
+@media(max-width: 768px){
+
+  .video-title{
+    font-size: 18px;
+    margin-bottom: 0px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 10px;
+  }
+  .next-video-link{
+    font-size: 13px;
+    margin-bottom: 0px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 10px;
+  }
+  .video-description{
+    font-size: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 0;
+    margin-right: 0;
+    color: #000
+  }
+
+}
+</style>
+
+ <!-- If there is a video lecture -->
+    <div class="d-flex flex-row justify-content-between">
+      <span class="video-title">Creating a Custom User Model</span>
+
+      <span class="next-video-link"><a href="/courses/building-a-website-django-python/customizing-django-admin-search-and-filtering/">Next Lecture</a></span>
+
+    </div>
+    <div class="d-flex justify-content-start">
+          <span class="date-updated">updated June 20, 2019</span>
+    </div>
+<hr>
+
+
+    <span class="video-description"><a href="https://github.com/mitchtabian/CodingWithMitch-Blog-Course/tree/Creating-a-Custom-User-Model-(Django)" target="_blank" rel="nofollow">Source code</a></span>
+
+
+ <!-- If there is a video lecture -->
+
+<br><br>
+
+
+
+
+
+<!-- Author Section -->
+
+<br><br>
+<h4 class="pb-0">Author</h4>
+<hr class="py-0 my-0">
+
+
+
+<section class="team-section">
+    <div class="d-flex flex-wrap mt-4 ml-0">
+        <div class="avatar">
+            <img class="rounded z-depth-1 p-0 m-0" src="https://codingwithmitch.s3.amazonaws.com/static/profile_images/1/vlcsnap-2020-06-29-14h24m59s897.png" style="width:75px; height: 75px; object-fit:cover;">
+        </div>
+
+        <div class="d-flex flex-column align-middle justify-content-center ml-2 my-0 py-0">
+            <p class="my-0 py-0"><small class="font-weight-bold">Mitch Tabian</small></p>
+
+            <a href="//codingwithmitch.com" target="_blank" rel="nofollow">
+                <p class="my-0 py-0"><small>codingwithmitch.com</small></p>
+            </a>
+
+            <p class="my-0 py-0"><small class="grey-text">Software Dev</small></p>
+        </div>
+    </div>
+</section>
+
+
+<br clear="pb-sm-5">
+
+
+
+<script>
+
+
+
+  /*
+  use markdown on blog body
+  */
+  function setLectureBody(){
+    var raw = "\u003Ca href\u003D\u0022https://github.com/mitchtabian/CodingWithMitch\u002DBlog\u002DCourse/tree/Creating\u002Da\u002DCustom\u002DUser\u002DModel\u002D(Django)\u0022 target\u003D\u0022_blank\u0022 rel\u003D\u0022nofollow\u0022\u003ESource code\u003C/a\u003E"
+    var body = document.createElement("p")
+    body.innerHTML = validateText(raw)
+    document.getElementById("id_lecture_description").appendChild(body)
+  }
+
+</script>
+
+
+
+    </div>
+
+    <!-- SIDE NAVIGATION (SM SCREENS) -->
+    <div class="small-sidebar-container flex-column d-lg-none d-md-flex d-sm-flex d-flex" id="id_small_sidebar_container">
+        <span class="video-list-heading">Lectures</span>
+        <ul class="list-group">
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/installing-python-2019/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_373" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Installing Python in 2019</span>
+        <span class="float-right d-none" id="id_checkmark-1-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '370'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-1-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-1-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-1-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-1-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/python-virtual-environments-virtualenv/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_374" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Python Virtual Environments (virtualenv)</span>
+        <span class="float-right d-none" id="id_checkmark-2-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '616'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-2-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-2-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-2-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-2-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/installing-django-2019-lts/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_376" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Installing Django in 2019 (LTS)</span>
+        <span class="float-right d-none" id="id_checkmark-3-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '203'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-3-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-3-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-3-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-3-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/creating-your-first-django-project/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_377" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Creating Your First Django Project</span>
+        <span class="float-right d-none" id="id_checkmark-4-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '435'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-4-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-4-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-4-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-4-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/pip-freeze-and-python-libraries/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_378" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Pip Freeze and Python Libraries</span>
+        <span class="float-right d-none" id="id_checkmark-5-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '353'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-5-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-5-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-5-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-5-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/sublime-text-best-web-development-ide/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_379" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Sublime Text (Best Web Development IDE)</span>
+        <span class="float-right d-none" id="id_checkmark-6-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '170'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-6-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-6-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-6-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-6-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/django-apps-views-and-templates-beginners-look/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_380" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Django Apps, Views and Templates (A Beginners look)</span>
+        <span class="float-right d-none" id="id_checkmark-7-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-flex" style="height: 3px;" id="id_progress_bar_container-7-sm">
+	    <div id="id_progress_bar-7-sm" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '8.77'
+var duration = '1038'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-7-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-7-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-7-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-7-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/django-content-blocks-and-snippets/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_381" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Django Content Blocks and Snippets</span>
+        <span class="float-right" id="id_checkmark-8-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-none" style="height: 3px;" id="id_progress_bar_container-8-sm">
+	    <div id="id_progress_bar-8-sm" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '639.84'
+var duration = '640'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-8-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-8-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-8-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-8-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/passing-variables-template-django/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_382" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Passing Variables to a Template with Django</span>
+        <span class="float-right d-none" id="id_checkmark-9-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-flex" style="height: 3px;" id="id_progress_bar_container-9-sm">
+	    <div id="id_progress_bar-9-sm" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="95" style="width: 95%;"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '495.39'
+var duration = '521'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-9-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-9-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-9-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-9-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/django-admin-panels-and-superuser/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_383" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Django Admin Panels and Superuser</span>
+        <span class="float-right d-none" id="id_checkmark-10-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-flex" style="height: 3px;" id="id_progress_bar_container-10-sm">
+	    <div id="id_progress_bar-10-sm" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="88" style="width: 88%;"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '312.83'
+var duration = '355'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-10-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-10-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-10-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-10-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/django-models-and-django-admin-beginner-example/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_384" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Django Models and Django Admin (Beginner Example)</span>
+        <span class="float-right" id="id_checkmark-11-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-none" style="height: 3px;" id="id_progress_bar_container-11-sm">
+	    <div id="id_progress_bar-11-sm" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '932.40'
+var duration = '933'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-11-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-11-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-11-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-11-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/creating-custom-user-model/">
+    <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light" id="id_list_item_lecture_385" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Creating a Custom User Model</span>
+        <span class="float-right d-none" id="id_checkmark-12-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-flex" style="height: 3px;" id="id_progress_bar_container-12-sm">
+	    <div id="id_progress_bar-12-sm" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="1" style="width: 1%;"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '15.81'
+var duration = '1317'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-12-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-12-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-12-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-12-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/customizing-django-admin-search-and-filtering/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_386" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Customizing Django Admin (search and filtering)</span>
+        <span class="float-right d-none" id="id_checkmark-13-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '550'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-13-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-13-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-13-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-13-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/custom-user-registration-django-abstractbaseuser-a/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_387" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Custom User Registration Django (AbstractBaseUser and UserCreationForm)</span>
+        <span class="float-right d-none" id="id_checkmark-14-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '1024'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-14-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-14-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-14-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-14-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/logging-out-users-and-checking-authentication-stat/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_388" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Logging out Users and Checking Authentication Status</span>
+        <span class="float-right d-none" id="id_checkmark-15-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '440'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-15-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-15-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-15-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-15-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/logging-users/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_389" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Logging in Users</span>
+        <span class="float-right d-none" id="id_checkmark-16-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '1012'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-16-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-16-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-16-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-16-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/updating-user-accounts-forms/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_390" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Updating User Accounts with Forms</span>
+        <span class="float-right d-none" id="id_checkmark-17-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '655'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-17-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-17-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-17-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-17-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/bootstrap-installation-and-example/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_391" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Bootstrap Installation and Example</span>
+        <span class="float-right d-none" id="id_checkmark-18-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '1221'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-18-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-18-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-18-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-18-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/bootstrap-login-registration-and-account-screens/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_392" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Bootstrap Login, Registration and Account Screens</span>
+        <span class="float-right d-none" id="id_checkmark-19-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '923'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-19-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-19-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-19-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-19-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/reset-password-and-change-password-django/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_393" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Reset Password and Change Password (Django)</span>
+        <span class="float-right d-none" id="id_checkmark-20-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '1387'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-20-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-20-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-20-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-20-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/blog-post-model-django/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_394" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Blog Post Model (Django)</span>
+        <span class="float-right d-none" id="id_checkmark-21-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '1153'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-21-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-21-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-21-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-21-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/django-static-files-images/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_395" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Django Static Files (Images)</span>
+        <span class="float-right d-none" id="id_checkmark-22-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '932'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-22-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-22-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-22-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-22-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/modeling-blog-using-redditcom/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_396" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Modeling the Blog using Reddit.com</span>
+        <span class="float-right d-none" id="id_checkmark-23-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '919'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-23-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-23-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-23-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-23-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/creating-blog-posts-using-form/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_397" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Creating Blog Posts using a Form</span>
+        <span class="float-right d-none" id="id_checkmark-24-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '731'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-24-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-24-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-24-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-24-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/detail-view-blog-posts/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_398" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Detail View of Blog Posts</span>
+        <span class="float-right d-none" id="id_checkmark-25-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '829'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-25-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-25-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-25-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-25-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/updating-blog-posts-using-django-form-images/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_399" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Updating Blog Posts using a Django Form (Images)</span>
+        <span class="float-right d-none" id="id_checkmark-26-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '840'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-26-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-26-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-26-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-26-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/blog-feed-redditcom/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_400" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Blog Feed Like Reddit.com</span>
+        <span class="float-right d-none" id="id_checkmark-27-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-flex" style="height: 3px;" id="id_progress_bar_container-27-sm">
+	    <div id="id_progress_bar-27-sm" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" style="width: 25%;"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '163.81'
+var duration = '645'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-27-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-27-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-27-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-27-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/blog-search-bar-django-q-lookup/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_401" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Blog Search Bar (Django Q Lookup)</span>
+        <span class="float-right d-none" id="id_checkmark-28-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-flex" style="height: 3px;" id="id_progress_bar_container-28-sm">
+	    <div id="id_progress_bar-28-sm" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="12" style="width: 12%;"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '113.86'
+var duration = '898'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-28-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-28-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-28-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-28-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/pagination-and-custom-search-queries/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_402" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Pagination and Custom Search Queries</span>
+        <span class="float-right d-none" id="id_checkmark-29-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '681'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-29-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-29-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-29-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-29-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/bug-fixes-part-1/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_410" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Bug Fixes (part 1)</span>
+        <span class="float-right d-none" id="id_checkmark-30-sm"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '122'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-30-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-30-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-30-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-30-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is NO video lecture -->
+  <a href="/courses/building-a-website-django-python/hosting-a-website-with-digital-ocean/">
+
+
+  <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_375" style="padding-right: 2px; padding-left: 2px;">
+    <div class="d-flex align-items-center justify-content-between  p-2 mr-3">
+      <span class="lecture-title">Hosting your Website with Digital Ocean</span>
+
+
+
+    </div>
+
+  </li>
+
+
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = ''
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-31-sm")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-31-sm")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-31-sm').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-31-sm').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </div><!-- END SIDE NAVIGATION -->
+
+    <!-- START DISCUSS COMMENTS -->
+      <br><br><br>
+      <h4>Comments</h4>
+      <hr>
+    <div id="disqus_recommendations" style="margin-bottom: 12px;"><iframe id="dsq-app9485" name="dsq-app9485" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="https://disqus.com/recommendations/?base=default&amp;f=codingwithmitch&amp;t_u=https%3A%2F%2Fcodingwithmitch.com%2Fcourses%2Fbuilding-a-website-django-python%2Fcreating-custom-user-model%2F&amp;t_d=CodingWithMitch.com&amp;t_t=CodingWithMitch.com#version=07054adb31d4f6133c2fb097add414fd" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 0px !important; display: inline !important; box-sizing: border-box !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div><div id="disqus_thread"><iframe id="dsq-app2491" name="dsq-app2491" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="https://disqus.com/embed/comments/?base=default&amp;f=codingwithmitch&amp;t_u=https%3A%2F%2Fcodingwithmitch.com%2Fcourses%2Fbuilding-a-website-django-python%2Fcreating-custom-user-model%2F&amp;t_d=CodingWithMitch.com&amp;t_t=CodingWithMitch.com&amp;s_o=default#version=dfaa05f4d3af8a4fe09cfd70007bc5b2" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 743px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+    <script>
+
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    // var disqus_config = function () {
+    //   var PAGE_URL = 'codingwithmitch.com/courses/building-a-website-django-python/creating-custom-user-model/';
+    //   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    //   this.page.identifier = '1'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    // };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://codingwithmitch.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    <!-- END DISCUSS COMMENTS -->
+  </div>
+
+
+  <!-- SIDE NAVIGATION (LG & MD SCREENS) -->
+  <div class="large-sidebar-container flex-column d-lg-flex d-md-none d-sm-none d-none" id="id_large_sidebar_container" style="width: 25%;">
+  <div class="d-flex mb-2">
+    <button class="btn btn-primary m-0 p-1" onclick="toggleLectureList()" id="id_toggle_collapse">Collapse &gt;&gt; </button>
+  </div>
+    <div class="d-flex flex-column lecture-list-container" id="id_lecture_list_container">
+      <span class="video-list-heading">Lectures</span>
+
+      <ul class="list-group lecture-list-group" id="id_lecture_list_group">
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/installing-python-2019/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_373" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Installing Python in 2019</span>
+        <span class="float-right d-none" id="id_checkmark-1-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '370'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-1-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-1-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-1-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-1-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/python-virtual-environments-virtualenv/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_374" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Python Virtual Environments (virtualenv)</span>
+        <span class="float-right d-none" id="id_checkmark-2-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '616'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-2-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-2-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-2-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-2-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/installing-django-2019-lts/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_376" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Installing Django in 2019 (LTS)</span>
+        <span class="float-right d-none" id="id_checkmark-3-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '203'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-3-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-3-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-3-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-3-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/creating-your-first-django-project/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_377" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Creating Your First Django Project</span>
+        <span class="float-right d-none" id="id_checkmark-4-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '435'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-4-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-4-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-4-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-4-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/pip-freeze-and-python-libraries/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_378" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Pip Freeze and Python Libraries</span>
+        <span class="float-right d-none" id="id_checkmark-5-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '353'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-5-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-5-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-5-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-5-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/sublime-text-best-web-development-ide/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_379" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Sublime Text (Best Web Development IDE)</span>
+        <span class="float-right d-none" id="id_checkmark-6-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '170'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-6-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-6-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-6-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-6-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/django-apps-views-and-templates-beginners-look/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_380" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Django Apps, Views and Templates (A Beginners look)</span>
+        <span class="float-right d-none" id="id_checkmark-7-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-flex" style="height: 3px;" id="id_progress_bar_container-7-lg">
+	    <div id="id_progress_bar-7-lg" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '8.77'
+var duration = '1038'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-7-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-7-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-7-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-7-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/django-content-blocks-and-snippets/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_381" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Django Content Blocks and Snippets</span>
+        <span class="float-right" id="id_checkmark-8-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-none" style="height: 3px;" id="id_progress_bar_container-8-lg">
+	    <div id="id_progress_bar-8-lg" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '639.84'
+var duration = '640'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-8-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-8-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-8-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-8-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/passing-variables-template-django/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_382" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Passing Variables to a Template with Django</span>
+        <span class="float-right d-none" id="id_checkmark-9-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-flex" style="height: 3px;" id="id_progress_bar_container-9-lg">
+	    <div id="id_progress_bar-9-lg" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="95" style="width: 95%;"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '495.39'
+var duration = '521'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-9-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-9-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-9-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-9-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/django-admin-panels-and-superuser/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_383" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Django Admin Panels and Superuser</span>
+        <span class="float-right d-none" id="id_checkmark-10-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-flex" style="height: 3px;" id="id_progress_bar_container-10-lg">
+	    <div id="id_progress_bar-10-lg" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="88" style="width: 88%;"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '312.83'
+var duration = '355'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-10-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-10-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-10-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-10-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/django-models-and-django-admin-beginner-example/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_384" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Django Models and Django Admin (Beginner Example)</span>
+        <span class="float-right" id="id_checkmark-11-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-none" style="height: 3px;" id="id_progress_bar_container-11-lg">
+	    <div id="id_progress_bar-11-lg" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '932.40'
+var duration = '933'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-11-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-11-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-11-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-11-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/creating-custom-user-model/">
+    <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light" id="id_list_item_lecture_385" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Creating a Custom User Model</span>
+        <span class="float-right d-none" id="id_checkmark-12-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-flex" style="height: 3px;" id="id_progress_bar_container-12-lg">
+	    <div id="id_progress_bar-12-lg" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="1" style="width: 1%;"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '15.81'
+var duration = '1317'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-12-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-12-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-12-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-12-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/customizing-django-admin-search-and-filtering/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_386" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Customizing Django Admin (search and filtering)</span>
+        <span class="float-right d-none" id="id_checkmark-13-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '550'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-13-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-13-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-13-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-13-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/custom-user-registration-django-abstractbaseuser-a/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_387" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Custom User Registration Django (AbstractBaseUser and UserCreationForm)</span>
+        <span class="float-right d-none" id="id_checkmark-14-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '1024'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-14-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-14-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-14-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-14-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/logging-out-users-and-checking-authentication-stat/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_388" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Logging out Users and Checking Authentication Status</span>
+        <span class="float-right d-none" id="id_checkmark-15-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '440'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-15-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-15-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-15-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-15-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/logging-users/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_389" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Logging in Users</span>
+        <span class="float-right d-none" id="id_checkmark-16-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '1012'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-16-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-16-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-16-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-16-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/updating-user-accounts-forms/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_390" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Updating User Accounts with Forms</span>
+        <span class="float-right d-none" id="id_checkmark-17-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '655'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-17-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-17-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-17-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-17-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/bootstrap-installation-and-example/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_391" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Bootstrap Installation and Example</span>
+        <span class="float-right d-none" id="id_checkmark-18-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '1221'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-18-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-18-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-18-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-18-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/bootstrap-login-registration-and-account-screens/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_392" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Bootstrap Login, Registration and Account Screens</span>
+        <span class="float-right d-none" id="id_checkmark-19-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '923'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-19-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-19-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-19-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-19-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/reset-password-and-change-password-django/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_393" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Reset Password and Change Password (Django)</span>
+        <span class="float-right d-none" id="id_checkmark-20-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '1387'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-20-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-20-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-20-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-20-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/blog-post-model-django/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_394" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Blog Post Model (Django)</span>
+        <span class="float-right d-none" id="id_checkmark-21-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '1153'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-21-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-21-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-21-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-21-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/django-static-files-images/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_395" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Django Static Files (Images)</span>
+        <span class="float-right d-none" id="id_checkmark-22-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '932'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-22-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-22-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-22-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-22-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/modeling-blog-using-redditcom/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_396" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Modeling the Blog using Reddit.com</span>
+        <span class="float-right d-none" id="id_checkmark-23-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '919'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-23-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-23-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-23-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-23-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/creating-blog-posts-using-form/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_397" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Creating Blog Posts using a Form</span>
+        <span class="float-right d-none" id="id_checkmark-24-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '731'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-24-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-24-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-24-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-24-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/detail-view-blog-posts/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_398" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Detail View of Blog Posts</span>
+        <span class="float-right d-none" id="id_checkmark-25-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '829'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-25-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-25-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-25-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-25-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/updating-blog-posts-using-django-form-images/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_399" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Updating Blog Posts using a Django Form (Images)</span>
+        <span class="float-right d-none" id="id_checkmark-26-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '840'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-26-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-26-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-26-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-26-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/blog-feed-redditcom/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_400" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Blog Feed Like Reddit.com</span>
+        <span class="float-right d-none" id="id_checkmark-27-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-flex" style="height: 3px;" id="id_progress_bar_container-27-lg">
+	    <div id="id_progress_bar-27-lg" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" style="width: 25%;"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '163.81'
+var duration = '645'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-27-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-27-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-27-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-27-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/blog-search-bar-django-q-lookup/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_401" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Blog Search Bar (Django Q Lookup)</span>
+        <span class="float-right d-none" id="id_checkmark-28-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+      <div class="progress mb-1 d-flex" style="height: 3px;" id="id_progress_bar_container-28-lg">
+	    <div id="id_progress_bar-28-lg" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="12" style="width: 12%;"></div>
+	    </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '113.86'
+var duration = '898'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-28-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-28-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-28-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-28-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/pagination-and-custom-search-queries/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_402" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Pagination and Custom Search Queries</span>
+        <span class="float-right d-none" id="id_checkmark-29-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '681'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-29-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-29-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-29-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-29-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is a video lecture -->
+  <a href="/courses/building-a-website-django-python/bug-fixes-part-1/">
+    <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_410" style="padding-right: 2px; padding-left: 2px;">
+
+      <div class="d-flex align-items-center justify-content-between p-2 mr-3">
+        <span class="lecture-title">Bug Fixes (part 1)</span>
+        <span class="float-right d-none" id="id_checkmark-30-lg"><i class="fa fa-check green-text fa" aria-hidden="true"></i></span>
+      </div>
+
+
+
+    </li>
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = '122'
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-30-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-30-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-30-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-30-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+  .free-lecture{
+    color: #3495eb;
+    font-size: 0.8em;
+  }
+  .placeholder-lecture{
+    background-color: #0275d8;
+    color: white;
+    font-weight: 400;
+  }
+  .list-group-item-action:hover{
+    background-color: #DCDCDC;
+  }
+</style>
+
+
+<script type="text/javascript" src="https://codingwithmitch.s3.amazonaws.com/static/js/jquery-3.3.1.min.js"></script>
+
+
+ <!-- If there is NO video lecture -->
+  <a href="/courses/building-a-website-django-python/hosting-a-website-with-digital-ocean/">
+
+
+  <li class="list-group-item  d-flex flex-column justify-content-between list-group-item-action" id="id_list_item_lecture_375" style="padding-right: 2px; padding-left: 2px;">
+    <div class="d-flex align-items-center justify-content-between  p-2 mr-3">
+      <span class="lecture-title">Hosting your Website with Digital Ocean</span>
+
+
+
+    </div>
+
+  </li>
+
+
+  </a>
+ <!-- If lecture.0.video and lecture.0.video.get_date_available <= current_time-->
+
+<script type="text/javascript">
+var playback_time = '0'
+var duration = ''
+var percentage_watched = parseInt((playback_time / duration) * 100);
+// console.log("% watched: " + percentage_watched)
+
+
+if(percentage_watched > 95){
+  var checkmark = document.getElementById("id_checkmark-31-lg")
+  if(checkmark != null ){
+    checkmark.classList.remove("d-none");
+    checkmark.classList.remove("d-flex");
+  }
+
+}
+else{
+  var progressBarContainer = document.getElementById("id_progress_bar_container-31-lg")
+  if(progressBarContainer != null){
+    progressBarContainer.classList.remove("d-none");
+    progressBarContainer.classList.add("d-flex");
+    $('#id_progress_bar-31-lg').attr("aria-valuenow", percentage_watched);
+    $('#id_progress_bar-31-lg').width(percentage_watched + "%");
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- END SIDE NAVIGATION -->
+
+
+
+  <!-- Modal -->
+<div class="modal fade" id="id_next_lecture_modal" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" name="modal-title" id="modalLabel">Next Lecture</h5>
+      </div>
+      <div class="modal-body">
+        <p id="id_next_lecture_model_body">
+          Next lecture starts in 3 seconds...
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" id="id_next_lecture_cancel" onclick="cancelNextLecture()" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="id_next_lecture_go_now" onclick="goNow()" data-dismiss="modal">Go now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div><!--END BODY OF POST -->
+</div>

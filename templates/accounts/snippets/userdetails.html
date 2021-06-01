@@ -1,0 +1,14 @@
+<div class="media">
+    <img class="rounded-circle account-img" src="{{ user.profile.img.url }}">
+    <div class="card bg-warning text-white">
+        <div class="card-header"><h4>{{ user.username }}</h4></div>
+    </div>
+    <div class="media-body">
+        <p class="text-secondary"><strong>{{ user.email }}</strong></p>
+    </div>
+    <div>
+        <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
+        {{ user.profile.country.name }} <i
+            class="{{ user.profile.country.flag_css }}"></i>
+    </div>
+</div>

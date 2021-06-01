@@ -1,0 +1,53 @@
+.django-autocomplete-widget {
+    width: 100%;
+    position: relative;
+}
+
+.django-autocomplete-widget ul {
+    position: absolute; width: 100%;
+    -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+    box-shadow: 10px 10px 5px #888;
+    margin: 0; padding: 0;
+    border-left: solid #ccc 1px;
+    border-right: solid #ccc 1px;
+    border-bottom: solid #ccc 1px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    z-index: 2;
+}
+.django-autocomplete-widget input {
+    width: 100%;
+    border-left: solid #ccc 1px;
+    border-right: solid #ccc 1px;
+    border-top: solid #ccc 1px;
+    border-bottom: 0px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 4px 12px 8px 12px;
+}
+
+.django-autocomplete-widget.none input {
+    border-bottom: solid #ccc 1px; border-radius: 3px;
+}
+
+
+.django-autocomplete-widget.none ul {
+    display: none;
+}
+.django-autocomplete-widget ul li {
+    display: none;
+}
+.django-autocomplete-widget ul li.active {
+    background-color: #fff;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin: 0px;
+    list-style: none;
+    padding: 4px 12px 8px 12px;
+}
+
+.django-autocomplete-widget ul li.selected {
+    background-color: #efe;
+}

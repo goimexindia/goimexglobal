@@ -1,0 +1,270 @@
+  {% extends "accounts/adminprofilebase.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+        <section class="container-fluid register-page px-0">
+            <div class="row no-gutters">
+                <div class="col-md-6 col-lg-6 col-xl-5 d-md-block d-none register-content reg-bg">
+                    <div class="eworld-icon">
+                        <a href="https://www.eworldtrade.com/" title="Global B2B Marketplace for Worldwide Manufacturers and Suppliers – Eworldtrade">
+                            <img src="https://www.eworldtrade.com/2K19/images/eworldtrade-icon.png" alt="Global B2B Marketplace for Worldwide Manufacturers and Suppliers – Eworldtrade">
+                        </a>
+                    </div>
+                                            <div class="description">
+                            <img src="https://www.eworldtrade.com/2K19/images/reg-graphic.svg" class="mx-auto d-block">
+                        </div>
+                                        <div class="copyrights-links">
+                        <span>© 2021 eWorldTrade.com</span>
+                        <nav>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="https://www.eworldtrade.com/contact-us/" title="Contact Eworldtrade">Contact Us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6 register-form register-page reg-sec pt-0">
+       <div class="hd-bann-form form-full  ">
+            <div>
+                <div class="register-page-header">
+                    <a href="https://www.eworldtrade.com/" title="Global B2B Marketplace for Worldwide Manufacturers and Suppliers – Eworldtrade" class="d-md-none mb-2">
+                        <img src="https://www.eworldtrade.com/2K19/images/eworldtrade-icon.png" class="mobile-icon" alt="Global B2B Marketplace for Worldwide Manufacturers and Suppliers – Eworldtrade">
+                    </a>
+                                        <h1>Welcome to <span>Eworldtrade</span></h1>
+                                        <h2>Free Instant Buyer’s Connectivity Worldwide</h2>
+                </div>
+                <div class="clearfix"></div>
+                <div>
+                    <form method="POST" action="https://www.eworldtrade.com/user/basic-signup-n/" accept-charset="UTF-8" class="validate-form" name="register_form" novalidate="novalidate"><input name="_token" type="hidden" value="qsMoBeNqTgkee68zocVcvthALZVr8vD8Vpp9D1Bx">
+
+                        <input type="hidden" name="affiliate" value="1">
+<input type="hidden" name="signup-form" value="yes">
+<input type="hidden" name="widget_source" value="registrationPage">
+<input type="hidden" name="source" value="Organic">
+
+<input type="hidden" name="utm_campaign" value="">
+<input type="hidden" name="utm_medium" value="">
+<input type="hidden" name="utm_source" value="">
+<input type="hidden" name="utm_content" value="">
+<input type="hidden" name="utm_term" value="">
+
+<input type="hidden" name="fullpageurl" value="https://www.eworldtrade.com/register-free">
+<input type="hidden" name="referrerurl" value="https://www.eworldtrade.com/login/">
+<input type="hidden" name="pageurl" value="https://www.eworldtrade.com/register-free">
+<input type="hidden" name="external_refferer" value="">
+
+<input type="hidden" name="ip2loc_ip" value="103.160.167.242">
+<input type="hidden" name="ip2loc_isp" value="">
+<input type="hidden" name="ip2loc_org" value="">
+<input type="hidden" name="ip2loc_country" value="">
+<input type="hidden" name="ip2loc_region" value="">
+<input type="hidden" name="ip2loc_city" value="">
+
+<ul class="list-inline nav-tabs">
+    <li class="list-inline-item">
+        <label>I am a</label>
+    </li>
+    <li class="list-inline-item active">
+        <input type="radio" name="type" value="seller" class="visitor-type-supplier valid" checked="checked" data-label="Seller">
+        <label for="seller" class="checkClosest">Supplier</label>
+    </li>
+    <li class="list-inline-item">
+        <input type="radio" name="type" value="buyer" class="visitor-type-buyer valid" data-label="Buyer">
+        <label for="buyer" class="checkClosest">Buyer</label>
+    </li>
+</ul>
+<div class="form-row">
+    <div class="incomplete-info-form-group col-12 mt-2">
+        <h6 class="w-100">Personal Information</h6>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-6 pr-xl-3 pr-lg-1 pr-md-1 pr-1">
+                <input class="required head-field form-control valid" required="" placeholder="Full Name" autocomplete="name" autofocus="" title="Full Name" name="full_name" type="text" aria-required="true">
+            </div>
+            <div class="col-6 pr-xl-3 pl-lg-1 pl-md-1 pl-0">
+                       </div>
+            <div class="col-6 pr-xl-3 pr-lg-1 pr-md-1 pr-1">
+                <input class="required head-field email form-control" required="" placeholder="Email" autocomplete="email" title="Email" name="email" type="email" value="" aria-required="true">
+            </div>
+            <div class="col-6 pr-xl-3 pl-lg-1 pl-md-1 pl-0">
+                <input class="required head-field form-control" required="" minlength="6" maxlength="30" placeholder="Create Password" title="Create Password" autocomplete="new-password" name="password" type="password" value="" aria-required="true">
+            </div>
+            <div class="input-group col-12  pr-xl-3 messengerDropdownParent seller-form-input">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary dropdown-toggle messengerPlatformButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Messenger</button>
+                    <div class="dropdown-menu messengerPlatformDropdown">
+                        <a class="dropdown-item" href="javascript:;">Skype</a>
+                        <a class="dropdown-item" href="javascript:;">WeChat</a>
+                        <a class="dropdown-item" href="javascript:;">QQ</a>
+                        <a class="dropdown-item" href="javascript:;">WhatsApp</a>
+                    </div>
+                </div>
+                <input type="text" name="messenger" value="" class="hidden-input messengerValue" required="required" aria-required="true">
+                <input type="text" class="form-control messenger" name="messenger_id" required="required" autocomplete="username" placeholder="Please enter Username of selected platform" aria-required="true">
+            </div>
+        </div>
+    </div>
+    <div class="incomplete-info-form-group col-12 mt-2">
+        <h6 class="w-100">Business Information</h6>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-6 pr-xl-3 pr-lg-1 pr-md-1 pr-1">
+                <input class="required head-field form-control" required="" placeholder="Company Name" autocomplete="organization" title="Company Name" name="company_name" type="text" aria-required="true">
+            </div>
+            <div class="col-6 pr-xl-3 pl-lg-1 pl-md-1 pl-0">
+                <select class="required head-field form-control" required="" title="Select Industry" name="industry_id" aria-required="true"><option value="" selected="selected">Select Industry</option><option value="1">Agriculture</option><option value="338">Apparel</option><option value="888">Automobiles &nbsp;&amp; Motorcycles</option><option value="2358">Beauty &amp; Personal Care</option><option value="4907">Business Services</option><option value="4128">Chemicals</option><option value="1354">Computer Hardware &amp; Software</option><option value="2566">Construction &amp; Real Estate</option><option value="1569">Consumer Electronic</option><option value="1745">Electrical Equipment&nbsp;Supplies</option><option value="4324">Energy</option><option value="4363">Environment</option><option value="722">Fashion Accessories</option><option value="132">Food &amp; Beverage</option><option value="3139">Furniture</option><option value="2064">Gifts &amp; Crafts</option><option value="3806">Hardware</option><option value="2227">Health &amp; Medical</option><option value="2711">Home &amp; Garden</option><option value="1436">Home Appliances</option><option value="3528">Industrial Parts &amp; Fabrication Services</option><option value="2969">Lights &amp; Lighting</option><option value="1211">Luggage, Bags &amp; Cases</option><option value="3284">Machinery</option><option value="3843">Measurement &amp; Analysis Instruments</option><option value="3943">Minerals &amp; Metallurgy</option><option value="5314">Multiple Products</option><option value="4514">Office &amp; School Supplies</option><option value="4382">Packaging &amp; Printing</option><option value="4242">Rubber &amp; Plastics</option><option value="1659">Security &amp; Protection</option><option value="4668">Service Equipment</option><option value="1277">Shoes &amp; Footwear Accessories</option><option value="1900">Sports &amp; Entertainment</option><option value="1854">Telecommunication</option><option value="555">Textile &amp; Leather Product</option><option value="814">Timepieces, Jewelry &amp; Eyewear</option><option value="3705">Tools</option><option value="2139">Toys &amp; Hobbies</option><option value="1074">Transportation</option></select>
+            </div>
+            <div class="col-12 pr-xl-3">
+                <input class="required head-field form-control" required="" placeholder="Products" title="Products" name="products_want" type="text" aria-required="true">
+            </div>
+        </div>
+                    <div class="text-center d-block">
+                <input type="submit" class="register" value="Join Free">
+            </div>
+            </div>
+            <div class="login-page-form col-12">
+    <h5 class="or-login text-center w-100"><span>OR CONNECT WITH</span></h5>
+    <div class="social-links">
+
+        <a href="https://www.eworldtrade.com/auth/social/facebook/redirect/" class="facebook"><i class="fab fa-facebook-f"></i>Facebook</a>
+        <a href="https://www.eworldtrade.com/auth/social/linkedin/redirect/" class="linkedin"><i class="fab fa-linkedin-in"></i>Linkedin</a>
+        <a href="https://www.eworldtrade.com/auth/social/google/redirect/" class="google"><i class="fab fa-google"></i>Google</a>
+
+    </div>
+</div>        <a href="https://www.eworldtrade.com/login/" title="eWorldTrade Login" class="text-center mt-3 w-100">Already a member?</a>
+    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+            </div>
+        </section>
+        <script type="text/javascript" src="/2K19/js/app.min.784a848f3e2f7558f6e49877a0d17172.js"></script>
+
+                    <script type="text/javascript" async="" src="/2K19/js/auth.min.02383e1b99ef148f4ffe.js"></script>
+
+                    <div class="start-chat" id="popupOpen">
+        <div class="chat-user">
+            <img src="https://www.eworldtrade.com/2K19/images/chat.png" class="lazy img-fluid" alt="Chat Baloon">
+        </div>
+        <div class="chat-content">
+            <h5>We're Online!</h5>
+            <p>How may I help you today?</p>
+            <span>Chat now</span>
+        </div>
+    </div>
+    <div class="lead-popup">
+        <div class="closeicon" id="closePopup">
+            <a href="javascript:;">
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="chat-form">
+            <div class="popheading">
+                <div class="popup-icon">
+                    <img src="https://www.eworldtrade.com/2K19/images/chaticon.png" class="lazy img-fluid" alt="Chat Icon">
+                </div>
+                <h4>Chat with us now!</h4>
+            </div>
+            <form method="POST" action="https://www.eworldtrade.com/user/basic-signup-n/" accept-charset="UTF-8" class="validate-form pre-chat-form" name="register_form" novalidate="novalidate"><input name="_token" type="hidden" value="qsMoBeNqTgkee68zocVcvthALZVr8vD8Vpp9D1Bx">
+                <input type="hidden" name="affiliate" value="1">
+<input type="hidden" name="signup-form" value="yes">
+<input type="hidden" name="widget_source" value="preChatForm">
+<input type="hidden" name="source" value="Organic">
+
+<input type="hidden" name="utm_campaign" value="">
+<input type="hidden" name="utm_medium" value="">
+<input type="hidden" name="utm_source" value="">
+<input type="hidden" name="utm_content" value="">
+<input type="hidden" name="utm_term" value="">
+
+<input type="hidden" name="fullpageurl" value="https://www.eworldtrade.com/register-free">
+<input type="hidden" name="referrerurl" value="https://www.eworldtrade.com/login/">
+<input type="hidden" name="pageurl" value="https://www.eworldtrade.com/register-free">
+<input type="hidden" name="external_refferer" value="">
+
+<input type="hidden" name="ip2loc_ip" value="103.160.167.242">
+<input type="hidden" name="ip2loc_isp" value="">
+<input type="hidden" name="ip2loc_org" value="">
+<input type="hidden" name="ip2loc_country" value="">
+<input type="hidden" name="ip2loc_region" value="">
+<input type="hidden" name="ip2loc_city" value="">
+
+                <input type="hidden" name="preChatForm" value="1">
+                <input type="hidden" name="quickregister" value="yes">
+                <input type="hidden" name="password" value="pOvEcE6JH07u">
+                                <div class="form-row pl-3 pr-3">
+                    <div class="col-12 mb-3 mt-4">
+                        <input class="form-control" required="" placeholder="Enter your Full Name" autocomplete="name" title="Enter your Full Name (Required)" name="full_name" type="text" aria-required="true">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <input class="form-control" required="" placeholder="Enter your Email" autocomplete="email" title="Enter your Email (Required)" name="email" type="email" aria-required="true">
+                    </div>
+                    <div class="col-12 mb-3">
+
+</div><input class="form-control  head-field" required="" placeholder="Enter your Phone" minlength="8" autocomplete="off" title="Enter your Phone (Required)" name="phone_number" type="tel" data-intl-tel-input-id="1" aria-required="true"></div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <input class="form-control" required="" placeholder="Your Company / Organization Name" autocomplete="organization" title="Your Company / Organization Name (Required)" name="company_name" type="text" aria-required="true">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <select class="form-control" required="" name="type" title="You want to sell or buy?" aria-required="true">
+                            <option value="">I am</option>
+                            <option value="seller">Seller</option>
+                            <option value="buyer">Buyer</option>
+                        </select>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <textarea class="form-control pt-2" name="products_want" rows="5" placeholder="Type your message and hit Enter"></textarea>
+                    </div>
+                    <div class="popup-btn">
+                        <button type="submit" class="btn mb-2">
+                            <i class="fa fa-envelope-open mr-2" aria-hidden="true"></i>Start Chat
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+                <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+        OneSignal.init({
+            appId: "fbd96f7e-d10b-48aa-b0d1-412ba5136cc6",
+        });
+
+
+                                OneSignal.sendTags({
+                fp_source: "Organic",
+                fp_domain_full_page_url: "https://www.eworldtrade.com/register-free",
+                fp_domain_page_url: "https://www.eworldtrade.com/register-free",
+                fp_domain_refferrer_url: "https://www.eworldtrade.com/login/",
+                fp_domain_external_url: "",
+                fp_utm_campaign: "",
+                fp_utm_medium: "",
+                fp_utm_source: "",
+                fp_utm_content: "",
+                fp_utm_term: "",
+                fp_visitor_ip: "103.160.167.242",
+                fp_visitor_country: "",
+                fp_visitor_region: "",
+                fp_visitor_city: ""
+            });
+            });
+    </script>
+
+                <script>
+            $(document).on('click', '#popupOpen', function() {
+                $('.lead-popup').addClass('chat-formopen');
+                $('#popupOpen').addClass('d-none');
+            });
+            $(document).on('click', '#closePopup', function() {
+                $('.lead-popup').removeClass('chat-formopen');
+                $('#popupOpen').removeClass('d-none');
+            });
+        </script>
+
+<script class="iti-load-utils" async="" src="/2K19/js/utils.js"></script>
+  {% endblock content %}

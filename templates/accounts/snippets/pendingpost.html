@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Pending posts for approval</h4>
+            <table class="table table-hover">
+                <thead class="thead-dark"
+                <tr>
+                    <th>SN</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Key Features</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                    <th><small>User Login</small></th>
+                    <th><small>Organization</small></th>
+                    <th><small>Created On</small></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for post in allpost %}
+                <tr class="table-primary">
+                    <td>{{forloop.counter}}</td>
+                    <td><a href="{{post.image.url}}" target="_blank"><img src="{{post.image.url}}" target="_blank"
+                                                                          style="height: 60px;" alt=""></td>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.title_tag|slice:":100"|safe }}</td>
+                    <td>{{ post.description|slice:":100"|safe }}</td>
+                    <td>{{post.author}}-{{post.get_status_display}}</td>
+                    <td>
+                        <a class="btn btn-secondary btn-sm mt-1 bmb-1" href="{% url 'post-update' post.id %}">Update</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger btn-sm mt-1 bmb-1" href="{% url 'post-delete' post.id %}">Delete</a>
+                    </td>
+                    <td><p class="card-text"><small> {{post.author}} </small></p></td>
+                    <td><p class="card-text"><small> {{post.author.profile.organization}} </small></p></td>
+                    <td><p class="card-text"><small> {{post.created_on}} </small></p></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <nav aria-label="...">
+        <ul class="pagination">
+            {% if allpost.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{pendingproduct.previous_page_number }}">Previous</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            {% endif %}
+            {% for i in allpost.paginator.page_range %}
+            {% if i == allpost.number %}
+            <li class="page-item active"><a class="page-link">{{i}}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if allpost.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{  allpost.next_page_number }}">Next</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>

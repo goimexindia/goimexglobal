@@ -1,0 +1,89 @@
+{% load static %}
+
+<style>
+.asidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.asidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.asidenav a:hover {
+  color: #f1f1f1;
+}
+
+.asidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .asidenav {padding-top: 15px;}
+  .asidenav a {font-size: 18px;}
+}
+
+
+
+
+</style>
+
+<div id="mySidenav" class="asidenav">
+    <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." class="logo w-100 mt-0"
+                                                     src="{%  static  'images/logo4.png' %}"></a>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="{% url 'blog-home' %}">Main Menu</a>
+    <a href="{% url 'adminhome' %}">Admin Menu</a>
+    <a href="{% url 'adminorderlist' %}">All Orders</a>
+    <a href="{% url 'customer' 1 %}">Customer Orders</a>
+    <a href="{% url 'admincat'  %}">Category</a>
+    <a href="{% url 'adminproductlist' %}">All Products</a>
+    <a href="{% url 'adminpostlist' %}">All Posts</a>
+    <a href="{% url 'adminrfqlist' %}">All RFQs</a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'register' %}">Register</a>
+    {% endif %}
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+        <!-- Right -->
+        <ul class="navbar-nav ml-auto">
+            <a href="{% url 'mycart'  %}" class="nav-link navbar-link-2 waves-effect">
+                <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+            </a>
+        </ul>
+    </div>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Adminstrator  -{{ user.username }}</span>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "290px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+
+
+
+</script>

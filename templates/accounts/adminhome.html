@@ -1,0 +1,21 @@
+{% extends "accounts/adminbase.html" %}
+
+{% block title %}Admin Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <h3>Action required by administrator......</h3>
+        </div>
+    </div>
+</div>
+<hr>
+
+{% include 'accounts/snippets/pendingorders.html' %}
+<hr>
+{% include 'accounts/snippets/pendingproduct.html' %}
+<hr>
+{% include 'accounts/snippets/pendingpost.html' %}
+<hr>
+{% endblock %}

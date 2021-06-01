@@ -1,0 +1,3 @@
+[console_scripts]
+genre = genre.genre:main
+

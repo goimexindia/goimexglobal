@@ -1,0 +1,11 @@
+<div class="django-autocomplete-widget none">
+    <input type="hidden" class="django-autocomplete-key" name="{{ name }}"/>
+    <input type="text" class="django-autocomplete-value" autocomplete="off" name="{{ name }}__label"/>
+    <div class="autocompletions">
+        <ul>
+            {% for option in widget.choices %}
+            <li data-key="{{ option.0 }}" data-value="{{ option.1 }}">{{ option.1 }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

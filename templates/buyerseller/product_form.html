@@ -1,0 +1,26 @@
+{% extends "buyerseller/newbase.html" %}
+{% load crispy_forms_tags %}
+{% block title %}New Product{% endblock %}
+
+{% block content %}
+    <div class="content-section">
+
+        <form action="" method="POST" enctype="multipart/form-data">
+             {% csrf_token %}
+              <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Update  product</legend>
+                    <h7>Change the status  = 'Published' to add product to your products list</h7>
+                    <h4>Product Information</h4>
+                     <h7>Information to help define a product</h7>
+                     <hr>
+                     {{ form.media }}
+                     {{ form|crispy }}
+                     <!------- {% crispy form %}--->
+              </fieldset>
+
+             <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Send For Publication</button>
+             </div>
+        </form>
+    </div>
+{% endblock content %}

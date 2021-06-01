@@ -1,0 +1,75 @@
+{% extends "accounts/adminprofilebase.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<style>
+      table,
+      td,
+      th {
+        padding: 10px;
+        border: 2px solid #1c87c9;
+        border-radius: 5px;
+        background-color: #e5e5e5;
+        text-align: center;
+      }
+</style>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div id='info' class="col-lg-8 mx-auto">
+            <div class="row mx-auto">
+                <div class="content-section">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <div class="card bg-warning text-white">
+                                <div class="card-header"><h4>Personnel Details</h4></div>
+                            </div>
+                            {{ form.media }}
+                            {{ u_form|crispy }}
+                            <div class="card bg-warning text-white">
+                                <div class="card-header"><h4>Organization Details</h4></div>
+                            </div>
+                            {{ form.media }}
+                            {{ p_form|crispy }}
+                        </fieldset>
+                        <div class="form-group">
+                            <p>
+                                <button class="btn btn-danger" type="Submit">Update</button>
+                            <p><strong>Once your documents have been verified they will no longer be editable. To make
+                                changes
+                                contact
+                                support@goimex.com</strong></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id='products3' class="col-lg-4 mx-auto">
+            {% include 'accounts/snippets/notice.html' %}
+        </div>
+    </div>
+    <hr>
+
+    <div class="customer-body">
+
+        <div class="col-xs-12 col-sm-5 col-md-5">
+            <h3><span>Customer</span> Services</h3>
+            <h5>Get in Touch with Your Account Manager!</h5>
+            <ul>
+                <li><a href="mailto:care@goimex.com"><i class="fa fa-envelope"
+                                                        aria-hidden="true"></i>care@goimex.com</a>
+                </li>
+                <li><a href="tel:+12143829974"><i class="fa fa-phone-square" aria-hidden="true"></i>+91-80978 03130 </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-7 col-md-7">
+            <a href="javascript:;" class="btnChat"><img
+                    src="https://www.eworldtrade.com/2K19/images/member/dashboardbanner2.png" alt="Customer Service"
+                    class="img-responsive"></a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

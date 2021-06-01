@@ -1,0 +1,291 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Connecting Bussiness to Bussiness, Country to Country">
+    <meta name="keywords" content="eCommerce, Buyer, Seller">
+    <meta name="author" content="Goimex Global Pvt Ltd.">
+
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
+    {% if title %}
+    <title>Giomex - {{ title }}</title>
+    {% else %}
+    <title>Giomex </title>
+    {% endif %}
+    <link href="{% static 'css/app_min.css' %}" media="all" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/responsive.min.css' %}" id="responsiveCss" media="screen and (max-width: 1199px)"
+          rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<style>
+    .container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1
+}
+</style>
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+</style>
+
+<div>
+    {% include 'blog/snippets/header.html' %}
+
+    {% include 'blog/snippets/base_css.html' %}
+
+    <!------
+    <section class="inner-banner-leftnav company-index-banner">
+        <div class="mx-auto w-75 text-center">
+            <h1>Buyer / Seller Request Post</h1>
+            <span>Around the World and Grow Your Business</span>
+            <div>
+                <div class="row">
+                    <div class="mx-auto">
+                        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                            <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
+                                <input class="form-control mr-sm-2" type="search"
+                                       placeholder="Search here........................" aria-label="Search"
+                                       name="search">
+                                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+------->
+<button class="open-button" onclick="openForm()">TELL US WHAT YOU NEED</button>
+
+<div class="form-popup" id="myForm">
+    <form action="" class="form-container">
+        <strong>Tell us what you need?</strong>
+        <input type="text" name="input_requirement"
+               class="contact_input contact_input_name requirement"
+               placeholder="Requirement (Enter Service /Product Name)" required="required">
+        <input type="text" name="input_name"
+               class="contact_input contact_input_name inpt"
+               placeholder="Your Name" required="required">
+        <input type="text" name="input_name1"
+               class="contact_input contact_input_name inpt"
+               placeholder="Your eMail" required="required">
+        <input type="text" name="input_name2"
+               class="contact_input contact_input_name inpt"
+               placeholder="Contact Number" required="required">
+        <input type="text" name="input_name3"
+               class="contact_input contact_input_name inpt"
+               placeholder="Company Name" required="required">
+        <label>I am a</label>
+        <select class="form-control" name="type" required="" aria-required="true">
+            <option value="seller" selected="">Seller</option>
+            <option value="buyer">Buyer</option>
+        </select>
+
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="btn cancel btn-sm" onclick="closeForm()">Close</button>
+    </form>
+</div>
+    <i class="icon-arrow-down"></i>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="left-column col-lg-10  ">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{message.tags}}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                <!------ Body --->
+                <style type="text/css">
+                .main{
+                    min-height: 100vh;
+                    height: 100%;
+                }
+                </style>
+                <div class="main">
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
+
+            </div>
+<!----
+            <div class="right-column col-lg-3 d-lg-flex d-none flex-column">
+                <div class="content-section" style="background-color:powderblue;">
+                    <h3>Goimex</h3>
+                    <h5></h5>
+                    <p class='text-muted'><small>Building Relationship For Business Growth</small>
+                        {% if user.is_authenticated %}
+                    <ul class="list-group">
+
+                        <a href="{% url 'blog-home' %}">
+                            <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
+                                Selling Offer
+                            </li>
+                        </a>
+                        <a href="{% url 'blog-buyerhome' %}">
+                            <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
+                                Buying Request
+                            </li>
+                        </a>
+                        <a href="{% url 'post-create' %}">
+                            <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
+                                Post Buy/Sale Offer
+                            </li>
+                        </a>
+                        <a href="{% url 'rfq' %}">
+                            <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
+                                RFQ [Tell suppliers what you need]
+                            </li>
+                        </a>
+                    {% if catlist %}
+                        <li class="nav-item dropdown  list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Category</a>
+
+                            <div class="dropdown-menu">
+                                {% for cat in catlist %}
+                                <a class="dropdown-item" href="{% url 'category' cat.category %}">{{cat.category}}</a>
+                                {% endfor %}
+                            </div>
+                        </li>
+                        {% endif %}
+                        <a href="#">
+                            <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
+                                <strong>Upcoming Events</strong></li>
+                        </a>
+                    </ul>
+                    {% endif %}
+                    </p>
+                </div>
+                <div id="black-studio-tinymce-18" class="widget widget_black_studio_tinymce">
+                    <div class="textwidget"><a href="#"
+                                               target="_blank"><img class="aligncenter wp-image-18390 size-full"
+                                                                    src="https://www.connectorsupplier.com/wp-content/uploads/preferred-suppliers.png"
+                                                                    alt="" width="300" height="100"></a></div>
+                </div>
+
+
+            </div>
+--->
+        </div>
+
+    </main>
+
+    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
+
+</div>
+{% include 'blog/snippets/footer.html' %}
+</body>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+
+</script>
+</html>

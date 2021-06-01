@@ -1,0 +1,696 @@
+{% extends "blog/base.html" %}
+
+{% load static %}
+{% block title %}{{profiles.profile.organization}}{% endblock %}
+{% block content %}
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 20%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container1 {
+  position: relative;
+  display: none;
+}
+
+.container2 {
+  position: relative;
+  display: none;
+}
+
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+#imgtext2 {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+</style>
+
+<style type="text/css">
+    .inner-banner{
+        background-image: url("https://www.eworldtrade.com/assets/images/company/company-banner.jpg");
+         background-image: url("https://www.eworldtrade.com/assets/images/company/company-banner.jpg");
+        background-position: center center;
+        background-size: cover;
+    }
+    .company-join-banner{
+        background-image: linear-gradient(0deg,rgba(230, 29, 36, 0.6),rgba(33, 37, 41, 0.6)), url("https://www.eworldtrade.com/assets/img/disp-banner.jpg");
+        background-position: center center;
+        background-size: cover;
+    }
+
+
+
+
+
+
+
+
+
+</style>
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: 300px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<style>
+html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+
+
+
+</style>
+
+
+<!-- Links (sit on top) -->
+<div>
+    <div class="w3-row w3-large w3-dark-grey">
+        <div class="w3-col s3">
+            <a href="#product" class="w3-button w3-block">Products</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="#post" class="w3-button w3-block">Gallery</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="#about" class="w3-button w3-block">About</a>
+        </div>
+        <div class="w3-col s3">
+            <a href="#contact" class="w3-button w3-block">Contact</a>
+        </div>
+    </div>
+</div>
+
+
+<section class="inner-banner company-profile">
+    <div style="background-image: {{profiles.profile.img1.url}};">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <i class="com-logo"> <img
+                            src="{{ profiles.profile.img.url}}"
+                            alt="{{profiles.profile.organization}}" height="200px"></i>
+                    <h1>{{profiles.profile.organization}} </h1>
+                    <span class="company-cat">{{profiles.profile.industry}}</span>
+                    <ul>
+                        <li>
+                            <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
+                            {{ profiles.profile.country.name }}-
+                        </li>
+                        <li><i class="{{ profiles.profile.country.flag_css }}"></i></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="com-details bggrey">
+    <div class="container brd-white-pad">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="hd-rd-brdr hd-inner-link">Company Overview</h2>
+                <p>
+                <h4>{{profiles.profile.bio}}</h4></p>
+                <div class="row">
+                    <div class="col-md-4 card ">
+                        <div class="card card-cascade card-ecommerce wider shadow  mx-auto ">
+                            <div class="view view-cascade overlay text-center">
+                                <img class="card-img-top" src="{{profiles.profile.img1.url}}"
+                                     alt="" style="height: 200px; object-fit: contain;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 card ">
+                        <div class="card card-cascade card-ecommerce wider shadow  mx-auto ">
+                            <div class="view view-cascade overlay text-center">
+                                <img class="card-img-top" src="{{profiles.profile.img2.url}}"
+                                     alt="" style="height: 200px; object-fit: contain;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 card ">
+                        <div class="card card-cascade card-ecommerce wider shadow  mx-auto ">
+                            <div class="view view-cascade overlay text-center">
+                                <img class="card-img-top" src="{{profiles.profile.img3.url}}"
+                                     alt="" style="height: 200px; object-fit: contain;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="com-formsec">
+                    <h2>Schedule Meeting</h2>
+                    <form action="https://www.eworldtrade.com/user/company/schedule/meeting/64517/" method="post"
+                          id="schedule-meeting" siq_id="autopick_2803">
+
+                        <div class="form-row">
+                            <div class="col-12">
+                                <input type="text" name="full_name" placeholder="Name">
+                            </div>
+                            <div class="col-12">
+                                <input type="email" name="email" placeholder="Email Address">
+                            </div>
+                            <div class="col-12">
+                                <div class="iti iti--allow-dropdown">
+                                    <input type="text" name="country" placeholder="Country">
+                                    <input type="tel" name="phone_number" placeholder="Phone Number"
+                                           autocomplete="off" data-intl-tel-input-id="0"></div>
+                            </div>
+                            <div class="col-12">
+                                <select class="form-control" required="" name="network_name">
+                                    <option value="">I am available on</option>
+                                    <option value="skype">Skype</option>
+                                    <option value="qq">QQ</option>
+                                    <option value="wechat">Wechat</option>
+                                    <option value="whatsapp">Whatsapp</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" required="required" name="network_id"
+                                       style="display:none;">
+                            </div>
+                            <div class="col-12">
+                                <input type="date" name="schedule_date" required="required" class="form-control"
+                                       placeholder="Date">
+                            </div>
+                            <div class="input-group clockpicker col-12">
+                                <input type="text" name="schedule_time" class="form-control clockpicker" value="09:30">
+                                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-time"></span>
+                </span>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input type="submit" value="submit" placeholder="submit">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+<div class="container">
+    <section class="com-details bggrey">
+        <div class="container brd-white-pad" id="about">
+            <div class="row">
+                <div class="header-banner col-lg-6 col-md-8 pl-0 pr-0 position-relative">
+                    <h2 class="hd-rd-brdr hd-inner-link">About-Us</h2>
+                    <p style="color:red;"><h4>{{profiles.profile.aboutus}}</h4></p>
+                </div>
+                <div class="header-banner col-lg-6 col-md-8 pl-0 pr-0 position-relative">
+                    <div class="w3-container">
+                        {% for p in product %}
+                        <div class="w3-display-container mySlides">
+                            <img src={{p.image.url}} style="width:100%">
+                        </div>
+                        {% endfor %}
+
+                        <!-- Slideshow next/previous buttons -->
+                        <div class="w3-container w3-dark-grey w3-padding w3-xlarge">
+                            <div class="w3-left" onclick="plusDivs(-1)"><i
+                                    class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
+                            <div class="w3-right" onclick="plusDivs(1)"><i
+                                    class="fa fa-arrow-circle-right w3-hover-text-teal"></i>
+                            </div>
+
+                            <div class="w3-center">
+                                <span class="w3-tag demodots w3-border w3-transparent w3-hover-white"
+                                      onclick="currentDiv(1)"></span>
+                                <span class="w3-tag demodots w3-border w3-transparent w3-hover-white"
+                                      onclick="currentDiv(2)"></span>
+                                <span class="w3-tag demodots w3-border w3-transparent w3-hover-white"
+                                      onclick="currentDiv(3)"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="prd-showcase bggrey">
+        <div class="container brd-white-pad" id="product">
+            <h2>Product <span>Showcase</span></h2>
+            <div class="Showcase-prd-tabs">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle-product="all" href="javascript:;">All Products</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="container-fluid mt-3">
+                <div id='products' class="col-lg-12 mx-auto">
+                    <div class="row mx-auto">
+                        {% for p in product %}
+                        <div class="col-md-6 card ">
+                            <div class="card card-cascade card-ecommerce wider shadow  mx-auto ">
+                                <!--Card image-->
+                                <div class="view view-cascade overlay text-center">
+                                    <h5 class="card-title"><strong><a
+                                            href="{% url 'productdetail' p.slug %}">{{p.title}}</a></strong>
+                                    </h5>
+                                    <img class="card-img-top" src="{{p.image.url}}"
+                                         alt="" style="height: 200px; object-fit: contain;">
+                                    <a>
+                                        <div class="mask rgba-white-slight"></div>
+                                        <strong>
+                                            <p class="price"><strike>Price Rs. {{p.marked_price}}</strike> Now
+                                                Rs.{{p.selling_price}}/- </p>
+                                        </strong>
+                                    </a>
+                                </div>
+                                <!--Card Body-->
+                                <div class=" text-center">
+                                    <p class="card-text"> {{p.description|safe}}</p>
+                                    <div>
+                                        <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To
+                                            Cart</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div>
+        <hr>
+        <nav aria-label="...">
+            <ul class="pagination">
+                {% if product.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{product.previous_page_number }}">Previous</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                {% endif %}
+                {% for i in product.paginator.page_range %}
+                {% if i == product.number %}
+                <li class="page-item active"><a class="page-link">{{i}}</a></li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% if product.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{  product.next_page_number }}">Next</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+
+
+    </div>
+
+    <section class="red-cta-inner bggrey">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <h2><span>Enjoy our Amazing services for your business.</span>
+                        Change your visitors into leads with our professional help</h2>
+                </div>
+                <div class="col-md-3 text-center text-md-left" id="contact">
+                    <a href="#" class="contactbtn">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <div class="container col-md-9">
+        <div class="container col-md-12">
+            <div class="card bg-warning text-white">
+                <div class="card-header"><span style="text-transform:uppercase">
+            <h1>{{profiles.profile.organization}}</h1></span></div>
+            </div>
+
+            <div id="accordion">
+                <div class="card bg-primary ">
+                    <div class="card-header">
+                        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                            <font color="black"> <strong><h5>Company Information</h5></strong> </font>
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>{{profiles.profile.bio}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-success">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                            <font color="black"> <strong><h5>Company Location</h5></strong> </font>
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <ul>
+                                <li>Business Type: <b>{{profiles.profile.bussiness_type}}</b></li>
+                                <li>Main Products: <b> {{profiles.profile.products}}</b></li>
+                                <li>Other Products: <b> {{profiles.profile.otherproducts}}</b></li>
+                                <li>Established year: <b>{{profiles.profile.year_of_company_registered}}</b></li>
+                                <li>Total Annual Revenue: <b>?????Millions</b></li>
+                                <li>Export Percentage: <b>??% - ??%</b></li>
+                                <li>Location:
+                                    <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
+                                    {{ profiles.profile.country.name }}-
+                                    <i class="{{ profiles.profile.country.flag_css }}"></i></li>
+                                <li>Address: <b> {{ profiles.profile.country.name }}</b></li>
+                                <li>Phone Number :
+                                    <b> <span data-text-blur="123456789"><a data-text-blur=""
+                                                                            title="Phone Number"</a></span></b>
+                                </li>
+                                <li>Country: <b>{{ profiles.profile.country.name }}</b></li>
+                                <li>Key Products: <b>{{profiles.profile.products}} </b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-primary">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                            <font color="black"> <strong><h5>Company Boucher 1</h5></strong> </font>
+                        </a>
+                    </div>
+                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <li><img class="card-img-top" src="{{profiles.profile.img1.url}}"
+                                     alt="" style="height: 200px; object-fit: contain;"></li>
+                        </div>
+                    </div>
+                </div>
+                <div class="card  bg-success">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+                            <font color="black"> <strong><h5>Company Boucher 2</h5></strong> </font>
+                        </a>
+                    </div>
+                    <div id="collapseFour" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <li><img class="card-img-top" src="{{profiles.profile.img2.url}}"
+                                     alt="" style="height: 200px; object-fit: contain;"></li>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-primary">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
+                            <font color="black"> <strong><h5>Company Boucher 3</h5></strong> </font>
+                        </a>
+                    </div>
+                    <div id="collapseFive" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <li><img class="card-img-top" src="{{profiles.profile.img3.url}}"
+                                     alt="" style="height: 200px; object-fit: contain;"></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div style="text-align:center" id="post">
+        <h2>Post Gallery</h2>
+        <p>Click on the images below to expand:</p>
+    </div>
+    <section>
+        <div class="row mx-auto">
+            {% for p in post %}
+            <div class="column">
+                <p><a href="#" class="btn btn-danger btn-sm "><small>Post</small></a></p>
+                <img src="{{p.image.url}}" alt="{{p.title}}" style="width:100%" onclick="myFunctionPost(this);">
+                <p><a href="#"><small>{{p.title}}-{{p.status}}</small></a></p>
+                <strong></strong>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="container2">
+            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+            <img id="expandedImg2" style="width:100%">
+            <div id="imgtext2"></div>
+        </div>
+    </section>
+
+
+    <div style="text-align:center">
+        <h2>Product Gallery</h2>
+        <p>Click on the images below to expand :</p>
+    </div>
+    <div class="row mx-auto">
+        {% for p in productall %}
+        <div class="column">
+            <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary btn-sm "><small>Add To Cart</small></a>
+            </p>
+            <img src="{{p.image.url}}" alt="{{p.title}}" style="width:100%" onclick="myFunction(this);">
+            <p><a href="{% url 'productdetail' p.slug %}"><small>{{p.title}}-{{p.status}}</small></a></p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="container1">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img id="expandedImg" style="width:100%">
+        <div id="imgtext"></div>
+    </div>
+
+    <script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+
+function myFunctionPost(imgs) {
+  var expandImg = document.getElementById("expandedImg2");
+  var imgText = document.getElementById("imgtext2");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+    <script>
+$(document).ready(function(){
+  $('[data-toggle="popover"]').popover();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+    <script>
+// Slideshow
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demodots");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-white";
+}
+
+
+
+
+
+
+
+
+
+    </script>
+    {% endblock %}

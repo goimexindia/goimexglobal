@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Category{% endblock %}
+{% block content %}
+
+<style>
+    .fa {
+    color: #f2dd1d
+}
+
+.rating {
+    margin-left: 37%
+}
+
+
+</style>
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- body -->
+<!------------------------------
+<section class="inner-banner-leftnav company-index-banner">
+    <div class="mx-auto w-75 text-center">
+        <h1>Category wise products</h1>
+        <span>Around the World and Grow Your Business</span>
+        <div>
+            <div class="row">
+                <div class="mx-auto">
+                    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                        <form class="form-inline my-2 my-lg-0" action="{% url 'cat' %}" method="GET">
+                            <input class="form-control mr-sm-2" type="search"
+                                   placeholder="Search here........................" aria-label="Search" name="search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-------------------------------->
+<div id="breadcrumb">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li><a href="/">Home-</a></li>
+            <li class="active">{{title }} Cataegory</li>
+        </ul>
+    </div>
+</div>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-lg-3 mx-auto " style="background-color:powderblue;">
+            <div class="list-group">
+                <a href="{{ request.path }}" class="list-group-item list-group-item-action active">All Products</a>
+                {% for category in categories %}
+                <a href="{{ request.path }}?category={{category.id}}"
+                   class="list-group-item list-group-item-action">{{category.title}}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- all products -->
+        <div id='products' class="col-lg-9 mx-auto">
+            <div class="row mx-auto" style="background-color:powderblue;">
+                {% for p in products %}
+                <div class="col-md-3 card">
+                    <div class="card card-cascade card-ecommerce wider shadow mb-4 ">
+                        <!--Card image-->
+                        <div class="view view-cascade overlay text-center">
+                            {% if p.status == 1 %}
+                            <h5 class="card-title"><strong><a
+                                    href="{% url 'productdetail' p.slug %}">{{p.title}}</a></strong>
+                            </h5>
+                            {% else %}
+                            <h5 class="card-title"><strong><a href="#">{{p.title}}</a></strong></h5>
+                            {% endif %}
+                            {% if p.offer %}
+                            <h6 style="background-color:black;color:white">
+                                <div class="spec_offer text-center"><a href="#">Special Offer</a></div>
+                            </h6>
+                            {% endif %}
+                            <img class="card-img-top" src="{{p.image.url}}"
+                                 title="{{p.keyfeatures}}"
+                                 alt="" style="height: 200px; object-fit: contain;">
+                            <div class="mask rgba-white-slight"></div>
+                            <p class="price"><strike> Rs. {{p.marked_price}}</strike> Rs. {{p.selling_price}}/- </p>
+                            </a>
+                        </div>
+                        <!--Card Body-->
+                        <div class=" text-center">
+                            <!--Card Title-->
+
+                            <ul class="row rating">
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                            </ul>
+                            <p class="card-text"><small>{{p.description|striptags|truncatechars:140 }}
+                                <a href="{% url 'productdetail' p.slug %}">Show
+                                    More........</a> </small></p>
+                            <small>Seller based in ( {{ p.author.profile.country.name }} )</small>
+                            <div>
+                                {% if p.status == 1 %}
+                                <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a></p>
+                                {% else %}
+                                <p><a href="#" class="btn btn-danger">Comming Soon...</a></p>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <hr>
+            <nav aria-label="...">
+                <ul class="pagination">
+                    {% if products.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ products.previous_page_number }}">Previous</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    {% endif %}
+                    {% for i in products.paginator.page_range %}
+                    {% if i == products.number %}
+                    <li class="page-item active"><a class="page-link">{{i}}</a></li>
+                    {% else %}
+                    <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                    {% if products.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ products.next_page_number }}">Next</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+

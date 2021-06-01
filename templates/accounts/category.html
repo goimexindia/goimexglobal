@@ -1,0 +1,31 @@
+{% extends 'accounts/adminbase.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Add New Category{% endblock %}
+
+{% block content %}
+<div class="container">
+    <hr>
+    <a class="btn btn-primary btn-lg mt-1 bmb-1" href="{% url 'admincategorylist'  %}">List Category</a>
+    <hr>
+    <div class="card bg-warning text-white">
+        <div class="card-header"><h4>Add Category</h4></div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <hr>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form|crispy }}
+                <button class="btn btn-danger btn-lg">POST CATEGORY</button>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+<br>
+
+
+    {% endblock %}

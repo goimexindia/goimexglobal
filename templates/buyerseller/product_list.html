@@ -1,0 +1,19 @@
+{% extends "buyerseller/snippets/baseproduct.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Product Details{% endblock %}
+{% load static %}
+{% block content %}
+ <h1>Product List</h1>
+  {% if product_list %}
+  <ul>
+    {% for product in product_list %}
+      <li>
+        <a href="#">{{ product.title }}</a> ({{product.author}}) -- {{product.keyfeatures}}--{{product.id}}<br>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no such product in our database.</p>
+  {% endif %}
+
+{% endblock %}

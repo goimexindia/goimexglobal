@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
+   {% if title %}
+            <title>Giomex - {{ title }}</title>
+    {% else %}
+            <title>Giomex </title>
+    {% endif %}
+    	 <link href="{% static 'css/app_min.css' %}"  media="all" rel="stylesheet" type="text/css">
+
+	<link href="{% static 'css/responsive.min.css' %}" id="responsiveCss" media="screen and (max-width: 1199px)" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+{% include 'buyerseller/header.html' %}
+
+   <i class="icon-arrow-down"></i>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="left-column col-lg-7 offset-lg-1  ">
+          {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{message.tags}}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+          {% endif %}
+           <!------ Body --->
+
+            <div class="main">
+                {% block content %}
+
+                {% endblock %}
+            </div>
+
+        </div>
+      </div>
+    </main>
+
+    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
+{% include 'buyerseller/footer.html' %}
+</body>
+
+</html>

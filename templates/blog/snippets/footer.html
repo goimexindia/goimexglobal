@@ -1,0 +1,74 @@
+<style type="text/css">
+     .footer{
+            min-height: 100px;
+     }
+
+</style>
+
+<style type="text/css">
+    .company-index-banner{
+        background-image: url("https://www.eworldtrade.com/assets/images/company/company-banner.jpg");
+         background-image: url("https://www.eworldtrade.com/assets/images/company/company-banner.jpg");
+        background-position: center center;
+        background-size: cover;
+    }
+    .company-join-banner{
+        background-image: linear-gradient(0deg,rgba(230, 29, 36, 0.6),rgba(33, 37, 41, 0.6)), url("https://www.eworldtrade.com/assets/img/disp-banner.jpg");
+        background-position: center center;
+        background-size: cover;
+    }
+
+
+</style>
+<section class="inner-banner-leftnav company-join-banner mt-3">
+    <div class="mx-auto w-75"><h4>Haven’t found the right supplier yet? Let matching verified suppliers find you.</h4>
+        <a href="{% url 'rfq' %}" class="btn btn-sm btn-danger">Get Quotation Now</a></div>
+</section>
+<footer class="py-3 bg-grey shadow-lg align-items-center">
+    *<p class="m-0 text-dark text-center "><a href="{% url 'policy' %}" target="_blank">*Privacy Statement.</a>*
+    <a href="{% url 'terms' %}" target="_blank">Terms &amp; Conditions.</a>*
+    <a href="{% url 'listing' %}" target="_blank">Product Listing Policy.</a>*
+    <a href="{% url 'htscode' %}" target="_blank">HTS Code</a>*
+    Copyright &copy; Goimex Global Pvt Ltd</p>
+    <p>
+            <p class="disclaimer">All Offers/Products/Company Profiles/Images and other user-posted contents are posted by
+            the user and GOIMEX GLOBAL shall not be detained accountable for any such content.</p>
+    </p>
+</footer>
+
+
+<script type="text/javascript">
+        document.getElementById("id_q").value = "{{query}}"
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+        document.getElementById("id_q").value = "{{query}}"
+
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script>
+            // ===== Scroll to Top ====
+        $(window).scroll(function() {
+            if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+                $('#return-to-top').fadeIn(200);    // Fade in the arrow
+            } else {
+                $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+            }
+        });
+        $('#return-to-top').click(function() {      // When arrow is clicked
+            $('body,html').animate({
+                scrollTop : 0                       // Scroll to top of body
+            }, 500);
+        });
+
+</script>
+

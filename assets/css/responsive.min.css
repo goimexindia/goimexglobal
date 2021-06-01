@@ -1,0 +1,1815 @@
+@media (max-width:1199px) {
+	.aws-content {
+		margin-top: 100px
+	}
+	section.news-page .feature-news {
+		height: 233px!important
+	}
+	.service-advantage [class^=col-]>div {
+		height: 417px
+	}
+	.prdct-lst-scroll-content {
+		margin-left: 248px
+	}
+	.partner_form_left select {
+		width: 100%!important;
+		float: left!important
+	}
+	.profit-foreign-trade .content-box {
+		height: 296px
+	}
+	ul.result-line-bar>li:not(.first):not(.last) {
+		display: inline-block;
+		padding: 0 0
+	}
+	li.result-line-box-bar {
+		padding: 0 14px
+	}
+	.our-partner .partner-banner .txt {
+		bottom: -128px
+	}
+	.ser-box h2 {
+		font-size: 14px
+	}
+	.popular-serv .ser-box {
+		height: 253px
+	}
+	.last .ser-box {
+		height: 211px
+	}
+	a.pkg-pdf-dwn {
+		padding: 6px 6px;
+		font-size: 9px
+	}
+	.buying-lead-row h6:after {
+		width: 48%
+	}
+	.buyer-filter-alphabet-result>ul>li {
+		width: 23.8%
+	}
+	.hd-bann-form h4 {
+		text-align: center
+	}
+	.home-register h4 {
+		margin-bottom: 0;
+		margin-top: 7px
+	}
+	.hd-bann-form .nav.nav-tabs {
+		background: 0 0;
+		position: unset;
+		justify-content: center
+	}
+	.buyer-listing-result-row .buyer-listing-action i {
+		height: 30px;
+		width: 30px
+	}
+	.buyer-tab-company .buyer-listing-action img {
+		width: 95px;
+		margin-top: 0
+	}
+	.buyer-tab-company .buyer-listing-action a.buyer-listing-btn {
+		padding: 7px 13px
+	}
+	.eworld-loc ul li h6 {
+		font-size: 11px
+	}
+	.ban-cta ul li {
+		padding-right: 48px;
+		font-size: 11px;
+		padding-left: 60px
+	}
+	.ban-cta ul li:first-child {
+		padding-left: 0
+	}
+	.ban-cta ul li:last-child {
+		padding-right: 0
+	}
+	.hm-sec-2 [class^=col-] .reg-channel-col ul li {
+		width: 47.9%;
+		padding: 14px 14px 14px 45px
+	}
+	.top-bar-head h6 {
+		font-size: 17px
+	}
+	.main-banner ul>li img {
+		margin-right: 0;
+		width: 129px
+	}
+	.cards-image img {
+		width: 89px
+	}
+	.organizer-sec h2 {
+		font-size: 12px
+	}
+	.seo-graph li {
+		font-size: 11px;
+		padding: 0 14px!important
+	}
+	.result-line-bar li.meta-icon:after {
+		left: 52px
+	}
+	.result-line-bar li.optimizied-icon:after {
+		left: 69px
+	}
+	.result-line-bar li.seo:after {
+		left: 97px
+	}
+	.result-line-bar li.research-icon:after {
+		left: 52px
+	}
+	.home-register {
+		padding: 6px 3px 0 9px
+	}
+	.popupform .reg-form-fieldset {
+		margin: 0;
+		margin-top: 16px
+	}
+	.popupform h4 {
+		margin-top: 5px;
+		margin-bottom: 0
+	}
+	.popupform .nav.nav-tabs {
+		margin-top: 2px!important
+	}
+	.popupform>div>div>div {
+		padding: 7px
+	}
+	.buyers-info li:last-child {
+		position: relative;
+		top: -8px
+	}
+	header .logo {
+		margin-top: 8px!important
+	}
+	.hm-sec-2 {
+		padding: 40px 0 30px
+	}
+	.home-register .hd-bann-form .tab-content {
+		margin-top: 10px
+	}
+	.home-register li:nth-last-child(2) {
+		margin-bottom: 0!important
+	}
+	.prd-showcase-listing-result-row ul li {
+		min-height: 248px
+	}
+	.company-profile h1 {
+		font-size: 31px
+	}
+	.company-profile figure a:last-child img {
+		width: 30%
+	}
+	.hd-bann-form .nav.nav-tabs {
+		margin-top: 10px
+	}
+	.cn-register-form .nav.nav-tabs li.nav-item a {
+		padding: 10px 10px
+	}
+	.cn-register-form .reg-form-fieldset input[type=submit] {
+		width: 100%;
+		padding: 7px 45px
+	}
+	.reg-form-fieldset ul:not(.iti__country-list)>li {
+		width: 46%
+	}
+	.packages-wrapper .pricing-block .package-icon-container {
+		left: 78px
+	}
+	.featuredbox::before {
+		width: 89%
+	}
+	.flag-right .buyer-listing-action {
+		width: 48%
+	}
+	.login-page-form .elite-register-form {
+		padding: 0
+	}
+	.copyrights-links nav ul li {
+		margin-right: 0!important
+	}
+	.copyrights-links nav ul li a {
+		margin-right: 3px
+	}
+	.thankyou-sec {
+		background-size: 27%, 123%
+	}
+	.services-card .details-listing nav {
+		padding: 20px 46px
+	}
+	.services-card .details-listing ul {
+		margin-top: 0
+	}
+	.services-card .cards-image img {
+		width: 100%
+	}
+	.services-carousel {
+		margin: 35px 23px 20px
+	}
+	.services-card .incomplete-info-form-group .form-control {
+		margin-bottom: 8px!important
+	}
+	.services-carousel figure:after {
+		top: 197px;
+		right: 85px
+	}
+	.services-carousel img {
+		padding-right: 115px
+	}
+	.services-carousel h3 {
+		font-size: 27px
+	}
+	.offer-detail-visible>li {
+		width: 32%!important;
+		font-size: 10px!important
+	}
+	.offer-detail-visible li:last-child {
+		top: -1px
+	}
+	.offer-detail-visible a {
+		font-size: 10px
+	}
+	.last-offer li:last-child {
+		top: 8px!important
+	}
+	.action-grp a.buyer-listing-btn {
+		font-size: 11px;
+		margin: 0
+	}
+	.quote-now h6 {
+		font-size: 16px
+	}
+	.productQuoteRegister h6 {
+		font-size: 15px
+	}
+}
+@media (max-width:991px) {
+	header .header-list ul {
+		margin: 8px 0 0 20px
+	}
+	header .header-list ul li span {
+		font-size: 13px
+	}
+	header .header-list ul li i {
+		font-size: 16px;
+		width: 26px;
+		height: 26px;
+		padding: 4px;
+		margin-top: 5px
+	}
+	header .header-list ul li:nth-child(2) i {
+		font-size: 15px
+	}
+	header .header-list ul li {
+		padding-left: 0;
+		margin-left: 43px
+	}
+	header .header-list ul li i {
+		left: -33px
+	}
+	header .head-search input[type=search] {
+		padding: 7px 0;
+		width: calc(83% - 86px)
+	}
+	header .head-search select {
+		width: 86px;
+		height: 42px
+	}
+	.about-col .about-side-nav {
+		margin: 0 0 0
+	}
+	.about-col .about-side-nav li a {
+		padding: 16px 17px 16px 56px
+	}
+	.inner-banner-leftnav .container {
+		padding-left: 15px
+	}
+	.representative-offices-list li h2 {
+		font-size: 14px
+	}
+	.representative-offices-list li p {
+		height: 75px
+	}
+	.event-formsec input[type=submit] {
+		width: inherit
+	}
+	.event-formsec input {
+		font-size: 10px
+	}
+	section.news-page .feature-news {
+		height: 258px!important
+	}
+	.hts-code-categories-page .reg-form-fieldset ul:not(.iti__country-list)>li {
+		width: 100%;
+		margin: 0 0 11px
+	}
+	.hts-code-categories-page .reg-form-fieldset .full-li {
+		width: 100%!important
+	}
+	.hts-code-categories-page .reg-form-fieldset #buyer-seller-form ul li:nth-child(even) {
+		margin-left: 0
+	}
+	.hts-code-categories-page .intl-tel-input {
+		width: 100%
+	}
+	.prdct-lst-scroll-content {
+		width: 73%
+	}
+	.prdct-lst-scroll-content {
+		width: 73%;
+		margin-top: -680px;
+		margin-left: 193px
+	}
+	.country_box_thumb {
+		min-height: 63px;
+		width: 63px
+	}
+	.global_ov_boxes .contact_location_box {
+		width: 100%!important
+	}
+	.partner_form_right input[type=file] {
+		float: unset!important
+	}
+	.content-banner .seat-content {
+		width: 100%
+	}
+	.foreign-trade h2 {
+		margin-top: 28px;
+		width: 100%
+	}
+	.profit-foreign-trade .content-box h3 {
+		font-size: 18px
+	}
+	.profit-foreign-trade .content-box>h4 {
+		font-size: 14px
+	}
+	.profit-foreign-trade .content-box p {
+		font-size: 12px
+	}
+	.profit-foreign-trade .content-box {
+		height: 272px
+	}
+	.profit-foreign-trade .trade-box {
+		width: 22%
+	}
+	.special-recommendation-cta a {
+		font-size: 19px;
+		padding: 14px 29px;
+		margin-top: 6px
+	}
+	.starts {
+		display: none
+	}
+	.our-partner .part-timeline .timeline:after {
+		display: none
+	}
+	.our-partner .part-timeline .era .img-circle {
+		display: none
+	}
+	.our-partner .part-timeline .entry:after {
+		display: none
+	}
+	.our-partner .part-timeline .entry-left:before {
+		display: none
+	}
+	.our-partner .part-timeline .entry {
+		width: 100%
+	}
+	.our-partner .part-timeline .entry-right:before {
+		display: none
+	}
+	.our-partner .part-timeline .entry-right {
+		margin-left: 0
+	}
+	.ser-box {
+		padding: 30px 26px;
+		padding-left: 29px;
+		margin: 5px 0 15px
+	}
+	.ser-box img {
+		margin: 0 auto 15px;
+		display: block
+	}
+	.ser-box i {
+		position: unset
+	}
+	.last .ser-box {
+		height: 252px
+	}
+	.first .ser-box {
+		height: 271px
+	}
+	.popular-serv .ser-box {
+		height: 261px
+	}
+	section.event-pg form {
+		position: relative;
+		width: 100%
+	}
+	section.event-pg input[type=text] {
+		width: calc(100% - 53px)
+	}
+	section.event-pg button {
+		width: 45px;
+		position: absolute;
+		right: 12px;
+		top: 1px
+	}
+	.lite-table .lite-btn {
+		padding: 7px 17px;
+		font-size: 10px
+	}
+	.buying-lead-row h6:after {
+		width: 26%
+	}
+	.ban-form-buyer>div>form>ul>li input[type=submit] {
+		padding: 7px 36px;
+		width: 100%
+	}
+	.latest-buyers ul li .lst-buyer-text {
+		width: 31%
+	}
+	.buyer-filter-alphabet-result>ul>li {
+		width: 33%
+	}
+	.seo-services [class^=col-]>div {
+		height: 270px;
+		padding: 8px
+	}
+	footer h5 {
+		font-size: 14px
+	}
+	.eworld-loc ul li {
+		width: 48%
+	}
+	.importer-sec .latest-buyers ul li .lst-buyer-text {
+		width: 24%
+	}
+	.deals-thumbnail .tab-brand-info li>a>span>img {
+		width: 67px
+	}
+	.deals-thumbnail .buyer-listing-result-row .buyer-listing-action {
+		text-align: right;
+		width: 40%;
+		float: right
+	}
+	.ban-cta ul li {
+		padding: 0 15px;
+		font-size: 11px
+	}
+	.testimonails-slider .item p {
+		margin: 10px 0 32px
+	}
+	.cards-image img {
+		width: 60px
+	}
+	.join-free-form .nav-tabs li label {
+		margin-right: 0
+	}
+	.join-free-form .nav-tabs li:first-child {
+		margin-left: 0!important
+	}
+	.seo-graph li {
+		font-size: 9px;
+		padding: 0 8px!important
+	}
+	.result-line-bar li.meta-icon:after {
+		left: 37px
+	}
+	.result-line-bar li.seo:after {
+		left: 78px
+	}
+	.result-line-bar li.optimizied-icon:after {
+		left: 53px
+	}
+	.result-line-bar li.research-icon:after {
+		left: 38px
+	}
+	.menu-banner-form .prd-cat-nav>ul {
+		margin: 13px 0 0
+	}
+	.menu-banner-form .header-banner img {
+		height: 433px
+	}
+	header .header-list ul li:first-child {
+		margin-left: 0
+	}
+	.seller-sec .seller-form-sec label {
+		margin-right: 0;
+		font-size: 13px
+	}
+	.seller-sec input:checked::before {
+		top: -1px;
+		font-size: 10px
+	}
+	.our-partner .part-timeline .timeline {
+		padding-top: 0
+	}
+	.our-partner .info {
+		padding: 30px 0
+	}
+	.hts-code-categories-page {
+		padding: 0 0
+	}
+	.buyer-listing-result-row .buyer-listing-action {
+		text-align: left
+	}
+	.mfr-listing .buyer-listing-action {
+		display: none!important
+	}
+	.buyer-tab-company .buyer-listing-action img {
+		width: 69px;
+		margin-top: 0
+	}
+	.buyer-tab-company .buyer-listing-action a.buyer-listing-btn {
+		padding: 7px 9px;
+		margin-left: 0;
+		font-size: 10px
+	}
+	.com-flex img {
+		max-width: 100%;
+		max-height: 100px
+	}
+	.buyer-listing-result-row h5 {
+		margin-top: -5px
+	}
+	.tab-company-item-lst>li {
+		height: 36px
+	}
+	.buyers-info li:last-child {
+		top: -17px
+	}
+	.about-col .about-side-nav li a i {
+		left: 19px
+	}
+	.top-quick-nav .navbar-nav li {
+		margin-right: 0;
+		margin-left: 0!important
+	}
+	.top-quick-nav .navbar-nav.right {
+		position: relative;
+		top: 2px
+	}
+	.top-quick-nav .navbar-nav.right li.dropdown {
+		margin-top: 0
+	}
+	.tab-brand-info li>a>span>img {
+		width: 91px
+	}
+	.customindustry .all-categ-left {
+		width: 100%;
+		text-align: center;
+		display: block;
+		margin-bottom: 16px
+	}
+	.customindustry .all-categ-right {
+		padding-left: 0
+	}
+	.customindustry .text-truncate {
+		white-space: unset
+	}
+	.mfr-listing .tab-brand-logo span {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		display: block
+	}
+	.filter-leftbar h6 a {
+		display: contents
+	}
+	.reg-form-fieldset ul:not(.iti__country-list)>li {
+		margin: 0 2px 11px
+	}
+	.prd-showcase-listing-result-row ul li {
+		min-height: 211px
+	}
+	.company-profile h1 {
+		font-size: 22px!important
+	}
+	.company-profile figure img {
+		width: 11%
+	}
+	.popup-banner {
+		margin-right: 16px;
+		margin-left: 16px
+	}
+	.hm-sec-2 [class^=col-] h3 {
+		font-size: 14px
+	}
+	.ftr-tradeshows-col .owl-theme .owl-dots {
+		top: -58px
+	}
+	#premiumServiceCarousel .owl-dots {
+		top: -50px
+	}
+	.packages-wrapper .pricing-block .package-icon-container {
+		left: 43px;
+		width: 119px;
+		height: 103px
+	}
+	.featuredbox::before {
+		width: 86%
+	}
+	.flag-right .buyer-listing-action i {
+		height: 37px!important;
+		width: 37px!important
+	}
+	.social-sec .img-holder {
+		padding: 165px 10px
+	}
+	.social-sec .social-form form .input-group input {
+		width: calc(100% - 145px)!important
+	}
+	.social-sec .social-form {
+		padding: 73px 27px
+	}
+	.reg-sec .hd-bann-form {
+		padding: 0 15px 0 15px
+	}
+	.thankyou-sec {
+		background-size: 36%, 192%
+	}
+	.login-page-form .social-links {
+		column-count: 3
+	}
+	.login-page-form .social-links a {
+		font-size: 12px
+	}
+	.services-testimonials .testimonials-sec p {
+		padding: 28px 120px
+	}
+	.services-testimonials .testimonials-sec .quote-down {
+		top: 5px
+	}
+	.services-card .incomplete-info-form-group .form-control {
+		margin-bottom: 4px!important
+	}
+	.services-carousel figure:after {
+		right: 67px;
+		top: 160px;
+		width: 33%;
+		height: 33%
+	}
+	.services-carousel img {
+		padding-right: 69px
+	}
+	.services-background {
+		background-size: cover
+	}
+	.contact-map .direction-main {
+		width: 40%
+	}
+	.contact-map .map-cnt {
+		width: calc(100% - 40%)
+	}
+	.buying-search input[type=text] {
+		width: calc(100% - 15px)!important
+	}
+	.offer-detail-visible {
+		width: 100%!important
+	}
+	.offer-action {
+		width: 100%!important;
+		float: unset!important;
+		text-align: center!important
+	}
+	.offer-detail-visible li:last-child {
+		top: -2px
+	}
+	.last-offer li:last-child {
+		top: -2px!important
+	}
+	.action-grp .buyer-listing-viewprice {
+		width: 100%;
+		text-align: center
+	}
+	.action-grp .buyer-listing-viewprice a {
+		display: inline-block;
+		float: none
+	}
+	.action-grp .buyer-listing-social {
+		width: 100%
+	}
+	.productQuoteRegister .nav-tabs {
+		margin-top: 12px
+	}
+	.productQuoteRegister form .nav-tabs .label-list {
+		margin-left: 0;
+		margin-right: 1px
+	}
+	.productQuoteRegister form .nav-tabs li.nav-item a {
+		padding: 5px 4px;
+		font-size: 11px
+	}
+	.productQuoteRegister h6 {
+		font-size: 13px;
+		line-height: 1.7
+	}
+	.connect-buyer {
+		padding: 14px 7px
+	}
+	.top-heading {
+		font-size: 21px
+	}
+	.connect-buyer h6 {
+		font-size: 13px
+	}
+}
+@media (max-width:767px) {
+	.ei-faq-shape {
+		display: none
+	}
+	.work-process {
+		margin-bottom: 47px
+	}
+	.image-column {
+		display: none
+	}
+	#svg-container {
+		display: none
+	}
+	.bggrey, .brd-white-pad, .buyer-listing-result-row {
+		word-break: break-word;
+		overflow-wrap: break-word;
+		max-width: 100%;
+		overflow: auto
+	}
+	img[src=""] {
+		display: none
+	}
+	.prod-content-des table {
+		display: contents
+	}
+	.buyers-listing-sec .left-border-heading {
+		width: 100%!important
+	}
+	.buyers-listing-sec span.buyer-listing-result-date {
+		margin-bottom: 10px;
+		display: block
+	}
+	.category-tabs .tab-content>.tab-pane {
+		padding-bottom: 0
+	}
+	.category-tabs .tab-content>.tab-pane>div>div {
+		margin-bottom: 15px
+	}
+	.representative-offices-list li {
+		width: 47%;
+		border: 0;
+		box-shadow: 6px 6px 9px rgba(136, 136, 136, .37);
+		margin-bottom: 14px;
+		margin-right: 13px
+	}
+	.representative-offices-list li:nth-child(3n+1) {
+		padding-left: 29px
+	}
+	section.suppliers ul {
+		width: 24%
+	}
+	section.company-about.bggrey .brd-white-pad .col-md-3 {
+		padding: 0 15px 0 15px
+	}
+	section.company-about.bggrey ul.nav-tabs li a.active:after {
+		display: none
+	}
+	section.company-about.bggrey .brd-white-pad {
+		padding: 30px 15px
+	}
+	.company-about-col .tab-content {
+		padding: 20px 19px
+	}
+	section.event-pg button {
+		height: 47px;
+		width: 45px
+	}
+	.product-listing-policy-page .prdct-lst-scroll-nav {
+		position: unset;
+		width: 100%;
+		float: left;
+		margin-bottom: 32px
+	}
+	.prdct-lst-scroll-content {
+		width: 100%;
+		margin-top: 22px;
+		margin-left: 0
+	}
+	.style-scrollbar {
+		height: unset;
+		overflow: auto
+	}
+	.content-row .hd-rd-brdr {
+		margin-left: 2px
+	}
+	.profit-foreign-trade .trade-box {
+		width: 47%
+	}
+	.results .chart-box p {
+		height: 122px
+	}
+	.first .ser-box, .last .ser-box, .popular-serv .ser-box {
+		height: unset
+	}
+	.lite-table .font18 {
+		font-size: 12px
+	}
+	.lite-table .lite-btn {
+		padding: 7px 9px;
+		font-size: 9px
+	}
+	.buying-lead-row h6:after {
+		width: 70%
+	}
+	.buyer-filter-alphabet-result>ul>li {
+		width: 32%
+	}
+	.seo-services [class^=col-]>div {
+		height: unset;
+		margin-bottom: 18px
+	}
+	.seo-services [class^=col-]>div i img {
+		max-width: 55%
+	}
+	.importer-sec .latest-buyers ul li .lst-buyer-text {
+		width: 43%
+	}
+	.deals-thumbnail .pad-left-0 {
+		padding: 14px 16px!important
+	}
+	.deals-thumbnail .buyer-listing-result-row .buyer-listing-action {
+		text-align: center;
+		width: 100%;
+		margin-bottom: 12px
+	}
+	.deals-thumbnail .buyer-listing-result-row .buyer-listing-action i {
+		height: 50px;
+		width: 50px
+	}
+	.service-banner img {
+		display: block;
+		margin: 0 auto
+	}
+	.section-position {
+		top: 0
+	}
+	.elite-register-form select {
+		margin-bottom: 17px
+	}
+	.cards-image img {
+		width: 84px
+	}
+	.main-banner h1 {
+		font-size: 20px;
+		line-height: 1.6
+	}
+	.main-banner img {
+		display: block;
+		margin: 0 auto;
+		float: none!important
+	}
+	.com-formsec {
+		margin-top: 0
+	}
+	.Showcase-prd-tabs .nav-tabs {
+		justify-content: center
+	}
+	.company-profile h1 {
+		font-size: 19px
+	}
+	.company-profile img {
+		width: 100%
+	}
+	.home-logged-in-nav {
+		padding: 8px 0
+	}
+	.menu-banner-form .prd-cat-nav>ul {
+		margin: 3px 0 0
+	}
+	.menu-banner-form .header-banner {
+		margin-top: 14px;
+		width: 100%
+	}
+	.menu-banner-form .prd-cat-nav>ul>li.menu-cat-more-btn {
+		margin-top: 4px
+	}
+	.ban-cta ul li {
+		width: 100%;
+		border: none;
+		margin-bottom: 10px
+	}
+	.hm-sec-2 [class^=col-] h3 {
+		margin-top: 0;
+		margin-bottom: 5px
+	}
+	.successStoriesComponent.hm-sec-3 {
+		margin-top: 30px
+	}
+	.owl-theme .owl-nav.disabled+.owl-dots {
+		margin-top: 12px
+	}
+	.hm-sec-2 [class^=col-] .reg-channel-col ul li {
+		width: 49.6%;
+		margin: 0 0 7px
+	}
+	#premiumServiceCarousel .owl-dots {
+		top: -45px
+	}
+	.hm-sec1 [class^=col-]:nth-child(odd) {
+		border-right: none
+	}
+	section.relatedBuyOfferComponent.transparent-panel {
+		margin-bottom: 30px!important
+	}
+	.featuredProductThumbnailComponent {
+		margin-top: 14px
+	}
+	.hm-sec-2 {
+		padding: 30px 0 50px
+	}
+	#premiumServiceCarousel {
+		margin-top: 16px
+	}
+	.reg-channel-col {
+		margin-top: 30px
+	}
+	.ftr-tradeshows-col {
+		margin-top: 23px
+	}
+	.about-col-desc {
+		padding: 30px 0
+	}
+	.featureTradeShowComponent .owl-theme .owl-nav.disabled+.owl-dots {
+		margin-top: 27px
+	}
+	.company-about-col {
+		margin-top: 30px
+	}
+	.dashboard-banner {
+		margin-bottom: 30px
+	}
+	.foreign-trade {
+		padding: 30px 56px
+	}
+	.profit-foreign-trade {
+		padding: 30px 0
+	}
+	.managers-sec {
+		padding: 30px 0
+	}
+	.best-pagination ul {
+		display: block;
+		text-align: center
+	}
+	.best-pagination ul li {
+		margin: 7px 12px
+	}
+	.buyer-listing-result-row h5 {
+		margin-top: 8px
+	}
+	.buyer-listing-result-row .buyer-listing-info>li {
+		margin-bottom: 8px
+	}
+	.buyer-listing-result-row .buyer-listing-action {
+		text-align: left;
+		position: unset;
+		text-align: center
+	}
+	.buyer-tab-company .buyer-listing-action img {
+		width: 113px
+	}
+	.buyer-tab-company .buyer-listing-action a.buyer-listing-btn {
+		padding: 7px 21px;
+		font-size: 15px
+	}
+	.buyer-listing-result-row .buyer-listing-action i {
+		height: 40px;
+		width: 40px
+	}
+	.buyer-listing-result-row.mfr-listing .buyer-listing-action i {
+		margin-right: 10px!important
+	}
+	.tab-company-item-lst>li {
+		height: 70px
+	}
+	.company-sec .buyer-listing-info {
+		width: 100%
+	}
+	.company-sec .buyer-listing-action {
+		width: 100%;
+		float: unset;
+		text-align: center
+	}
+	.buyer-listing-result-row .buyer-listing-result-date {
+		top: 33px
+	}
+	.buyers-info li:last-child {
+		position: relative;
+		top: -3px
+	}
+	.lead-sec label {
+		font-size: 18px;
+		margin-right: 13px;
+		text-align: left;
+		width: 100%;
+		justify-content: start!important
+	}
+	.lead-sec h6 {
+		margin-top: 0
+	}
+	section.red-cta-inner .container {
+		padding-right: 15px;
+		padding-left: 15px
+	}
+	ol.breadcrumb, ul.breadcrumb {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		display: block
+	}
+	ol.breadcrumb>li, ul.breadcrumb>li {
+		display: inline-block
+	}
+	.home-register {
+		width: 100%!important;
+		margin-top: 0
+	}
+	.home-register .reg-form-fieldset ul:not(.iti__country-list)>li {
+		width: 48%
+	}
+	.home-register .intl-tel-input {
+		width: 100%;
+		position: relative
+	}
+	.top-quick-nav .navbar-nav.right li {
+		margin-left: 0
+	}
+	.navbar-toggler {
+		padding: .35rem .48rem;
+		line-height: .5
+	}
+	.navbar-light .navbar-toggler>span {
+		width: .75em;
+		height: .75em
+	}
+	.prd-showcase-listing-result-row ul {
+		column-count: 2
+	}
+	.top-quick-nav ul.navbar-nav.left li>a>span, .top-quick-nav ul.navbar-nav.left li>span {
+		padding: 6px 10px 7px 26px
+	}
+	.top-quick-nav .ul.navbar-nav.left li>span>i, .top-quick-nav ul.navbar-nav.left li>a>span>i {
+		padding: 9px 5px 9px
+	}
+	.top-quick-nav .navbar-nav.right {
+		top: 0
+	}
+	.prod-supplier-box .padleft15 {
+		padding-left: 0;
+		margin-top: 15px
+	}
+	.prod-supplier-box img {
+		max-width: 100%;
+		max-width: 28%
+	}
+	.tab-brand-info li>a>span>img {
+		width: 117px
+	}
+	.mfr-listing .buyer-listing-action {
+		display: block!important;
+		width: unset!important
+	}
+	.mfr-listing li:first-child a {
+		display: flex
+	}
+	.deals-thumbnail .tab-brand-info li>a>span>img {
+		width: 130px
+	}
+	header .logo {
+		width: 61%!important;
+		display: block;
+		margin: 0 auto
+	}
+	.top-bar-head h6 {
+		margin-bottom: 4px
+	}
+	.fixed-premium {
+		display: none
+	}
+	.fixed-premium.authenticatedCTA {
+		display: inline-block
+	}
+	.fixed-premium a, .quote a {
+		font-size: 16px;
+		padding: 5px 0
+	}
+	.fixed-premium i, .quote i {
+		font-size: 12px
+	}
+	.follow-us {
+		display: none
+	}
+	.buyers-listing-sec .intl-tel-input {
+		display: block
+	}
+	.detail-box .prod-info {
+		padding-top: 19px;
+		padding-left: 0
+	}
+	.home-register h4 {
+		margin-bottom: 10px
+	}
+	.prd-showcase-listing-result-row {
+		column-count: 1
+	}
+	header .logo {
+		margin-top: 0!important
+	}
+	.company-profile img {
+		width: unset
+	}
+	.company-profile figure img {
+		width: unset
+	}
+	.company-profile figure a:last-child img {
+		width: 30%
+	}
+	.tab-brand-info li span {
+		line-height: 2.2
+	}
+	.hd-show-result {
+		position: relative;
+		left: 0;
+		margin: 20px 0
+	}
+	.menu-banner-form>.container {
+		padding: 0 0 10px 0
+	}
+	.featuredProductThumbnailComponent .featuredProductThumbnailItem img {
+		height: auto
+	}
+	.quick-register form .intl-tel-input {
+		width: calc(100% - 37px)
+	}
+	.packages-wrapper .pricing-block .package-icon-container {
+		left: 39%;
+		width: 135px;
+		height: 110px
+	}
+	.featuredbox {
+		height: unset;
+		margin-bottom: 12px
+	}
+	.featuredbox::before {
+		width: 0%
+	}
+	.social-sec .img-holder {
+		display: none
+	}
+	.social-sec .social-form {
+		border-radius: 10px;
+		padding: 20px 15px
+	}
+	.login-page-form .eworld-icon {
+		padding: 0 7px
+	}
+	.login-page-form .eworld-icon img {
+		max-width: 35%
+	}
+	.login-page-form h3 {
+		font-size: 1rem
+	}
+	.login-page-form p {
+		font-size: 11px;
+		margin: 0
+	}
+	.seller-sec .img-holder {
+		display: none
+	}
+	.mobile-icon {
+		float: left;
+		margin-right: 3px;
+		max-width: 11%;
+		margin-top: 4px
+	}
+	.login-mob-icon a {
+		float: unset;
+		width: unset
+	}
+	.login-mob-icon a img {
+		margin-top: -4px;
+		max-width: 14%!important
+	}
+	.login-mob-icon h1 {
+		color: #2c2c2c;
+		text-align: left;
+		font-size: 20px;
+		font-weight: 600;
+		margin-bottom: 0;
+		margin-top: 20px
+	}
+	.login-mob-icon span {
+		color: #e60000
+	}
+	.login-mob-icon p {
+		color: #b1b1b1;
+		font-size: 14px;
+		text-align: left;
+		text-transform: capitalize
+	}
+	.login-actions {
+		margin: .5rem 0
+	}
+	.login-mob-icon {
+		margin-bottom: 20px
+	}
+	.login-page-form .elite-register-form h2 {
+		margin-bottom: 7px
+	}
+	.thankyou-sec {
+		background-size: 0, 192%
+	}
+	.testimonails-slider {
+		height: auto;
+		max-height: inherit
+	}
+	.testimonails-slider .item p {
+		margin: 10px 0 20px;
+		padding: 0 0
+	}
+	.hm-sec-2 [class^=col-] .pkg-scroll-col+.btm-pkg-btn {
+		padding: 0 0;
+		background: 0 0
+	}
+	.hm-sec-2 [class^=col-] .pkg-scroll-col+.btm-pkg-btn>a {
+		font-size: 16px;
+		padding: 5px 0;
+		width: 60%
+	}
+	.services-card .details-listing nav {
+		margin-bottom: 15px
+	}
+	.services-carousel {
+		margin: 35px 0 0
+	}
+	.services-testimonials .testimonials-sec .quote-down {
+		display: none
+	}
+	.services-banner h1 {
+		font-size: 45px
+	}
+	.services-contact {
+		background: 0 0
+	}
+	.services-card .section-position {
+		top: 0
+	}
+	.services-contact {
+		padding: 35px 0
+	}
+	.services-testimonials .testimonials-sec p {
+		padding: 28px 15px
+	}
+	.services-testimonials .testimonials-sec p:before {
+		top: 57px;
+		left: 18px
+	}
+	.services-carousel img {
+		padding-right: 76px
+	}
+	.services-carousel figure:after {
+		top: 356px;
+		right: 43px;
+		width: 24%;
+		height: 24%
+	}
+	.services-carousel figure {
+		margin-top: 12px
+	}
+	.services-card .col-6 {
+		flex: 0 0 100%;
+		max-width: 100%
+	}
+	.services-card .col-6:nth-child(odd) {
+		padding-left: 15px;
+		padding-right: 15px!important
+	}
+	.services-card .col-6:nth-child(even) {
+		padding-right: 15px;
+		padding-left: 15px!important
+	}
+	.services-card .col-12 {
+		padding: 0 15px
+	}
+	.services-card .incomplete-info-form-group #accordion a {
+		padding: 0 0
+	}
+	.services-card .incomplete-info-form-group {
+		padding: 0 5px
+	}
+	.services-testimonials .testimonials-sec p:before {
+		top: 112px
+	}
+	#customPackageForm label {
+		margin-bottom: .2rem
+	}
+	#customPackageForm .form-group {
+		margin-bottom: .8rem
+	}
+	#customPackageForm .form-control {
+		padding-top: 4px;
+		padding-bottom: 4px
+	}
+	#customPackageForm .form-control:not([name=phone_number]) {
+		padding-left: 6px;
+		padding-right: 6px
+	}
+	.contact-map .direction-sec .map-direction {
+		padding: 16px 9px
+	}
+	.contact-bg {
+		background-image: none!important
+	}
+	.buying-search input[type=text] {
+		width: calc(100% - 0px)!important
+	}
+	.custom-top-pad .buying-lead-row {
+		padding: 18px 20px
+	}
+	.offer-detail-visible label {
+		font-weight: bolder
+	}
+	.action-grp .buyer-listing-social {
+		width: auto
+	}
+	.action-grp .buyer-listing-viewprice {
+		width: auto
+	}
+	.quote-now {
+		width: 100%
+	}
+	.productQuoteRegister form .nav-tabs li.nav-item a {
+		padding: 5px 10px;
+		font-size: 13px
+	}
+	.productQuoteRegister .nav-tabs {
+		margin-top: 0
+	}
+	.quote-now form button {
+		width: 37%
+	}
+	.premiumDetailPricing {
+		text-align: center;
+		font-size: 16px;
+		float: none;
+		display: block;
+		margin-top: 0;
+		margin-bottom: 20px
+	}
+	.elite-register-form h2 {
+		font-size: 18px
+	}
+	.lead-popup {
+		width: 97%;
+		right: 8px
+	}
+}
+@media (max-width:575px) {
+	.hm-sec-3 .prem-supplier-slider ul {
+		height: auto;
+		max-height: inherit;
+		column-count: 3
+	}
+	.representative-offices-list li {
+		width: 100%
+	}
+	.inner-banner h1 {
+		font-size: 34px
+	}
+	.representative-offices-list li p {
+		height: 46px
+	}
+	section.suppliers ul {
+		width: 49%
+	}
+	section.suppliers ul li i {
+		height: 19px;
+		width: 20px
+	}
+	.img-mob-responsive img {
+		width: 100%
+	}
+	.inner-banner-leftnav h1 {
+		font-size: 32px
+	}
+	.prdct-lst-scroll-nav {
+		width: 100%
+	}
+	.become_partner_form input[type=submit] {
+		width: auto!important
+	}
+	.seat-sourcing h1 {
+		font-size: 26px
+	}
+	.seat-sourcing {
+		padding: 33px 6px
+	}
+	.profit-foreign-trade .content-box h3 {
+		font-size: 27px
+	}
+	.profit-foreign-trade .content-box>h4 {
+		font-size: 20px
+	}
+	.profit-foreign-trade .content-box p {
+		font-size: 15px
+	}
+	.dashboard-banner {
+		padding: 0 10px
+	}
+	.dashboard-banner nav ul h3 {
+		margin-top: 5px;
+		font-size: 24px
+	}
+	.results .chart-box p {
+		height: 56px
+	}
+	.results .chart-box {
+		padding: 0 19px
+	}
+	.content-banner .seat-content>h1 {
+		font-size: 27px
+	}
+	.partner-sec .seat-content {
+		padding: 7px 10px 15px
+	}
+	.buying-lead-row h6:after {
+		width: 43%
+	}
+	.buyer-filter-alphabet-result>ul>li {
+		width: 49%
+	}
+	.buyer-filter-alphabet-result>ul>li>a {
+		font-size: 10px
+	}
+	.eworld-loc ul li {
+		width: 100%
+	}
+	.importer-sec .latest-buyers ul li .lst-buyer-text {
+		width: 32%
+	}
+	.ban-cta ul li {
+		width: 100%;
+		border-right: none!important
+	}
+	.testimonails-slider .item p {
+		margin: 0 0 6px;
+		font-size: 16px
+	}
+	.cards-image ul {
+		text-align: center
+	}
+	.cards-image ul li {
+		margin-right: 10px!important;
+		text-align: center;
+		margin-bottom: 19px
+	}
+	.Showcase-prd-tabs .nav-tabs .nav-item {
+		text-align: center
+	}
+	.prd-showcase-listing-result-row ul li {
+		width: 100%
+	}
+	.com-formsec label {
+		font-size: 10px
+	}
+	.event-info-button a {
+		padding: 4px 18px
+	}
+	.hm-sec-2 [class^=col-] .reg-channel-col ul li {
+		width: 48.3%
+	}
+	.featuredProductThumbnailComponent .hd-rd-brdr img {
+		display: none
+	}
+	.hd-rd-brdr {
+		font-size: 15px
+	}
+	.category-tabs .tab-content>.tab-pane h3 {
+		margin: 15px 0 7px
+	}
+	.hm-sec-2 [class^=col-] .reg-channel-col ul li {
+		width: 49.5%
+	}
+	.owl-theme .owl-nav.disabled+.owl-dots {
+		margin-top: 9px
+	}
+	.hm-sec-2 {
+		padding: 0 0 50px
+	}
+	.hm-sec-2 [class^=col-] h3 {
+		margin-top: 30px
+	}
+	h5.mobile-margin {
+		margin-top: 0!important
+	}
+	footer h5 {
+		font-size: 18px;
+		margin-top: 30px
+	}
+	.hm-sec-2 [class^=col-] .ftr-tradeshows-col ul li {
+		margin-top: 15px
+	}
+	.ftr-copyright {
+		text-align: center
+	}
+	.buyer-filter-alphabet-row ul>li {
+		margin: 10px 12px
+	}
+	.buyer-filter-alphabet-row ul {
+		text-align: left
+	}
+	.white-panel {
+		margin: 0 0
+	}
+	section.news-page .col-md-3 {
+		padding-left: 15px
+	}
+	.bestSellingProductComponent .result>ul>li {
+		width: 23.8%
+	}
+	.buyer-tab-company .buyer-listing-action img {
+		width: 98px
+	}
+	.buyer-listing-result-row .buyer-listing-action i {
+		height: 35px;
+		width: 35px
+	}
+	.buyer-tab-company .buyer-listing-action a.buyer-listing-btn {
+		padding: 7px 11px;
+		font-size: 13px
+	}
+	.buyer-listing-result-row h5 {
+		font-size: 13px
+	}
+	.buyer-listing-result-row .buyer-listing-result-date {
+		position: unset;
+		text-align: left
+	}
+	.buyer-listing-result-row p {
+		word-break: break-word
+	}
+	.buyers-info li:last-child {
+		position: relative;
+		top: -4px
+	}
+	.home-register .reg-form-fieldset ul:not(.iti__country-list)>li {
+		width: 47%
+	}
+	.fancybox-caption {
+		padding: 25px 44px 25px
+	}
+	.top-bar-head h6 {
+		font-size: 12px;
+		margin-right: 0!important
+	}
+	.top-bar-head {
+		padding: 8px 0
+	}
+	.top-bar-head>.container a {
+		padding: 1px 10px
+	}
+	.prd-showcase-listing-result-row ul li {
+		min-height: 166px
+	}
+	.company-profile figure {
+		margin-top: 25px
+	}
+	.company-profile i.com-logo {
+		width: 100%
+	}
+	.company-profile figure a:last-child img {
+		width: 37%
+	}
+	.register-form .nav-tabs li {
+		margin-right: 0!important
+	}
+	.register-form .nav-tabs {
+		padding: 0 5px
+	}
+	.register-form .nav-tabs li label {
+		font-size: 17px
+	}
+	.register-page .register-form {
+		padding: 0
+	}
+	.hm-sec-2 [class^=col-] .reg-channel-col ul li {
+		width: 49.3%
+	}
+	.packages-wrapper .pricing-block .package-icon-container {
+		left: calc(50% - 68px)
+	}
+	.login-page-form .social-links {
+		column-gap: 5px
+	}
+	.form-check-inline .form-check-input {
+		margin-right: 12px
+	}
+	.popupform .reg-form-fieldset input[type=submit] {
+		margin-top: 0
+	}
+	.popupform .reg-form-fieldset ul:not(.iti__country-list)>li {
+		margin: 0 0 10px;
+		width: 49%
+	}
+	.popupform .reg-form-fieldset {
+		margin-top: 10px
+	}
+	.popupform .reg-form-fieldset #buyer-seller-form ul li:nth-child(odd) {
+		margin-left: 0;
+		margin-right: 0
+	}
+	.popupform .reg-form-fieldset #buyer-seller-form ul li:nth-child(even) {
+		margin-left: .5%;
+		margin-right: 0
+	}
+	.popupform .reg-form-fieldset #buyer-seller-form ul li.full-li {
+		width: 100%!important
+	}
+	.fancybox-caption {
+		display: none!important
+	}
+	.popupform .reg-form-fieldset #buyer-seller-form ul li:last-child {
+		margin-bottom: 0
+	}
+	.popupform h4 {
+		display: none
+	}
+	.popupform input[type=submit] {
+		padding: 5px 38px
+	}
+	.mobile-icon {
+		max-width: 20%
+	}
+	.login-mob-icon a img {
+		margin-top: -3px;
+		max-width: 19%!important
+	}
+	.login-mob-icon p {
+		font-size: 13px
+	}
+	.login-mob-icon h1 {
+		font-size: 16px
+	}
+	.login-page-form .eworld-icon {
+		padding: 0 9px;
+		margin-bottom: 5px
+	}
+	.register-page .hd-bann-form h1 {
+		margin-top: 0
+	}
+	.reg-sec.hd-bann-form h2 {
+		margin-bottom: 0
+	}
+	.thankyou-sec a {
+		padding: 10px 8px;
+		font-size: 9px;
+		margin-right: 4px
+	}
+	.thankyou-sec {
+		background-size: 0, 651%
+	}
+	.login-page-form .social-links {
+		column-count: 3
+	}
+	.login-page-form .social-links a {
+		margin-bottom: 5px
+	}
+	.services-card .header-content h3 {
+		font-size: 20px;
+		margin-top: 7px;
+		text-align: center;
+		float: none
+	}
+	.services-card .header-content figure {
+		width: auto;
+		float: none;
+		margin-bottom: 0
+	}
+	.services-card .header-content figure img {
+		margin: 0 auto;
+		display: block;
+		float: none!important
+	}
+	.services-carousel figure .main {
+		padding-right: 48px;
+		padding-left: 25px
+	}
+	.services-carousel figure:after {
+		top: 212px;
+		right: 66px;
+		width: 43%;
+		height: 43%
+	}
+	.services-card form {
+		padding: 10px
+	}
+	.services-card .incomplete-info-form-group {
+		padding: 0 0
+	}
+	.form-p-0 {
+		padding: 0!important
+	}
+	.services-card .details-listing nav {
+		padding: 20px 10px
+	}
+	.services-background {
+		padding: 45px 0 45px
+	}
+	.services-banner h1 {
+		font-size: 25px;
+		text-align: center;
+		text-shadow: none;
+		padding: 0
+	}
+	.services-banner h2 {
+		font-size: 22px;
+		text-shadow: none;
+		margin-bottom: 0;
+		padding: 0
+	}
+	.mob-bg {
+		background: #0003;
+		padding: 6px 20px;
+		text-align: center;
+		margin: 0 auto
+	}
+	.services-contact label {
+		margin-bottom: 3px
+	}
+	.services-contact input {
+		margin-bottom: 18px!important
+	}
+	.mob-box .prod-info .buyer-listing-social {
+		text-align: center
+	}
+	.mob-box .free-mem {
+		text-align: center
+	}
+	.mob-box .prod-content {
+		padding-top: 0
+	}
+	.mob-prod ul li strong {
+		margin-right: 10px
+	}
+	.contact-map .direction-main {
+		width: 47%
+	}
+	.contact-map .direction-sec .map-direction h6 {
+		font-size: 12px
+	}
+	.contact-map .direction-sec .map-direction p {
+		font-size: 10px
+	}
+	.contact-map .direction-sec .map-direction h6 i {
+		font-size: 18px
+	}
+	.contact-map .map-cnt {
+		width: calc(100% - 47%)
+	}
+	.contact-map .locate-heading h5 {
+		font-size: 13px
+	}
+	.drop-nav {
+		min-width: 344px;
+		left: 0!important;
+		width: 344px
+	}
+	.drop-nav li {
+		font-size: 10px
+	}
+	.locate-heading {
+		font-size: 14px
+	}
+	.offer-detail-visible>li {
+		font-size: 9px!important;
+		padding-left: 0!important
+	}
+	.offer-detail-visible>li>i {
+		display: none
+	}
+	.offer-detail-visible a {
+		font-size: 9px
+	}
+	.offer-detail-visible li:last-child {
+		top: -1px!important
+	}
+	.quote-now .nav-tabs {
+		margin-top: 9px
+	}
+	.menu-banner-form .header-banner img {
+		height: auto
+	}
+	.header-banner .owl-carousel .owl-stage-outer {
+		height: 292px
+	}
+	.header-banner .owl-dots {
+		bottom: calc(10% - 15px)
+	}
+}

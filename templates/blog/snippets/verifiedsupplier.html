@@ -1,0 +1,37 @@
+{% load static %}
+<section class="ft-prd-verfy-sup featuredProductThumbnailComponent">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="lbo-brdr"><span>Verified </span> Suppliers <i><img
+                        alt="Featured Products from Verified Suppliers" class="lazy"
+                        data-src="{% static 'images/verified-supplier-icon.png' %}"
+                        src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></i> <a
+                        class="viewMore d-none d-md-block" href="{% url 'allcompany' %}" title="All Company">- View More
+                    -</a></h4>
+            </div>
+            <div class="col-md-12">
+                <div class="owl-carousel owl-theme owl-drag" id="featuredProductThumbnail">
+                    <div class="item">
+                        <div class="row no-gutters">
+                            {% for p in suppliers %}
+                            <div class="col-md-3 col-6">
+                                <div class="desc">{{p.organization}}</div>
+                                <div class="gallery">
+                                    <div class="featuredProductThumbnailItem">
+                                        <a target="_blank" href=" {% url 'companyproduct' p.user.id %} ">
+                                            <img src="{{p.img.url}}" alt="{{p.title}}" width="600"
+                                                 height="400">
+                                        </a>
+                                        <div class="desc">{{p.products}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

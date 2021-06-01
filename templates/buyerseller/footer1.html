@@ -1,0 +1,59 @@
+{% load static %}
+<script src="{% static 'js/app.min.js' %}" type="text/javascript">
+</script>
+<script async src="{% static 'js/auth.min.js' %}" type="text/javascript">
+</script>
+
+<script>
+	var OneSignal = window.OneSignal || []; OneSignal.push(function() { OneSignal.init({ appId: "fbd96f7e-d10b-48aa-b0d1-412ba5136cc6", }); OneSignal.sendTags({ fp_source: "Organic", fp_domain_full_page_url: "https://www.eworldtrade.com", fp_domain_page_url: "https://www.eworldtrade.com", fp_domain_refferrer_url: "", fp_domain_external_url: "", fp_utm_campaign: "", fp_utm_medium: "", fp_utm_source: "", fp_utm_content: "", fp_utm_term: "", fp_visitor_ip: "103.208.71.73", fp_visitor_country: "India", fp_visitor_region: "MAHARASHTRA", fp_visitor_city: "MUMBAI" }); });
+
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){ $('#bannerCarousel').owlCarousel({ loop: true, margin: 0, nav: false, lazyLoad: true, dots: true, items: 1, autoplay: true, autoplayHoverPause: true, responsiveClass: true }); });
+
+</script>
+<script type="text/javascript">
+	$('#featuredProductThumbnail').owlCarousel({ loop: true, margin: 0, nav: false, lazyLoad: true, dots: true, items: 1, autoplay: true, autoplayHoverPause: true });
+
+</script>
+<script type="text/javascript">
+	$('.owl-carousel-tabs').owlCarousel({ loop: false, margin: 5, dots: false, nav: false, lazyLoad: true, lazyLoadEager: 7, stagePadding: 60, responsive:{ 0: { items: 2 }, 600: { items: 4 }, 1000: { items: 6 } }});
+
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){ $('.featured-company-banner').owlCarousel({ items: 1, loop: true, margin: 0, nav: false, lazyLoad: true, dots: false, autoplay: true, autoplayHoverPause: true, responsiveClass: true }); });
+
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){ $('#premiumServiceCarousel').owlCarousel({ loop: true, margin: 0, nav: false, lazyLoad: true, dots: true, items: 1, autoplay: true, autoplayHoverPause: true, responsiveClass: true }); }); $(document).on("click", ".premiumServiceCarouselComponent-section", function(event){ var target = $(event.target); if(!target.is("a")){ window.location.href = $(this).data('route'); } });
+
+</script>
+<script>
+	$(document).ready(function(){ $("#tradeShowCarousel").owlCarousel({ items: 1, loop: true, margin: 0, nav: false, lazyLoad: true, dots: true, autoplay: true, autoplayHoverPause: true, responsiveClass: true }); });
+
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){ $('#featuredSuppliers').owlCarousel({ items: 1, loop: true, margin: 0, nav: false, lazyLoad: true, dots: true, autoplay: true, autoplayHoverPause: true, responsiveClass: true }); });
+
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){ $('.testimonails-slider').owlCarousel({ items: 1, loop: true, margin: 0, nav: false, lazyLoad: true, dots: true, autoplay: true, autoplayHoverPause: true, responsiveClass: true }); });
+
+</script>
+<script>
+	$(document).ready(function(){ $("#owlAbout").owlCarousel({ items: 1, autoHeight:true }); });
+
+</script>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){ $.fancybox.defaults.animationEffect = "zoom-in-out"; $.fancybox.defaults.animationDuration = 500; }); function registerPopup(title){ title = title === undefined ? 'Join Free' : title; if(title == "Join Free"){ title = "Join today and be a part of the fastest growing B2B Network"; } if(title == "Quote Now"){ title = ''; $("#popupform h4").text("Contact Now"); $('#popupform .reg-form-fieldset input[type=submit]').val('Submit'); $('#popupform .socialLoginComponent>.social-login-separator>span').text('or fill with your social network'); $(".quickRegisterHeading").remove(); $(".quick-register button[type=submit]").text("Submit"); } $.fancybox.defaults.caption = title; $("#popupformOpener").click(); }
+
+</script>
+
+
+<script>
+	$(document).on('click', '#popupOpen', function() { $('.lead-popup').addClass('chat-formopen'); $('#popupOpen').addClass('d-none'); }); $(document).on('click', '#closePopup', function() { $('.lead-popup').removeClass('chat-formopen'); $('#popupOpen').removeClass('d-none'); });
+
+</script>
+

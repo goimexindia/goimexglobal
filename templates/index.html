@@ -1,0 +1,2062 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+{% include 'buyerseller/header.html' %}
+
+<style>
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+</style>
+
+<div class="row">
+    <div class="mx-auto">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
+            <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
+                <input class="form-control mr-sm-2" type="search"
+                       placeholder="Keyword for Buyer/Seller Requirement" aria-label="Search"
+                       name="search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Post <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </nav>
+    </div>
+    <div class="mx-auto">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
+            <form class="form-inline my-2 my-lg-0" action="{% url 'cat-search' %}" method="GET">
+                <input class="form-control mr-sm-2" type="search"
+                       placeholder="Search here........................" aria-label="Search"
+                       name="search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Product <i
+                        class="fa fa-search"></i>
+                </button>
+
+            </form>
+        </nav>
+    </div>
+    <div class="mx-auto">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
+            <form class="form-inline my-2 my-lg-0" action="{% url 'allcompany' %}" method="GET">
+                <input class="form-control mr-sm-2" type="search"
+                       placeholder="Search here........................" aria-label="Search"
+                       name="search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Company <i
+                        class="fa fa-search"></i>
+                </button>
+            </form>
+        </nav>
+    </div>
+</div>
+<hr>
+
+<section class="menu-banner-form">
+    <div class="container">
+        <div class="categories-section  col-md-4 col-lg-3 p-0">
+            <h4>Categories <i class="fa fa-bars"></i></h4>
+               {% load mptt_tags %}
+            <ul class="category-list">
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Machinery">Machinery <i class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)"
+                                   title="Energy Mineral Equipment">Energy Mineral Equipment</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Mining Machinery">Mining
+                                        Machinery</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Energy Saving Equipment">Energy
+                                        Saving Equipment</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Gas Generation Equipment">Gas
+                                        Generation Equipment</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Oil Field Equipment">Oil
+                                        Field Equipment</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Petroleum Processing Equipment">Petroleum Processing Equipment</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Energy Saving Equipment Parts">Energy Saving Equipment Parts</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Gas Generation Equipment Parts">Gas Generation Equipment Parts</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Magnesium Production Line">Magnesium Production Line</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)"
+                                   title="Food Beverage Machinery">Food Beverage Machinery</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Snack Machines">Snack
+                                        Machines</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Fruit Vegetable Processing Machines">Fruit Vegetable Processing
+                                        Machines</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Baking Equipment">Baking
+                                        Equipment</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Beverage Wine Processing Machinery">Beverage Wine Processing Machinery</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Other Food Processing Machinery">Other Food Processing Machinery</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Grain Product Making Machines">Grain Product Making Machines</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Fryer">Fryer</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Grain Processing Machinery">Grain Processing Machinery</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Beauty &amp; Personal Care">Beauty &amp; Personal Care <i
+                            class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Baby Care">Baby
+                                Care</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Baby DiapersNappies">Baby
+                                        DiapersNappies</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Baby Wipes">Baby Wipes</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Baby Skin Care">Baby Skin
+                                        Care</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Baby Bath Supplies">Baby
+                                        Bath Supplies</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Baby Oral Hygiene">Baby
+                                        Oral Hygiene</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Baby Hair Care">Baby Hair
+                                        Care</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)"
+                                   title="Hair Extensions Wigs">Hair Extensions Wigs</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Hair Extension">Hair
+                                        Extension</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Wigs">Wigs</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Lace Wigs">Lace Wigs</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Toupeee">Toupeee</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Chignon">Chignon</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Other Artificial Hair">Other
+                                        Artificial Hair</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Fringes">Fringes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Security &amp; Protection">Security &amp; Protection <i
+                            class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)"
+                                   title="Police Military Supplies">Police Military Supplies</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Bullet Proof Vest">Bullet
+                                        Proof Vest</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Other Police Military Supplies">Other Police Military Supplies</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Gun Bag">Gun Bag</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Warning Tape">Warning
+                                        Tape</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Bullet Proof Helmet">Bullet
+                                        Proof Helmet</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Baton">Baton</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Handcuff">Handcuff</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="CCTV Products">CCTV
+                                Products</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="CCTV Camera">CCTV
+                                        Camera</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="CCTV DVR">CCTV DVR</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="CCTV System">CCTV
+                                        System</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="CCTV Accessories">CCTV
+                                        Accessories</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="CCTV Monitor">CCTV
+                                        Monitor</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Other Surveillance Products">Other Surveillance Products</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="CCTV Lens">CCTV Lens</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="CCTV Camera Housing">CCTV
+                                        Camera Housing</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Lights &amp; Lighting">Lights &amp; Lighting <i
+                            class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)"
+                                   title="LED Outdoor Lighting">LED Outdoor Lighting</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="LED Flood Lights">LED
+                                        Flood Lights</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="LED Street Lights">LED
+                                        Street Lights</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="LED Garden Lights">LED
+                                        Garden Lights</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="LED Wall Washers">LED Wall
+                                        Washers</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="LED Outdoor Wall Lights">LED
+                                        Outdoor Wall Lights</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="LED Underground Lights">LED
+                                        Underground Lights</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="LED Tunnel Lights">LED
+                                        Tunnel Lights</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="LED Lawn Lights">LED Lawn
+                                        Lights</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Stage Lights">Stage
+                                Lights</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Moving Head Lights">Moving
+                                        Head Lights</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Laser Lights">Laser
+                                        Lights</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Beam Lights">Beam
+                                        Lights</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Scan Lights">Scan
+                                        Lights</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Cyclorama Lights">Cyclorama
+                                        Lights</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Follow Spot Lights">Follow
+                                        Spot Lights</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Projection Lights">Projection
+                                        Lights</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Moving Lights">Moving
+                                        Lights</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Automobiles &nbsp;&amp; Motorcycles">Automobiles &nbsp;&amp;
+                        Motorcycles <i class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Motorcycle Parts">Motorcycle
+                                Parts</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Motorcycle Tires">Motorcycle
+                                        Tires</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Motorcycle Body Parts">Motorcycle
+                                        Body Parts</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Other Motorcycle Parts">Other
+                                        Motorcycle Parts</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Motorcycle Electrical System">Motorcycle Electrical System</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Motorcycle Engines">Motorcycle
+                                        Engines</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Motorcycle Brakes">Motorcycle
+                                        Brakes</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Motorcycle Transmissions">Motorcycle
+                                        Transmissions</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Motorcycle Wheels">Motorcycle
+                                        Wheels</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Valve Train">Valve
+                                Train</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Intake Exhaust Valve">Intake
+                                        Exhaust Valve</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Camshaft">Camshaft</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Valve Train">Valve
+                                        Train</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Rocker Arm Rocker Shaft">Rocker
+                                        Arm Rocker Shaft</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Valve Tappet">Valve
+                                        Tappet</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Other Auto Parts">Other
+                                        Auto Parts</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Other Auto Valve Train">Other
+                                        Auto Valve Train</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Speaker Horn">Speaker
+                                        Horn</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Chemicals">Chemicals <i class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Paints Coatings">Paints
+                                Coatings</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Building Coating">Building
+                                        Coating</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Car Paint">Car Paint</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Appliance Paint">Appliance
+                                        Paint</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Furniture Paint">Furniture
+                                        Paint</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Boat Paint">Boat Paint</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Electrical Insulating Varnish">Electrical Insulating Varnish</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Plastic Coating">Plastic
+                                        Coating</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Other Paint Coating">Other
+                                        Paint Coating</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Fertilizer">Fertilizer</a>
+                            </h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Organic Fertilizer">Organic
+                                        Fertilizer</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Nitrogen Fertilizer">Nitrogen
+                                        Fertilizer</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Compound Fertilizer">Compound
+                                        Fertilizer</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Potassium Fertilizer">Potassium
+                                        Fertilizer</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Urea">Urea</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Phosphate Fertilizer">Phosphate
+                                        Fertilizer</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Biological Fertilizer">Biological
+                                        Fertilizer</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Other Fertilizers">Other
+                                        Fertilizers</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Food &amp; Beverage">Food &amp; Beverage <i
+                            class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Canned Food">Canned
+                                Food</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Canned Fruit">Canned
+                                        Fruit</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Canned Poultry Meat">Canned
+                                        Poultry Meat</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Canned Seafood">Canned
+                                        Seafood</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Canned Beans">Canned
+                                        Beans</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Honey Products">Honey
+                                Products</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Honey">Honey</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Bee Wax">Bee Wax</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Bee Pollen">Bee Pollen</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Propolis">Propolis</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Royal Jelly">Royal
+                                        Jelly</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Honey Syrup">Honey
+                                        Syrup</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Minerals &amp; Metallurgy">Minerals &amp; Metallurgy <i
+                            class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Wire Mesh">Wire
+                                Mesh</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Steel Wire Mesh">Steel
+                                        Wire Mesh</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Iron Wire Mesh">Iron Wire
+                                        Mesh</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Copper Wire Mesh">Copper
+                                        Wire Mesh</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Aluminum Wire Mesh">Aluminum
+                                        Wire Mesh</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Fiberglass Mesh">Fiberglass
+                                        Mesh</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Other Wire Mesh">Other
+                                        Wire Mesh</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)"
+                                   title="Aluminum">Aluminum</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Aluminum Profiles">Aluminum
+                                        Profiles</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Aluminum Sheets">Aluminum
+                                        Sheets</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Aluminum Foil">Aluminum
+                                        Foil</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Aluminum Coils">Aluminum
+                                        Coils</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Aluminum Pipes">Aluminum
+                                        Pipes</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Aluminum Bars">Aluminum
+                                        Bars</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Aluminum Strips">Aluminum
+                                        Strips</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Aluminum Powder">Aluminum
+                                        Powder</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-cat-more-btn">
+                    <a href="javascript:void(0)" title="Categories">View All Categories</a>
+                </li>
+            </ul>
+        </div>
+        <div class="header-banner col-lg-6 col-md-8 pl-0 pr-0 position-relative">
+            <div class="owl-carousel owl-theme owl-drag" id="bannerCarousel">
+                {% for dest in prod %}
+                    {% if user.is_authenticated %}
+                        <div class="item">
+                            <a href="#"><img class="img-fluid w-100 owl-lazy" data-src="{{dest.img.url}}"
+                                             src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></a>
+                        </div>
+                    {% else %}
+                        <div class="item">
+                            <a href="javascript:registerPopup(&quot;Start%20rank%20dominate&quot;)"><img
+                                    class="img-fluid w-100 owl-lazy" data-src="{{dest.img.url}}"
+                                    src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <section>
+            {% if user.is_authenticated %}
+            <div class="home-logged-in-nav col-md-3 d-none d-lg-block">
+                <ul>
+                    <li><a  href="{% url 'ecomerce' %}" title="Dashboard">Dashboard</a></li>
+                    <li><a href="{% url 'profile' %}" title="My Profile">My Profile</a></li>
+                    <li><a href="#" title="Messages">Messages</a></li>
+                    <li><a href="#" title="Products">Products</a></li>
+                    <li><a href="#" title="Company Profile">Company Profile</a>
+                    </li>
+                    <li><a href="#" title="Premium Services">Premium
+                        Services</a></li>
+
+                    <li><a href="{% url 'rfq' %}" title="Post RFQ">Post RFQ</a></li>
+                    <li><a href="javascript:$('#zsiq_float').click();" title="Need Help?">Need Help?</a></li>
+                </ul>
+            </div>
+            {% else %}
+            <section class="tell-us-what-you-section quote-now d-md-none d-lg-block d-xl-block">
+                <h6>Tell Us What You <span>NEED</span></h6>
+                <form action="user/basic-signup-n/" id="quoteForm" method="post" name="quoteForm">
+                    <input name="affiliate" type="hidden" value="1"><input name="signup-form" type="hidden" value="yes"><input
+                        name="widget_source" type="hidden" value="quoteForm"><input name="source" type="hidden"
+                                                                                    value="Organic"><input
+                        name="utm_campaign" type="hidden" value=""><input name="utm_medium" type="hidden"
+                                                                          value=""><input name="utm_source"
+                                                                                          type="hidden" value=""><input
+                        name="utm_content" type="hidden" value=""><input name="utm_term" type="hidden" value=""><input
+                        name="fullpageurl" type="hidden" value="https://www.eworldtrade.com"><input name="referrerurl"
+                                                                                                    type="hidden"
+                                                                                                    value=""><input
+                        name="pageurl" type="hidden" value="https://www.eworldtrade.com"><input name="external_refferer"
+                                                                                                type="hidden"
+                                                                                                value=""><input
+                        name="ip2loc_ip" type="hidden" value="103.208.71.73"><input name="ip2loc_isp" type="hidden"
+                                                                                    value=""><input name="ip2loc_org"
+                                                                                                    type="hidden"
+                                                                                                    value=""><input
+                        name="ip2loc_country" type="hidden" value="India"><input name="ip2loc_region" type="hidden"
+                                                                                 value="MAHARASHTRA"><input
+                        name="ip2loc_city" type="hidden" value="MUMBAI"> <input name="_token" type="hidden"
+                                                                                value="k5WAhvHR2Dvr1VGQCjuC7WvSC3SsYOPcvniqmr8C">
+                    <input name="quickregister" type="hidden" value="yes"> <input name="password" type="hidden"
+                                                                                  value="nv5z0FSCdL">
+                    <div class="form-row mt-3">
+                        <div class="col-sm-12">
+                            <label>Requirements</label> <input autocomplete="off" class="form-control"
+                                                               name="products_want"
+                                                               placeholder="Enter product/service name" required=""
+                                                               title="Comma seperated keywords" type="text">
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-6">
+                            <label>Name</label> <input autocomplete="name" class="form-control" name="full_name"
+                                                       placeholder="Full Name" required=""
+                                                       title="Please enter your Full Name here" type="text">
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-6">
+                            <label>Email</label> <input autocomplete="email" class="form-control" name="email"
+                                                        placeholder="name@company.com" required=""
+                                                        title="Please enter your Email Address here" type="email">
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-6">
+                            <label>Company</label> <input autocomplete="organization" class="form-control"
+                                                          name="company_name" placeholder="Company Name" required=""
+                                                          title="Please enter your Company Name here" type="text">
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-6">
+                            <label>Phone Number</label> <input class="form-control tel" maxlength="30"
+                                                               name="phone_number" placeholder="Phone / Mobile"
+                                                               required=""
+                                                               title="Please enter your Phone or Mobile Number here"
+                                                               type="tel">
+                        </div>
+                        <div class="col-md-12">
+                            <label>I am a</label> <select class="form-control" name="type" required="">
+                            <option selected value="seller">
+                                Seller
+                            </option>
+                            <option value="buyer">
+                                Buyer
+                            </option>
+                        </select>
+                        </div>
+                        <div class="col-12 form-p-0 text-center">
+                            <button class="btn btn-outline-danger" type="submit">Submit</button>
+                        </div>
+                        <p class="text-center"><span>*</span> To achieve our mission we provide all the necessary
+                            functionalities to buyers and sellers that help them in developing the voice of their
+                            business and to expand worldwide.</p>
+                    </div>
+                </form>
+            </section>
+            {% endif %}
+        </section>
+    </div>
+</section>
+
+
+<section class="ban-cta-new d-none d-md-block" id="featuredPointSection">
+    <!----       onclick="document.getElementById('featuredPointSectionLink').click()">--->
+    <div class="container">
+        <ul>
+            <li><i class="icon1-TRADE-WITH-CONFIDENCE"></i> TRADE WITH CONFIDENCE</li>
+            <li><i class="icon1-VERIFIED-BUYERS"></i> VERIFIED BUYERS</li>
+            <li><i class="icon1-Globe"></i> GLOBAL NETWORK</li>
+            <li><i class="icon1-HELP-CENTER"></i> 24/7 HELP CENTER</li>
+        </ul>
+        <a href="{% url 'membership' %}"></a>
+    </div>
+    <a class="d-none"
+       href='javascript:registerPopup(&quot;We%20provide%20you%20representatives%20who%20will%20manage%20all%20of%20your%20B2B%20engagements%20interactively%20and%20digitally.&quot;)'
+       id="featuredPointSectionLink"></a>
+</section>
+<section class=" latest-buyers-section pd-btm-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <section class="relatedBuyOfferComponent transparent-panel">
+                    <h4 class="lbo-brdr  hd-section-inner-link">Latest Buy Offers <a href="{% url 'blog-home' %}"
+                                                                                     title="Related Buy Offers">- View
+                        More -</a></h4>
+                    <div class="latest-buyers fixedHeight ticker">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul>
+                                    {% for p in post %}
+                                    <li>
+                                        <a href="{% url 'post-detail' p.id%}" title="{{p.title}}"><span
+                                                class="world-name truncate">{{ p.author.profile.country.name }}</span>
+                                            <span
+                                                    class="lst-buyer-text truncate">{{p.title|safe}}-{{snippet}}</span>
+                                            <small class="date">{{ p.date_posted|date:"F d, Y" }}</small></a>
+                                    </li>
+                                    {% endfor %}
+                                    <!-----------------
+                                    <li>
+                                        <a href="javascript:void(0)" title="Requisite for Face Mask"><i
+                                                class="flag-icon flag-icon flag-icon-vn"></i> <span
+                                                class="world-name truncate">Vietnam</span> <span
+                                                class="lst-buyer-text truncate">Requisite for Face Mask</span> <small
+                                                class="date">09 Mar, 2021</small></a>
+                                    </li>
+                                    ---------------->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-6">
+                <h4 class="lbo-brdr  hd-section-inner-link">Latest Products <a href="javascript:void(0)"
+                                                                               title="All Products">- View More -</a>
+                </h4>
+                <div class="featured-products">
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)"
+                               title="Best Quality Carbonless NCR Paper 60 gsm 50gsm 55gsm 70gsm 75gsm 80gsm"><i
+                                    class="flag-icon flag-icon-us"></i>
+                                <h6 class="text-truncate mt-0">Best Quality Carbonless NCR Paper 60 gsm 50gsm 55gsm
+                                    70gsm 75gsm 80gsm</h6>
+                                <p class="text-truncate">Golden Paper Co., Ltd.</p></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" title="Steel Aluminum Plate Mesh"><i
+                                    class="flag-icon flag-icon-cn"></i>
+                                <h6 class="text-truncate mt-0">Steel Aluminum Plate Mesh</h6>
+                                <p class="text-truncate">HengTe Wire Mesh Products Co., Ltd.</p></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" title="UL12 inch Electric skillet"><i
+                                    class="flag-icon flag-icon-cn"></i>
+                                <h6 class="text-truncate mt-0">UL12 inch Electric skillet</h6>
+                                <p class="text-truncate">Ningbo Lingrun Electric Appliance Co., Ltd.</p></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"
+                               title="A-4 Fast Heat Round Griddle Electrical Wok Pan Electric Skillet"><i
+                                    class="flag-icon flag-icon-cn"></i>
+                                <h6 class="text-truncate mt-0">A-4 Fast Heat Round Griddle Electrical Wok Pan Electric
+                                    Skillet</h6>
+                                <p class="text-truncate">Yongkang Jueling Electrical Appliance Co., Ltd.</p></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" title="Hand cream"><i class="flag-icon flag-icon-cn"></i>
+                                <h6 class="text-truncate mt-0">Hand cream</h6>
+                                <p class="text-truncate">Lief Essentials</p></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" title="Open Frame Power Supply"><i
+                                    class="flag-icon flag-icon-cn"></i>
+                                <h6 class="text-truncate mt-0">Open Frame Power Supply</h6>
+                                <p class="text-truncate">Big Forest Adapters</p></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% include 'blog/snippets/verifiedsupplier.html' %}
+<hr>
+<br>
+
+{% include 'blog/snippets/verifiedproducts.html' %}
+
+<section class="category-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2><span>Browse Our <b>Categories</b></span></h2><br>
+                <ul class="nav nav-tabs owl-carousel-tabs owl-carousel owl-theme categoryTabsNav">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="javascript:void(0)" title="Apparel"><i>
+                            <picture>
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/26.webp"
+                                        type="image/webp">
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/26.png' %}"
+                                        type="image/png">
+                                <img alt="Apparel" class="owl-lazy"
+                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/26.png' %}"
+                                     height="50"
+                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                     width="50"></picture>
+                        </i> <span>Apparel</span></a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)" title="Home Appliances"><i>
+                            <picture>
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/12.webp"
+                                        type="image/webp">
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/12.png' %}"
+                                        type="image/png">
+                                <img alt="Home Appliances" class="owl-lazy"
+                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/12.png' %}"
+                                     height="50"
+                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                     width="50"></picture>
+                        </i> <span>Home Appliances</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)" title="Machinery"><i>
+                            <picture>
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/6.webp"
+                                        type="image/webp">
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/6.png' %}"
+                                        type="image/png">
+                                <img alt="Machinery" class="owl-lazy"
+                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/6.png' %}"
+                                     height="50"
+                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                     width="50"></picture>
+                        </i> <span>Machinery</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)"
+                           title="Beauty &amp; Personal Care"><i>
+                            <picture>
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/3.webp"
+                                        type="image/webp">
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/3.png' %}"
+                                        type="image/png">
+                                <img alt="Beauty &amp; Personal Care" class="owl-lazy"
+                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/3.png' %}"
+                                     height="50"
+                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                     width="50"></picture>
+                        </i> <span>Beauty &amp; Personal Care</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)"
+                           title="Security &amp; Protection"><i>
+                            <picture>
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/4.webp"
+                                        type="image/webp">
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/4.png' %}"
+                                        type="image/png">
+                                <img alt="Security &amp; Protection" class="owl-lazy"
+                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/4.png' %}"
+                                     height="50"
+                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                     width="50"></picture>
+                        </i> <span>Security &amp; Protection</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)"
+                           title="Lights &amp; Lighting"><i>
+                            <picture>
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/35.webp"
+                                        type="image/webp">
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/35.png' %}"
+                                        type="image/png">
+                                <img alt="Lights &amp; Lighting" class="owl-lazy"
+                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/35.png' %}"
+                                     height="50"
+                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                     width="50"></picture>
+                        </i> <span>Lights &amp; Lighting</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)"
+                           title="Automobiles &nbsp;&amp; Motorcycles"><i>
+                            <picture>
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/20.webp"
+                                        type="image/webp">
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/20.png' %}"
+                                        type="image/png">
+                                <img alt="Automobiles &nbsp;&amp; Motorcycles" class="owl-lazy"
+                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/20.png' %}"
+                                     height="50"
+                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                     width="50"></picture>
+                        </i> <span>Automobiles &nbsp;&amp; Motorcycles</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)" title="Chemicals"><i>
+                            <picture>
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/2.webp"
+                                        type="image/webp">
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/2.png' %}"
+                                        type="image/png">
+                                <img alt="Chemicals" class="owl-lazy"
+                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/2.png' %}"
+                                     height="50"
+                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                     width="50"></picture>
+                        </i> <span>Chemicals</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)" title="Food &amp; Beverage"><i>
+                            <picture>
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/15.webp"
+                                        type="image/webp">
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/15.png' %}"
+                                        type="image/png">
+                                <img alt="Food &amp; Beverage" class="owl-lazy"
+                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/15.png' %}"
+                                     height="50"
+                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                     width="50"></picture>
+                        </i> <span>Food &amp; Beverage</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)"
+                           title="Minerals &amp; Metallurgy"><i>
+                            <picture>
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/1.webp"
+                                        type="image/webp">
+                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/1.png' %}"
+                                        type="image/png">
+                                <img alt="Minerals &amp; Metallurgy" class="owl-lazy"
+                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/1.png' %}"
+                                     height="50"
+                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                     width="50"></picture>
+                        </i> <span>Minerals &amp; Metallurgy</span></a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="apparel-tab">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <h3><a class="text-danger" href="javascript:void(0)" title="Underwear">Underwear</a>
+                                </h3>
+                                <ul>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Bra">Bra</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Womens Panties">Womens
+                                            Panties</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Mens Briefs Boxers">Mens
+                                            Briefs Boxers</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Shapers">Shapers</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Sexy Underwear">Sexy
+                                            Underwear</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Bra Brief Sets">Bra
+                                            Brief Sets</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Garters Bel">Garters
+                                            Bel</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Camisoles 7983">Camisoles
+                                            7983</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <h3><a class="text-danger" href="javascript:void(0)" title="Womens Clothing">Womens
+                                    Clothing</a></h3>
+                                <ul>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Dresses">Dresses</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Womens T-Shirts">Womens
+                                            T-Shirts</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Womens Underwear">Womens
+                                            Underwear</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Womens Sweaters">Womens
+                                            Sweaters</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Ladies Blouses Tops">Ladies
+                                            Blouses Tops</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Womens Jackets Coats">Womens
+                                            Jackets Coats</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)"
+                                           title="Womens Trousers Pants">Womens Trousers Pants</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Womens Jeans">Womens
+                                            Jeans</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <h3><a class="text-danger" href="javascript:void(0)" title="Boys Clothing">Boys
+                                    Clothing</a></h3>
+                                <ul>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Boys Clothing Sets">Boys
+                                            Clothing Sets</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Boys T-Shirts">Boys
+                                            T-Shirts</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Boys Jackets Coats">Boys
+                                            Jackets Coats</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Boys Shirts">Boys
+                                            Shirts</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Boys Pants">Boys
+                                            Pants</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Boys Underwear">Boys
+                                            Underwear</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Boys Sweaters">Boys
+                                            Sweaters</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)"
+                                           title="Boys Hoodies Sweatshirts">Boys Hoodies Sweatshirts</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <h3><a class="text-danger" href="javascript:void(0)" title="Childrens Clothing">Childrens
+                                    Clothing</a></h3>
+                                <ul>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)"
+                                           title="Childrens Clothing Sets">Childrens Clothing Sets</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Girls Skirts">Girls
+                                            Skirts</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Childrens T-Shirts">Childrens
+                                            T-Shirts</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)"
+                                           title="Childrens Pants Trousers">Childrens Pants Trousers</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Childrens Sweaters">Childrens
+                                            Sweaters</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Childrens Coats">Childrens
+                                            Coats</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)"
+                                           title="Childrens Shirts Tops">Childrens Shirts Tops</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Childrens Shorts">Childrens
+                                            Shorts</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="home-appliance-tab">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <h3><a class="text-danger" href="javascript:void(0)" title="Cooking Appliances">Cooking
+                                    Appliances</a></h3>
+                                <ul>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Cooktops">Cooktops</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Induction Cookers">Induction
+                                            Cookers</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Ovens">Ovens</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Range Hoods">Range
+                                            Hoods</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Rice Cookers">Rice
+                                            Cookers</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Electric Deep Fryers">Electric
+                                            Deep Fryers</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Hot Plates">Hot
+                                            Plates</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)"
+                                           title="Electric Grills Electric Griddles">Electric Grills Electric
+                                            Griddles</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <h3><a class="text-danger" href="javascript:void(0)"
+                                       title="Air Conditioning Appliances">Air Conditioning Appliances</a></h3>
+                                <ul>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="DVD Burner">DVD
+                                            Burner</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Fans">Fans</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Humidifiers">Humidifiers</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Air Purifiers">Air
+                                            Purifiers</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Air Conditioners">Air
+                                            Conditioners</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Dehumidifiers">Dehumidifiers</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)"
+                                           title="Other Air Conditioning Appliances">Other Air Conditioning
+                                            Appliances</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <h3><a class="text-danger" href="javascript:void(0)" title="Cleaning Appliances">Cleaning
+                                    Appliances</a></h3>
+                                <ul>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Vacuum Cleaners">Vacuum
+                                            Cleaners</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Ultrasonic Cleaners">Ultrasonic
+                                            Cleaners</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Steam Cleaners">Steam
+                                            Cleaners</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)"
+                                           title="Other Cleaning Appliances">Other Cleaning Appliances</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Electric Broom">Electric
+                                            Broom</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <h3><a class="text-danger" href="javascript:void(0)" title="Home Appliance Parts">Home
+                                    Appliance Parts</a></h3>
+                                <ul>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)"
+                                           title="Kitchen Appliance Parts">Kitchen Appliance Parts</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)"
+                                           title="Air Conditioning Appliance Parts">Air Conditioning Appliance Parts</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Home Heater Parts">Home
+                                            Heater Parts</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)"
+                                           title="Other Home Appliance Parts">Other Home Appliance Parts</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)"
+                                           title="Refrigerator Freezer Parts">Refrigerator Freezer Parts</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)"
+                                           title="Laundry Appliance Parts">Laundry Appliance Parts</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)" title="Water Heater Parts">Water
+                                            Heater Parts</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-truncate" href="javascript:void(0)"
+                                           title="Water Treatment Appliance Parts">Water Treatment Appliance Parts</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container">
+    <div class="row">
+        <div class="col-md-6 mt-3">
+            <div class="featured-company-banner owl-carousel owl-theme">
+                {% for p in suppliers %}
+                <figure class="m-0">
+                    <div class="desc"><strong>{{p.organization}}</strong></div>
+                    <a href=" {% url 'companyproduct' p.user.id %} " title="{{p.organization}}">
+                        <picture>
+                            <img alt="{{p.title}}" class="owl-lazy"
+                                 data-src="{{p.img.url}}"
+                                 src="{{p.img.url}}"
+                                 width="600" height="400" style="">
+                        </picture>
+                        <div class="desc">{{p.products}}</div>
+                    </a>
+                </figure>
+                {% endfor %}
+
+            </div>
+        </div>
+        <div class="col-md-6 mt-3">
+            <div class="featured-company-banner owl-carousel owl-theme">
+                {% for p in products %}
+                <figure class="m-0">
+                    <div class="desc"><strong>{{p.title}}</strong></div>
+                    <a href="{% url 'productdetail' p.slug %}" title="{{p.title}}">
+                        <picture>
+                            <img alt="{{p.title}}" class="owl-lazy"
+                                 data-src="{{p.image.url}}"
+                                 src="{{p.image.url}}"
+                                 width="600" height="400" style="">
+                        </picture>
+                        <div class="desc">{{p.keyfeatures}}</div>
+                    </a>
+                </figure>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container mb-2 mt-5">
+    <div class="box-shadow">
+        <div class="row">
+            <div class="col-md-7">
+                <h3 class="top-heading text-uppercase">Can't find the <span>products</span> that meets your requirement
+                    exactly?</h3>
+                <div class="row">
+                    <div class="col-md-6 pr-md-2">
+                        <div class="connect-buyer text-center">
+                            <img alt="Trade with Confidence" class="lazy"
+                                 data-src="{%  static  'images/quote/trade-with-confidence.svg' %}" height="80"
+                                 src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                 width="80">
+                            <h6 class="text-uppercase">Trade with<br>
+                                <span>Confidence</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-md-2">
+                        <div class="connect-buyer text-center">
+                            <img alt="Free quotes from Sellers" class="lazy"
+                                 data-src="{%  static  'images/quote/free-quotes-from-sellers.svg' %}" height="80"
+                                 src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                 width="80">
+                            <h6 class="text-uppercase">Free quotes from<br>
+                                <span>Sellers</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-md-6 pr-md-2">
+                        <div class="connect-buyer text-center">
+                            <img alt="Verified Connected Buyers" class="lazy"
+                                 data-src="{%  static  'images/quote/verified-connected-buyers.svg' %}" height="80"
+                                 src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                 width="80">
+                            <h6 class="text-uppercase">Verified Connected<br>
+                                <span>Buyers</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-md-2">
+                        <div class="connect-buyer text-center">
+                            <img alt="24/7 Help Center" class="lazy"
+                                 data-src="{%  static  'images/quote/24-7-help-center.svg' %}" height="80"
+                                 src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                 width="80">
+                            <h6 class="text-uppercase">24/7<br>
+                                <span>Help Center</span></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <section class="tell-us-what-you-section productQuoteRegister mt-2">
+                    <h6>Tell Us What You <span>NEED</span></h6>
+                    <form action="user/basic-signup-n/" id="quoteForm1" method="post" name="quoteForm1">
+                        <input name="affiliate" type="hidden" value="1"><input name="signup-form" type="hidden"
+                                                                               value="yes"><input name="widget_source"
+                                                                                                  type="hidden"
+                                                                                                  value="quoteForm1"><input
+                            name="source" type="hidden" value="Organic"><input name="utm_campaign" type="hidden"
+                                                                               value=""><input name="utm_medium"
+                                                                                               type="hidden"
+                                                                                               value=""><input
+                            name="utm_source" type="hidden" value=""><input name="utm_content" type="hidden"
+                                                                            value=""><input name="utm_term"
+                                                                                            type="hidden"
+                                                                                            value=""><input
+                            name="fullpageurl" type="hidden" value="https://www.eworldtrade.com"><input
+                            name="referrerurl" type="hidden" value=""><input name="pageurl" type="hidden"
+                                                                             value=""><input name="external_refferer"
+                                                                                             type="hidden"
+                                                                                             value=""><input
+                            name="ip2loc_ip" type="hidden" value="103.208.71.73"><input name="ip2loc_isp" type="hidden"
+                                                                                        value=""><input
+                            name="ip2loc_org" type="hidden" value=""><input name="ip2loc_country" type="hidden"
+                                                                            value="India"><input name="ip2loc_region"
+                                                                                                 type="hidden"
+                                                                                                 value="MAHARASHTRA"><input
+                            name="ip2loc_city" type="hidden" value="MUMBAI"> <input name="_token" type="hidden"
+                                                                                    value="k5WAhvHR2Dvr1VGQCjuC7WvSC3SsYOPcvniqmr8C">
+                        <input name="quickregister" type="hidden" value="yes"> <input name="password" type="hidden"
+                                                                                      value="JvbTpmBaZl">
+                        <div class="form-row mt-3">
+                            <div class="col-sm-12">
+                                <label>Requirements</label> <input autocomplete="off" class="form-control"
+                                                                   name="products_want"
+                                                                   placeholder="Enter product/service name" required=""
+                                                                   title="Comma seperated keywords" type="text">
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Name</label> <input autocomplete="name" class="form-control" name="full_name"
+                                                           placeholder="Full Name" required=""
+                                                           title="Please enter your Full Name here" type="text">
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Email</label> <input autocomplete="email" class="form-control" name="email"
+                                                            placeholder="name@company.com" required=""
+                                                            title="Please enter your Email Address here" type="email">
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Company</label> <input autocomplete="organization" class="form-control"
+                                                              name="company_name" placeholder="Company Name" required=""
+                                                              title="Please enter your Company Name here" type="text">
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Phone Number</label> <input class="form-control tel" maxlength="30"
+                                                                   name="phone_number" placeholder="Phone / Mobile"
+                                                                   required=""
+                                                                   title="Please enter your Phone or Mobile Number here"
+                                                                   type="tel">
+                            </div>
+                            <div class="col-md-12">
+                                <label>I am a</label> <select class="form-control" name="type" required="">
+                                <option selected value="seller">
+                                    Seller
+                                </option>
+                                <option value="buyer">
+                                    Buyer
+                                </option>
+                            </select>
+                            </div>
+                            <div class="col-12 form-p-0 text-center">
+                                <button class="btn btn-outline-danger" type="submit">Submit</button>
+                            </div>
+                            <p class="text-center"><span>*</span> To achieve our mission we provide all the necessary
+                                functionalities to buyers and sellers that help them in developing the voice of their
+                                business and to expand worldwide.</p>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="pru-section-1 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="premiumServiceCarouselComponent-section" data-route="premium-services">
+                    <h3>Packages</h3>
+                    <div class="pkg-scroll-col">
+                        <div class="lbl-pkg">
+                            <div class="owl-carousel owl-theme owl-drag" id="premiumServiceCarousel">
+                                <div class="item">
+                                    <a href="javascript:void(0)"><span><img
+                                            alt="Banner Premium Service. Contact More Buyer and Grow your business. In only USD 1499 for 365 days."
+                                            class="owl-lazy" data-src="{% static 'svg/package/package-img.png' %}"
+                                            height="44"
+                                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                            width="138"></span></a>
+                                </div>
+                                <div class="item">
+                                    <a href="javascript:void(0)"><span><img
+                                            alt="KAM Premium Service. Contact More Buyer and Grow your business. In only USD 1499 for 365 days."
+                                            class="owl-lazy" data-src="{% static 'svg/package/package-img.png' %}"
+                                            height="44"
+                                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                            width="138"></span></a>
+                                </div>
+                                <div class="item">
+                                    <a href="javascript:void(0)"><span><img
+                                            alt="Banner Premium Service. Contact More Buyer and Grow your business. In only USD 1499 for 365 days."
+                                            class="owl-lazy" data-src="{% static 'svg/package/package-img.png' %}"
+                                            height="44"
+                                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                            width="138"></span></a>
+                                </div>
+                                <div class="item">
+                                    <a href="javascript:void(0)"><span><img
+                                            alt="KAM Premium Service. Contact More Buyer and Grow your business. In only USD 1499 for 365 days."
+                                            class="owl-lazy" data-src="{% static 'svg/package/package-img.png' %}"
+                                            height="44"
+                                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                            width="138"></span></a>
+                                </div>
+
+
+                            </div>
+                            <span><img alt="Premium Services" class="lazy"
+                                       data-src="{%  static  'images/prem-pro-icon.png' %}"
+                                       src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></span>
+                        </div>
+                        <ul class="premiumServicesCarouselFeatureList">
+                            <li class="text-truncate">
+                                <span>Premium Features</span>
+                                <ul>
+                                    <li class="text-truncate"><span>Trusted Supplier Premium Membership Flag</span></li>
+                                    <li class="text-truncate"><span>Profile Listing on B2B eWorldTrade</span></li>
+                                    <li class="text-truncate"><span>Connected Buyers</span></li>
+                                    <li class="text-truncate"><span>Showcase Product Posting</span></li>
+                                    <li class="text-truncate"><span>Online Products Exposure</span></li>
+                                    <li class="text-truncate"><span>Buyer's Connectivity & Follow-ups</span></li>
+                                    <li class="text-truncate"><span>Performance & Buyer Report</span></li>
+                                    <li class="text-truncate"><span>Access to Global Buyer Directory</span></li>
+                                    <li class="text-truncate"><span>Unlimited Product Posting</span></li>
+                                    <li class="text-truncate"><span>Buyer Alerts</span></li>
+                                    <li class="text-truncate"><span>Sub Accounts</span></li>
+                                    <li class="text-truncate"><span>Upload Company Certificate / Video / Brochure / Images</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="text-truncate">
+                                <span>H2H (Human Assistance)</span>
+                                <ul>
+                                    <li class="text-truncate"><span>Customer Support Assistance</span></li>
+                                    <li class="text-truncate"><span>Key Account Manager</span></li>
+                                    <li class="text-truncate"><span>Email Marketing Campaign</span></li>
+                                    <li class="text-truncate"><span>Extensive Product Research & Analysis</span></li>
+                                    <li class="text-truncate"><span>Tradeshow Facilitation</span></li>
+                                </ul>
+                            </li>
+                            <li class="text-truncate">
+                                <span>Digital Services</span>
+                                <ul>
+                                    <li class="text-truncate"><span>Professional Logo</span></li>
+                                    <li class="text-truncate"><span>Professional Website</span></li>
+                                    <li class="text-truncate"><span>Google AdWords (SEM)</span></li>
+                                    <li class="text-truncate"><span>Google Search Engine Optimization (SEO)</span></li>
+                                    <li class="text-truncate"><span>White Board / 2D / Motion Graphic Video</span></li>
+                                    <li class="text-truncate"><span>Social Media Marketing</span></li>
+                                    <li class="text-truncate"><span>Logo Stationary, Brochure Designing</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btm-pkg-btn">
+                        <a href="javascript:void(0)" title="Premium Services">Let&rsquo;s take a look</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="reg-channel-col">
+                    <h3>Regional Channel</h3>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)" title="China"><i class="flag-icon flag-icon-cn"></i> <span>China</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" title="Turkey"><i class="flag-icon flag-icon-tr"></i> <span>Turkey</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" title="USA"><i class="flag-icon flag-icon-us"></i>
+                                <span>USA</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" title="Japan"><i class="flag-icon flag-icon-jp"></i> <span>Japan</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" title="Malaysia"><i class="flag-icon flag-icon-my"></i> <span>Malaysia</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" title="Egypt"><i class="flag-icon flag-icon-eg"></i> <span>Egypt</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" title="Germany"><i class="flag-icon flag-icon-de"></i> <span>Germany</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" title="India"><i class="flag-icon flag-icon-in"></i> <span>India</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="ftr-tradeshows-col featureTradeShowComponent">
+                    <h3>Upcoming Tradeshows</h3>
+                    <div class="owl-carousel owl-theme" id="tradeShowCarousel">
+                        <div class="item">
+                            <ul>
+                                <li>
+                                    <a href="javscript:void(0)"
+                                       title="China Zigong Cultural Industry (Simulation Dinosaur)-Middle East Digital Expo"><span><img
+                                            alt="China Zigong Cultural Industry (Simulation Dinosaur)-Middle East Digital Expo"
+                                            class="owl-lazy" data-src="{%  static  'images/upcomping.png' %}"
+                                            height="55"
+                                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                            width="55"></span>
+                                        <h6>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                            industry. </h6>
+                                        <p>Date : 30 - 2 November, 2020<br>
+                                            Venue : Virtual Meeting</p></a>
+                                </li>
+                                <li>
+                                    <a href="javscript:void(0)"
+                                       title="China-Middle East and North Africa(Morocco) International Trade Digital Expo"><span><img
+                                            alt="China-Middle East and North Africa(Morocco) International Trade Digital Expo"
+                                            class="owl-lazy" data-src="{%  static  'images/upcomping.png' %}"
+                                            height="55"
+                                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                            width="55"></span>
+                                        <h6>Lorem Ipsum has been the industry's standard dummy text ever since the
+                                            1500s.</h6>
+                                        <p>Date : 19 - 28 November, 2020<br>
+                                            Venue : Virtual Meeting</p></a>
+                                </li>
+                                <li>
+                                    <a href="javscript:void(0)"
+                                       title="Jiangsu-UAE Energy &amp; Power Online Trade Fair"><span><img
+                                            alt="Jiangsu-UAE Energy &amp; Power Online Trade Fair" class="owl-lazy"
+                                            data-src="{%  static  'images/upcomping.png' %}" height="55"
+                                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                            width="55"></span>
+                                        <h6>It is a long established fact that a reader will be distracted by the
+                                            readable content.</h6>
+                                        <p>Date : 9 - 12 November, 2020<br>
+                                            Venue : Virtual Meeting</p></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="item">
+                            <ul>
+                                <li>
+                                    <a href="javscript:void(0)"
+                                       title="China Zigong Cultural Industry (Simulation Dinosaur)-Middle East Digital Expo"><span><img
+                                            alt="China Zigong Cultural Industry (Simulation Dinosaur)-Middle East Digital Expo"
+                                            class="owl-lazy" data-src="{%  static  'images/upcomping.png' %}"
+                                            height="55"
+                                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                            width="55"></span>
+                                        <h6>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                            industry. </h6>
+                                        <p>Date : 30 - 2 November, 2020<br>
+                                            Venue : Virtual Meeting</p></a>
+                                </li>
+                                <li>
+                                    <a href="javscript:void(0)"
+                                       title="China-Middle East and North Africa(Morocco) International Trade Digital Expo"><span><img
+                                            alt="China-Middle East and North Africa(Morocco) International Trade Digital Expo"
+                                            class="owl-lazy" data-src="{%  static  'images/upcomping.png' %}"
+                                            height="55"
+                                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                            width="55"></span>
+                                        <h6>Lorem Ipsum has been the industry's standard dummy text ever since the
+                                            1500s.</h6>
+                                        <p>Date : 19 - 28 November, 2020<br>
+                                            Venue : Virtual Meeting</p></a>
+                                </li>
+                                <li>
+                                    <a href="javscript:void(0)"
+                                       title="Jiangsu-UAE Energy &amp; Power Online Trade Fair"><span><img
+                                            alt="Jiangsu-UAE Energy &amp; Power Online Trade Fair" class="owl-lazy"
+                                            data-src="{%  static  'images/upcomping.png' %}" height="55"
+                                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                            width="55"></span>
+                                        <h6>It is a long established fact that a reader will be distracted by the
+                                            readable content . </h6>
+                                        <p>Date : 9 - 12 November, 2020<br>
+                                            Venue : Virtual Meeting</p></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="item">
+                            <ul>
+                                <li>
+                                    <a href="javscript:void(0)"
+                                       title="China Zigong Cultural Industry (Simulation Dinosaur)-Middle East Digital Expo"><span><img
+                                            alt="China Zigong Cultural Industry (Simulation Dinosaur)-Middle East Digital Expo"
+                                            class="owl-lazy" data-src="{%  static  'images/upcomping.png' %}"
+                                            height="55"
+                                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                            width="55"></span>
+                                        <h6>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                            industry. </h6>
+                                        <p>Date : 30 - 2 November, 2020<br>
+                                            Venue : Virtual Meeting</p></a>
+                                </li>
+                                <li>
+                                    <a href="javscript:void(0)"
+                                       title="China-Middle East and North Africa(Morocco) International Trade Digital Expo"><span><img
+                                            alt="China-Middle East and North Africa(Morocco) International Trade Digital Expo"
+                                            class="owl-lazy" data-src="{%  static  'images/upcomping.png' %}"
+                                            height="55"
+                                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                            width="55"></span>
+                                        <h6>Lorem Ipsum has been the industry's standard dummy text ever since the
+                                            1500s.</h6>
+                                        <p>Date : 19 - 28 November, 2020<br>
+                                            Venue : Virtual Meeting</p></a>
+                                </li>
+                                <li>
+                                    <a href="javscript:void(0)"
+                                       title="Jiangsu-UAE Energy &amp; Power Online Trade Fair"><span><img
+                                            alt="Jiangsu-UAE Energy &amp; Power Online Trade Fair" class="owl-lazy"
+                                            data-src="{%  static  'images/upcomping.png' %}" height="55"
+                                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                            width="55"></span>
+                                        <h6>It is a long established fact that a reader will be distracted by the
+                                            readable content. </h6>
+                                        <p>Date : 9 - 12 November, 2020<br>
+                                            Venue : Virtual Meeting</p></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <div class="item">
+                            <ul>
+                                <li>
+                                    <a href="https://www.eworldtrade.com/events/plastic-and-packaging/" title="Plasti&amp;Pack Pakistan"><span><img alt="Plasti&amp;Pack Pakistan" class="owl-lazy" data-src="https://euimg.eworldtrade.com/uploads/events/logo/6/1/plastic-and-packaging.JPG" height="55" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" width="55"></span>
+                                    <h6>Plasti&amp;Pack Pakistan</h6>
+                                    <p>Date : 27 - 29 July, 2019<br>
+                                    Venue : Karachi Expo Centre</p></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.eworldtrade.com/events/stonesurface-trade-show/" title="STONE &amp; SURFACE SAUDI ARABIA 2019"><span><img alt="STONE &amp; SURFACE SAUDI ARABIA 2019" class="owl-lazy" data-src="https://euimg.eworldtrade.com/uploads/events/logo/0/9/stonesurface-trade-show.jpg" height="55" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" width="55"></span>
+                                    <h6>STONE &amp; SURFACE SAUDI ARABIA 2019</h6>
+                                    <p>Date : 21 - 23 April, 2019<br>
+                                    Venue : Jeddah Centre for Forums &amp; Events</p></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.eworldtrade.com/events/international-building-and-construction-expo/" title="The big 5"><span><img alt="The big 5" class="owl-lazy" data-src="https://euimg.eworldtrade.com/uploads/events/logo/5/2/International Building and construction expo.jpg" height="55" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" width="55"></span>
+                                    <h6>The big 5</h6>
+                                    <p>Date : 26 - 29 November, 2018<br>
+                                    Venue : Dubai World Trade Centre (Dubai Exhibition Centre)</p></a>
+                                </li>
+                            </ul>
+                        </div> -->
+                        <!-- <div class="item">
+                            <ul>
+                                <li>
+                                    <a href="https://www.eworldtrade.com/events/international-air-conditioning-refrigeration-exhibition/" title="MEGA CLIMA EXPO – EAST AFR?CA"><span><img alt="MEGA CLIMA EXPO – EAST AFR?CA" class="owl-lazy" data-src="https://euimg.eworldtrade.com/uploads/events/logo/6/0/International Air Conditioning &amp; Refrigeration Exhibition.png' %}" height="55" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" width="55"></span>
+                                    <h6>MEGA CLIMA EXPO – EAST AFR?CA</h6>
+                                    <p>Date : 5 - 7 September, 2019<br>
+                                    Venue : Safex Expo Center</p></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.eworldtrade.com/events/Hvac%20-%20air%20conditioning%20-%20refrigerator/" title="MEGA CLIMA WEST AFRICA 2019"><span><img alt="MEGA CLIMA WEST AFRICA 2019" class="owl-lazy" data-src="https://euimg.eworldtrade.com/uploads/events/logo/7/0/Hvac - air conditioning - refrigerator.JPG" height="55" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" width="55"></span>
+                                    <h6>MEGA CLIMA WEST AFRICA 2019</h6>
+                                    <p>Date : 11 - 13 July, 2019<br>
+                                    Venue : Landmark Centre, Lagos, Nigeria</p></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.eworldtrade.com/events/The-Big-5-Construct-Egypt/" title="The Big 5 Construct Egypt"><span><img alt="The Big 5 Construct Egypt" class="owl-lazy" data-src="https://euimg.eworldtrade.com/uploads/events/logo/9/2/The-Big-5-Construct-Egypt.jpg" height="55" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" width="55"></span>
+                                    <h6>The Big 5 Construct Egypt</h6>
+                                    <p>Date : 18 - 21 September, 2018<br>
+                                    Venue : Egypt International Exhibition Center</p></a>
+                                </li>
+                            </ul>
+                        </div> -->
+                        <!-- <div class="item">
+                            <ul>
+                                <li>
+                                    <a href="https://www.eworldtrade.com/events/The-11th-Guangzhou-International-Garden-Machinery-Fair/" title="The 11th Guangzhou International Garden Machinery Fair (GMF 2019)"><span><img alt="The 11th Guangzhou International Garden Machinery Fair (GMF 2019)" class="owl-lazy" data-src="https://euimg.eworldtrade.com/uploads/events/logo/7/4/The-11th-Guangzhou-International-Garden-Machinery-Fair.jpg" height="55" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" width="55"></span>
+                                    <h6>The 11th Guangzhou International Garden Machinery Fair (GMF 2019)</h6>
+                                    <p>Date : 17 - 19 March, 2019<br>
+                                    Venue : Guangzhou International Sourcing Center</p></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.eworldtrade.com/events/international-apparel-and-textile%20Fair/" title="International Apparel and Textile Fair"><span><img alt="International Apparel and Textile Fair" class="owl-lazy" data-src="https://euimg.eworldtrade.com/uploads/events/logo/9/8/international-apparel-and-textile Fair.jpg" height="55" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" width="55"></span>
+                                    <h6>International Apparel and Textile Fair</h6>
+                                    <p>Date : 12 - 14 November, 2018<br>
+                                    Venue : Dubai World Trade Centre (Dubai Exhibition Centre)</p></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.eworldtrade.com/events/china-smart-customs-exhibition-and-conference/" title="China Smart Customs Exhibition &amp; Conference"><span><img alt="China Smart Customs Exhibition &amp; Conference" class="owl-lazy" data-src="https://euimg.eworldtrade.com/uploads/events/logo/5/9/Conference.png' %}" height="55" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" width="55"></span>
+                                    <h6>China Smart Customs Exhibition &amp; Conference</h6>
+                                    <p>Date : 15 - 17 August, 2018<br>
+                                    Venue : Shanghai New International Expo Centre</p></a>
+                                </li>
+                            </ul>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="pru-section-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4><span>Our Premium</span> Suppliers</h4>
+                <div class="prem-supplier-slider owl-carousel owl-theme" id="featuredSuppliers">
+                    <div class="item">
+                        <ul>
+                            {%for p in suppliers %}
+                            <li>
+                                <a href=" {% url 'companyproduct' p.user.id %} "><img alt="{{p.title}}" class="owl-lazy"
+                                                                                      data-src="{{p.img.url}}"
+                                                                                      height="78" src="data:image/png"
+                                                                                      width="78">
+                                    <small><p>{{p.organization}}</p></small>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-md-0">
+                <div class="successStoriesComponent pru-section-2" onclick="window.location.href='">
+                    <h4><span>Success</span> Stories</h4>
+                    <div class="testimonails-slider owl-carousel owl-theme">
+                        <div class="item">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s.</p>
+                            <div class="author-story">
+                                <i><img alt="Damien Pan" class="owl-lazy"
+                                        data-src="{%  static  'images/success-story/success-story-img.png' %}"
+                                        src="data:image/png"></i> <span><b>S.Manager Name</b> Sales Manager</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <p>when an unknown printer took a galley of type and scrambled it to make a type specimen
+                                book. It has survived not only five centuries.</p>
+                            <div class="author-story">
+                                <i><img alt="Aileen" class="owl-lazy"
+                                        data-src="{%  static  'images/success-story/success-story-img.png' %}"
+                                        src="data:image/png"></i>
+                                <span><b>O.S.Manager Name</b> Overseas Sales Manager</span>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <p>It is a long established fact that a reader will be distracted by the readable content of
+                                a page when looking at its layout.</p>
+                            <div class="author-story">
+                                <i><img alt="Halen Cadli" class="owl-lazy"
+                                        data-src="{%  static  'images/success-story/success-story-img.png' %}"
+                                        src="data:image/png"></i> <span><b>Director Name</b> Director</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about-us-section ">
+    <div class="container text-center">
+        <h2>About Goimex</h2>
+        <div class="owl-carousel owl-theme" id="owlAbout">
+            <div class="item">
+                <h3>Global B2B Market place</h3>
+                <p>Goimex is one of the fastest growing online wholesale B2B marketplace place with
+                    innovative features specially developed for traders to reach global level and set new
+                    milestones. To achieve our mission we provide all the necessary functionalities to
+                    buyers and sellers that help them in developing the voice of their business and to
+                    expand worldwide. We have engineered our portal to be highly user-friendly allowing
+                    buyers to connect with sellers quickly. eWorldTrade entered the market with a passion to
+                    address business to business market challenges with the commitment to provide traders
+                    satisfaction by all possible means and provide them a ground for fast, reliable and
+                    transparent trading.</p> <a href="#" id="m_readmore"
+                                                title="Learn More About Us">Learn more about us</a>
+                </p>
+            </div>
+            <div class="item">
+                <p>Through years of experience we have integrated smart ways to connect buyers and sellers across the
+                    globe over a comprehensive digital trading platform. Goimex encourages traders from all
+                    over the world to be the part of an exciting B2B portal packed with incredible features making the
+                    connectivity of genuine buyers with wonderful sellers on a transparent B2B platform with guaranteed
+                    profitability and business expansion opportunities for both parties.</p>
+                <h6>How can Goimex Help Your Business Meet Unparalleled Highs</h6>
+                <p>Goimex is not just an ordinary B2B website that promotes safe trading, but it is based on an
+                    effective principle that is aimed to develop businesses for its partners to let them get maximum
+                    profitability and unstoppable growth with good business exposure. We love to provide and design most
+                    effective and cost friendly one-stop solution packages for your business growth.</p>
+            </div>
+            <div class="item">
+                <p>We have designed our marketplace for anyone to buy and sell products in
+                    bulk quantities and ensuring secure, fast and versatile payment methods. By empowering
+                    millions of people to trade globally Goimex is setting new standards of catering fierce
+                    B2B marketplace challenges and providing a golden opportunity to every entrepreneur to turn
+                    their dreams into reality.</p>
+                <h6>Don’t Miss out to Know What Makes Us “Goimex Global”</h6>
+                <p>We are the only B2B marketplace that guarantees buyers and profitability as we have
+                    shaped innovative strategies for smart trading. To make the overall trading process
+                    authentic our associates constantly verifies seller identities, offerings and physical
+                    existence through an automated process.</p>
+            </div>
+
+            <div class="item">
+                <h6>Choose what Suites Best For You!</h6>
+                <p>As an intelligent business platform we constantly look forward to enhance
+                    our services to help businesses earn more and unveil new market expansion opportunities.
+                    Through our seamless model buyers can explore millions of products at wholesale prices
+                    offered by verified and trusted suppliers. We are intended to provide services to every
+                    members that have never been delivered by any B2B marketplace by ensuring authentic, quality
+                    driven and business boosting mechanism worldwide. Our B2B platform is shaped for every
+                    stakeholder to enjoy win-win marketplace that only guarantees unsurpassed services but
+                    assure quality standards for long lasting business relationships. To make sure that everyone
+                    across every region enjoy our services and develop their own brands with our extensive
+                    digital marketing service. To further help wholesale buyers and suppliers we have created
+                    country exclusive portal......</p>
+                <a href="#" id="m_readmore"
+                   title="Learn More About Us">Learn more about us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- new section add from here -->
+<section class="Sell on Goimex">
+    <div class="hot-buttons">
+        <div class="container">
+            <div class="flex-box row">
+                <div class="left ">
+                    <div class="title scrollTopHomePage">
+                        <div class="h2">Sell on Goimex</div>
+                    </div>
+                    <div class="links">
+                        <ul class="flex-box">
+                            <li>
+                                <a class="link" href="javascript:void(0)">
+                                    <i class="fa fa-bullhorn"></i>
+                                    <span>Tenders<span>Here are the most relevant requests for quotation</span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="link" href="javascript:void(0)">
+                                    <i class="fa fa-product-hunt"></i>
+                                    <span>Promotion<span>Pay only on results!</span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="link" href="javascript:void(0)">
+                                    <i class="fa fa-plus"></i>
+                                    <span>Add company<span>Trade worldwide on Goimex </span></span></a>
+                            </li>
+                            <li>
+                                <a class="link" href="javascript:void(0)" target="_blank">
+                                    <i class="fa fa-check-circle"></i>
+                                    <span>Verified supplier<span>Increase customer trust and receive more inquiries</span></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right ">
+                    <div class="title scrollTopHomePage">
+                        <div class="h2">Buy on Goimex</div>
+                    </div>
+                    <div class="links">
+                        <ul class="flex-box">
+                            <li>
+                                <a class="link" href="javascript:void(0)" style="margin-right: 0">
+                                    <i class="fa fa-archive"></i>
+                                    <span>Suppliers<span>Suppliers from all over the world</span></span>
+                                </a>
+                                <div class="hidden-block">
+                                    <a href="javascript:void(0)">Product suppliers</a>
+                                    <a href="javascript:void(0)">Service suppliers</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="link" href="javascript:void(0)" style="margin-right: 0">
+                                    <i class="fa fa-product-hunt"></i>
+                                    <span>Products and services<span>More than 1000 categories of wholesale products and business services</span></span>
+                                </a>
+                                <div class="hidden-block">
+                                    <a href="javascript:void(0)">Products</a>
+                                    <a href="javascript:void(0)">Services</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="link" href="javascript:void(0)">
+                                    <i class="fa fa-american-sign-language-interpreting"></i>
+                                    <span>Protect deal<span>Make safe deals</span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="link" href="javascript:void(0)">
+                                    <i class="fa fa-quote-left"></i>
+                                    <span>Get quotes<span>Create one request - get multiple offers</span></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- new section End  here -->
+{% include 'buyerseller/footer.html' %}
+</body>
+</html>

@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<style>
+.blue-color {
+color:blue;
+}
+.green-color {
+color:green;
+}
+.teal-color {
+color:teal;
+}
+.yellow-color {
+color:yellow;
+}
+.red-color {
+color:red;
+}
+</style>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div id='info' class="col-lg-12 mx-auto">
+
+            <div class="card bg-warning text-white">
+                <div class="card-header"><h4>My Catalog</h4></div>
+            </div>
+            <hr>
+             <a class="btn btn-danger btn-sm mt-1 bmb-1"   href="{% url 'cart-create' %}">Add New Catalog</a>
+            <hr>
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>ProductImage</th>
+                    <th>Title</th>
+                    <th>Slug</th>
+                    <th>Key Features</th>
+                    <th>Category</th>
+                    <th>Selling Price</th>
+                    <th>ProductDescription</th>
+                    <th>Posted on</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                    <th>View</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for prod in product %}
+                <tr class="table-primary">
+                    <td><a href="#"> {{prod.id}}</a></td>
+                    <td><a href="{{prod.image.url}}" target="_blank"><img src="{{prod.image.url}}" target="_blank"
+                                                                          style="height: 100px;" alt=""></td>
+                    <td>{{prod.title}}</td>
+                    <td>{{prod.slug}}</td>
+                    <td><small>{{prod.keyfeatures}}</small></td>
+                    <td><small>{{prod.category}}</small></td>
+                    <td>{{prod.selling_price}}/-</td>
+                    <!----<td><small>{{prod.description|slice:":100"|safe}}</small></td>--->
+                    <td><small>{{prod.description|striptags|truncatechars:140 }}</small></td>
+                    <td>{{prod.created_on|timesince}} ago</td>
+                    <td>{{prod.get_status_display}}</td>
+                    <td>
+                        {% if prod.status == 1 %}
+                        <a title="Delete"  href="{% url 'cart-delete' prod.id %}" class="btn btn-sm red btnDelete">
+                            <i class="fa fa-trash fa-3x  blue-color" ></i>
+                        {% else %}
+                        <a title="Edit" class="btn btn-secondary btn-sm mt-1 bmb-1" href="{% url 'cart-update' prod.id %}">
+                            <i class="fa fa-edit fa-3x blue-color" ></i>
+                        {% endif %}
+                    </td>
+                    <td>{{prod.view_count}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<nav aria-label="...">
+    <ul class="pagination">
+        {% if product.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ product.previous_page_number }}">Previous</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        {% endif %}
+
+        {% for i in product.paginator.page_range %}
+        {% if i == product.number %}
+        <li class="page-item active"><a class="page-link">{{i}}</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if product.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ product.next_page_number }}">Next</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+
+

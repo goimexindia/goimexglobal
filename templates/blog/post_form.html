@@ -1,0 +1,20 @@
+{% extends "blog/newbase.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}New Post{% endblock %}
+{% block content %}
+    <div class="content-section">
+        <form action="" method="POST" enctype="multipart/form-data">
+             {% csrf_token %}
+              <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Post Buy/Sale Offer</legend>
+                     {{ form.media }}
+                     {{ form|crispy }}
+              </fieldset>
+
+             <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">POST</button>
+             </div>
+        </form>
+    </div>
+{% endblock content %}

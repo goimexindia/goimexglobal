@@ -1,0 +1,89 @@
+{% extends "accounts/adminprofilebase.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Profile{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<style>
+.blue-color {
+color:blue;
+}
+.green-color {
+color:green;
+}
+.teal-color {
+color:teal;
+}
+.yellow-color {
+color:yellow;
+}
+.red-color {
+color:red;
+}
+</style>
+<style>
+      table,
+      td,
+      th {
+        padding: 10px;
+        border: 2px solid #1c87c9;
+        border-radius: 5px;
+        background-color: #e5e5e5;
+        text-align: center;
+      }
+
+
+</style>
+<div class="container-fluid mt-3">
+    <div id='products' class="col-lg-12 mx-auto">
+        <div class="row mx-auto">
+            <div class="col-md-8">
+                <div class="card bg-warning text-white">
+                    <div class="card-header"><h4>My Previous Orders</h4></div>
+                </div>
+                <hr>
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>SN</th>
+                        <th>Order ID</th>
+                        <th>Amount</th>
+                        <th>Ordered on</th>
+                        <th>Status</th>
+                        <th>Order Name</th>
+                        <th>Shipping Address</th>
+                        <th>Mobile</th>
+                        <th>eMail</th>
+                        <th>Details</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for ord in myorders %}
+                    <tr class="table-primary">
+                        <td>{{forloop.counter}}</td>
+                        <td> #ORDER_{{ord.id}}</a></td>
+                        <td>{{ord.total}}</td>
+                        <td>{{ord.created_at|timesince}} ago</td>
+                        <td>{{ord.order_status}}</td>
+                        <td>{{ord.ordered_by}}</td>
+                        <td>{{ord.shipping_address}}</td>
+                        <td>{{ord.mobile}}</td>
+                        <td>{{ord.email}}</td>
+                        <td>
+                            <a title="View" href="{% url 'customerorderdetail' ord.id  %}"
+                               class="btn btn-primary btn-sm mt-1 bmb-1"><i class="fa fa-street-view fa-3x blue-color" ></i>
+                         </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

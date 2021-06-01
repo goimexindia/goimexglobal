@@ -1,0 +1,53 @@
+{% extends "blog/newbase.html" %}
+{% load crispy_forms_tags %}
+{% block title %}RFQ{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h2 class="c-heading main-heading multi-heading">Tell suppliers <span>what you need</span></h2>
+            <div class="col-xs-12 col-sm-12 col-md-8 left-container">
+                <h4 class="c-heading heading-rfq">Complete Your RFQ</h4>
+                <hr>
+            </div>
+            <p>The more specific information, the more accurately we can match your request to the right supplier.</p>
+            <hr>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form|crispy }}
+                <hr>
+                <small class="text-muted">
+                    <p>By clicking POST RFQ, you agree to our Terms and that you have read our Data UsePolicy, including
+                        our Cookie Use.</p></small>
+                <button class="btn btn-danger btn-lg">POST RFQ</button>
+            </form>
+        </div>
+        <div class="col-md-4 mx-auto">
+            <hr>
+            <div class="container-fluid">
+                <h6 style="color:Navy;"> Scoring benchmark system</h6>
+                <p style="color:crimson;">Assists you in providing as much product requirement details as possible, so
+                    as to get better
+                    &amp; faster responses from suppliers
+                </p>
+                <hr>
+                <div class="container">
+                    <h6 style="color:Navy;">Absolutely Free</h6>
+                    <p style="color:crimson;">Available for all worldwide buyers at no cost</p>
+                </div>
+                <hr>
+                <h6 style="color:Navy;">How it Works</h6>
+                <p style="color:crimson;">
+                    <li value="1">Tell us what you need by filling the form</li>
+                    <li>Receive Verified supplier details</li>
+                    <li>Compare Quotations and seal the deal</li>
+                    <li>Pay with Goimex &amp; Get 100% Buyer Protection</li>
+                </p>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

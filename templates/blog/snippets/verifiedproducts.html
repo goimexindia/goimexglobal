@@ -1,0 +1,189 @@
+{% load static %}
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+<!-------
+<section class="ft-prd-verfy-sup featuredProductThumbnailComponent">
+    <div class="container">
+
+        <div class="row">
+            {% for p in products %}
+            <div class="column">
+                <img class="demo cursor" src="{{p.image.url}}" style="width:100%" onclick="currentSlide(1)"
+                     alt="The Woods">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+----->
+
+<section class="ft-prd-verfy-sup featuredProductThumbnailComponent">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="lbo-brdr"><span>Featured Products</span> from Verified Suppliers <i><img
+                        alt="Featured Products from Verified Suppliers" class="lazy"
+                        data-src="{% static 'images/verified-supplier-icon.png' %}"
+                        src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></i> <a
+                        class="viewMore d-none d-md-block" href="{% url 'ecomerce' %}" title="All Company">- View More
+                    -</a></h4>
+            </div>
+            <div class="col-md-12">
+                <div>
+                    <div class="item">
+                        <div class="row no-gutters">
+                            {% for p in products %}
+                            <div class="col-md-2 col-6">
+                                <div class="gallery">
+                                    <h6 class="card-title"><small><a
+                                            href="{% url 'productdetail' p.slug %}">{{p.title}}</a></small>
+                                        {% if p.offer %}
+                                        <span class="badge badge-secondary">Offer</span>
+                                        {% endif %}
+                                    </h6>
+
+                                    <div class="featuredProductThumbnailItem">
+                                        <a target="_blank" href="#">
+                                            <img src="{{p.image.url}}" class="img-thumbnail" alt="{{p.image}}">
+                                        </a>
+                                        <div class="desc">{{p.keyfeatures}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <nav aria-label="...">
+        <ul class="pagination">
+            {% if products.has_previous %}
+            <li class="page-item">
+                <a class="page-link"
+                   href="?page={{allorders.previous_page_number }}">Previous</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1"
+                   aria-disabled="true">Previous</a>
+            </li>
+            {% endif %}
+            {% for i in products.paginator.page_range %}
+            {% if i == products.number %}
+            <li class="page-item active"><a class="page-link">{{i}}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if products.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ products.next_page_number }}">Next</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>

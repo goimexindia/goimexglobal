@@ -1,0 +1,630 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}eCommerce{% endblock %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<style>
+.blue-color {
+color:blue;
+}
+.green-color {
+color:green;
+}
+.teal-color {
+color:teal;
+}
+.yellow-color {
+color:yellow;
+}
+.red-color {
+color:red;
+}
+</style>
+<style>
+    .fa {
+    color: #f2dd1d
+}
+
+.rating {
+    margin-left: 37%
+}
+
+
+
+
+
+</style>
+<style type="text/css">
+    .company-index-banner{
+        background-image: url("https://www.eworldtrade.com/assets/images/company/company-banner.jpg");
+         background-image: url("https://www.eworldtrade.com/assets/images/company/company-banner.jpg");
+        background-position: center center;
+        background-size: cover;
+    }
+    .company-join-banner{
+        background-image: linear-gradient(0deg,rgba(230, 29, 36, 0.6),rgba(33, 37, 41, 0.6)), url("https://www.eworldtrade.com/assets/img/disp-banner.jpg");
+        background-position: center center;
+        background-size: cover;
+    }
+
+
+
+
+
+</style>
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+
+<section class="inner-banner-leftnav company-index-banner">
+    <div class="mx-auto w-75 text-center">
+        <div>
+            <div class="text-center">
+                <h1>Premium Memberships <br></h1>
+                <span>Unlimited Business Solutions</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="premium-pricing join-free-packages">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center sec-heading d-none d-lg-block d-xl-block">
+                <h3>Our Premium <span>Packages</span></h3>
+                <h6>Premium Features and Ultimate Services</h6>
+            </div>
+
+            <div class="table-responsive-lg w-100 d-none d-lg-block d-xl-block">
+                <table cellpadding="0" cellspacing="0" width="100%" class="lite-table mt-3">
+                    <tbody id="premiumPackageComponent">
+                    <tr>
+                        <td style="background:none;" rowspan="2" class="td1 td3 height border-0" width="276"></td>
+                    </tr>
+                    <tr>
+                        <td class="height2 elite-td">
+                            <a href="#"
+                               title="E-Lite Premium Service. Contact More Buyer and Grow your business. In only USD 399 for 365 days.">
+                                <img src="https://www.eworldtrade.com/assets/svg/package/lg_elite.svg" width="138"
+                                     height="44"
+                                     alt="E-Lite Premium Service. Contact More Buyer and Grow your business. In only USD 399 for 365 days."
+                                     class="lazy" style="">
+                            </a>
+                        </td>
+                        <td class="height2 gold-td">
+                            <a href="#"
+                               title="Gold Premium Service. Contact More Buyer and Grow your business. In only USD 1499 for 365 days.">
+                                <img src="https://www.eworldtrade.com/assets/svg/package/lg_gold.svg" width="138"
+                                     height="44"
+                                     alt="Gold Premium Service. Contact More Buyer and Grow your business. In only USD 1499 for 365 days."
+                                     class="lazy" style="">
+                            </a>
+                        </td>
+                        <td class="height2 platinum-td">
+
+                            <a href="#"
+                               title="Platinum Premium Service. Contact More Buyer and Grow your business. In only USD 2499 for 365 days.">
+                                <img src="https://www.eworldtrade.com/assets/svg/package/lg_platinum.svg" width="138"
+                                     height="44"
+                                     alt="Platinum Premium Service. Contact More Buyer and Grow your business. In only USD 2499 for 365 days."
+                                     class="lazy" style="">
+                            </a>
+                        </td>
+                        <td class="height2 platinum-plus-td">
+                            <a href="#"
+                               title="Platinum + Premium Service. Contact More Buyer and Grow your business. In only USD 3999 for 365 days.">
+                                <img src="https://www.eworldtrade.com/assets/svg/package/lg_platinum_plus.svg"
+                                     width="138" height="44"
+                                     alt="Platinum + Premium Service. Contact More Buyer and Grow your business. In only USD 3999 for 365 days."
+                                     class="lazy" style="">
+                            </a>
+                        </td>
+                        <td class="height2 exclusive-td">
+                            <a href="#"
+                               title="Exclusive Premium Service. Contact More Buyer and Grow your business. In only USD 7999 for 365 days.">
+                                <img src="https://www.eworldtrade.com/assets/svg/package/lg_exclusive.svg"  width="138"
+                                     height="44"
+                                     alt="Exclusive Premium Service. Contact More Buyer and Grow your business. In only USD 7999 for 365 days."
+                                     class="lazy" style="">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 bold market text-center packageComponentMainHeading" colspan="6">Premium
+                            Features
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Trusted Supplier Premium Membership Flag</td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Profile Listing on B2B Goimex Global</td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Connected Buyers</td>
+                        <td width="170">
+                            Buyer Inquiries
+                        </td>
+                        <td width="170">
+                            Verified Buyer Inquiries
+                        </td>
+                        <td width="170">
+                            Connected Buyers
+                        </td>
+                        <td width="170">
+                            Connected A &amp; B Grade Buyers
+                        </td>
+                        <td width="170">
+                            Connected A Grade Buyers
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Showcase Product Posting</td>
+                        <td width="170">
+                            10
+                        </td>
+                        <td width="170">
+                            15
+                        </td>
+                        <td width="170">
+                            20
+                        </td>
+                        <td width="170">
+                            30
+                        </td>
+                        <td width="170">
+                            50
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Online Products Exposure</td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Buyer's Connectivity &amp; Follow-ups</td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Performance &amp; Buyer Report</td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            Yearly
+                        </td>
+                        <td width="170">
+                            Quarterly
+                        </td>
+                        <td width="170">
+                            Monthly
+                        </td>
+                        <td width="170">
+                            Weekly / Monthly
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Access to Global Buyer Directory</td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Unlimited Product Posting</td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Buyer Alerts</td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Sub Accounts</td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Upload Company Certificate / Video / Brochure /
+                            Images
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 bold market text-center packageComponentMainHeading" colspan="6">H2H (Human
+                            Assistance)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Customer Support Assistance</td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Key Account Manager</td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            Shared
+                        </td>
+                        <td width="170">
+                            01 Hour
+                        </td>
+                        <td width="170">
+                            02 Hours
+                        </td>
+                        <td width="170">
+                            08 Hours
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Email Marketing Campaign</td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Extensive Product Research &amp; Analysis</td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            Yes (Brief)
+                        </td>
+                        <td width="170">
+                            Yes (Advanced)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Tradeshow Facilitation</td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 bold market text-center packageComponentMainHeading" colspan="6">Digital
+                            Services
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Professional Logo</td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Professional Website</td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Google AdWords (SEM)</td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Google Search Engine Optimization (SEO)</td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            (5 Keywords) 1st Page Guaranteed Ranking on Google
+                        </td>
+                        <td width="170">
+                            (10 Keywords) 1st Page Guaranteed Ranking on Google
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">White Board / 2D / Motion Graphic Video</td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Social Media Marketing</td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            Basic Marketing
+                        </td>
+                        <td width="170">
+                            Advance Marketing
+                        </td>
+                        <td width="170">
+                            Paid Marketing
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td3 packageComponentSubHeading">Logo Stationary, Brochure Designing</td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-times text-warning"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                        <td width="170">
+                            <i class="fas fa-check text-success"></i>
+                        </td>
+                    </tr>
+                     <tr class="price bold market">
+                        <td class="td3">Annual Price</td>
+                        <td><span class="mony"><font class="india-pre">USD $</font><font class="font18 premium-price">399</font></span>
+                        </td>
+                        <td><span class="mony"><font class="india-pre">USD $</font><font class="font18 premium-price">1499</font></span>
+                        </td>
+                        <td><span class="mony"><font class="india-pre">USD $</font><font class="font18 premium-price">2499</font></span>
+                        </td>
+                        <td><span class="mony"><font class="india-pre">USD $</font><font class="font18 premium-price">3999</font></span>
+                        </td>
+                        <td><span class="mony"><font class="india-pre">USD $</font><font class="font18 premium-price">7999</font></span>
+                        </td>
+                    </tr>
+                    <tr id="premiumPackageCallToAction">
+                        <td style="background:#fff;" class="td3 border-0"></td>
+                        <td>
+                            <a href="#"
+                               title="E-Lite Premium Service. Contact More Buyer and Grow your business. In only USD 399 for 365 days."
+                               class="lite-btn apply">Apply Now</a>
+                        </td>
+                        <td>
+                            <a href="#"
+                               title="Gold Premium Service. Contact More Buyer and Grow your business. In only USD 1499 for 365 days."
+                               class="lite-btn apply">Apply Now</a>
+                        </td>
+                        <td>
+                            <a href="#"
+                               title="Platinum Premium Service. Contact More Buyer and Grow your business. In only USD 2499 for 365 days."
+                               class="lite-btn apply">Apply Now</a>
+                        </td>
+                        <td>
+                            <a href="#"
+                               title="Platinum + Premium Service. Contact More Buyer and Grow your business. In only USD 3999 for 365 days."
+                               class="lite-btn apply">Apply Now</a>
+                        </td>
+                        <td>
+                            <a href="#"
+                               title="Exclusive Premium Service. Contact More Buyer and Grow your business. In only USD 7999 for 365 days."
+                               class="lite-btn apply">Apply Now</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+{% endblock %}

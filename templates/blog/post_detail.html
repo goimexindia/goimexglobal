@@ -1,0 +1,113 @@
+{% extends "blog/base.html" %}
+
+<ul class="breadcrumbs">
+    <li><a href="/">Home</a></li>
+    {% for slug,name in breadcrumbs %}
+    <li><a href="/category/{{ slug }}">{{ name }}</a></li>
+    {% endfor %}
+</ul>
+
+{% block content %}
+
+<div class="container-fluid mt-3">
+    <!-- all products -->
+    <div id='products' class="col-lg-12 mx-auto">
+        <div class="row mx-auto">
+            <div class="row mx-auto" style="background-color:powderblue;">
+                <article class="media content-section">
+                    <img class="rounded-circle article-img" src="{{ post.author.profile.img.url }}"
+                         title="{{post.author.profile.bio}}">
+                    <div class="media-body">
+                        <div class="article-metadata">
+                            <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+                            <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+                            {% if object.author == user %}
+                            <div>
+                                <a class="btn btn-secondary btn-sm mt-1 bmb-1" href="{% url 'post-update' object.id %}">Update</a>
+                                <a class="btn btn-danger btn-sm mt-1 bmb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+                            </div>
+                            {% endif %}
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <a href="{{object.image.url}}" target="_blank">
+                                        <img src="{{object.image.url}}" class="img-fluid" style="object-fit: contain;"
+                                             alt=""></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4 class="article-title">{{ object.title }}</h4>
+                                    <h6>(Viewed {{object.view_count}} times)</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="b">
+                                {{ object.content|safe }}
+                                <hr>
+                                {{ object.snippet|safe }}
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="col-lg-12 mx-auto">
+    <div class="row">
+        {% for pi in photos %}
+        <div class="col-md-2 p-4">
+            <a href="{{pi.images.url}}" target="_blank">
+                <img src="{{pi.images.url}}" class="img-fluid" style="height: 100px; object-fit: contain;"
+                     alt="">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="row mx-auto" style="background-color:powderblue;">
+    <article class="media content-section">
+        {% include 'blog/snippets/postimages.html' %}
+    </article>
+</div>
+
+<hr>
+
+
+<div class="row" style="background-color:powderblue;">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-2">
+        <a class="btn btn-danger btn-lg mt-1 bmb-1" href="{% url 'blog-home' %}">Back</a>
+    </div>
+    <div class="col-md-3">
+        {% if user.is_authenticated %}
+        <a href="{% url 'pt' post.id  %}" class="btn btn-danger btn-lg mt-1 bmb-1">Contact Now</a>
+        {% else %}
+        <small><a href="{% url 'login' %}">Login to contact buyers/sellers</a></small>
+        {% endif %}
+    </div>
+    <div class="col-md-3">
+        <form action="{% url 'like' post.pk %}" method="POST">
+            {% csrf_token %}
+            {% if user.is_authenticated %}
+            {% if liked %}
+            <button type="submit" , name="post_id" value="{{ post.id }}" , class="btn btn-danger btn-lg">UnLike
+            </button>
+            {% else %}
+            <button type="submit" , name="post_id" value="{{ post.id }}" , class="btn btn-primary btn-lg">Like
+            </button>
+            {% endif %}
+            {% else %}
+            <small><a href="{% url 'login' %}">Login to like</a></small>
+            {% endif %}
+            -{{ object.likes.count }}-likes
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

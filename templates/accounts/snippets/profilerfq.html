@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-md-9">
+        <div class="card bg-warning text-white">
+                <div class="card-header"><h4>My RFQ</h4></div>
+            </div>
+            <hr>
+            <a class="btn btn-danger btn-sm mt-1 bmb-1"   href="{% url 'rfq' %}">Add New RFQ</a>
+    <hr>
+        <hr>
+        <table>
+            <thead>
+            <tr>
+                <th>ImagesUploaded</th>
+                <th>ID</th>
+                <th>Industry</th>
+                <th>Buyers Need</th>
+                <th>Keywords</th>
+                <th>Content</th>
+                <th>Qty Rqd</th>
+                <th>UOM</th>
+                <th>Buying freq.</th>
+                <th>Payment Mode</th>
+                <th>Destination</th>
+                <th>Validity</th>
+                <th>Date</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for rfqs in rfq %}
+            <tr>
+                 <td><a href="{{rfqs.image.url}}" target="_blank"><img src="{{rfqs.image.url}}" target="_blank"
+                                                                         style="width:100px;height:100px;" alt=""></td>
+                <td><a href="#">RFQ#{{rfqs.id}}</a></td>
+                <td>{{rfqs.industry}}</td>
+                <td>{{rfqs.buyer_need}}</td>
+                <td>{{rfqs.keywords}}</td>
+                <td>{{rfqs.content|safe}}</td>
+                <td>{{rfqs.qty_required}}</td>
+                <td>{{rfqs.uom}}</td>
+                <td>{{rfqs.buying_frequency}}</td>
+                <td>{{rfqs.payment_mode}}</td>
+                <td>{{rfqs.destination_port}}</td>
+                <td>{{rfqs.time_validity}}</td>
+                <td>{{rfqs.created_on|timesince}} ago</td>
+
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <hr>
+</div>

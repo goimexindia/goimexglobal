@@ -1,0 +1,148 @@
+{% extends 'accounts/adminbase.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Customer Details{% endblock %}
+
+{% block content %}
+
+{% load static %}
+<style>
+    ul {
+    list-style-type: none;
+    margin-left: 37%;
+    padding: 0
+}
+
+.rating {
+    margin-left: 37%
+}
+
+.page {
+    background-color: #dfe6e0;
+    padding: 2%;
+    margin: auto
+}
+
+.fa {
+    color: #f2dd1d
+}
+
+.card-img-top {
+    width: 90%;
+    height: 225px
+}
+
+.view {
+    background-color: #dfe6e0;
+    padding: 10px;
+    margin: 20px
+}
+
+.card {
+    width: 95%;
+    padding: 0px;
+    margin-left: 2%
+}
+
+.card-footer {
+    background-color: #ff772e;
+    font-weight: 700
+}
+
+.price {
+    color: #ff4517;
+    font-weight: 600
+}
+.spec_offer
+{
+	position: absolute;
+	top: 15px;
+	left: 16px;
+	width: 118px;
+	height: 36px;
+	background: #181818;
+}
+
+
+
+
+
+
+</style>
+<link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<div class="card bg-primary text-white">
+    <div class="card-header"><h4>Customer Order</h4>
+    </div>
+</div>
+<hr>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-lg-3 mx-auto">
+            <div class="container-fluid px-0">
+                <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
+                    <div class="d-flex">
+                        <form method="get">
+                            <div class="span2">
+                                <button class="btn btn-primary btn-block" type="submit">Search</button>
+                            </div>
+                            {% csrf_token %}
+                            {{ form.media }}
+                            {{tableFilter.form|crispy}}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='products' class="col-lg-9 mx-auto">
+
+            <div class="container">
+                <div class="col-md-12 mx-auto">
+                    <div class="row">
+                        <div class="col-md">
+                            <div>
+                                <font size="4" face="Courier New">
+                                    <table class="table table-striped">
+                                        <thead class="thead-dark">
+                                        <tr class="table-primary">
+                                            <th>Order No.</th>
+                                            <th>Order By</th>
+                                            <th>Shipping Address</th>
+                                            <th>Email</th>
+                                            <th>Mobile</th>
+                                            <th>Created at</th>
+                                            <th>Total</th>
+                                            <th>Payment Mode</th>
+                                            <th>Status</th>
+                                            <th>Username</th>
+                                        </tr>
+                                        </thead>
+                                        {% for order in orders %}
+                                        <tr>
+                                            <td><a href="{% url 'adminorderdetail' order.id %}">#ORDER_{{order.id}}</a>
+                                            </td>
+                                            <td>{{order.ordered_by}}</td>
+                                            <td>{{order.shipping_address }}</td>
+                                            <td>{{order.email }}</td>
+                                            <td>{{order.mobile }}</td>
+                                            <td>{{order.created_at|date:"M d, Y"}}</td>
+                                            <td>{{order.total}}</td>
+                                            <td>{{order.payment_method}}</td>
+                                            <td>{{order.order_status}}</td>
+                                            <td>{{order.customer.user.username}}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </table>
+                                </font>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

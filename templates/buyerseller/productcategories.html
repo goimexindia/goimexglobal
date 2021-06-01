@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}eCommerce{% endblock %}
+{% block content %}
+{% load static %}
+<br>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+<!---------
+{% include 'blog/snippets/body_snippet.html' %}
+------>
+<div class="container-fluid mt-3">
+    <!-- all products -->
+    <div id='products' class="col-lg-12 mx-auto">
+        <div class="row mx-auto">
+            <h1>{{ cat }}</h1>
+            {% for p in product_list %}
+            <div class="col-md-2 card ">
+                <div>
+                    <!--Card image-->
+                    <div class="view view-cascade overlay text-center">
+                        <h7 class="card-title"><strong><a
+                                href="{% url 'productdetail' p.slug %}">{{p.title}}</a></strong>
+                        </h7>
+                        {{p.category}}
+                        <img class="card-img-top" src="{{p.image.url}}"
+                             alt="" style="height: 200px; object-fit: contain;">
+                    </div>
+                    <!--Card Body-->
+                    <div class=" text-center">
+                        <p><small> {{p.keyfeatures|slice:":100"|safe}} </small></p>
+                        <a class="mr-2" href="{% url 'user-posts' p.author.username %}">
+                            <small>{{ p.author.profile.organization }} ( {{ p.author.profile.country.name }} )</small>
+                        </a>
+                        <!--------
+                        <div>
+                            <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a>
+                            </p>
+                        </div>
+                        ------>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% if is_paginated %}
+
+{% if page_obj.has_previous %}
+<a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+{% endif %}
+
+{% for num in page_obj.paginator.page_range %}
+{% if page_obj.number == num %}
+<a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+{% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+<a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+{% endif %}
+{% endfor %}
+
+{% if page_obj.has_next %}
+<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+<a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+{% endif %}
+
+{% endif %}
+
+
+{% if posts.has_other_pages %}
+<nav aria-label="Page navigation conatiner"></nav>
+<ul class="pagination justify-content-center">
+    {% if posts.has_previous %}
+    <li><a href="?page={{ posts.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+    {% endif %}
+    {% if posts.has_next %}
+    <li><a href="?page={{ posts.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+    {% endif %}
+</ul>
+</nav>
+{% endif %}
+
+
+<script type="text/javascript">
+        document.getElementById("id_q").value = "{{query}}"
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+<!--------------------------
+{% if sub_categories %}
+    <h3>Sub Categories</h3>
+    {% for i in sub_categories %}
+        <a href="{{ i.slug }}"> {{ i.name }} </a>
+    {% endfor %}
+{% endif %}
+
+<div class="row small-up-1 medium-up-3" >
+{% if post_set %}
+{% for i in post_set %}
+    <div class="columns">
+        <div class=" card-article-hover card">
+          <a href="{{ i.slug }}">
+            <img  src="{{ i.cover_photo.url }}">
+          </a>
+          <div class="card-section">
+            <a href="{{ i.slug }}">
+              <h6 class="article-title">{{ i.title | truncatechars:30}}</h6>
+            </a>
+          </div>
+          <div class="card-divider flex-container align-middle">
+            <a href="" class="author">{{ i.user.get_full_name }}</a>
+          </div>
+          <div class="hover-border">
+          </div>
+        </div>
+    </div>
+{% endfor %}
+{% endif %}
+</div>
+----------------->
+
+{% endblock %}

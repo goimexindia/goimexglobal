@@ -167,7 +167,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                                          title="{{ profiles.organization}}"> {{ profiles.organization}}
             </a></h5>
 
-            <p>{{ profiles.bio}} <a href=" {% url 'companyproduct' profiles.user.id %} ">Show
+            <p>{{ profiles.bio|safe}} <a href=" {% url 'companyproduct' profiles.user.id %} ">Show
                 More........</a></p>
 
             <ul class="buyer-listing-info li-width-50 full-with-ul">

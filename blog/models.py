@@ -86,14 +86,6 @@ class Post(models.Model):
     view_count = models.PositiveIntegerField(default=0)
     posttype = models.CharField(max_length=50, choices=TYPE_CHOICES, default="buyer", verbose_name="request type")
 
-    def save(self, *args, **kwargs):
-        super().save()
-       # image = Image.open(self.image.path)
-        #if image.height > 300 or image.width > 300:
-         #   output_size = (300, 300)
-          #  image.thumbnail(output_size)
-           # image.save(self.image.path)
-
     def total_likes(self):
         return self.likes.count()
 

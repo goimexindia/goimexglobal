@@ -561,9 +561,9 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <div class="row mx-auto">
             {% for p in post %}
             <div class="column">
-                <p><a href="#" class="btn btn-danger btn-sm "><small>Post</small></a></p>
+                <p><a href="{% url 'post-detail' p.id%}" class="btn btn-danger btn-sm "><small>Post</small></a></p>
                 <img src="{{p.image.url}}" alt="{{p.title}}" style="width:100%" onclick="myFunctionPost(this);">
-                <p><a href="#"><small>{{p.title}}-{{p.status}}</small></a></p>
+                <p><a href="{% url 'post-detail' p.id%}"><small>{{p.title}}-{{p.status}}</small></a></p>
                 <strong></strong>
             </div>
             {% endfor %}

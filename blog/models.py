@@ -122,11 +122,11 @@ class PostImage(models.Model):
 
     def save(self, *args, **kwargs):
         super().save()
-        images = Image.open(self.images.path)
-        if images.height > 4000 or images.width > 6000:
-            output_size = (400, 600)
-            images.thumbnail(output_size)
-            images.save(self.images.path)
+       # images = Image.open(self.images.path)
+       # if images.height > 4000 or images.width > 6000:
+       #     output_size = (400, 600)
+       #     images.thumbnail(output_size)
+       #     images.save(self.images.path)
 
 
 class Comment(models.Model):

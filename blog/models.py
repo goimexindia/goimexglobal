@@ -88,11 +88,7 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         super().save()
-        image = Image.open(self.image.path)
-        if image.height > 3000000 or image.width > 3000000:
-            output_size = (300, 300)
-            image.thumbnail(output_size)
-            image.save(self.image.path)
+
 
     def total_likes(self):
         return self.likes.count()

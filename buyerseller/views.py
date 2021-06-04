@@ -722,7 +722,7 @@ def catsearch(request):
         product = Product.objects.filter(Q(title__icontains=search_product) |
                                          Q(description__icontains=search_product))
     else:
-        product = Product.objects.all().order_by("-created_on")
+        product = Product.objects.filter(status=1).order_by("-created_on")
 
     paginator = Paginator(product, 8)  # 3 posts in each page
     page = request.GET.get('page')

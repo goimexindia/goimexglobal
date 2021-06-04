@@ -89,7 +89,7 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         super().save()
         image = Image.open(self.image.path)
-        if image.height > 300 or image.width > 300:
+        if image.height > 3000 or image.width > 3000:
             output_size = (300, 300)
             image.thumbnail(output_size)
             image.save(self.image.path)

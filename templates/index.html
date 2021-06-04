@@ -27,12 +27,31 @@ div.desc {
   text-align: center;
 }
 </style>
+<style>
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
 
+input[type=text]:focus {
+  width: 100%;
+}
+</style>
 <div class="row">
     <div class="mx-auto">
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
-                <input class="form-control mr-sm-2" type="search"
+                <input  type="text"  class="form-control mr-sm-2" type="search"
                        placeholder="Keyword for Buyer/Seller Requirement" aria-label="Search"
                        name="search">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Post <i class="fa fa-search"></i>
@@ -43,7 +62,7 @@ div.desc {
     <div class="mx-auto">
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <form class="form-inline my-2 my-lg-0" action="{% url 'cat-search' %}" method="GET">
-                <input class="form-control mr-sm-2" type="search"
+                <input   type="text" class="form-control mr-sm-2" type="search"
                        placeholder="Search here........................" aria-label="Search"
                        name="search">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Product <i
@@ -56,7 +75,7 @@ div.desc {
     <div class="mx-auto">
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <form class="form-inline my-2 my-lg-0" action="{% url 'allcompany' %}" method="GET">
-                <input class="form-control mr-sm-2" type="search"
+                <input  type="text" class="form-control mr-sm-2" type="search"
                        placeholder="Search here........................" aria-label="Search"
                        name="search">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Company <i

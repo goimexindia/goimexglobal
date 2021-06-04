@@ -237,7 +237,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
             <div class="col-md-8">
                 <h2 class="hd-rd-brdr hd-inner-link">Company Overview</h2>
                 <p>
-                <h4>{{profiles.profile.bio}}</h4></p>
+                <h4>{{profiles.profile.bio|safe}}</h4></p>
                 <div class="row">
                     <div class="col-md-4 card ">
                         <div class="card card-cascade card-ecommerce wider shadow  mx-auto ">
@@ -327,7 +327,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
             <div class="row">
                 <div class="header-banner col-lg-6 col-md-8 pl-0 pr-0 position-relative">
                     <h2 class="hd-rd-brdr hd-inner-link">About-Us</h2>
-                    <p style="color:red;"><h4>{{profiles.profile.aboutus}}</h4></p>
+                    <p style="color:red;"><h4>{{profiles.profile.aboutus|safe}}</h4></p>
                 </div>
                 <div class="header-banner col-lg-6 col-md-8 pl-0 pr-0 position-relative">
                     <div class="w3-container">
@@ -476,7 +476,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                     </div>
                     <div id="collapseOne" class="collapse show" data-parent="#accordion">
                         <div class="card-body">
-                            <p>{{profiles.profile.bio}}</p>
+                            <p>{{profiles.profile.bio|safe}}</p>
                         </div>
                     </div>
                 </div>

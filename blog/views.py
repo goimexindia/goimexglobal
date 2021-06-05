@@ -68,11 +68,11 @@ def CategoryView(request, cats):
 
 
 def ProductCategoryView(request, cats):
-    category_posts = Product.objects.filter(category=cats,status=1)
+    category_posts = Product.objects.filter(category=cats, status=1)
     category = Product.objects.values('category').distinct()
     category = Product.objects.filter(status=1).distinct('category')
-    return render(request, 'buyerseller/productcategories.html', {'cats': cats, 'product_list': category_posts, 'catlist': category})
-
+    return render(request, 'buyerseller/productcategories.html',
+                  {'cats': cats, 'product_list': category_posts, 'catlist': category})
 
 
 def search(request):
@@ -101,7 +101,7 @@ def search(request):
 
     if type_post == 'company':
         return render(request, 'blog/allcompany.html',
-                      {'posts': post_list, 'catlist': catlist,'profile':profile, 'page': page, 'type': type_post})
+                      {'posts': post_list, 'catlist': catlist, 'profile': profile, 'page': page, 'type': type_post})
     if type_post == 'buyer':
         return render(request, 'blog/homepostbuy.html',
                       {'posts': post_list, 'catlist': catlist, 'page': page, 'type': type_post})
@@ -163,7 +163,7 @@ class BuyerPostListView(ListView):
     paginate_by = 5
 
     def get_queryset(self):
-        return Post.objects.filter(status=1).order_by('-id')
+        return Post.objects.exclude(posttype='seller').filter(status=1).order_by('-id')
 
     def get_context_data(self, *args, **kwargs):
         categorylist = Post.objects.all().distinct('category')
@@ -175,7 +175,6 @@ class BuyerPostListView(ListView):
         context['posts'] = post_list
         context['catlist'] = categorylist
         return context
-
 
 
 class UserPostListView(ListView):

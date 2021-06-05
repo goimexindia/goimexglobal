@@ -1,13 +1,14 @@
-
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
+from django.http import FileResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from django.core.paginator import Paginator
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-
+import os
+from django.conf import settings
 from blog.models import Post
 from buyerseller.models import Rfq, Customer, Order, Product, Category, Admin
 from .forms import *
@@ -260,6 +261,13 @@ def terms(request):
     return render(request, 'accounts/terms.html', context)
 
 
+def faq(request):
+    filename = "faq.pdf"
+    filepath = os.path.join(settings.MEDIA_ROOT, "goimex", filename)
+    print(filepath)
+    return FileResponse(open(filepath, 'rb'), content_type='application/pdf')
+
+
 def success(request):
     context = {}
     return render(request, 'buyerseller/rfqsuccess.html', context)
@@ -298,6 +306,3 @@ class AdminCategoryListView(AdminRequiredMixin, ListView):
         cat_list = paginator.get_page(page_number)
         context['allcat'] = cat_list
         return context
-
-
-

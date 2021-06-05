@@ -157,6 +157,7 @@ class PostListView(ListView):
 class BuyerPostListView(ListView):
     model = Post
     template_name = 'blog/homepostbuy.html'  # <app>/<model>_<viewtype>.html
+    posts = Post.objects.exclude(posttype='seller').filter(status=1).order_by('-id')
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 5

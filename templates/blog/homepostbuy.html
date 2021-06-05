@@ -1,5 +1,6 @@
 {% extends "blog/newbase.html" %}
 {% block title %}Request Post{% endblock %}
+{% load static %}
 {% block content %}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -10,10 +11,11 @@
 <!---------
 {% include 'blog/snippets/body_snippet.html' %}
 ------>
+
 <br>
 {% for post in posts %}
 <article class="media content-section">
-    <img class="rounded-circle article-img" src="{{ post.author.profile.img.url }}" title="{{post.author.profile.bio}}">
+    <img class="rounded-circle article-img"  alt="{{ post.author }}" src="{{ post.author.profile.img.url }}" title="{{post.author.profile.bio}}">
     <div class="media-body">
         <div class="article-metadata">
             <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
@@ -22,9 +24,12 @@
             </small>
             <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
             <small class="text-mutted">{{ post.author.profile.country.name }}</small>
-            <small class="text-muted">
-                <a class="mr-2" href="{% url 'category' post.category %}">{{ post.posttype }}</a>
-            </small>
+            {% if post.posttype == "buyer" %}
+            <h4>Buying Lead from {{ post.author.profile.country.name }}</h4>
+            {% else %}
+            <a class="mr-2" href="{% url 'category' post.category %}">{{ post.posttype }}</a>
+            {% endif %}
+
             <!---<small class="text-muted"><a class="btn btn-default btn-xs mt-1 bmb-1" href="#">co.info&rarr;</a></small>---->
         </div>
 
@@ -78,8 +83,18 @@
 </nav>
 {% endif %}
 
+
+</section>
+
 <script type="text/javascript">
         document.getElementById("id_q").value = "{{query}}"
+
+
+
+
+
+
+
 
 
 

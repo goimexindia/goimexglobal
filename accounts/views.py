@@ -150,6 +150,9 @@ def profile(request):
     product = product_list
 
     myorders = Order.objects.filter(cart__customer=request.user.customer).order_by("-id")
+    ppostcount = Post.objects.filter(author=request.user).count()
+    pproductcount = Product.objects.filter(author=request.user).count()
+    pordercount = Order.objects.filter(customer=request.user.customer).count()
     context = {
         'u_form': u_form,
         'p_form': p_form,
@@ -157,6 +160,9 @@ def profile(request):
         'rfq': rfq,
         'myorders': myorders,
         'product': product,
+        'ppostcount': ppostcount,
+        'pordercount': pordercount,
+        'pproductcount': pproductcount,
     }
     return render(request, 'profile.html', context)
 

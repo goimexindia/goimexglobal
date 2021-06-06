@@ -41,9 +41,11 @@ def home(request):
     suppliers = Profile.object.all()
     search_post = request.GET.get('search')
     if search_post:
-        posts = Post.objects.filter(Q(title__icontains=search_post) & Q(content__icontains=search_post))
+        posts = Post.objects.exclude(posttype='buyer').filter(status=1).filter(
+            Q(title__icontains=search_post) & Q(content__icontains=search_post))
     else:
-        posts = Post.objects.all().order_by("-date_posted")
+        # posts = Post.objects.all().order_by("-date_posted")
+        posts = Post.objects.exclude(posttype='buyer').filter(status=1).order_by('-id')
 
     paginator = Paginator(posts, 5)  # 3 posts in each page
     page = request.GET.get('page')
@@ -135,16 +137,17 @@ class PostSearchListView(ListView):
 class PostListView(ListView):
     model = Post
     template_name = 'blog/home.html'  # <app>/<model>_<viewtype>.html
+    posts = Post.objects.exclude(posttype='buyer').filter(status=1).order_by('-id')
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 5
 
     def get_queryset(self):
-        return Post.objects.filter(status=1).order_by('-id')
+        return Post.objects.exclude(posttype='buyer').filter(status=1).order_by('-id')
 
     def get_context_data(self, *args, **kwargs):
         context = super(PostListView, self).get_context_data(**kwargs)
-        postss = Post.objects.filter(status=1).order_by('-id')
+        postss = Post.objects.exclude(posttype='buyer').filter(status=1).order_by('-id')
         catlist = Post.objects.all().distinct('category')
         paginator = Paginator(postss, 5)
         page_number = self.request.GET.get('page')

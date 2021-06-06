@@ -22,13 +22,13 @@
 ------>
 
 <!---->
-
+Sellers Post
 <div class="row mx-auto" style="background-color:powderblue;">
     <hr>
     {% for post in posts %}
 
     <article class="media content-section">
-        <img class="rounded-circle article-img" src="{{ post.author.profile.img.url }}"
+        <img class="rounded-circle article-img"  alt="{{ post.author }}" src="{{ post.author.profile.img.url }}"
              title="{{post.author.profile.bio}}">
         <div class="media-body">
             <div class="article-metadata">
@@ -44,7 +44,7 @@
                 <!---<small class="text-muted"><a class="btn btn-default btn-xs mt-1 bmb-1" href="#">co.info&rarr;</a></small>---->
             </div>
             <h2><a class="article-title" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></h2>
-
+                <h4>Seller Lead From {{ post.author.profile.country.name }}</h4>
             <div class="container-fluid">
                 <div class="container-fluid">
                     <div class="row">
@@ -54,7 +54,7 @@
                             </p>
                         </div>
                         <div class="col-sm-9 col-md-6 col-lg-7 bg-light">
-                            <img class="card-img-top" src="{{post.image.url}}"
+                            <img class="card-img-top"   alt="{{ post.author }} No Photos" src="{{post.image.url}}"
                                  alt="" style="height: 200px; object-fit: contain;">
                             <p class="article-content">
                             <blockquote>{{post.snippet|slice:":200"|safe }}</blockquote>

@@ -53,19 +53,19 @@
             <div class="navbar-collapse collapse hide" id="nav-top-left">
                 <ul class="navbar-nav left">
                     <li class="nav-item">
-                        <a href="javascript:void(0)" title="Premium Services"><span><i class="fa fa-star"></i> Premium Services</span></a>
+                        <a href="{% url 'membership' %}" title="Premium Services"><span><i class="fa fa-star"></i> Premium Services</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" title="Buyers">Buyers</a>
+                        <a class="nav-link" href="{% url 'blog-buyerhome' %}" title="Buyers">Buyers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="product" title="Products">Products</a>
+                        <a class="nav-link" href="{% url 'ecomerce' %}" title="Products">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" title="Companies">Companies</a>
+                        <a class="nav-link" href="{% url 'allcompany' %}" title="Companies">Companies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" title="Manufacturers">Manufacturers</a>
+                        <a class="nav-link" href="{% url 'allcompany' %}" title="Manufacturers">Manufacturers</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav right">
@@ -73,7 +73,7 @@
                         <a class="nav-link" href="javascript:void(0)">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">Need Help?</a>
+                        <a class="nav-link" href="{% url 'faq' %}">FAQs</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"

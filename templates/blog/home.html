@@ -28,7 +28,7 @@ Sellers Post
     {% for post in posts %}
 
     <article class="media content-section">
-        <img class="rounded-circle article-img"  alt="{{ post.author }}" src="{{ post.author.profile.img.url }}"
+        <img class="rounded-circle article-img" alt="{{ post.author }}" src="{{ post.author.profile.img.url }}"
              title="{{post.author.profile.bio}}">
         <div class="media-body">
             <div class="article-metadata">
@@ -39,12 +39,12 @@ Sellers Post
                 <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
                 <small class="text-mutted">{{ post.author.profile.country.name }}</small>
                 <small class="text-muted">
-                   <a class="mr-2"   href="{% url 'category' post.category %}">{{ post.posttype }}</a>
+                    <a class="mr-2" href="{% url 'category' post.category %}">{{ post.posttype }}</a>
                 </small>
                 <!---<small class="text-muted"><a class="btn btn-default btn-xs mt-1 bmb-1" href="#">co.info&rarr;</a></small>---->
             </div>
             <h2><a class="article-title" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></h2>
-                <h4>Seller Lead From {{ post.author.profile.country.name }}</h4>
+            <h4>Seller Lead From {{ post.author.profile.country.name }}</h4>
             <div class="container-fluid">
                 <div class="container-fluid">
                     <div class="row">
@@ -54,7 +54,7 @@ Sellers Post
                             </p>
                         </div>
                         <div class="col-sm-9 col-md-6 col-lg-7 bg-light">
-                            <img class="card-img-top"   alt="{{ post.author }} No Photos" src="{{post.image.url}}"
+                            <img class="card-img-top" alt="{{ post.author }} No Photos" src="{{post.image.url}}"
                                  alt="" style="height: 200px; object-fit: contain;">
                             <p class="article-content">
                             <blockquote>{{post.snippet|slice:":200"|safe }}</blockquote>
@@ -77,7 +77,7 @@ Sellers Post
                 <small><a href="{% url 'login' %}">Login to contact buyers/sellers</a></small>
             </div>
             {% endif %}
-           <small>{{post.get_status_display}}</small>
+            <small>{{post.get_status_display}}</small>
         </div>
     </article>
     {% endfor %}
@@ -105,7 +105,7 @@ Sellers Post
 {% endif %}
 
 {% endif %}
-
+ {% include 'blog/snippets/buyerinfo.html' %}
 <script type="text/javascript">
     $(document).ready(function(){
       $('.your-class').slick({
@@ -113,23 +113,11 @@ Sellers Post
       });
     });
 
+
 </script>
 
 <script type="text/javascript">
         document.getElementById("id_q").value = "{{query}}"
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 

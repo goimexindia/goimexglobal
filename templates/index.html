@@ -708,11 +708,11 @@ input[type=text]:focus {
             {% if user.is_authenticated %}
             <div class="home-logged-in-nav col-md-3 d-none d-lg-block">
                 <ul>
-                    <li><a  href="{% url 'blog-about' %}" title="Dashboard">Dashboard</a></li>
-                    <li><a href="{% url 'profile' %}" title="My Profile">My Profile</a></li>
-                    <li><a href="#" title="Messages">Messages</a></li>
-                    <li><a href="#" title="Products">Products</a></li>
-                    <li><a href="#" title="Company Profile">Company Profile</a>
+                    <li><a  href="{% url 'profile' %}" title="Dashboard">Dashboard</a></li>
+                    <li><a href="{% url 'blog-home' %}" title="Sellers Listing">Seller's Listing</a></li>
+                    <li><a href="{% url 'blog-buyerhome' %}" title="Buyers Listing">Buyer's Listing</a></li>
+                    <li><a href="{% url 'ecomerce' %}" title="All Products">Products</a></li>
+                    <li><a href="{% url 'mybussiness' %}" title="Company Profile">Company Profile</a>
                     </li>
                     <li><a href="#" title="Premium Services">Premium
                         Services</a></li>

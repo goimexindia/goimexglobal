@@ -10,7 +10,7 @@ from django.views.generic import CreateView
 import os
 from django.conf import settings
 from blog.models import Post
-from buyerseller.models import Rfq, Customer, Order, Product, Category, Admin
+from buyerseller.models import Rfq, Customer, Order, Product, Category, Admin, ProdComment
 from .forms import *
 from django.contrib.auth.decorators import login_required
 
@@ -153,6 +153,7 @@ def profile(request):
     ppostcount = Post.objects.filter(author=request.user).count()
     pproductcount = Product.objects.filter(author=request.user).count()
     pordercount = Order.objects.filter(customer=request.user.customer).count()
+    pinquirycount = ProdComment.objects.filter(product__author=request.user).count()
     context = {
         'u_form': u_form,
         'p_form': p_form,
@@ -163,6 +164,7 @@ def profile(request):
         'ppostcount': ppostcount,
         'pordercount': pordercount,
         'pproductcount': pproductcount,
+        'pinquirycount': pinquirycount,
     }
     return render(request, 'profile.html', context)
 

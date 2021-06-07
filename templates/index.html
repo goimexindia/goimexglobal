@@ -1,4 +1,5 @@
 {% load static %}
+{% load custom_tags %}
 
 <!DOCTYPE html>
 
@@ -26,6 +27,8 @@ div.desc {
   padding: 15px;
   text-align: center;
 }
+
+
 </style>
 <style>
 input[type=text] {
@@ -46,23 +49,29 @@ input[type=text] {
 input[type=text]:focus {
   width: 100%;
 }
+
+
 </style>
+
 <div class="row">
     <div class="mx-auto">
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <form class="form-inline my-3 my-lg-1" action="{% url 'blog-search' %}" method="GET">
-                <input  type="text"  class="form-control mr-sm-2" type="search"
+                <input type="text" class="form-control mr-sm-2" type="search"
                        placeholder="Search here....................." aria-label="Search"
                        name="search">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Post <i class="fa fa-search"></i>
                 </button>
             </form>
         </nav>
+        <div class="container">
+            <p><small>Latest name of Posts</small> : {% show_latest_post%}</p>
+        </div>
     </div>
     <div class="mx-auto">
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <form class="form-inline my-3 my-lg-1" action="{% url 'cat-search' %}" method="GET">
-                <input   type="text" class="form-control mr-sm-2" type="search"
+                <input type="text" class="form-control mr-sm-2" type="search"
                        placeholder="Search here........................" aria-label="Search"
                        name="search">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Product <i
@@ -71,11 +80,14 @@ input[type=text]:focus {
 
             </form>
         </nav>
+        <div class="container">
+            <p><small>Latest name of Products:</small> {% show_latest_name%}</p>
+        </div>
     </div>
     <div class="mx-auto">
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <form class="form-inline my-3 my-lg-1" action="{% url 'allcompany' %}" method="GET">
-                <input  type="text" class="form-control mr-sm-2" type="search"
+                <input type="text" class="form-control mr-sm-2" type="search"
                        placeholder="Search here........................" aria-label="Search"
                        name="search">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Company <i
@@ -83,6 +95,9 @@ input[type=text]:focus {
                 </button>
             </form>
         </nav>
+        <div class="container">
+            <p><small>Latest name of Company:</small> {% show_latest_company%}</p>
+        </div>
     </div>
 </div>
 <hr>
@@ -91,7 +106,7 @@ input[type=text]:focus {
     <div class="container">
         <div class="categories-section  col-md-4 col-lg-3 p-0">
             <h4>Categories <i class="fa fa-bars"></i></h4>
-               {% load mptt_tags %}
+            {% load mptt_tags %}
             <ul class="category-list">
                 <li class="submenu">
                     <a href="javascript:void(0)" title="Machinery">Machinery <i class="fa fa-angle-right"></i></a>
@@ -688,18 +703,18 @@ input[type=text]:focus {
         <div class="header-banner col-lg-6 col-md-8 pl-0 pr-0 position-relative">
             <div class="owl-carousel owl-theme owl-drag" id="bannerCarousel">
                 {% for dest in prod %}
-                    {% if user.is_authenticated %}
-                        <div class="item">
-                            <a href="#"><img class="img-fluid w-100 owl-lazy" data-src="{{dest.img.url}}"
-                                             src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></a>
-                        </div>
-                    {% else %}
-                        <div class="item">
-                            <a href="javascript:registerPopup(&quot;Start%20rank%20dominate&quot;)"><img
-                                    class="img-fluid w-100 owl-lazy" data-src="{{dest.img.url}}"
-                                    src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></a>
-                        </div>
-                    {% endif %}
+                {% if user.is_authenticated %}
+                <div class="item">
+                    <a href="#"><img class="img-fluid w-100 owl-lazy" data-src="{{dest.img.url}}"
+                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></a>
+                </div>
+                {% else %}
+                <div class="item">
+                    <a href="javascript:registerPopup(&quot;Start%20rank%20dominate&quot;)"><img
+                            class="img-fluid w-100 owl-lazy" data-src="{{dest.img.url}}"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></a>
+                </div>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
@@ -708,7 +723,7 @@ input[type=text]:focus {
             {% if user.is_authenticated %}
             <div class="home-logged-in-nav col-md-3 d-none d-lg-block">
                 <ul>
-                    <li><a  href="{% url 'profile' %}" title="Dashboard">Dashboard</a></li>
+                    <li><a href="{% url 'profile' %}" title="Dashboard">Dashboard</a></li>
                     <li><a href="{% url 'blog-home' %}" title="Sellers Listing">Seller's Listing</a></li>
                     <li><a href="{% url 'blog-buyerhome' %}" title="Buyers Listing">Buyer's Listing</a></li>
                     <li><a href="{% url 'ecomerce' %}" title="All Products">Products</a></li>

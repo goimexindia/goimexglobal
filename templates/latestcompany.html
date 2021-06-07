@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    {% for x in last %}
+    <h6 class="text-truncate"><a href=" {% url 'companyproduct' x.user.id %} "
+                                         title="{{ x.organization}}"> {{ x.organization}}
+            </a></h6>
+    {% endfor %}
+</div>
+</body>
+</html>

@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 {% block title %}Product Details{% endblock %}
 {% load static %}
+{% load custom_tags %}
 {% block content %}
 <style>
 * {box-sizing: border-box;}
@@ -75,10 +76,12 @@ img {vertical-align: middle;}
 }
 
 
+
 </style>
 <style>
     .rating {
     margin-left: 7%
+
 
 
 
@@ -122,9 +125,11 @@ img {vertical-align: middle;}
                 <h6>(Viewed {{product.view_count}} times)</h6>
                 <small>({{product.category}})</small>
                 <h8></h8>
-                <h6>Selling Price: <strike>Rs. {{product.marked_price}}</strike></h6>
-                <h6>Our Price: Rs. {{product.selling_price}}</h6>
-                <a href="{% url 'addtocart' product.id %}" class="btn btn-primary">Add To Cart</a>
+                {% if product.marked_price|gt:1 %}
+                    <h6>Selling Price: <strike>Rs. {{product.marked_price}}</strike></h6>
+                    <h6>Our Price: Rs. {{product.selling_price}}</h6>
+                    <a href="{% url 'addtocart' product.id %}" class="btn btn-primary">Add To Cart</a>
+                {% endif %}
                 <hr>
                 <p class="text-info">Warranty: {{product.warranty}}</p>
                 <p class="text-info">Return Policy:{{product.return_policy}}</p>
@@ -247,6 +252,7 @@ function showSlides() {
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
+
 
 
 </script>

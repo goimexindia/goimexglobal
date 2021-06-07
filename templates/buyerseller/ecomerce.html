@@ -3,7 +3,7 @@
 {% block title %}eCommerce{% endblock %}
 {% block content %}
 {% load static %}
-
+{% load custom_tags %}
 <style>
     .fa {
     color: #f2dd1d
@@ -12,6 +12,22 @@
 .rating {
     margin-left: 37%
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </style>
 <style type="text/css">
@@ -26,6 +42,12 @@
         background-position: center center;
         background-size: cover;
     }
+
+
+
+
+
+
 
 </style>
 <link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
@@ -76,10 +98,18 @@
                              alt="" style="height: 200px; object-fit: contain;">
                         <a>
                             <div class="mask rgba-white-slight"></div>
+
+                            {% if p.marked_price|gt:1 %}
                             <strong>
                                 <p class="price"><strike>Price Rs. {{p.marked_price}}</strike> Now
                                     Rs.{{p.selling_price}}/- </p>
                             </strong>
+                            {% else %}
+                            <div>
+                                <p><a href="{% url 'prodinquiry' p.id  %}" class="btn btn-primary">Inquiry</a>
+                                </p>
+                            </div>
+                            {% endif %}
                         </a>
                     </div>
                     <!--Card Body-->
@@ -91,14 +121,20 @@
                             <li><i class="fa fa-star"></i></li>
                             <li><i class="fa fa-star"></i></li>
                         </ul>
-                         <p class="card-text"><small>{{p.description|striptags|truncatechars:140 }}
-                                <a href="{% url 'productdetail' p.slug %}">Show
-                                    More........</a> </small></p>
+                        <p class="card-text"><small>{{p.description|striptags|truncatechars:140 }}
+                            <a href="{% url 'productdetail' p.slug %}">Show
+                                More........</a> </small></p>
                         <small>Seller based in ( {{ p.author.profile.country.name }} )</small>
+                         {% if p.marked_price|gt:1 %}
                         <div>
-                            <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a> {{p.status}}</p>
-                              </div>
-                        <a class="mr-2" href=" {% url 'companyproduct' p.author.profile.user.id  %} "><small>{{ p.author.profile.organization }}</small></a>
+                            <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a> {{p.status}}
+                            </p>
+                        </div>
+                        {% endif %}
+
+
+                        <a class="mr-2" href=" {% url 'companyproduct' p.author.profile.user.id  %} "><small>{{
+                            p.author.profile.organization }}</small></a>
                     </div>
                 </div>
             </div>

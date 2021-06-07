@@ -22,7 +22,16 @@
 ------>
 
 <!---->
-Sellers Post
+    {% if user.is_authenticated %}
+    {% else %}
+    <article class="media content-section" style="background-color:powderblue;">
+        <div class="mx-auto w-75" ><h4>To view this seller's/buyer's contact information please Sign In Now!. Not a member yet? It
+            takes less than a minute to Join FREE now!</h4>
+            <a href="{% url 'login' %}" class="btn btn-sm btn-danger">Login</a>
+            <a href="{% url 'register' %}" class="btn btn-sm btn-info">Register</a></div>
+    </article>
+    {% endif %}
+
 <div class="row mx-auto" style="background-color:powderblue;">
     <hr>
     {% for post in posts %}

@@ -58,17 +58,18 @@
             <div class="row mx-auto">
                 <div class="content-section">
                     <form action="" method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <fieldset class="form-group">
+                         <fieldset class="form-group">
                             <div class="card bg-warning text-white">
                                 <div class="card-header"><h4>Personnel Details</h4></div>
                             </div>
-                            {{ form.media }}
+                            {% csrf_token %}
+                            {{ u_form.media }}
                             {{ u_form|crispy }}
                             <div class="card bg-warning text-white">
                                 <div class="card-header"><h4>Organization Details</h4></div>
                             </div>
-                            {{ form.media }}
+                             {% csrf_token %}
+                            {{ p_form.media }}
                             {{ p_form|crispy }}
                         </fieldset>
                         <div class="form-group">

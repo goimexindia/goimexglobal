@@ -379,7 +379,7 @@ class ProdComment(models.Model):
     name = models.CharField(max_length=80)
     mobile = models.CharField(max_length=80)
     email = models.EmailField()
-    body = models.TextField()
+    body = RichTextField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
 

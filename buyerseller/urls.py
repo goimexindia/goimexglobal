@@ -21,6 +21,7 @@ urlpatterns = [
     path('customer/<int:pk>/', views.customer, name='customer'),
     path('cat/list/', Cat.as_view(), name='cat'),
     path('prodcomment/<slug:slug>/', views.prodcomment, name='prodcomment'),
+    path('prodinquiry/<slug:slug>/', views.prodinquiry, name='prodinquiry'),
     path('rfq', RfqCreateView.as_view(), name='rfq'),
     path('rfq/<int:pk>/update', RfqUpdateView.as_view(), name='rfq-update'),
     path("product/<slug:slug>/", ProductDetailView.as_view(), name="productdetail"),

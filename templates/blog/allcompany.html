@@ -76,6 +76,15 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 
+
+
+
+
+
+
+
+
+
 </style>
 <style type="text/css">
     .company-index-banner{
@@ -89,6 +98,15 @@ body {font-family: Arial, Helvetica, sans-serif;}
         background-position: center center;
         background-size: cover;
     }
+
+
+
+
+
+
+
+
+
 
 </style>
 
@@ -148,6 +166,17 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
     </form>
 </div>
+{% if user.is_authenticated %}
+{% else %}
+<section class="inner-banner-leftnav company-join-banner mt-3">
+    <div class="mx-auto w-75">
+        <h4>Want to Display Your Products on Goimex.com?</h4>
+        <a href="{% url 'register' %}" data-fancybox="" data-src="#popupform" class="btn btn-sm btn-danger">Join Free
+            Now</a>
+    </div>
+</section>
+{% endif %}
+
 
 {% for profiles in profile %}
 <div class="buyer-listing-result-row buyer-tab-company">
@@ -256,7 +285,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 {% endif %}
 
-
+<!-------------------
 {% if profile.has_other_pages %}
 <nav aria-label="Page navigation conatiner"></nav>
 <ul class="pagination justify-content-center">
@@ -269,10 +298,152 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </ul>
 </nav>
 {% endif %}
+----------------->
+<!------
+<div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-4">
+        <div class="all-categ-box">
+            <div class="all-categ-left">
+                <a title="Minerals &amp; Metallurgy" href="https://www.eworldtrade.com/minerals-metallurgy/"><img
+                        src="https://www.eworldtrade.com/assets/images/industries/c-thumbs/minerals-metallurgy.png"
+                        class="lazy"
+                        alt="Minerals &amp; Metallurgy" title="Minerals &amp; Metallurgy" style=""></a>
+            </div>
+            <div class="all-categ-right">
+                <h5><a title="Minerals &amp; Metallurgy" href="https://www.eworldtrade.com/minerals-metallurgy/">Minerals</a>
+                </h5>
+                <h6><a href="https://www.eworldtrade.com/minerals-metallurgy/wire-mesh/" title="Wire Mesh">Wire Mesh</a>
+                </h6>
+                <h6><a href="https://www.eworldtrade.com/minerals-metallurgy/aluminum/" title="Aluminum">Aluminum</a>
+                </h6>
+                <h6><a href="https://www.eworldtrade.com/minerals-metallurgy/titanium/" title="Titanium">Titanium</a>
+                </h6>
+            </div>
+        </div>
+    </div>
+</div>
+-------->
+<hr>
+<div class="seo-cooo seo-content-mfr">
+    <h2>Premium Wholesale Directory Of Manufacturers &amp; Suppliers</h2>
+
+    <div>Goimex welcomes buyers from all over the world to its comprehensive marketplace, a wholesale center for
+        buyers to connect with suppliers, manufacturers, and wholesalers from around the globe. Goimex is one of
+        the biggest wholesale websites that features many industries with thousands of sub-categories included
+        to
+        serve
+        you a comprehensive listings through its wholesale directory, enabling you to boost your trades with the
+        best
+        supplies and products and to enhance your business existence globally. Goimex serves as a central
+        wholesale
+        spot that features everything from food supplies to apparel, industrial machinery to equipment, beauty
+        supplies
+        to electronics and everything in between. We ensure that you’ll find everything in our B2B directory. We
+        have an
+        experienced staff of sales and business expansion representatives who will help and guide you through
+        each
+        and
+        every process and make sure that you are able to make your trade efficiently with utmost convenience.
+        Buyer
+        can
+        also connect with other buyers and discuss their issues and trade in our large buyer’s community forum.
+        Our
+        B2B
+        directory is designed to increase your chances of visibility and expand your reach amongst the global
+        traders.
+    </div>
+
+    <div>&nbsp;</div>
+
+    <h3>Central Wholesale Trading Spot</h3>
+
+    <div>At Goimex.com we have a broad range of buyer tools and services to make sourcing the right products and
+        services easy for you! We have an extensive manufacturers’ directory of international and domestic
+        industries
+        and companies that offer a complete range of high-quality products and goods for you. We also have a
+        huge
+        supplier directory of thousands of reliable wholesalers and distributors from around the world who
+        offers
+        authentic supplies and products that will benefit your business effectively. Goimex is a safe trading
+        center for every buyer connect with renowned industries and wholesalers to build a better future for
+        your
+        business.
+    </div>
+
+    <div>&nbsp;</div>
+
+    <h3>Search &amp; Quote Feature</h3>
+
+    <div>Finding products is made easy at eWorldTrade with our search and quote options. You can easily find
+        anything
+        from our search option, or you can also explore the large wholesale directory above and find new
+        products
+        that
+        might benefit your business growth. Unlike other wholesale websites, you can get a quote from the
+        product
+        provider as soon as you click the contact now button. You will be connected immediately to the products
+        representative and discuss the details of your trade in the most convenient way. Goimex offers you a
+        simple
+        and effective searching process to find the best suppliers for your requirements.
+    </div>
+
+    <div>&nbsp;</div>
+
+    <h3>Comprehensive Information of Products, Services &amp; Suppliers</h3>
+
+    <div>For buyers, eWorldTrade brings comprehensive buying information of all the industries and the
+        sub-categories
+        to help you in refining your search. Our buying guide will provide you complete information about each
+        category
+        with details of what you can find in its collection. Each buying guide will be displayed at the end of
+        each
+        sub-category page. By signing up at eWorldTrade, you will not only get access to link directly with the
+        suppliers but also you’ll be able to gain access to the business information and records of the
+        suppliers.
+    </div>
+
+    <div>&nbsp;</div>
+
+    <h3>Safe, Secure &amp; Centralized Wholesale Suppliers Database</h3>
+
+    <div>Goimex is a secure wholesale central platform that provides a safe trading experience to each of its
+        members. We are bringing you, authentic and reputable manufacturers and wholesalers, enabling you to buy
+        from
+        the best. We are providing the safest way to connect with reliable sellers, exporters and let you trade
+        with
+        confidence. Within minutes of our membership signups, you’ll be able to compare the authenticity of our
+        powerful
+        sourcing tool in the entire B2B directory at present.
+    </div>
+
+    <div>&nbsp;</div>
+
+    <div>At our premium wholesale central platform you can always communicate with our customer representatives
+        whenever
+        you face difficulties in finding the right suppliers for your requirements. Our staff will make sure
+        that
+        you’re
+        linked with the right suppliers according to your needs. You can easily locate the ideal producer,
+        supplier,
+        exporters and wholesaler of product you're looking for. We connect buyers and sellers not solely as a
+        wholesale
+        central platform but with exhaustive options like Digital Branding, Human to Human Service, Trade Show
+        Management &amp; assisted buyer consultancy services. The best part about eWorldTrade is you can signup
+        for
+        free
+        at our wholesale central platform and enjoy trading without any hassles.
+    </div>
+</div>
 
 
 <script type="text/javascript">
         document.getElementById("id_q").value = "{{query}}"
+
+
+
+
+
+
 </script>
 
 <script>
@@ -283,6 +454,15 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
+
+
+
+
+
+
+
+
+
 
 
 </script>

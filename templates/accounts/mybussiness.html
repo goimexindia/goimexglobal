@@ -28,11 +28,12 @@
                         <div class="card-header"><h4>Organization - {{ user.profile.organization }}</h4></div>
                     </div>
                     <hr>
-                    {{ form.media }}
+                    {{ p_form.media }}
                     {{ p_form|crispy }}
                     <div class="card bg-warning text-white">
                         <div class="card-header">Company Brochures / Product Images</div>
                     </div>
+                    {{ p_form.media }}
                     {{ u_form|crispy }}
                 </fieldset>
                 <div class="form-group">

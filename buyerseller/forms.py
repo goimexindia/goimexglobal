@@ -16,6 +16,12 @@ class ProdCommentForm(forms.ModelForm):
         fields = ('name', 'email', 'mobile', 'body')
 
 
+class ProdInquiryForm(forms.ModelForm):
+    class Meta:
+        model = ProdComment
+        fields = ('body','name', 'email', 'mobile')
+
+
 class ProductForm(forms.ModelForm):
     more_images = forms.FileField(required=False, widget=forms.FileInput(attrs={
         "class": "form-control",

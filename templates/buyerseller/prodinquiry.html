@@ -1,0 +1,61 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h2>Please fill this form to view price</h2>
+<article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ product.author.profile.img.url }}">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="#">{{ product.author }}</a>
+            <small class="text-muted">{{ product.date_posted|date:"F d, Y" }}</small>
+        </div>
+        <h2 class="article-title">{{ product.title }}</h2>
+        <div class="b">
+            {{ product.description|safe }}
+            {{ product.keyfeatures|safe }}
+        </div>
+    </div>
+</article>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 card mb-4  mt-3 ">
+            <div class="card-body">
+                {% if product.author == user %}
+                <h2>{{ comments.count }} messages</h2>
+                {% for comment in comments %}
+                <div class="comments" style="padding: 10px;">
+                    <p class="font-weight-bold" style="color:black;">
+                        {{ comment.name }}
+                        <span class=" text-muted font-weight-normal">{{ comment.created_on }}</span>
+                    </p>
+                    {{ comment.body | linebreaks }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                 {% if new_comment %}
+                <div class="alert alert-success" role="alert">
+                    Your comment is awaiting moderation
+                </div>
+                {% else %}
+                <h3>Inquiry for {{ product.title }} </h3>
+                <form method="post" style="margin-top: 1.3em;">
+                     {% csrf_token %}
+                     {{ comment_form.media }}
+                     {{ comment_form|crispy }}
+                    <div>
+                        <p class='text-muted'>By pressing the Button -
+                            I agree to share my details with the company I am interacting.
+                    </div>
+                    <button type="submit" class="btn btn-danger  btn-sm">Send Message</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <a class="btn btn-secondary btn-sm mt-1 bmb-1" href="#">Back</a>
+</div>
+
+{% endblock content %}

@@ -8,7 +8,7 @@
 <div class="container">
     {% for x in last %}
     <h6 class="text-truncate"><a href="{% url 'productdetail' x.slug %}"
-                                 title="{{ x.title}}"> {{ x.title}}
+                                 title="{{ x.title}}"> {{ x.title|striptags|truncatechars:40}}
     {% endfor %}
 </div>
 </body>

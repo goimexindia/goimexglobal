@@ -717,7 +717,6 @@ def prodinquiry(request, slug):
                                            'comment_form': comment_form})
 
 
-
 def companycomment(request, slug):
     template_name = 'buyerseller/companycomment.html'
     product = get_object_or_404(Product, id=slug)
@@ -806,3 +805,31 @@ class ProductListView(generic.ListView):
         # Create any data and add it to the context
         context['some_data'] = 'This is just some data'
         return context
+
+
+class Category(MPTTModel):
+    name = models.CharField(max_length=50, unique=True)
+    parent = TreeForeignKey('self', null=True, blank=True, related_name='children', db_index=True)
+    slug = models.SlugField()
+
+    class MPTTMeta:
+        order_insertion_by = ['name']
+
+    class Meta:
+        unique_together = (('parent', 'slug',))
+        verbose_name_plural = 'categories'
+
+    def get_slug_list(self):
+        try:
+            ancestors = self.get_ancestors(include_self=True)
+        except:
+            ancestors = []
+        else:
+            ancestors = [i.slug for i in ancestors]
+        slugs = []
+        for i in range(len(ancestors)):
+            slugs.append('/'.join(ancestors[:i + 1]))
+        return slugs
+
+    def __str__(self):
+        return self.name

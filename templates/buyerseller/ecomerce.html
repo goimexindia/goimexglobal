@@ -131,10 +131,8 @@
                             </p>
                         </div>
                         {% endif %}
-
-
-                        <a class="mr-2" href=" {% url 'companyproduct' p.author.profile.user.id  %} "><small>{{
-                            p.author.profile.organization }}</small></a>
+                        <a class="mr-2" href=" {% url 'companyproduct' p.author.profile.user.id  %} ">
+                            <small>{{p.author.profile.organization }}</small></a>
                     </div>
                 </div>
             </div>

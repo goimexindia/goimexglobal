@@ -1,0 +1,192 @@
+{% extends "blog/newbase.html" %}
+{% load static %}
+{% block title %} Safe Deal{% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<style>
+.btn {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.success {background-color: #04AA6D;} /* Green */
+.success:hover {background-color: #46a049;}
+
+.info {background-color: #2196F3;} /* Blue */
+.info:hover {background: #0b7dda;}
+
+.warning {background-color: #ff9800;} /* Orange */
+.warning:hover {background: #e68a00;}
+
+.danger {background-color: #f44336;} /* Red */
+.danger:hover {background: #da190b;}
+
+.default {background-color: #e7e7e7; color: black;} /* Gray */
+.default:hover {background: #ddd;}
+
+
+
+
+
+
+</style>
+
+<div class="second-screen">
+    <div class="container">
+        <div class="line"></div>
+        <div class="h1">Do not worry</div>
+<br>
+        <div class="container-fluid mt-12">
+            <div id='products' class="col-lg-12 mx-auto">
+                <div class="row mx-auto">
+                    <div class="col-md-6 card ">
+                        <div class="view view-cascade overlay text-center">
+                            <div class="left">
+                                <div class="image"><img src="{%  static  'images/check_goods.svg' %}"
+                                                        alt="Qoovee Icon">
+                                    <h2>You will receive products in required quality</h2></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 card ">
+                        <div class="view view-cascade overlay text-center">
+                            <div class="right">
+                                <div class="image"><img src="{% static 'images/airplane_time.svg' %}"
+                                                        alt="Qoovee Icon"></div>
+                                <div class="text">
+                                    <div class="h2">Your products will be shipped on time</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="container-fluid mt-1">
+            <div class="col-md-12 card ">
+                <div class="view view-cascade overlay text-center">
+                    <div class="bottom">
+                        <div class="h2">Terms</div>
+                        <p><strong>If the quality of the product or the date of delivery differs from what you and the
+                            supplier agreed
+                            on Goimex Safe, we will help you find the best solution for all parties or refund your
+                            money</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="text-center">
+            <button class="btn success"><h3>Protect Deal</h3></button>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col bg-primary">
+            <div class="text-center">
+                <div class="image"><img src="{% static 'images/shield_purple.svg' %}"
+                                        alt="Qoovee Icon"></div>
+
+                <button class="btn warning"><h3>Deal Protection</h3></button>
+            </div>
+            <hr>
+            <h4 style="color:black; text-align:justify"> We protect both the buyer and seller. We guarantee the seller
+                100 %
+                payment from the
+                buyer. We guarantee the buyer a refund if the seller does not fulfill its
+                obligations.
+            </h4>
+        </div>
+        <div class="col bg-success">
+            <div class="text-center">
+                <div class="image"><img src="{% static 'images/ship.svg' %}"
+                                        alt="Qoovee Icon"></div>
+
+                <button class="btn warning"><h3>Logistics</h3></button>
+            </div>
+            <hr>
+            <h4 style="color:black; text-align:justify">
+                Using Goimex Logistics, you also get protection for the delivery of
+                goods and your
+                goods are sent on time through reliable channels.
+            </h4>
+        </div>
+        <div class="col bg-primary">
+            <div class="text-center">
+                <div class="image"><img src="{% static 'images/original.svg' %}"
+                                        alt="Qoovee Icon"></div>
+
+                <button class="btn warning"><h3>Brand Verification</h3></button>
+            </div>
+            <hr>
+            <h4 style="color:black; text-align:justify">
+                Before the shipment of the goods, we check the risks of brand
+                ownership and other
+                intangible assets that may cause difficulties at customs. You will be completely
+                sure that your
+                cargo will pass all the procedures and will not be confiscated.
+            </h4>
+
+        </div>
+    </div>
+</div>
+
+<hr>
+<section class="fourth-screen" style="background-image: url('/static/images/safe_how.jpg')">
+    <div class="inner">
+        <div class="container">
+            <div class="text-center"><br>
+                <button class="btn success"><h1>How does it works ?</h1></button>
+            </div>
+            <div class="steps">
+                <hr>
+                <div class="step">
+                    <div class="left"><span>
+                        <button class="btn danger"><h4>01. Buyer and supplier discuss the terms of delivery and conclude a contract</h4></button>
+                    </span></div>
+                    <div class="right">
+
+                    </div>
+                </div>
+                <hr>
+                <div class="step">
+                    <div class="left"><span>
+                        <button class="btn danger"><h4>02. Buyer sends payment for an order to the transit account of Goimex</h4></button>
+                    </span></div>
+                </div>
+                <hr>
+                <div class="step">
+                    <div class="left"><span>
+                        <button class="btn danger"><h4>03. Supplier receives notification of payment receipt </h4></button>
+                    </span></div>
+                </div>
+                <hr>
+                <div class="step">
+                    <div class="left"><span>
+                        <button class="btn danger"><h4>04. Supplier ships order</h4></button>
+                    </span></div>
+                </div>
+                <hr>
+                <div class="step">
+                    <div class="left"><span>
+                        <button class="btn danger"><h4>05. After buyer receives &amp; approves order, Goimex releases payment to
+                            supplier </h4></button>
+                    </span></div>
+                </div>
+<br>
+            </div>
+
+        </div>
+    </div>
+</section>
+<br><br><br>
+{% endblock %}

@@ -259,6 +259,11 @@ def transactions(request):
     return render(request, 'transactions.html', context)
 
 
+def safedeal(request):
+    context = {}
+    return render(request, 'safedeal.html', context)
+
+
 def policy(request):
     context = {}
     return render(request, 'accounts/privacypolicy.html', context)

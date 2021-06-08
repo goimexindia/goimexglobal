@@ -74,6 +74,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
 </style>
 <style type="text/css">
     .company-index-banner{
@@ -87,6 +88,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
         background-position: center center;
         background-size: cover;
     }
+
 </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -115,6 +117,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
     </div>
 </section>
 ---->
+{% if user.is_authenticated %}
+<section class="inner-banner-leftnav company-index-banner">
+    <div class="mx-auto w-75 text-center">
+        <h1>Find Companies</h1>
+        <span>Around the World and Grow Your Business</span>
+    </div>
+</section>
+{% endif %}
 <button class="open-button" onclick="openForm()">TELL US WHAT YOU NEED</button>
 
 <div class="form-popup" id="myForm">
@@ -173,7 +183,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                                          title="{{ profiles.organization}}"> {{ profiles.organization}}
             </a></h5>
 
-            <p>{{ profiles.bio|safe}} <a href=" {% url 'companyproduct' profiles.user.id %} ">Show
+            <p>{{ profiles.bio|safe|truncatechars:200}} <a href=" {% url 'companyproduct' profiles.user.id %} ">Show
                 More........</a></p>
 
             <ul class="buyer-listing-info li-width-50 full-with-ul">
@@ -229,6 +239,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 </li>
             </ul>
             <div class="buyer-listing-action full-with-div mg-top-10">
+
                 <a href="#" class="membership-tag-sm">
                     <img src="https://www.eworldtrade.com/assets/svg/package/lg_free.svg" class="lazy" alt="Free"
                          width="112" height="34" style="">
@@ -421,6 +432,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 
 
+
 </script>
 
 <script>
@@ -431,6 +443,7 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
+
 
 
 

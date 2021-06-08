@@ -29,6 +29,10 @@ div.desc {
 }
 
 
+
+
+
+
 </style>
 <style>
 input[type=text] {
@@ -51,55 +55,79 @@ input[type=text]:focus {
 }
 
 
+
+
 </style>
 
-<div class="row">
-    <div class="mx-auto">
-        <nav class="navbar navbar-expand-sm bg-light navbar-light">
-            <form class="form-inline my-3 my-lg-1" action="{% url 'blog-search' %}" method="GET">
-                <input type="text" class="form-control mr-sm-2" type="search"
-                       placeholder="Search here....................." aria-label="Search"
-                       name="search">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Post <i class="fa fa-search"></i>
-                </button>
-            </form>
-        </nav>
-        <div class="container">
-            <p><small>Latest name of Posts</small> : {% show_latest_post%}</p>
-        </div>
-    </div>
-    <div class="mx-auto">
-        <nav class="navbar navbar-expand-sm bg-light navbar-light">
-            <form class="form-inline my-3 my-lg-1" action="{% url 'cat-search' %}" method="GET">
-                <input type="text" class="form-control mr-sm-2" type="search"
-                       placeholder="Search here........................" aria-label="Search"
-                       name="search">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Product <i
-                        class="fa fa-search"></i>
-                </button>
+<style>
+* {
+  box-sizing: border-box;
+}
 
-            </form>
-        </nav>
-        <div class="container">
-            <p><small>Latest name of Products:</small> {% show_latest_name%}</p>
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+</style>
+<section class="menu-banner-form">
+    <div>
+        <div class="row">
+
+            <div class="mx-auto">
+                <form class="form-inline my-3 my-lg-1" action="{% url 'blog-search' %}" method="GET">
+                    <input class="form-control mr-sm-2" type="search"
+                           placeholder="Search here....................." aria-label="Search"
+                           name="search">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Post <i class="fa fa-search"></i>
+                    </button>
+                </form>
+                <div class="mx-auto" style="background-color:#ccc;">
+                    <p><strong>Latest name of Posts</strong> : {% show_latest_post%}</p>
+                </div>
+            </div>
+            <div class="mx-auto">
+
+                <form class="form-inline my-3 my-lg-1" action="{% url 'cat-search' %}" method="GET">
+                    <input class="form-control mr-sm-2" type="search"
+                           placeholder="Search here........................" aria-label="Search"
+                           name="search">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Product <i
+                            class="fa fa-search"></i>
+                    </button>
+                </form>
+                <div class="mx-auto" style="background-color:#ccc;">
+                    <p><strong>Latest name of Products:</strong> {% show_latest_name%}</p>
+                </div>
+            </div>
+            <div class="mx-auto">
+                <form class="form-inline my-3 my-lg-1" action="{% url 'allcompany' %}" method="GET">
+                    <input class="form-control mr-sm-2" type="search"
+                           placeholder="Search here........................" aria-label="Search"
+                           name="search">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Company <i
+                            class="fa fa-search"></i>
+                    </button>
+                </form>
+                <div class="mx-auto" style="background-color:#ccc;">
+                    <p><strong>Latest name of Company:</strong> {% show_latest_company%}</p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="mx-auto">
-        <nav class="navbar navbar-expand-sm bg-light navbar-light">
-            <form class="form-inline my-3 my-lg-1" action="{% url 'allcompany' %}" method="GET">
-                <input type="text" class="form-control mr-sm-2" type="search"
-                       placeholder="Search here........................" aria-label="Search"
-                       name="search">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Company <i
-                        class="fa fa-search"></i>
-                </button>
-            </form>
-        </nav>
-        <div class="container">
-            <p><small>Latest name of Company:</small> {% show_latest_company%}</p>
-        </div>
-    </div>
-</div>
+</section>
 <hr>
 
 <section class="menu-banner-form">

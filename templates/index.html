@@ -135,6 +135,7 @@ input[type=text]:focus {
 
 
 </style>
+<marquee behavior="scroll" direction="left"><h4>Virtual Event Hosted By Goimex Gobal Pvt Ltd will held in Jan 2022</h4></marquee>
 <section class="menu-banner-form">
     <div>
         <div class="row">
@@ -953,8 +954,9 @@ input[type=text]:focus {
                 <h4 class="lbo-brdr  hd-section-inner-link">Latest Products <a href="{% url 'ecomerce' %}"
                                                                                title="All Products">- View More -</a>
                 </h4>
-
+ <marquee behavior="scroll" direction="down">
                 {% show_latest_product %}
+    </marquee>
             </div>
         </div>
     </div>
@@ -973,6 +975,7 @@ input[type=text]:focus {
         </div>
 </div>
 
+ <marquee behavior="scroll" direction="down">Scroll down...</marquee>
 
 {% include 'blog/snippets/verifiedsupplier.html' %}
 <hr>

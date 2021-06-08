@@ -10,7 +10,7 @@
     <h6 class="text-truncate"><a href=" {% url 'companyproduct' x.user.id %} "
                                          title="{{ x.organization}}"> {{ x.organization|striptags|truncatechars:40}}
              <small> ( {{ x.country.name }} )</small>  <i class="{{ x.country.flag_css }}"></i>
-         </a><small> -{{ x.industry }} </small></h6>
+       #  </a><small> -{{ x.industry }} </small></h6>
     {% endfor %}
 </div>
 </body>

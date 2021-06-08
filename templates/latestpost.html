@@ -8,9 +8,9 @@
 <div class="container">
     {% for x in last %}
     <h6 class="text-truncate"><a href="{% url 'post-detail' x.id%}"
-                                 title="{{ x.title}}"> {{ x.title|striptags|truncatechars:40}}
+                                 title="{{ x.title}}"> {{ x.title|striptags|truncatechars:35}}
         <small> ( {{ x.author.profile.country.name }} )</small> <i class="{{ x.author.profile.country.flag_css }}"></i>
-     </a>      <small> -{{ x.category }} </small>
+   #  </a>      <small> -{{ x.category }} </small>
  </h6>
     {% endfor %}
 </div>

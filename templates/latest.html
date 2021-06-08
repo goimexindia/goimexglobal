@@ -10,11 +10,11 @@
 <div class="container">
     {% for x in last %}
     <h6 class="text-truncate"><a href="{% url 'productdetail' x.slug %}"
-                                 title="{{ x.title}}"> {{ x.title|striptags|truncatechars:40}}
+                                 title="{{ x.title}}"> {{ x.title|striptags|truncatechars:35}}
         <small> ( {{ x.author.profile.country.name }} )</small>
         <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
         <i class="{{ x.author.profile.country.flag_css }}"></i></a>
-        <small> -{{ x.category }} </small>
+      #  <small> -{{ x.category }} </small>
         {% endfor %}</h6>
 </div>
 

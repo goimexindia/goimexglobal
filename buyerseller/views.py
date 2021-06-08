@@ -55,10 +55,12 @@ class HomeView(TemplateView):
         category = Category.objects.all()
         suppliers = Profile.objects.exclude(organization__isnull=True).exclude(type='Buyer').order_by("-id")
         products = Product.objects.all().order_by("-id")
+        productss = Product.objects.all().exclude(image__isnull=True).order_by("-id")
         post = Post.objects.all().order_by("-id")
         context['prod'] = prod
         context['suppliers'] = suppliers
         context['products'] = products
+        context['productss'] = productss
         context['post'] = post
         context['category'] = category
         paginator = Paginator(products, 12)

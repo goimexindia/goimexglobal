@@ -5,7 +5,51 @@
 
 <html lang="en">
 {% include 'buyerseller/header.html' %}
+<style>
+.scroll-left {
+ height: 200px;
+ overflow: hidden;
+ position: relative;
+}
+.scroll-left .inner {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);
+ transform:translateX(100%);
+ /* Apply animation to this element */
+ -moz-animation: scroll-left 15s linear infinite;
+ -webkit-animation: scroll-left 15s linear infinite;
+ animation: scroll-left 15s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes scroll-left {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes scroll-left {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes scroll-left {
+ 0%   {
+ -moz-transform: translateX(100%); /* Browser bug fix */
+ -webkit-transform: translateX(100%); /* Browser bug fix */
+ transform: translateX(100%);
+ }
+ 100% {
+ -moz-transform: translateX(-100%); /* Browser bug fix */
+ -webkit-transform: translateX(-100%); /* Browser bug fix */
+ transform: translateX(-100%);
+ }
+}
 
+</style>
 <style>
 div.gallery {
   margin: 5px;
@@ -27,6 +71,9 @@ div.desc {
   padding: 15px;
   text-align: center;
 }
+
+
+
 
 
 
@@ -57,6 +104,9 @@ input[type=text]:focus {
 
 
 
+
+
+
 </style>
 
 <style>
@@ -78,6 +128,9 @@ input[type=text]:focus {
   display: table;
   clear: both;
 }
+
+
+
 
 
 
@@ -897,56 +950,30 @@ input[type=text]:focus {
                 </section>
             </div>
             <div class="col-md-6">
-                <h4 class="lbo-brdr  hd-section-inner-link">Latest Products <a href="javascript:void(0)"
+                <h4 class="lbo-brdr  hd-section-inner-link">Latest Products <a href="{% url 'ecomerce' %}"
                                                                                title="All Products">- View More -</a>
                 </h4>
-                <div class="featured-products">
-                    <ul>
-                        <li>
-                            <a href="javascript:void(0)"
-                               title="Best Quality Carbonless NCR Paper 60 gsm 50gsm 55gsm 70gsm 75gsm 80gsm"><i
-                                    class="flag-icon flag-icon-us"></i>
-                                <h6 class="text-truncate mt-0">Best Quality Carbonless NCR Paper 60 gsm 50gsm 55gsm
-                                    70gsm 75gsm 80gsm</h6>
-                                <p class="text-truncate">Golden Paper Co., Ltd.</p></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" title="Steel Aluminum Plate Mesh"><i
-                                    class="flag-icon flag-icon-cn"></i>
-                                <h6 class="text-truncate mt-0">Steel Aluminum Plate Mesh</h6>
-                                <p class="text-truncate">HengTe Wire Mesh Products Co., Ltd.</p></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" title="UL12 inch Electric skillet"><i
-                                    class="flag-icon flag-icon-cn"></i>
-                                <h6 class="text-truncate mt-0">UL12 inch Electric skillet</h6>
-                                <p class="text-truncate">Ningbo Lingrun Electric Appliance Co., Ltd.</p></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"
-                               title="A-4 Fast Heat Round Griddle Electrical Wok Pan Electric Skillet"><i
-                                    class="flag-icon flag-icon-cn"></i>
-                                <h6 class="text-truncate mt-0">A-4 Fast Heat Round Griddle Electrical Wok Pan Electric
-                                    Skillet</h6>
-                                <p class="text-truncate">Yongkang Jueling Electrical Appliance Co., Ltd.</p></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" title="Hand cream"><i class="flag-icon flag-icon-cn"></i>
-                                <h6 class="text-truncate mt-0">Hand cream</h6>
-                                <p class="text-truncate">Lief Essentials</p></a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" title="Open Frame Power Supply"><i
-                                    class="flag-icon flag-icon-cn"></i>
-                                <h6 class="text-truncate mt-0">Open Frame Power Supply</h6>
-                                <p class="text-truncate">Big Forest Adapters</p></a>
-                        </li>
-                    </ul>
-                </div>
+
+                {% show_latest_product %}
             </div>
         </div>
     </div>
+    </div>
 </section>
+
+
+<div class="scroll-left">
+        <div class="inner">
+            <!----
+            <img src="//www.html.am/images/html-codes/marquees/fish-swimming.gif" alt="Swimming fish">
+            --->
+            {% for p in products %}
+               <img src="{{p.image.url}}" alt="Swimming fish"  height=100%>
+            {% endfor %}
+        </div>
+</div>
+
+
 {% include 'blog/snippets/verifiedsupplier.html' %}
 <hr>
 <br>

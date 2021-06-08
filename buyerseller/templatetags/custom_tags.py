@@ -28,3 +28,9 @@ def show_latest_post(total=5):
 def show_latest_company(total=5):
     last = Profile.objects.exclude(organization__isnull=True).order_by('-id')[:total]
     return {'last': last}
+
+
+@register.inclusion_tag("latestproduct.html")
+def show_latest_product(total=8):
+    last = Product.objects.order_by('-id')[:total]
+    return {'last': last}

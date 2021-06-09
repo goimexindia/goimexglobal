@@ -107,6 +107,7 @@ def search(request):
         return render(request, 'blog/allcompany.html',
                       {'posts': post_list, 'catlist': catlist, 'profile': profile, 'page': page, 'type': type_post})
     if type_post == 'company':
+        profile = Profile.objects.filter(Q(organization__icontains=search_post) | Q(products__icontains=search_post)).exclude(type='manufacturer')
         return render(request, 'blog/allcompany.html',
                       {'posts': post_list, 'catlist': catlist, 'profile': profile, 'page': page, 'type': type_post})
     if type_post == 'buyer':

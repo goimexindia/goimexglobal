@@ -79,13 +79,13 @@ STATUS = (
 
 BUSSINESS = [
     ("Manufacturer", "Manufacturer"),
-    ("Trading Company", "Trading Company"),
+    ("Company", "Trading Company"),
     ("Buying Office", "Buying Office"),
     ("Agent", "Agent"),
     ("Distributor/Wholesaler", "Distributor/Wholesaler"),
-    ("Government ministry/Bureau/Commission", "Government ministry/Bureau/Commission"),
+    ("Government", "Government ministry/Bureau/Commission"),
     ("Association", "Association"),
-    ("Business Service (Transportation, finance, travel, Ads, etc)",
+    ("Business Service",
      "Business Service (Transportation, finance, travel, Ads, etc)"),
     ("Other", "Other"),
 ]
@@ -106,7 +106,7 @@ class Profile(models.Model):
     zip = models.CharField(max_length=30, null=True, blank=True)
     country = CountryField()
     organization = models.CharField(max_length=230, null=True, blank=True)
-    type = models.CharField(max_length=50, choices=TYPE_CHOICES, null=True, blank=True)
+    type = models.CharField(max_length=50, choices=BUSSINESS, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     industry = models.CharField(max_length=100, choices=INDUSTRY, default='APPAREL')

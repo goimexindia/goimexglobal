@@ -27,6 +27,7 @@
 
 
 
+
 </style>
 <style>
     .fa {
@@ -36,6 +37,7 @@
 .rating {
     margin-left: 37%
 }
+
 
 
 
@@ -93,6 +95,7 @@ body {
 }
 
 
+
 </style>
 
 {% include 'blog/snippets/loginheader.html' %}
@@ -137,8 +140,11 @@ body {
                                name="search">
                         <select required="" name="type">
                             <option value="buyer" selected="selected">Buyer</option>
-                            <option value="company">Company</option>
                             <option value="seller">Seller</option>
+                            <option value="seller">Service</option>
+                            <option value="company">Company</option>
+                            <option value="manufacturer">Manufacturer</option>
+
                         </select>
                         <label for="cars">-</label>
                         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
@@ -147,7 +153,6 @@ body {
             </div>
         </div>
     </div>
-
 
 
     <!-----
@@ -211,6 +216,7 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
+
 
 
 

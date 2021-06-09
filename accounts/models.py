@@ -78,16 +78,16 @@ STATUS = (
 )
 
 BUSSINESS = [
-    ("Manufacturer", "Manufacturer"),
-    ("Company", "Trading Company"),
-    ("Buying Office", "Buying Office"),
-    ("Agent", "Agent"),
-    ("Distributor/Wholesaler", "Distributor/Wholesaler"),
-    ("Government", "Government ministry/Bureau/Commission"),
-    ("Association", "Association"),
-    ("Business Service",
+    ("manufacturer", "Manufacturer"),
+    ("company", "Trading Company"),
+    ("buying Office", "Buying Office"),
+    ("agent", "Agent"),
+    ("distributor/Wholesaler", "Distributor/Wholesaler"),
+    ("government", "Government ministry/Bureau/Commission"),
+    ("association", "Association"),
+    ("business",
      "Business Service (Transportation, finance, travel, Ads, etc)"),
-    ("Other", "Other"),
+    ("other", "Other"),
 ]
 
 

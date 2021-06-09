@@ -81,6 +81,7 @@ def search(request):
     catlist = Post.objects.all().distinct('category')
     search_post = request.GET.get('search')
     type_post = request.GET.get('type')
+
     profile = Profile.objects.filter(Q(organization__icontains=search_post) | Q(products__icontains=search_post))
 
     if search_post:
@@ -101,6 +102,10 @@ def search(request):
         # If page is out of range deliver last page of results
         post_list = paginator.page(paginator.num_pages)
 
+    if type_post == 'manufacturer':
+        profile = Profile.objects.filter(Q(organization__icontains=search_post) | Q(products__icontains=search_post)).filter(type='manufacturer')
+        return render(request, 'blog/allcompany.html',
+                      {'posts': post_list, 'catlist': catlist, 'profile': profile, 'page': page, 'type': type_post})
     if type_post == 'company':
         return render(request, 'blog/allcompany.html',
                       {'posts': post_list, 'catlist': catlist, 'profile': profile, 'page': page, 'type': type_post})
@@ -378,5 +383,14 @@ def allcompany(request):
     if search_post:
         profile = Profile.objects.filter(Q(organization__icontains=search_post) | Q(products__icontains=search_post))
     else:
-        profile = Profile.objects.exclude(organization__isnull=True).exclude(type='Buyer').order_by("-id")
+        profile = Profile.objects.exclude(organization__isnull=True).exclude(type='manufacturer').order_by("-id")
+    return render(request, 'blog/allcompany.html', {'profile': profile})
+
+
+def mfgcompany(request):
+    search_post = request.GET.get('search')
+    if search_post:
+        profile = Profile.objects.filter(Q(organization__icontains=search_post) | Q(products__icontains=search_post))
+    else:
+        profile = Profile.objects.exclude(organization__isnull=True).filter(type='manufacturer').order_by("-id")
     return render(request, 'blog/allcompany.html', {'profile': profile})

@@ -19,7 +19,7 @@ class ProdCommentForm(forms.ModelForm):
 class ProdInquiryForm(forms.ModelForm):
     class Meta:
         model = ProdComment
-        fields = ('body','name', 'email', 'mobile')
+        fields = ('body', 'name', 'email', 'mobile')
 
 
 class ProductForm(forms.ModelForm):
@@ -32,9 +32,11 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = ["title", "slug", "keyfeatures", "category", "image",
                   "description", "warranty", "return_policy",
-                  "brand", "uom", "marked_price", "selling_price", "offer","noofpacksinonecartoon", "moq", "storagetemp", "show_product", "policy_agreed"]
+                  "brand", "uom", "marked_price", "selling_price", "offer", "noofpacksinonecartoon", "moq",
+                  "storagetemp", "show_product", "policy_agreed"]
         labels = {
-            'policy_agreed': _('By clicking submit, you acknowledge that your information does not violate any listing policies.'),
+            'policy_agreed': _(
+                'By clicking submit, you acknowledge that your information does not violate any listing policies.'),
             'show_product': _(' Display this product on showcase'),
             'category': _('Click to select product Category'),
             'title': _('Product Name - English'),
@@ -127,7 +129,7 @@ class RfqForm(forms.ModelForm):
         model = Rfq
 
         fields = ['industry', 'buyer_need', 'keywords', 'content', 'qty_required', 'uom',
-                  'buying_frequency', 'image', 'payment_mode', 'destination_port', 'time_validity','policy_agreed']
+                  'buying_frequency', 'image', 'payment_mode', 'destination_port', 'time_validity', 'policy_agreed']
         labels = {
             'policy_agreed': _('I have read, agreed to abide by Terms and Conditions of RFQ'),
             'industry': _('Please select industry'),
@@ -198,4 +200,34 @@ class CustomerLoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput())
 
 
+class SafedealForm(forms.ModelForm):
+    class Meta:
+        model = Safedeal
 
+        fields = ['email', 'buy', 'description', 'dealvalue',
+                  'commission', 'logistics', 'pickup', 'delivery', 'name',
+                  'company', 'country',
+                  'phone', 'city', 'partnername', 'partnercompany', 'partnerphone', 'partneremail']
+
+        labels = {
+            'email': _('Your E-mail Address:'),
+            'buy': _('I want to buy'),
+            'dealvalue': _('Deal Value in USD $'),
+            'description': _('Description of goods/services'),
+            'dealvaule': _('Deal Value in USD $'),
+            'commission': _('Who pays the Commission? '),
+            'logistics': _('Shipping Logistics '),
+            'pickup': _('From where to pick up the goods? *'),
+            'delivery': _('Where do you need to deliver the goods? *'),
+            'name': _('YOUR DATA - your full name with surname'),
+            'company': _('YOUR DATA - your organization name'),
+            'country': _('YOUR DATA -  your country name'),
+            'phone': _('YOUR DATA - your contact number'),
+            'city': _('YOUR DATA - your city name'),
+            'partnername': _('PARTNER DATA - Partner full name with surname'),
+            'partnerompany': _('PARTNER DATA - Partner organization name'),
+            'partnercountry': _('PARTNER DATA -  Partner country name'),
+            'partnerphone': _('PARTNER DATA - Partner contact number'),
+            'partneremail': _('PARTNER DATA - Partner Email Address'),
+
+        }

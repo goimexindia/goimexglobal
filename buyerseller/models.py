@@ -8,7 +8,22 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column
 from django.urls import reverse_lazy, reverse
 from mptt.models import MPTTModel, TreeForeignKey
+from phone_field import PhoneField
 
+LOGISTICS = [
+    ("own", 'Own'),
+    ("goimex", "Want to deliver the goods with Goimex Logistics"),
+]
+COMMISSION = [
+    ("seller", "Seller"),
+    ("buyer", "Buyer"),
+    ("50%seller50%buyer", "50% Seller, 50% the buyer")
+]
+BUY = [
+    ("product", "Product"),
+    ("services", "Services"),
+    ("others", "Others")
+]
 UOM = [
     ("Case", "Case"),
     ("Centimeter", "Centimeter"),
@@ -445,3 +460,37 @@ class Order(models.Model):
 
     def __str__(self):
         return "Order: " + str(self.id)
+
+
+class Safedeal(models.Model):
+    email = models.EmailField(max_length=200)
+    buy = models.CharField(max_length=100, choices=BUY, default='Product')
+    description = RichTextField(blank=True, null=True)
+    dealvalue = models.PositiveIntegerField()
+    commission = models.CharField(max_length=100, choices=COMMISSION, default='Seller',
+                                  help_text='Goimex Safe service charges a commission for organizing deal protection and guaranteeing the delivery of goods / services. The commission size is up to 3 % for goods, up to 7 % for services. There can be other commissions depending on the conditions and amount of the transaction.')
+    logistics = models.CharField(max_length=100, choices=LOGISTICS, default='Seller',
+                                 help_text='Specify how you want to organize logistics.Goimex Logistics is a service of searching logistics companies, we have trusted freight forwarders working with us. If you want to make delivery through our Logistics, in this case Goimex will also act as a guarantor for delivery.')
+    pickup = models.CharField(max_length=500)
+    delivery = models.CharField(max_length=500)
+    name = models.CharField(max_length=500)
+    company = models.CharField(max_length=500)
+    country = CountryField()
+    phone = models.CharField(max_length=120, default='123456789')
+    city = models.CharField(max_length=500)
+    partnername = models.CharField(max_length=500,
+                                   help_text='Specify the information of your partner from whom you are buying or to whom you are selling a product or service')
+    partnercompany = models.CharField(max_length=500,
+                                      help_text='The name of the partner company (if it is legal. person)')
+    partnerphone = models.CharField(max_length=120, default='123456789')
+    partneremail = models.EmailField(max_length=200)
+    updated_on = models.DateTimeField(auto_now=True, verbose_name="date updated")
+    created_on = models.DateTimeField(auto_now_add=True, verbose_name="date published")
+    status = models.IntegerField(choices=STATUS, default=0)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='safedeal')
+
+    class Meta:
+        ordering = ['-created_on']
+
+    def __str__(self):
+        return self.buyer_safe + '|' + str(self.author.email)

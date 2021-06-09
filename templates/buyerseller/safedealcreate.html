@@ -1,0 +1,38 @@
+{% extends "blog/newbase.html" %}
+{% load crispy_forms_tags %}
+{% block title %}RFQ{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h2 class="c-heading main-heading multi-heading">Get <span> guarantee</span></h2>
+            <div class="card bg-warning text-white">
+                <div class="card-header"><h4>Order Protection</h4></div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-8 left-container">
+
+                <hr>
+            </div>
+            <p>Before you apply for deal protection, agree with your partner on the terms of the deal and fill in the
+                fields on this page.</p>
+            <hr>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form|crispy }}
+                <hr>
+                <small class="text-muted">
+                    <p>By clicking Safe Guard Deal, you agree to our Terms and that you have read our Data UsePolicy,
+                        including
+                        our Cookie Use.</p></small>
+                <button class="btn btn-danger btn-lg">PROTECT</button>
+            </form>
+        </div>
+        <div class="col-md-4 mx-auto">
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

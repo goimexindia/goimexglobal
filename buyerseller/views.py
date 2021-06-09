@@ -807,4 +807,17 @@ class ProductListView(generic.ListView):
         return context
 
 
+class CategoryListView(generic.ListView):
+    model = Category
+    template_name = "buyseller/category_list.html"
 
+
+class SafedealCreateView(LoginRequiredMixin, CreateView):
+    template_name = "buyerseller/safedealcreate.html"
+    form_class = SafedealForm
+    success_url = '/accounts/success'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        p = form.save()
+        return super().form_valid(form)

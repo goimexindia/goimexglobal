@@ -8,6 +8,7 @@ from .views import *
 urlpatterns = [
     path("", HomeView.as_view(), name="ecohome"),
     path('catsearch/', views.catsearch, name='cat-search'),
+    path('categorylist', CategoryListView.as_view(), name='category-list'),
     path('adminpostsearch/', views.adminpostsearch, name='adminpost-search'),
     path("ecomerce", EcomerceView.as_view(), name="ecomerce"),
     path("all-products/", AllProductsView.as_view(), name="allproducts"),
@@ -23,6 +24,7 @@ urlpatterns = [
     path('prodcomment/<slug:slug>/', views.prodcomment, name='prodcomment'),
     path('prodinquiry/<slug:slug>/', views.prodinquiry, name='prodinquiry'),
     path('rfq', RfqCreateView.as_view(), name='rfq'),
+    path('safedealform', SafedealCreateView.as_view(), name='safedealform'),
     path('rfq/<int:pk>/update', RfqUpdateView.as_view(), name='rfq-update'),
     path("product/<slug:slug>/", ProductDetailView.as_view(), name="productdetail"),
     path("add-to-cart-<int:pro_id>/", AddToCartView.as_view(), name="addtocart"),

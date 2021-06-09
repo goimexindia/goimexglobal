@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django_countries.fields import CountryField
 from PIL import Image
+from phone_field import PhoneField
 
 INDUSTRY = [
     ('AGRICULTURE', 'Agriculture'),

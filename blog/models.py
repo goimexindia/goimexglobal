@@ -18,6 +18,7 @@ TYPE_CHOICES = [
     ("seller", "Seller"),
     ("retailer", "Retailer"),
     ("agent", "Agent"),
+    ("services", "Services"),
 ]
 INDUSTRY = [
     ('AGRICULTURE', 'Agriculture'),

@@ -87,9 +87,14 @@ def search(request):
     if search_post:
         posts = Post.objects.filter(
             Q(title__icontains=search_post) |
-            Q(snippet__icontains=search_post))
+            Q(snippet__icontains=search_post)).exclude(posttype='service')
     else:
-        posts = Post.objects.filter(status=1).order_by("-date_posted")
+        posts = Post.objects.filter(status=1).exclude(posttype='service').order_by("-date_posted")
+
+    if type_post == 'service':
+        posts = Post.objects.filter(posttype='service', status=1).filter(
+            Q(title__icontains=search_post) |
+            Q(snippet__icontains=search_post)).order_by("-date_posted")
 
     paginator = Paginator(posts, 5)  # 3 posts in each page
     page = request.GET.get('page')
@@ -185,6 +190,28 @@ class BuyerPostListView(ListView):
         context['catlist'] = categorylist
         return context
 
+
+class ServicePostListView(ListView):
+    model = Post
+    template_name = 'blog/homepostbuy.html'  # <app>/<model>_<viewtype>.html
+    posts = Post.objects.filter(posttype='service').filter(status=1).order_by('-id')
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by = 5
+
+    def get_queryset(self):
+        return Post.objects.filter(posttype='service').filter(status=1).order_by('-id')
+
+    def get_context_data(self, *args, **kwargs):
+        categorylist = Post.objects.all().distinct('category')
+        context = super(ServicePostListView, self).get_context_data(**kwargs)
+        posts = Post.objects.filter(posttype='service').filter(status=1).order_by('-id')
+        paginator = Paginator(posts, 5)
+        page_number = self.request.GET.get('page')
+        post_list = paginator.get_page(page_number)
+        context['posts'] = post_list
+        context['catlist'] = categorylist
+        return context
 
 class UserPostListView(ListView):
     model = Post

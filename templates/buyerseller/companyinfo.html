@@ -385,7 +385,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                                             href="{% url 'productdetail' p.slug %}">{{p.title}}</a></strong>
                                     </h5>
                                     <img class="card-img-top" src="{{p.image.url}}"
-                                         alt="" style="height: 200px; object-fit: contain;">
+                                         alt="{{profiles.profile.organization}} " style="height: 200px; object-fit: contain;">
                                     <a>
                                         <div class="mask rgba-white-slight"></div>
                                         <strong>
@@ -519,7 +519,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                     <div id="collapseThree" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                             <li><img class="card-img-top" src="{{profiles.profile.img1.url}}"
-                                     alt="" style="height: 200px; object-fit: contain;"></li>
+                                     alt="{{profiles.profile.organization}} " style="height: 200px; object-fit: contain;"></li>
                         </div>
                     </div>
                 </div>
@@ -532,7 +532,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                     <div id="collapseFour" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                             <li><img class="card-img-top" src="{{profiles.profile.img2.url}}"
-                                     alt="" style="height: 200px; object-fit: contain;"></li>
+                                     alt="{{profiles.profile.organization}} " style="height: 200px; object-fit: contain;"></li>
                         </div>
                     </div>
                 </div>
@@ -545,7 +545,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                     <div id="collapseFive" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                             <li><img class="card-img-top" src="{{profiles.profile.img3.url}}"
-                                     alt="" style="height: 200px; object-fit: contain;"></li>
+                                     alt="{{profiles.profile.organization}} " style="height: 200px; object-fit: contain;"></li>
                         </div>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
     path('buyerpost', BuyerPostListView.as_view(), name='blog-buyerhome'),
     path('servicepost', ServicePostListView.as_view(), name='blog-servicehome'),
+    path('servicepost', ServicePostListView.as_view(), name='blog-servicehome'),
     path('allcompany', views.allcompany, name='allcompany'),
     path('mfgcompany', views.mfgcompany, name='mfgcompany'),
     path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),

@@ -105,6 +105,7 @@ body {
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="{% url 'blog-home' %}"> Sale Offers</a>
         <a href="{% url 'blog-buyerhome' %}">Buy Offer</a>
+        <a href="{% url 'blog-servicehome' %}">Services Offer</a>
         <a href="{% url 'post-create' %}">Post Request</a>
         <a href="{% url 'rfq' %}"> RFQ</a>
         {% if user.is_authenticated %}

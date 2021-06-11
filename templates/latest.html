@@ -6,16 +6,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
-<div class="container">
+<div class="w3-container">
     {% for x in last %}
-    <h6 class="text-truncate"><a href="{% url 'productdetail' x.slug %}"
-                                 title="{{ x.title}}"> {{ x.title|striptags|truncatechars:35}}
-        <small> ( {{ x.author.profile.country.name }} )</small>
-        <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
-        <i class="{{ x.author.profile.country.flag_css }}"></i></a>
-
-        {% endfor %}</h6>
+    <div class="w3-panel w3-card">
+        <h6 class="text-truncate"><a href="{% url 'productdetail' x.slug %}"
+                                     title="{{ x.title}}"> {{ x.title|striptags|truncatechars:35}}
+            <small> ( {{ x.author.profile.country.name }} )</small>
+            <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
+            <i class="{{ x.author.profile.country.flag_css }}"></i></a>
+        </h6>
+    </div>
+    {% endfor %}
 </div>
 
 

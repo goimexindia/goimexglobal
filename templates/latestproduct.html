@@ -1,4 +1,4 @@
- {% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,17 +7,18 @@
 </head>
 <body>
 <div class="container">
-    {% for x in last %}
-    <h5 class="text-truncate"><a href="{% url 'productdetail' x.slug %}"
-                                 title="{{ x.title}}"> {{ x.title|striptags}}
-        <small> ( {{ x.author.profile.country.name }} )</small>
-         <small> ( {{ x.author.profile.organization }} )</small>
-        <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
-       </a>
+{% for x in last %}
 
-        {% endfor %}</h5>
+
+<h5 class="text-truncate"><a href="{% url 'productdetail' x.slug %}"
+                             title="{{ x.title}}"> {{ x.title|striptags}}
+    <small> ( {{ x.author.profile.country.name }} )</small>
+    <small> ( {{ x.author.profile.organization }} )</small>
+    <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
+</a>
+</h5>
+
+{% endfor %}
 </div>
-
-
 </body>
 </html>

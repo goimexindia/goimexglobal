@@ -5,12 +5,16 @@
     <title>Title</title>
 </head>
 <body>
-<div class="container">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class="w3-container">
     {% for x in last %}
-    <h6 class="text-truncate"><a href=" {% url 'companyproduct' x.user.id %} "
-                                         title="{{ x.organization}}"> {{ x.organization|striptags|truncatechars:40}}
-             <small> ( {{ x.country.name }} )</small>  <i class="{{ x.country.flag_css }}"></i>
-
+    <div class="w3-panel w3-card">
+        <h6 class="text-truncate"><a href=" {% url 'companyproduct' x.user.id %} "
+                                     title="{{ x.organization}}"> {{ x.organization|striptags|truncatechars:40}}
+            <small> ( {{ x.country.name }} )</small> <i class="{{ x.country.flag_css }}"></i>
+        </a>
+        </h6>
+    </div>
     {% endfor %}
 </div>
 </body>

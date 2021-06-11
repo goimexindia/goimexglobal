@@ -14,20 +14,37 @@
                 <div class="owl-carousel owl-theme owl-drag" id="featuredProductThumbnail">
                     <div class="item">
                         <div class="row no-gutters">
-                            {% for p in suppliers %}
-                            <div class="col-md-3 col-6">
-                                <div class="desc">{{p.organization}}</div>
-                                <div class="gallery">
-                                    <div class="featuredProductThumbnailItem">
-                                        <a target="_blank" href=" {% url 'companyproduct' p.user.id %} ">
-                                            <img src="{{p.img.url}}" alt="{{p.title}}" width="600"
-                                                 height="400">
-                                        </a>
-                                        <div class="desc">{{p.products}}</div>
+                         {% for p in suppliers %}
+                            <div class="col-md-3 card ">
+                                <div class="card card-cascade card-ecommerce wider shadow mb-4 ">
+                                    <!--Card image-->
+                                    <div class="view view-cascade overlay text-center">
+                                        <h5 class="card-title"><strong><a
+                                                href="{% url 'companyproduct' p.user.id %}">{{p.organization}}</a></strong>
+                                        </h5>
+                                        <small class="text-muted">
+                                            <a class="mr-2" href="#">{{p.industry }}</a>
+                                        </small>
+                                        <img class="card-img-top" src="{{p.img.url}}"
+                                             alt="" style="height: 200px; object-fit: contain;">
+                                        <a>
+                                            <div class="mask rgba-white-slight"></div>
+                                          </a>
+                                    </div>
+                                    <!--Card Body-->
+                                    <div class=" text-center">
+                                        <p class="card-text"><small>{{p.bio|striptags|truncatechars:140 }}
+                                            <a href="#">Show
+                                                More........</a> </small></p>
+                                        <small>Seller based in ( {{ p.country.name }} )</small>
+                                        <a class="mr-2" href=" {% url 'companyproduct' p.user.id  %} ">
+                                            <small>{{p.author.profile.organization }}</small></a>
                                     </div>
                                 </div>
                             </div>
                             {% endfor %}
+
+
                         </div>
                     </div>
                 </div>

@@ -53,7 +53,7 @@ class HomeView(TemplateView):
         context = super(HomeView, self).get_context_data(**kwargs)
         prod = Proddisplay.objects.all().order_by("-id")
         category = Category.objects.all()
-        suppliers = Profile.objects.exclude(organization__isnull=True).exclude(type='Buyer').order_by("-id")
+        suppliers = Profile.objects.exclude(organization__isnull=True).exclude(type='Buyer').order_by("-id")[:10]
         products = Product.objects.all().order_by("-id")
         productss = Product.objects.all().exclude(image__isnull=True).order_by("-id")
         post = Post.objects.all().order_by("-id")

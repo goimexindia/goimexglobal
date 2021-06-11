@@ -1,6 +1,4 @@
 {% load static %}
-
-
 <meta charset="utf-8">
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -8,7 +6,6 @@
 <meta name="keywords" content="eCommerce, Buyer, Seller, Indian Manufactorer">
 <meta name="author" content="Goimex Global Pvt Ltd.">
 <title>Goimex Global Pvt Ltd</title>
-
 <link href="{% static 'css/app_min.css' %}" media="all" rel="stylesheet" type="text/css">
 <link href="{% static 'fonts/icomoon1.ttf?smr7yk' %}" as="font" rel="preload" type="font/ttf">
 <link href="{% static 'fonts/fa-solid-900.woff2' %}" rel="preload" type="font/woff2">
@@ -17,16 +14,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="{% static 'fonts/lato-v15-latin-300.woff2' %}" rel="preload" type="font/woff2">
 <!-- <link href="{% static 'css/renderBlocking.min.css' %}" media="all" rel="stylesheet" type="text/css"> -->
-
 <link href="{% static 'css/responsive.min.css' %}" id="responsiveCss" media="screen and (max-width: 1199px)"
       rel="stylesheet" type="text/css">
-
 {% include 'buyerseller/header1.html' %}
-
-
 {% include 'blog/snippets/base_css.html' %}
-
-
 <body>
 <div>
     <section class="top-bar-head-section">
@@ -100,8 +91,6 @@
 <div class="logo100">
 
 </div>
-
-
 <div class="container">
     <div class="row">
 
@@ -119,12 +108,10 @@
                         <h5><span style="text-transform:uppercase">{{user.profile.organization}}</span></h5>
                     </div>
                 </a>
-
                 {% endif %}
             </div>
             {% endif %}
         </div>
-
         <div class="col-md-4 col-xl-3 d-flex justify-content-center justify-content-md-end mt-md-0 mt-2 header-list">
             <a href="{% url 'safedeal' %}"><i class="fa fa-shield fa-3x"><h6>Safe Deal &nbsp; </h6></i><h6>-</h6></a>
             <a href="rfq"><i class="fa fa-envelope fa-3x"><h5>RFQ &nbsp; -</h5></i></a>

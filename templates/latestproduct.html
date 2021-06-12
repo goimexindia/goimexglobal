@@ -11,8 +11,8 @@
 
 
 <h5 class="text-truncate"><a href="{% url 'productdetail' x.slug %}"
-                             title="{{ x.title}}"> {{ x.title|striptags}}
-    <small> ( {{ x.author.profile.country.name }} )</small>
+                             title="{{ x.title}}"> <small>{{ x.title|striptags}}
+     ( {{ x.author.profile.country.name }} )</small>
     <small> ( {{ x.author.profile.organization }} )</small>
     <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
 </a>

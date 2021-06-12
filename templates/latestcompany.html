@@ -9,9 +9,10 @@
 <div class="w3-container">
     {% for x in last %}
     <div class="w3-panel w3-card">
-        <h6 class="text-truncate"><a href=" {% url 'companyproduct' x.user.id %} "
-                                     title="{{ x.organization}}"> {{ x.organization|striptags|truncatechars:40}}
-            <small> ( {{ x.country.name }} )</small> <i class="{{ x.country.flag_css }}"></i>
+        <h6 class="text-truncate">
+            <a href=" {% url 'companyproduct' x.user.id %} "
+              title="{{ x.organization}}"> <small>{{ x.organization|striptags|truncatechars:30}}
+             ( {{ x.country.name }} )</small> <i class="{{ x.country.flag_css }}"></i>
         </a>
         </h6>
     </div>

@@ -12,7 +12,7 @@
     {% for x in last %}
     <div class="w3-panel w3-card">
         <h6 class="text-truncate"><a href="{% url 'productdetail' x.slug %}"
-                                     title="{{ x.title}}"> {{ x.title|striptags|truncatechars:35}}
+                                     title="{{ x.title}}"><small> {{ x.title|striptags|truncatechars:30}}</small>
             <small> ( {{ x.author.profile.country.name }} )</small>
             <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
             <i class="{{ x.author.profile.country.flag_css }}"></i></a>

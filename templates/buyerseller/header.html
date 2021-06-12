@@ -140,7 +140,7 @@
             <li><i class="fa fa-shield fa-3x"></i><a href="{% url 'safedeal' %}"><h6>SafeDeal &nbsp;</h6></a></li>
             <li><i class="fa fa-envelope fa-3x"></i><a href="rfq"><h5>&nbsp &nbsp RFQ &nbsp</h5></a></li>
             {% if user.is_authenticated %}
-            <a href="accounts/logout"><i class="fa fa-user-circle fa-3x"><h5>Sign Out</h5></i></a>
+            <li><i class="fa fa-user-circle fa-3x"></i><a href="accounts/logout"><h5>Sign Out</h5></a></li>
             {% else %}
             <li><i class="fa fa-user-circle fa-3x"></i> <a href="accounts/login"><h5>&nbsp Sign In</h5></a>
                </li>

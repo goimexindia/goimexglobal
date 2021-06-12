@@ -105,16 +105,19 @@ input[type=text]:focus {
   clear: both;
 }
 
-
-
+</style>
+<style>
+.menu-banner-form {background-color: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);}
+.abc {background-color: 	#E6E6FA;}
+.categories-section {background-color: powderblue;}
+h1   {color: blue;}
+p    {color: black;}
 
 </style>
 <section class="menu-banner-form">
-
-    <div>
+    <div class="container">
         <div class="row">
-
-            <div class="mx-auto">
+            <div class="abc mx-auto">
                 <form class="form-inline my-3 my-lg-1" action="{% url 'blog-search' %}" method="GET">
                     <input class="form-control mr-sm-2" type="search"
                            placeholder="Search here....................." aria-label="Search"
@@ -122,11 +125,11 @@ input[type=text]:focus {
                     <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Post <i class="fa fa-search"></i>
                     </button>
                 </form>
-                <div class="mx-auto" style="background-color:#ccc;">
+                <div class="abc mx-auto" style="background-image: url('static/image/12.jpg');">
                     <p><strong>Latest name of Posts</strong> : {% show_latest_post%}</p>
                 </div>
             </div>
-            <div class="mx-auto">
+            <div class="abc mx-auto">
 
                 <form class="form-inline my-3 my-lg-1" action="{% url 'cat-search' %}" method="GET">
                     <input class="form-control mr-sm-2" type="search"
@@ -136,11 +139,11 @@ input[type=text]:focus {
                             class="fa fa-search"></i>
                     </button>
                 </form>
-                <div class="mx-auto" style="background-color:#ccc;">
+                <div class="abc mx-auto" style="background-image: url('/static/image/12.jpg');">
                     <p><strong>Latest name of Products:</strong> {% show_latest_name%}</p>
                 </div>
             </div>
-            <div class="mx-auto">
+            <div class="abc mx-auto">
                 <form class="form-inline my-3 my-lg-1" action="{% url 'allcompany' %}" method="GET">
                     <input class="form-control mr-sm-2" type="search"
                            placeholder="Search here........................" aria-label="Search"
@@ -149,7 +152,7 @@ input[type=text]:focus {
                             class="fa fa-search"></i>
                     </button>
                 </form>
-                <div class="mx-auto" style="background-color:#ccc;">
+                <div class="abc mx-auto" style="background: url('/static/image/12.jpg');">
                     <p><strong>Latest name of Company:</strong> {% show_latest_company%}</p>
                 </div>
             </div>
@@ -672,7 +675,7 @@ input[type=text]:focus {
                 </ul>
             </div>
             {% else %}
-            <section class="tell-us-what-you-section quote-now d-md-none d-lg-block d-xl-block">
+            <section class="categories-section tell-us-what-you-section quote-now d-md-none d-lg-block d-xl-block">
                 <h6>Tell Us What You <span>NEED</span></h6>
                 <form action="user/basic-signup-n/" id="quoteForm" method="post" name="quoteForm">
                     <input name="affiliate" type="hidden" value="1"><input name="signup-form" type="hidden" value="yes"><input
@@ -1674,5 +1677,5 @@ input[type=text]:focus {
 </section>
 <!-- new section End  here -->
 {% include 'buyerseller/footer.html' %}
-</body>
+
 </html>

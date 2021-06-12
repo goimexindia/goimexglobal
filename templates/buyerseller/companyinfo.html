@@ -84,13 +84,14 @@ body {
 
 
 
+
+
 </style>
 
 <style type="text/css">
     .inner-banner{
-        background-image: url("https://www.eworldtrade.com/assets/images/company/company-banner.jpg");
-         background-image: url("https://www.eworldtrade.com/assets/images/company/company-banner.jpg");
-        background-position: center center;
+        background-image: url("/static/images/12.jpg");
+
         background-size: cover;
     }
     .company-join-banner{
@@ -98,15 +99,6 @@ body {
         background-position: center center;
         background-size: cover;
     }
-
-
-
-
-
-
-
-
-
 </style>
 <style>
 * {box-sizing: border-box}
@@ -157,14 +149,6 @@ body {font-family: "Lato", sans-serif;}
 }
 
 
-
-
-
-
-
-
-
-
 </style>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -185,10 +169,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
 
 
-
 </style>
-
-
 <!-- Links (sit on top) -->
 <div>
     <div class="w3-row w3-large w3-dark-grey">
@@ -209,14 +190,14 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 
 <section class="inner-banner company-profile">
-    <div style="background-image: {{profiles.profile.img1.url}};">
+     <div >
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12" style="color:blue;">
                     <i class="com-logo"> <img
                             src="{{ profiles.profile.img.url}}"
                             alt="{{profiles.profile.organization}}" height="200px"></i>
-                    <h1>{{profiles.profile.organization}} </h1>
+                    <h1 style="color:blue;">{{profiles.profile.organization}} </h1>
                     <span class="company-cat">{{profiles.profile.industry}}</span>
                     <ul>
                         <li>
@@ -226,7 +207,6 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                         <li><i class="{{ profiles.profile.country.flag_css }}"></i></li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </div>
@@ -243,7 +223,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                         <div class="card card-cascade card-ecommerce wider shadow  mx-auto ">
                             <div class="view view-cascade overlay text-center">
                                 <img class="card-img-top" src="{{profiles.profile.img1.url}}"
-                                     alt="{{profiles.profile.organization}} " style="height: 200px; object-fit: contain;">
+                                     alt="{{profiles.profile.organization}} "
+                                     style="height: 200px; object-fit: contain;">
                             </div>
                         </div>
                     </div>
@@ -251,7 +232,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                         <div class="card card-cascade card-ecommerce wider shadow  mx-auto ">
                             <div class="view view-cascade overlay text-center">
                                 <img class="card-img-top" src="{{profiles.profile.img2.url}}"
-                                     alt="{{profiles.profile.organization}} " style="height: 200px; object-fit: contain;">
+                                     alt="{{profiles.profile.organization}} "
+                                     style="height: 200px; object-fit: contain;">
                             </div>
                         </div>
                     </div>
@@ -259,7 +241,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                         <div class="card card-cascade card-ecommerce wider shadow  mx-auto ">
                             <div class="view view-cascade overlay text-center">
                                 <img class="card-img-top" src="{{profiles.profile.img3.url}}"
-                                     alt="{{profiles.profile.organization}} " style="height: 200px; object-fit: contain;">
+                                     alt="{{profiles.profile.organization}} "
+                                     style="height: 200px; object-fit: contain;">
                             </div>
                         </div>
                     </div>
@@ -385,7 +368,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                                             href="{% url 'productdetail' p.slug %}">{{p.title}}</a></strong>
                                     </h5>
                                     <img class="card-img-top" src="{{p.image.url}}"
-                                         alt="{{profiles.profile.organization}} " style="height: 200px; object-fit: contain;">
+                                         alt="{{profiles.profile.organization}} "
+                                         style="height: 200px; object-fit: contain;">
                                     <a>
                                         <div class="mask rgba-white-slight"></div>
                                         <strong>
@@ -519,7 +503,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                     <div id="collapseThree" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                             <li><img class="card-img-top" src="{{profiles.profile.img1.url}}"
-                                     alt="{{profiles.profile.organization}} " style="height: 200px; object-fit: contain;"></li>
+                                     alt="{{profiles.profile.organization}} "
+                                     style="height: 200px; object-fit: contain;"></li>
                         </div>
                     </div>
                 </div>
@@ -532,7 +517,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                     <div id="collapseFour" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                             <li><img class="card-img-top" src="{{profiles.profile.img2.url}}"
-                                     alt="{{profiles.profile.organization}} " style="height: 200px; object-fit: contain;"></li>
+                                     alt="{{profiles.profile.organization}} "
+                                     style="height: 200px; object-fit: contain;"></li>
                         </div>
                     </div>
                 </div>
@@ -545,7 +531,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                     <div id="collapseFive" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                             <li><img class="card-img-top" src="{{profiles.profile.img3.url}}"
-                                     alt="{{profiles.profile.organization}} " style="height: 200px; object-fit: contain;"></li>
+                                     alt="{{profiles.profile.organization}} "
+                                     style="height: 200px; object-fit: contain;"></li>
                         </div>
                     </div>
                 </div>
@@ -627,6 +614,8 @@ function myFunctionPost(imgs) {
 
 
 
+
+
     </script>
 
 
@@ -635,6 +624,8 @@ function myFunctionPost(imgs) {
 $(document).ready(function(){
   $('[data-toggle="popover"]').popover();
 });
+
+
 
 
 
@@ -683,6 +674,8 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " w3-white";
 }
+
+
 
 
 

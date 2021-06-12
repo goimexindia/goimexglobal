@@ -1,4 +1,4 @@
-{% extends "blog/base.html" %}
+{% extends "blog/basefile.html" %}
 {% load crispy_forms_tags %}
 {% load static %}
 {% block content %}
@@ -8,9 +8,11 @@
             <div>
                 <a href="#"
                    title="Global B2B Marketplace for Worldwide Manufacturers and Suppliers – Goimex Global">
-                    <img src="https://www.eworldtrade.com/2K19/images/eworldtrade-icon.png"
-                         alt="Global B2B Marketplace for Worldwide Manufacturers and Suppliers – Goimex Global">
-                </a>
+                          <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="70"
+
+                                                                     src="{%  static  'images/goimex.png' %}"></a>
+                        </a>
+                <br>
             </div>
             <div class="description">
                 <h1 class="main-heading">Welcome to </h1>

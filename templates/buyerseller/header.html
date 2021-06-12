@@ -18,29 +18,19 @@
       rel="stylesheet" type="text/css">
 {% include 'buyerseller/header1.html' %}
 {% include 'blog/snippets/base_css.html' %}
-<style>
-body {
-  background-image: "{%  static  'images/logonew.png' %}";
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-
-</style>
 <body>
+<div class="container">
+    <div class="row">
+        <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="75"
+                                                         class="logo w-60 mt-1"
+                                                         src="{%  static  'images/goimex.png' %}"></a>
+     </div>
+</div>
 
 <div>
     {% if user.is_authenticated %}
     <div class="container">
         <div class="col-md-12 d-md-flex justify-content-md-center text-center">
-            <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="75"
-                                                             class="logo w-60 mt-1"
-                                                             src="{%  static  'images/logonew.png' %}"></a>
-            <hr>
-            <h3 class="mr-3"> Hello, <span style="text-transform:uppercase">{{user.username}}</span> , you are a
-                part of the fastest growing B2B Goimex Buisness Network</h3><a></a>
-            <hr>
         </div>
     </div>
     {% else %}
@@ -54,9 +44,6 @@ body {
                         part of the fastest growing B2B Network</h6><a
                         href="accounts/logout">LOGOUT</a>
                     {% else %}
-                    <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="70"
-                                                                     class="logo w-60 mt-1"
-                                                                     src="{%  static  'images/logonew.png' %}"></a>
 
                     <h6 class="mr-3">Join today and be a part of the fastest growing B2B Network</h6><a
                         href="accounts/register">Join Now</a>
@@ -131,7 +118,11 @@ body {
                 {% if user.is_authenticated %}
                 <a href="{% url 'companyproduct' user.id %}" title="My Company">
                     <div class="w3-panel w3-card ">
+                        {% if user.profile.organization %}
                         <h5><span style="text-transform:uppercase">{{user.profile.organization}}</span></h5>
+                         {% else %}
+                        <h5>{{user.username}}</h5>h5>
+                        {% endif %}
                     </div>
                 </a>
                 {% endif %}
@@ -146,21 +137,19 @@ body {
 
         </div>
         <div class="col-md-4 col-xl-3 d-flex justify-content-center justify-content-md-end mt-md-0 mt-2 header-list">
-            <a href="{% url 'safedeal' %}"><i class="fa fa-shield fa-3x"><h6>Safe Deal &nbsp; </h6></i><h6>-</h6></a>
-            <a href="rfq"><i class="fa fa-envelope fa-3x"><h5>RFQ &nbsp; -</h5></i></a>
+            <li><i class="fa fa-shield fa-3x"></i><a href="{% url 'safedeal' %}"><h6>SafeDeal &nbsp;</h6></a></li>
+            <li><i class="fa fa-envelope fa-3x"></i><a href="rfq"><h5>&nbsp &nbsp RFQ &nbsp</h5></a></li>
             {% if user.is_authenticated %}
             <a href="accounts/logout"><i class="fa fa-user-circle fa-3x"><h5>Sign Out</h5></i></a>
             {% else %}
-            <li><i class="fa fa-user-circle"></i> <small><a href="accounts/login">Sign In</a> <sub
-                    class="headerLoginRegisterSeperator">/</sub> <a
-                    href="javascript:registerPopup('Join%20Free');" title="Join Free">Join Free</a></small>
-                <span></span></li>
+            <li><i class="fa fa-user-circle fa-3x"></i> <a href="accounts/login"><h5>&nbsp Sign In</h5></a>
+               </li>
             {% endif %}
         </div>
     </div>
 </div>
 <!----
  <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd."  class="logo w-60 mt-1"
-                                                                 src="{%  static  'images/logonew.png' %}"></a>
+                                                                 src="{%  static  'images/logonew1.png' %}"></a>
 --->
 </body>

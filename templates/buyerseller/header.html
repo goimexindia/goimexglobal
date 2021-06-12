@@ -18,8 +18,27 @@
       rel="stylesheet" type="text/css">
 {% include 'buyerseller/header1.html' %}
 {% include 'blog/snippets/base_css.html' %}
+<style>
+body {
+  background-image: "{%  static  'images/logonew.png' %}";
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+</style>
 <body>
+
 <div>
+    {% if user.is_authenticated %}
+     <nav class="navbar navbar-expand-md navbar-dark">
+     <div class="col-md-12 d-md-flex justify-content-md-center text-center">
+    <h5 class="mr-3"> Hello, <span style="text-transform:uppercase">{{user.username}}</span> , you are a
+                        part of the fastest growing B2B Goimex Buisness Network</h5><a></a>
+         <hr>
+         </div>
+          <nav class="navbar navbar-expand-md navbar-light">
+    {% else %}
     <section class="top-bar-head-section">
         <div class="container">
             <div class="row">
@@ -36,6 +55,7 @@
             </div>
         </div>
     </section>
+    {% endif %}
 </div>
 <section class="top-nav">
     <div class="container">
@@ -95,8 +115,7 @@
     <div class="row">
 
         <div class="col-md-3 col-xl-4 d-flex justify-content-center justify-content-md-start mb-md-0 mb-3">
-                <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." class="logo w-60 mt-1"
-                                                                 src="{%  static  'images/logo2.png' %}"></a>
+
         </div>
         <div class="col-md-3 col-xl-5 pr-md-0">
 
@@ -126,3 +145,8 @@
         </div>
     </div>
 </div>
+<!----
+ <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd."  class="logo w-60 mt-1"
+                                                                 src="{%  static  'images/logonew.png' %}"></a>
+--->
+</body>

@@ -95,6 +95,7 @@ img {
 .demo:hover {
   opacity: 1;
 }
+
 </style>
 <!-------
 <section class="ft-prd-verfy-sup featuredProductThumbnailComponent">
@@ -124,22 +125,27 @@ img {
                     -</a></h4>
             </div>
             <div class="col-md-12">
-                <div>
+                <div class="owl-carousel owl-theme owl-drag" id="featuredProductThumbnail">
                     <div class="item">
                         <div class="row no-gutters">
                             {% for p in products %}
                             <div class="col-md-2 col-6">
                                 <div class="gallery">
-                                    <h6 class="card-title"><small><a
-                                            href="{% url 'productdetail' p.slug %}">{{p.title}}</a></small>
+                                    <div class="view view-cascade overlay text-center">
+                                        <h6 class="card-title"><strong><a
+                                                href="{% url 'productdetail' p.slug %}">{{p.title}}</a></strong>
+                                        </h6>
+
                                         {% if p.offer %}
                                         <span class="badge badge-secondary">Offer</span>
                                         {% endif %}
-                                    </h6>
-
+                                        </h6>
+                                    </div>
                                     <div class="featuredProductThumbnailItem">
                                         <a target="_blank" href="#">
-                                            <img src="{{p.image.url}}" class="img-thumbnail" alt="{{p.image}}">
+
+                                            <img class="card-img-top" src="{{p.image.url}}"
+                                                 alt="" style="height: 200px; object-fit: contain;">
                                         </a>
                                         <div class="desc">{{p.keyfeatures}}</div>
                                     </div>

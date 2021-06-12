@@ -26,20 +26,23 @@ body {
   background-size: cover;
 }
 
+
 </style>
 <body>
 
 <div>
     {% if user.is_authenticated %}
-     <nav class="navbar navbar-expand-md navbar-dark">
-     <div class="col-md-12 d-md-flex justify-content-md-center text-center">
-         <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="75" class="logo w-60 mt-1"
-                                                                 src="{%  static  'images/logonew.png' %}"></a>
-   <hr> <h3 class="mr-3"> Hello, <span style="text-transform:uppercase">{{user.username}}</span> , you are a
-                        part of the fastest growing B2B Goimex Buisness Network</h3><a></a>
-         <hr>
-         </div>
-          <nav class="navbar navbar-expand-md navbar-light">
+    <div class="container">
+        <div class="col-md-12 d-md-flex justify-content-md-center text-center">
+            <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="75"
+                                                             class="logo w-60 mt-1"
+                                                             src="{%  static  'images/logonew.png' %}"></a>
+            <hr>
+            <h3 class="mr-3"> Hello, <span style="text-transform:uppercase">{{user.username}}</span> , you are a
+                part of the fastest growing B2B Goimex Buisness Network</h3><a></a>
+            <hr>
+        </div>
+    </div>
     {% else %}
     <section class="top-bar-head-section">
         <div class="container">
@@ -51,8 +54,9 @@ body {
                         part of the fastest growing B2B Network</h6><a
                         href="accounts/logout">LOGOUT</a>
                     {% else %}
-                    <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="70" class="logo w-60 mt-1"
-                                                                 src="{%  static  'images/logonew.png' %}"></a>
+                    <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="70"
+                                                                     class="logo w-60 mt-1"
+                                                                     src="{%  static  'images/logonew.png' %}"></a>
 
                     <h6 class="mr-3">Join today and be a part of the fastest growing B2B Network</h6><a
                         href="accounts/register">Join Now</a>
@@ -122,7 +126,7 @@ body {
     <div class="row">
 
         <div class="col-md-3 col-xl-3 d-flex justify-content-center justify-content-md-start mb-md-0 mb-3">
-  {% if user.profile.organization %}
+            {% if user.profile.organization %}
             <div class="row">
                 {% if user.is_authenticated %}
                 <a href="{% url 'companyproduct' user.id %}" title="My Company">
@@ -135,9 +139,10 @@ body {
             {% endif %}
         </div>
         <div class="col-md-3 col-xl-6 pr-md-0">
-  <marquee behavior="scroll" direction="left"><h6>Virtual Event Hosted By Goimex Gobal Pvt Ltd will held in Jan
-        2022</h6>
-    </marquee>
+            <marquee behavior="scroll" direction="left"><h6>Virtual Event Hosted By Goimex Gobal Pvt Ltd will held in
+                Jan
+                2022</h6>
+            </marquee>
 
         </div>
         <div class="col-md-4 col-xl-3 d-flex justify-content-center justify-content-md-end mt-md-0 mt-2 header-list">

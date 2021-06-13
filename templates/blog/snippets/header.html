@@ -161,24 +161,24 @@ body {
                 {% endif %}
             </ul>
 
-            <li><i class="fa fa-shopping-cart fa-3x"></i>
-                <a class="nav-item nav-link" href="{% url 'mycart'  %}" class="nav-link navbar-link-2 waves-effect">My
-                    Cart </a></li>
-            <li><i class="fa fa-shield fa-3x"></i><a class="nav-item nav-link" href="{% url 'safedeal' %}"><h6>SafeDeal
-                &nbsp;</h6></a></li>
-            <li><i class="fa fa-envelope fa-3x"></i><a class="nav-item nav-link" href="{% url 'rfq' %}"><h6>&nbsp &nbsp
-                RFQ &nbsp</h6></a></li>
-            <li><i class="fa fa-shield fa-3x"></i><a class="nav-item nav-link" href="{% url 'ecomerce' %}"><h6>
-                My eShop &nbsp</h6></a></li>
+            <li><i class="fa fa-shopping-cart fa-2x"></i>
+                <a class="nav-item nav-link" href="{% url 'mycart'  %}" class="nav-link navbar-link-2 waves-effect"><h7>My
+                    Cart</h7> </a></li>
+            <li><i class="fa fa-shield fa-2x"></i><a class="nav-item nav-link" href="{% url 'safedeal' %}"><h7>SafeDeal
+                &nbsp;</h7></a></li>
+            <li><i class="fa fa-envelope fa-2x"></i><a class="nav-item nav-link" href="{% url 'rfq' %}"><h7> &nbsp
+                RFQ &nbsp</h7></a></li>
+            <li><i class="fa fa-shield fa-2x"></i><a class="nav-item nav-link" href="{% url 'ecomerce' %}"><h7>
+                My eShop &nbsp</h7></a></li>
 
             {% if user.is_authenticated %}
-            <li><i class="fa fa-user-circle fa-3x"></i> <a class="nav-item nav-link" href="{% url 'logout' %}"><h6>&nbsp
-                Sign Out</h6></a>
+            <li><i class="fa fa-user-circle fa-2x"></i> <a class="nav-item nav-link" href="{% url 'logout' %}"><h7>&nbsp
+                Sign Out</h7></a>
             </li>
 
             {% else %}
-            <li><i class="fa fa-user-circle fa-3x"></i> <a class="nav-item nav-link" href="{% url 'login' %}"><h6>&nbsp
-                Sign In</h6></a>
+            <li><i class="fa fa-user-circle fa-2x"></i> <a class="nav-item nav-link" href="{% url 'login' %}"><h7>&nbsp
+                Sign In</h7></a>
             </li>
             {% endif %}
 

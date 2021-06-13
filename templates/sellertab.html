@@ -1,0 +1,136 @@
+<style>
+    ol.s {list-style-type: inherit;}
+
+</style>
+<style>
+
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
+
+.success {
+  background-color: #ddffdd;
+  border-left: 6px solid #04AA6D;
+}
+
+.info {
+  background-color: #e7f3fe;
+  border-left: 6px solid #2196F3;
+}
+
+
+.warning {
+  background-color: #ffffcc;
+  border-left: 6px solid #ffeb3b;
+}
+
+</style>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<div class="container" style="text-align: center;">
+    <div class="card bg-primary text-white">
+    </div>
+    <div class="card card-cascade card-ecommerce wider shadow">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="pill" href="#home"><h4>Sell on Goimex</h4></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#menu1"><h4>Buy on Goimex</h4></a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+
+            <div id="home" class="container tab-pane active"><br>
+                <div class="col-md-12">
+                    <div>
+                        <div class="item">
+                            <div class="row no-gutters">
+                                <div class="w3-panel w3-card">
+                                    <a class="nav-item nav-link" href="{% url 'safedeal' %}"><h3>Post</h3></a>
+                                    <div class="container">
+                                        <i class="fa fa-bullhorn fa-4x"></i>
+                                        <h7>Requests for quotation</h7>
+                                        </a></li>
+                                    </div>
+                                </div>
+                                <div class="w3-panel w3-card">
+                                    <a class="nav-item nav-link" href="{% url 'safedeal' %}"><h3>Promotions</h3></a>
+                                    <div class="container">
+                                        <i class="fa fa-product-hunt fa-4x"></i>
+                                        <h7>Pay only on results</h7>
+                                        </a></li>
+                                    </div>
+                                </div>
+                                <div class="w3-panel w3-card">
+                                    <a class="nav-item nav-link" href="{% url 'safedeal' %}"><h3>Add company</h3></a>
+                                    <div class="container">
+                                        <i class="fa fa-plus fa-4x"></i>
+                                        <h8>Trade worldwide</h8>
+                                        </a></li>
+                                    </div>
+                                </div>
+                                <div class="w3-panel w3-card">
+                                    <a class="nav-item nav-link" href="{% url 'safedeal' %}"><h3>Verified supplier</h3>
+                                    </a>
+                                    <div class="container">
+                                        <i class="fa fa-check-circle fa-4x"></i>
+                                        <h8>Increase customer trust</h8>
+                                        </a></li>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="menu1" class="container tab-pane fade"><br>
+                <div class="item">
+                      <div class="row no-gutters">
+                        <div class="w3-panel w3-card">
+                            <a class="nav-item nav-link" href="{% url 'safedeal' %}"><h3>Suppliers</h3></a>
+                            <div class="container">
+                                <i class="fa fa-archive fa-4x"></i>
+                                <h8>From all over the world</h8>
+                                </a></li>
+                            </div>
+                        </div>
+                        <div class="w3-panel w3-card">
+                            <a class="nav-item nav-link" href="{% url 'safedeal' %}"><h3>Products</h3></a>
+                            <div class="container">
+                                <i class="fa  fa-product-hunt fa-4x"></i>
+                                <h7>More categories</h7>
+                                </a></li>
+                            </div>
+                        </div>
+                        <div class="w3-panel w3-card">
+                            <a class="nav-item nav-link" href="{% url 'safedeal' %}"><h3>Safe Deal</h3></a>
+                            <div class="container">
+                                <i class="fa fa-american-sign-language-interpreting fa-4x"></i>
+                                <h8>Protect Deal</h8>
+                                </a></li>
+                            </div>
+                        </div>
+                        <div class="w3-panel w3-card">
+                            <a class="nav-item nav-link" href="{% url 'safedeal' %}"><h3>Get Quote</h3>
+                            </a>
+                            <div class="container">
+                                <i class="fa fa-quote-left fa-4x"></i>
+                                <h8>get multiple offers</h8>
+                                </a></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

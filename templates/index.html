@@ -111,8 +111,9 @@ input[type=text]:focus {
 h1   {color: blue;}
 p    {color: black;}
 
-
 </style>
+{% include 'sellertab.html' %}
+<br><br>
 <section class="menu-banner-form">
     <div class="container">
         <div class="row">
@@ -157,6 +158,7 @@ p    {color: black;}
             </div>
         </div>
     </div>
+    <br>
     <div class="container">
         <div class="categories-section  col-md-4 col-lg-3 p-0">
             <h4>Categories <i class="fa fa-bars"></i></h4>
@@ -810,9 +812,9 @@ p    {color: black;}
                 <h4 class="lbo-brdr  hd-section-inner-link">Latest Products <a href="{% url 'ecomerce' %}"
                                                                                title="All Products">- View More -</a>
                 </h4>
-                    <marquee behavior="scroll" direction="down">
-                        {% show_latest_product %}
-                    </marquee>
+                <marquee behavior="scroll" direction="down">
+                    {% show_latest_product %}
+                </marquee>
             </div>
 
         </div>
@@ -820,10 +822,11 @@ p    {color: black;}
     </div>
 </section>
 
-    <div class="container">
-    <h3 class="lbo-brdr  hd-section-inner-link">Latest Products By Our verified Suppliers..<a href="{% url 'ecomerce' %}"
-                                                                               title="All Products">- View More -</a>
-                </h3>
+<div class="container">
+    <h3 class="lbo-brdr  hd-section-inner-link">Latest Products By Our verified Suppliers..<a
+            href="{% url 'ecomerce' %}"
+            title="All Products">- View More -</a>
+    </h3>
 </div>
 <div class="scroll-left">
     <div class="inner">
@@ -848,7 +851,8 @@ p    {color: black;}
                 <ul class="nav nav-tabs owl-carousel-tabs owl-carousel owl-theme categoryTabsNav">
 
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="javascript:void(0)" title="Apparel"><i>
+                        <a class="nav-link active" data-toggle="tab" href="javascript:void(0)"
+                           title="Apparel &amp; Textiles"><i>
                             <picture>
                                 <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/26.webp"
                                         type="image/webp">
@@ -859,12 +863,12 @@ p    {color: black;}
                                      height="50"
                                      src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
                                      width="50"></picture>
-                        </i> <span>Apparel</span></a>
+                        </i> <span>Apparel & Textiles</span></a>
                     </li>
 
 
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)" title="Home Appliances"><i>
+                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)" title="Food"><i>
                             <picture>
                                 <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/12.webp"
                                         type="image/webp">
@@ -875,40 +879,26 @@ p    {color: black;}
                                      height="50"
                                      src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
                                      width="50"></picture>
-                        </i> <span>Home Appliances</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)" title="Machinery"><i>
-                            <picture>
-                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/6.webp"
-                                        type="image/webp">
-                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/6.png' %}"
-                                        type="image/png">
-                                <img alt="Machinery" class="owl-lazy"
-                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/6.png' %}"
-                                     height="50"
-                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-                                     width="50"></picture>
-                        </i> <span>Machinery</span></a>
+                        </i> <span>Food & Beverage</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="javascript:void(0)"
-                           title="Beauty &amp; Personal Care"><i>
+                           title="Agriculture"><i>
                             <picture>
                                 <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/3.webp"
                                         type="image/webp">
                                 <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/3.png' %}"
-                                        type="image/png">
+                                        typght="50"
+                                        sre="image/png">
                                 <img alt="Beauty &amp; Personal Care" class="owl-lazy"
                                      data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/3.png' %}"
-                                     height="50"
-                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                     heic="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
                                      width="50"></picture>
-                        </i> <span>Beauty &amp; Personal Care</span></a>
+                        </i> <span>Agriculture</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="javascript:void(0)"
-                           title="Security &amp; Protection"><i>
+                           title="Health"><i>
                             <picture>
                                 <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/4.webp"
                                         type="image/webp">
@@ -919,380 +909,15 @@ p    {color: black;}
                                      height="50"
                                      src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
                                      width="50"></picture>
-                        </i> <span>Security &amp; Protection</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)"
-                           title="Lights &amp; Lighting"><i>
-                            <picture>
-                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/35.webp"
-                                        type="image/webp">
-                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/35.png' %}"
-                                        type="image/png">
-                                <img alt="Lights &amp; Lighting" class="owl-lazy"
-                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/35.png' %}"
-                                     height="50"
-                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-                                     width="50"></picture>
-                        </i> <span>Lights &amp; Lighting</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)"
-                           title="Automobiles &nbsp;&amp; Motorcycles"><i>
-                            <picture>
-                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/20.webp"
-                                        type="image/webp">
-                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/20.png' %}"
-                                        type="image/png">
-                                <img alt="Automobiles &nbsp;&amp; Motorcycles" class="owl-lazy"
-                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/20.png' %}"
-                                     height="50"
-                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-                                     width="50"></picture>
-                        </i> <span>Automobiles &nbsp;&amp; Motorcycles</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)" title="Chemicals"><i>
-                            <picture>
-                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/2.webp"
-                                        type="image/webp">
-                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/2.png' %}"
-                                        type="image/png">
-                                <img alt="Chemicals" class="owl-lazy"
-                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/2.png' %}"
-                                     height="50"
-                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-                                     width="50"></picture>
-                        </i> <span>Chemicals</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)" title="Food &amp; Beverage"><i>
-                            <picture>
-                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/15.webp"
-                                        type="image/webp">
-                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/15.png' %}"
-                                        type="image/png">
-                                <img alt="Food &amp; Beverage" class="owl-lazy"
-                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/15.png' %}"
-                                     height="50"
-                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-                                     width="50"></picture>
-                        </i> <span>Food &amp; Beverage</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="javascript:void(0)"
-                           title="Minerals &amp; Metallurgy"><i>
-                            <picture>
-                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/1.webp"
-                                        type="image/webp">
-                                <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/icon/1.png' %}"
-                                        type="image/png">
-                                <img alt="Minerals &amp; Metallurgy" class="owl-lazy"
-                                     data-src="https://esimg.eworldtrade.com/assets/images/industries/category/icon/1.png' %}"
-                                     height="50"
-                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-                                     width="50"></picture>
-                        </i> <span>Minerals &amp; Metallurgy</span></a>
+                        </i> <span>Health</span></a>
                     </li>
                 </ul>
-                <div class="tab-content">
-                    <div class="tab-pane active" id="apparel-tab">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6">
-                                <h3><a class="text-danger" href="javascript:void(0)" title="Underwear">Underwear</a>
-                                </h3>
-                                <ul>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Bra">Bra</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Womens Panties">Womens
-                                            Panties</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Mens Briefs Boxers">Mens
-                                            Briefs Boxers</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Shapers">Shapers</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Sexy Underwear">Sexy
-                                            Underwear</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Bra Brief Sets">Bra
-                                            Brief Sets</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Garters Bel">Garters
-                                            Bel</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Camisoles 7983">Camisoles
-                                            7983</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <h3><a class="text-danger" href="javascript:void(0)" title="Womens Clothing">Womens
-                                    Clothing</a></h3>
-                                <ul>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Dresses">Dresses</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Womens T-Shirts">Womens
-                                            T-Shirts</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Womens Underwear">Womens
-                                            Underwear</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Womens Sweaters">Womens
-                                            Sweaters</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Ladies Blouses Tops">Ladies
-                                            Blouses Tops</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Womens Jackets Coats">Womens
-                                            Jackets Coats</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)"
-                                           title="Womens Trousers Pants">Womens Trousers Pants</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Womens Jeans">Womens
-                                            Jeans</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <h3><a class="text-danger" href="javascript:void(0)" title="Boys Clothing">Boys
-                                    Clothing</a></h3>
-                                <ul>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Boys Clothing Sets">Boys
-                                            Clothing Sets</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Boys T-Shirts">Boys
-                                            T-Shirts</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Boys Jackets Coats">Boys
-                                            Jackets Coats</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Boys Shirts">Boys
-                                            Shirts</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Boys Pants">Boys
-                                            Pants</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Boys Underwear">Boys
-                                            Underwear</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Boys Sweaters">Boys
-                                            Sweaters</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)"
-                                           title="Boys Hoodies Sweatshirts">Boys Hoodies Sweatshirts</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <h3><a class="text-danger" href="javascript:void(0)" title="Childrens Clothing">Childrens
-                                    Clothing</a></h3>
-                                <ul>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)"
-                                           title="Childrens Clothing Sets">Childrens Clothing Sets</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Girls Skirts">Girls
-                                            Skirts</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Childrens T-Shirts">Childrens
-                                            T-Shirts</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)"
-                                           title="Childrens Pants Trousers">Childrens Pants Trousers</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Childrens Sweaters">Childrens
-                                            Sweaters</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Childrens Coats">Childrens
-                                            Coats</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)"
-                                           title="Childrens Shirts Tops">Childrens Shirts Tops</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Childrens Shorts">Childrens
-                                            Shorts</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="home-appliance-tab">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6">
-                                <h3><a class="text-danger" href="javascript:void(0)" title="Cooking Appliances">Cooking
-                                    Appliances</a></h3>
-                                <ul>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Cooktops">Cooktops</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Induction Cookers">Induction
-                                            Cookers</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Ovens">Ovens</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Range Hoods">Range
-                                            Hoods</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Rice Cookers">Rice
-                                            Cookers</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Electric Deep Fryers">Electric
-                                            Deep Fryers</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Hot Plates">Hot
-                                            Plates</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)"
-                                           title="Electric Grills Electric Griddles">Electric Grills Electric
-                                            Griddles</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <h3><a class="text-danger" href="javascript:void(0)"
-                                       title="Air Conditioning Appliances">Air Conditioning Appliances</a></h3>
-                                <ul>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="DVD Burner">DVD
-                                            Burner</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Fans">Fans</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Humidifiers">Humidifiers</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Air Purifiers">Air
-                                            Purifiers</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Air Conditioners">Air
-                                            Conditioners</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Dehumidifiers">Dehumidifiers</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)"
-                                           title="Other Air Conditioning Appliances">Other Air Conditioning
-                                            Appliances</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <h3><a class="text-danger" href="javascript:void(0)" title="Cleaning Appliances">Cleaning
-                                    Appliances</a></h3>
-                                <ul>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Vacuum Cleaners">Vacuum
-                                            Cleaners</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Ultrasonic Cleaners">Ultrasonic
-                                            Cleaners</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Steam Cleaners">Steam
-                                            Cleaners</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)"
-                                           title="Other Cleaning Appliances">Other Cleaning Appliances</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Electric Broom">Electric
-                                            Broom</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <h3><a class="text-danger" href="javascript:void(0)" title="Home Appliance Parts">Home
-                                    Appliance Parts</a></h3>
-                                <ul>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)"
-                                           title="Kitchen Appliance Parts">Kitchen Appliance Parts</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)"
-                                           title="Air Conditioning Appliance Parts">Air Conditioning Appliance Parts</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Home Heater Parts">Home
-                                            Heater Parts</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)"
-                                           title="Other Home Appliance Parts">Other Home Appliance Parts</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)"
-                                           title="Refrigerator Freezer Parts">Refrigerator Freezer Parts</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)"
-                                           title="Laundry Appliance Parts">Laundry Appliance Parts</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)" title="Water Heater Parts">Water
-                                            Heater Parts</a>
-                                    </li>
-                                    <li>
-                                        <a class="text-truncate" href="javascript:void(0)"
-                                           title="Water Treatment Appliance Parts">Water Treatment Appliance Parts</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+              </div>
         </div>
     </div>
 </section>
-<section class="container">
+<hr><br><br>
+<sectio class="container">
     <div class="row">
         <div class="col-md-6 mt-3">
             <div class="featured-company-banner owl-carousel owl-theme">
@@ -1333,7 +958,8 @@ p    {color: black;}
             </div>
         </div>
     </div>
-</section>
+</sectio>
+
 <section class="container mb-2 mt-5">
     <div class="box-shadow">
         <div class="row">
@@ -1596,88 +1222,12 @@ p    {color: black;}
 
 <!-- new section add from here -->
 
-<section class="Sell on Goimex1">
-    <div class="hot-buttons">
-        <div class="container">
-            <div class="flex-box row">
-                <div class="left ">
-                    <div class="title scrollTopHomePage">
-                        <div class="h2">Sell on Goimex</div>
-                    </div>
-                    <div class="links">
-                        <ul class="flex-box">
-                            <li>
-                                <a class="link" href="javascript:void(0)">
-                                    <i class="fa fa-bullhorn"></i>
-                                    <span>Tenders<span>Here are the most relevant requests for quotation</span></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="link" href="javascript:void(0)">
-                                    <i class="fa fa-product-hunt"></i>
-                                    <span>Promotion<span>Pay only on results!</span></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="link" href="javascript:void(0)">
-                                    <i class="fa fa-plus"></i>
-                                    <span>Add company<span>Trade worldwide on Goimex </span></span></a>
-                            </li>
-                            <li>
-                                <a class="link" href="javascript:void(0)" target="_blank">
-                                    <i class="fa fa-check-circle"></i>
-                                    <span>Verified supplier<span>Increase customer trust and receive more inquiries</span></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="right ">
-                    <div class="title scrollTopHomePage">
-                        <div class="h2">Buy on Goimex</div>
-                    </div>
-                    <div class="links">
-                        <ul class="flex-box">
-                            <li>
-                                <a class="link" href="javascript:void(0)" style="margin-right: 0">
-                                    <i class="fa fa-archive"></i>
-                                    <span>Suppliers<span>Suppliers from all over the world</span></span>
-                                </a>
-                                <div class="hidden-block">
-                                    <a href="javascript:void(0)">Product suppliers</a>
-                                    <a href="javascript:void(0)">Service suppliers</a>
-                                </div>
-                            </li>
-                            <li>
-                                <a class="link" href="javascript:void(0)" style="margin-right: 0">
-                                    <i class="fa fa-product-hunt"></i>
-                                    <span>Products and services<span>More than 1000 categories of wholesale products and business services</span></span>
-                                </a>
-                                <div class="hidden-block">
-                                    <a href="javascript:void(0)">Products</a>
-                                    <a href="javascript:void(0)">Services</a>
-                                </div>
-                            </li>
-                            <li>
-                                <a class="link" href="javascript:void(0)">
-                                    <i class="fa fa-american-sign-language-interpreting"></i>
-                                    <span>Protect deal<span>Make safe deals</span></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="link" href="javascript:void(0)">
-                                    <i class="fa fa-quote-left"></i>
-                                    <span>Get quotes<span>Create one request - get multiple offers</span></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 <!-- new section End  here -->
+<!------
+{% include 'buyersellertab.html' %}
+------>
+
 {% include 'buyerseller/footer.html' %}
 
 </html>

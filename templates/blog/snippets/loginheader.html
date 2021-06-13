@@ -1,22 +1,19 @@
 {% load static %}
-
+<div class="col-md-3 col-xl-3 d-flex justify-content-center justify-content-md-start mb-md-0 mb-3">
+    <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd."
+                                                     class="logo w-50 mt-0"
+                                                     src="{%  static  'images/GOIMEX.png' %}"></a>
+</div>
+{% if user.is_authenticated %}
+{% else %}
 <section class="top-bar-head-section">
     <div class="container">
         <div class="row">
             <div class="col-md-12 d-md-flex justify-content-md-center text-center">
-                <div class="col-md-3 col-xl-3 d-flex justify-content-center justify-content-md-start mb-md-0 mb-3">
-                    <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd."
-                                                                     class="logo w-100 mt-0"
-                                                                     src="{%  static  'images/logo4.png' %}"></a>
-                </div>
-                {% if user.is_authenticated %}
-                <h6 class="mr-3"> Hello, {{user.username}}, you are a part of the fastest growing B2B Network</h6><a
-                    href="{% url 'logout' %}">LOGOUT</a>
-                {% else %}
                 <h6 class="mr-3">Join today and be a part of the fastest growing B2B Network</h6><a
                     href="{% url 'register' %}">Join Now</a>
-                {% endif %}
             </div>
         </div>
     </div>
+    {% endif %}
 </section>

@@ -94,7 +94,23 @@ body {
   .sidenav a {font-size: 18px;}
 }
 
+/* Bootstrap 4 text input with search icon */
 
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
 
 </style>
 
@@ -102,7 +118,10 @@ body {
 
 <header class="site-header">
     <div id="mySidenav" class="sidenav">
+
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." class="logo w-50 mt-0"
+                                                     src="{%  static  'images/GOIMEX.png' %}"></a>
         <a href="{% url 'blog-home' %}"> Sale Offers</a>
         <a href="{% url 'blog-buyerhome' %}">Buying Leads</a>
         <a href="{% url 'blog-servicehome' %}">Services Offer</a>
@@ -123,30 +142,30 @@ body {
             <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Menu</span>
             <ul>
                 {% if catlist %}
-                <li class="nav-item dropdown  list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Category</a>
+                <li class="nav-item dropdown bg-dark  list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><h7>Category</h7></a>
                     <div class="dropdown-menu">
                         {% for cat in catlist %}
-                        <a class="dropdown-item" href="{% url 'category' cat.category %}">{{cat.category}}</a>
+                       <h5> <a class="dropdown-item" href="{% url 'category' cat.category %}">{{cat.category}}</a></h5>
                         {% endfor %}
                     </div>
                 </li>
                 {% endif %}
             </ul>
             <div class="mx-auto">
-                <nav class="navbar navbar-expand-sm bg-light navbar-light">
+                <nav class="navbar navbar-expand-sm bg-dark navbar-light">
                     <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
                         <input class="form-control mr-sm-2" type="search"
                                placeholder="Search here........................" aria-label="Search"
                                name="search">
-                        <select required="" name="type">
+                      <h5>  <select required="" name="type">
                             <option value="buyer" selected="selected">Buyer</option>
                             <option value="seller">Seller</option>
                             <option value="service">Service</option>
                             <option value="company">Company</option>
                             <option value="manufacturer">Manufacturer</option>
 
-                        </select>
+                        </select></h5>
                         <label for="cars">-</label>
                         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
                     </form>

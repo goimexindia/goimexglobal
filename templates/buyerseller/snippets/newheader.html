@@ -5,12 +5,10 @@
 <header class="site-header">
     <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-            <!---------------------------
             <div class="col-md-3 col-xl-3 d-flex justify-content-center justify-content-md-start mb-md-0 mb-3">
-                <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." class="logo w-100 mt-0"
-                                                                 src="{%  static  'images/logo4.png' %}"></a>
+                <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." class="logo w-50 mt-0"
+                                                                 src="{%  static  'images/GOIMEX.png' %}"></a>
             </div>
-            ----------------------------->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
                     aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -21,35 +19,34 @@
                     <a class="nav-item nav-link" href="{% url 'blog-home' %}">My Post</a>
                     <a class="nav-item nav-link" href="{% url 'ecomerce' %}">My eShop</a>
                     <a class="nav-item nav-link" href="{% url 'cat' %}">Categories</a>
+                    <a class="nav-item nav-link" href="{% url 'allproducts' %}">All Category</a>
+                    <a class="nav-item nav-link" href="{% url 'mycart' %}">View Cart</a>
+                    <a class="nav-item nav-link" href="{% url 'cart-create' %}">New Product</a>
+                    {% if user.is_authenticated %}
+                    <a class="nav-item nav-link" href="{% url 'aboutus' %}">About Us</a>
+                    <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                    <a class="nav-item nav-link" href="{% url 'aboutus' %}">About Us</a>
+                    <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                    <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                    {% endif %}
+                    <a class="nav-item nav-link" href="{% url 'mycart'  %}" class="nav-link navbar-link-2 waves-effect">
+                        <i class="fa fa-shopping-cart fa-2x"></i>
+                    </a>
                 </div>
             </div>
-            <div class="search-container">
-                <form class="form-inline my-2 my-lg-0" action="{% url 'cat-search' %}" method="GET">
-                    <input class="form-control mr-sm-2" type="search"
-                           placeholder="Search here........................" aria-label="Search"
-                           name="search">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search
-                    </button>
-                </form>
-            </div>
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href="{% url 'allproducts' %}">All Category</a>
-                <a class="nav-item nav-link" href="{% url 'mycart' %}">View Cart</a>
-                <a class="nav-item nav-link" href="{% url 'cart-create' %}">New Product</a>
-                {% if user.is_authenticated %}
-                <a class="nav-item nav-link" href="{% url 'aboutus' %}">About Us</a>
-                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-                {% else %}
-                <a class="nav-item nav-link" href="{% url 'aboutus' %}">About Us</a>
-                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
-                {% endif %}
-                <a class="nav-item nav-link" href="{% url 'mycart'  %}" class="nav-link navbar-link-2 waves-effect">
-                    <i class="fa fa-shopping-cart fa-2x"></i>
-                </a>
-            </div>
-        </div>
     </nav>
     <br/><br/>
+    <div class="container">
+        <div class="search-container">
+            <form class="form-inline my-2 my-lg-0" action="{% url 'cat-search' %}" method="GET">
+                <input class="form-control mr-sm-2" type="search"
+                       placeholder="Search here........................" aria-label="Search"
+                       name="search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search
+                </button>
+            </form>
+        </div>
+    </div>
 </header>
 

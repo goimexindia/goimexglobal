@@ -105,6 +105,7 @@ input[type=text]:focus {
   clear: both;
 }
 
+
 </style>
 <style>
 .menu-banner-form {background-color: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);}
@@ -112,6 +113,7 @@ input[type=text]:focus {
 .categories-section {background-color: powderblue;}
 h1   {color: blue;}
 p    {color: black;}
+
 
 </style>
 <section class="menu-banner-form">
@@ -643,7 +645,8 @@ p    {color: black;}
                 {% for dest in prod %}
                 {% if user.is_authenticated %}
                 <div class="item">
-                    <a href="#"><img class="img-fluid w-100 owl-lazy"  title={{dest.desc}} alt="{{dest.desc}}" data-src="{{dest.img.url}}"
+                    <a href="#"><img class="img-fluid w-100 owl-lazy" title={{dest.desc}} alt="{{dest.desc}}"
+                                     data-src="{{dest.img.url}}"
                                      src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></a>
                 </div>
                 {% else %}
@@ -810,23 +813,25 @@ p    {color: black;}
                 <h4 class="lbo-brdr  hd-section-inner-link">Latest Products <a href="{% url 'ecomerce' %}"
                                                                                title="All Products">- View More -</a>
                 </h4>
-                <marquee behavior="scroll" direction="down">
-                    {% show_latest_product %}
-                </marquee>
+                    <marquee behavior="scroll" direction="down">
+                        {% show_latest_product %}
+                    </marquee>
             </div>
+
         </div>
     </div>
     </div>
 </section>
 
-
+    <div class="container">
+    <h3 class="lbo-brdr  hd-section-inner-link">Latest Products By Our verified Suppliers..<a href="{% url 'ecomerce' %}"
+                                                                               title="All Products">- View More -</a>
+                </h3>
+</div>
 <div class="scroll-left">
     <div class="inner">
-        <!----
-        <img src="//www.html.am/images/html-codes/marquees/fish-swimming.gif" alt="Swimming fish">
-        --->
         {% for p in productss %}
-        <img src="{{p.image.url}}" alt="Swimming fish" height=100%>
+        <img src="{{p.image.url}}" alt="Goimex Latest Products" height=100%>
         {% endfor %}
     </div>
 </div>

@@ -643,7 +643,7 @@ p    {color: black;}
                 {% for dest in prod %}
                 {% if user.is_authenticated %}
                 <div class="item">
-                    <a href="#"><img class="img-fluid w-100 owl-lazy" data-src="{{dest.img.url}}"
+                    <a href="#"><img class="img-fluid w-100 owl-lazy"  title={{dest.desc}} alt="{{dest.desc}}" data-src="{{dest.img.url}}"
                                      src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></a>
                 </div>
                 {% else %}

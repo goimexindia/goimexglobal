@@ -171,10 +171,11 @@ body {
             <li><i class="fa fa-shield fa-3x"></i><a class="nav-item nav-link" href="{% url 'ecomerce' %}"><h6>
                 My eShop &nbsp</h6></a></li>
 
-<
             {% if user.is_authenticated %}
-            <li><i class="fa-solid fa-user-circle fa-3x"></i><a class="nav-item nav-link" href="{% url 'logout' %}"><h6>Sign
-                Out</h6></a></li>
+            <li><i class="fa fa-user-circle fa-3x"></i> <a class="nav-item nav-link" href="{% url 'logout' %}"><h6>&nbsp
+                Sign Out</h6></a>
+            </li>
+
             {% else %}
             <li><i class="fa fa-user-circle fa-3x"></i> <a class="nav-item nav-link" href="{% url 'login' %}"><h6>&nbsp
                 Sign In</h6></a>

@@ -6,6 +6,16 @@
 <html lang="en">
 {% include 'buyerseller/header.html' %}
 <style>
+.city {
+  background-color: tomato;
+  color: white;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+}
+
+</style>
+<style>
 .scroll-left {
  height: 200px;
  overflow: hidden;
@@ -110,6 +120,10 @@ input[type=text]:focus {
 .categories-section {background-color: powderblue;}
 h1   {color: blue;}
 p    {color: black;}
+
+
+
+
 
 </style>
 {% include 'sellertab.html' %}
@@ -772,56 +786,64 @@ p    {color: black;}
        href='javascript:registerPopup(&quot;We%20provide%20you%20representatives%20who%20will%20manage%20all%20of%20your%20B2B%20engagements%20interactively%20and%20digitally.&quot;)'
        id="featuredPointSectionLink"></a>
 </section>
-<section class=" latest-buyers-section pd-btm-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <section class="relatedBuyOfferComponent transparent-panel">
-                    <h4 class="lbo-brdr  hd-section-inner-link">Latest Buy Offers <a href="{% url 'blog-home' %}"
-                                                                                     title="Related Buy Offers">- View
-                        More -</a></h4>
-                    <div class="latest-buyers fixedHeight ticker">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <ul>
-                                    {% for p in post %}
-                                    <li>
-                                        <a href="{% url 'post-detail' p.id%}" title="{{p.title}}"><span
-                                                class="world-name truncate">{{ p.author.profile.country.name }}</span>
-                                            <span
-                                                    class="lst-buyer-text truncate">{{p.title|safe}}-{{snippet}}</span>
-                                            <small class="date">{{ p.date_posted|date:"F d, Y" }}</small></a>
-                                    </li>
-                                    {% endfor %}
-                                    <!-----------------
-                                    <li>
-                                        <a href="javascript:void(0)" title="Requisite for Face Mask"><i
-                                                class="flag-icon flag-icon flag-icon-vn"></i> <span
-                                                class="world-name truncate">Vietnam</span> <span
-                                                class="lst-buyer-text truncate">Requisite for Face Mask</span> <small
-                                                class="date">09 Mar, 2021</small></a>
-                                    </li>
-                                    ---------------->
-                                </ul>
-                            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <section class="relatedBuyOfferComponent transparent-panel">
+                <h4 class="lbo-brdr  hd-section-inner-link">Latest Buy Offers <a href="{% url 'blog-home' %}"
+                                                                                 title="Related Buy Offers">- View
+                    More -</a></h4>
+                <div class="latest-buyers fixedHeight ticker">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul>
+                                {% for p in post %}
+                                <li>
+                                    <a href="{% url 'post-detail' p.id%}" title="{{p.title}}"><span
+                                            class="world-name truncate">{{ p.author.profile.country.name }}</span>
+                                        <span
+                                                class="lst-buyer-text truncate">{{p.title|safe}}-{{snippet}}</span>
+                                        <small class="date">{{ p.date_posted|date:"F d, Y" }}</small></a>
+                                </li>
+                                {% endfor %}
+                                <!-----------------
+                                <li>
+                                    <a href="javascript:void(0)" title="Requisite for Face Mask"><i
+                                            class="flag-icon flag-icon flag-icon-vn"></i> <span
+                                            class="world-name truncate">Vietnam</span> <span
+                                            class="lst-buyer-text truncate">Requisite for Face Mask</span> <small
+                                            class="date">09 Mar, 2021</small></a>
+                                </li>
+                                ---------------->
+                            </ul>
                         </div>
                     </div>
-                </section>
-            </div>
-            <div class="col-md-6">
+                </div>
+            </section>
+        </div>
+        <div class="col-md-6">
+            <section class="relatedBuyOfferComponent transparent-panel">
                 <h4 class="lbo-brdr  hd-section-inner-link">Latest Products <a href="{% url 'ecomerce' %}"
-                                                                               title="All Products">- View More -</a>
+                                                                               title="All Products">- View More
+                    -</a>
                 </h4>
-                <marquee behavior="scroll" direction="down">
-                    {% show_latest_product %}
-                </marquee>
-            </div>
-
+                <div class="latest-buyers fixedHeight ticker">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <marquee behavior="scroll" direction="down" scrolldelay="200">
+                                {% show_latest_product %}
+                            </marquee>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
-    </div>
-</section>
 
+</div>
+</div>
+</section>
+<hr>
 <div class="container">
     <h3 class="lbo-brdr  hd-section-inner-link">Latest Products By Our verified Suppliers..<a
             href="{% url 'ecomerce' %}"
@@ -851,7 +873,7 @@ p    {color: black;}
                 <ul class="nav nav-tabs owl-carousel-tabs owl-carousel owl-theme categoryTabsNav">
 
                     <li class="nav-item">
-                    <a class="nav-link active"  href="{% url 'allproducts' %}"
+                        <a class="nav-link active" href="{% url 'allproducts' %}"
                            title="Apparel &amp; Textiles"><i>
                             <picture>
                                 <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/26.webp"
@@ -868,7 +890,7 @@ p    {color: black;}
 
 
                     <li class="nav-item">
-                        <a class="nav-link"    href="{% url 'allproducts' %}" title="Food"><i>
+                        <a class="nav-link" href="{% url 'allproducts' %}" title="Food"><i>
                             <picture>
                                 <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/12.webp"
                                         type="image/webp">
@@ -897,7 +919,7 @@ p    {color: black;}
                         </i> <span>Agriculture</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"   href="{% url 'allproducts' %}"
+                        <a class="nav-link" href="{% url 'allproducts' %}"
                            title="Health"><i>
                             <picture>
                                 <source srcset="https://esimg.eworldtrade.com/assets/images/industries/category/webp/4.webp"
@@ -912,11 +934,12 @@ p    {color: black;}
                         </i> <span>Health</span></a>
                     </li>
                 </ul>
-              </div>
+            </div>
         </div>
     </div>
 </section>
-<hr><br><br>
+<hr>
+<br><br>
 <sectio class="container">
     <div class="row">
         <div class="col-md-6 mt-3">

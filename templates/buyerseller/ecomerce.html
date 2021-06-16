@@ -23,6 +23,7 @@
         background-position: center center;
         background-size: cover;
     }
+
 </style>
 <link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
 <!-----------------------
@@ -69,7 +70,8 @@
                             <a class="mr-2" href="{% url 'productcategory' p.category.id %}">{{ p.category }}</a>
                         </small>
                         <img class="card-img-top" src="{{p.image.url}}"
-                             alt="" style="height: 200px; object-fit: contain;">
+                             onerror="this.onerror=null; this.src='/static/images/no_image.jpg'"
+                             alt="{{p.title}}" style="height: 200px; object-fit: contain;">
                         <a>
                             <div class="mask rgba-white-slight"></div>
 
@@ -99,7 +101,7 @@
                             <a href="{% url 'productdetail' p.slug %}">Show
                                 More........</a> </small></p>
                         <small>Seller based in ( {{ p.author.profile.country.name }} )</small>
-                         {% if p.marked_price|gt:1 %}
+                        {% if p.marked_price|gt:1 %}
                         <div>
                             <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a> {{p.status}}
                             </p>

@@ -4,27 +4,69 @@
 
 {% block content %}
 
-<div class="container">
-    {% for cat in allcategories %}
-    <h4>{{cat.title}}</h4>
-    <hr>
-    <div class="row">
-        {% for p in cat.product_set.all %}
-        <div class="col-md-3">
-            <div class="m-4">
-                <h5><a href="#">{{p.title}}</a></h5>
-                <img src="{{p.image.url}}" alt="" class="img-fluid" style="height: 2500; object-fit: cover;">
-                <p class="mt-3">Price: <strike>Rs. {{p.marked_price}}</strike> Rs. {{p.selling_price}}</p>
-
-                {% if p.status == 1 %}
-                <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a></p>
-                {% else %}
-                <p><a href="#" class="btn btn-danger">Comming Soon...</a></p>
-                {% endif %}
+<div class="container-fluid mt-3">
+    <div id='products' class="col-lg-12 mx-auto">
+        <div class="row mx-auto">
+            {% for cat in allcategories %}
+            <div class="card bg-warning text-white">
+                <div class="card-header"><h4>{{cat.title}}</h4></div>
             </div>
+            <div class="row">
+                {% for p in cat.product_set.all %}
+                <div class="col-md-3 card ">
+                    <div class="card card-cascade card-ecommerce wider shadow mb-4 ">
+                        <!--Card image-->
+                        <div class="view view-cascade overlay text-center">
+                            <h5 class="card-title"><strong><a
+                                    href="{% url 'productdetail' p.slug %}">{{p.title}}</a></strong>
+                                {% if p.offer %}
+                                <span class="badge badge-secondary">Offer</span>
+                                {% endif %}
+
+                            </h5>
+                            <small class="text-muted">
+                                <a class="mr-2" href="{% url 'productcategory' p.category.id %}">{{ p.category }}</a>
+                            </small>
+                            <img class="card-img-top" src="{{p.image.url}}"
+                                 onerror="this.onerror=null; this.src='/static/images/no_image.jpg'"
+                                 alt="{{p.title}}" style="height: 200px; object-fit: contain;">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                                <strong>
+                                    <p class="price"><strike>Price Rs. {{p.marked_price}}</strike> Now
+                                        Rs.{{p.selling_price}}/- </p>
+                                </strong>
+                            </a>
+                        </div>
+                        <!--Card Body-->
+                        <div class=" text-center">
+                            <ul class="row rating">
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                            </ul>
+                            <p class="card-text"><small>{{p.description|striptags|truncatechars:140 }}
+                                <a href="{% url 'productdetail' p.slug %}">Show
+                                    More........</a> </small></p>
+                            <small>Seller based in ( {{ p.author.profile.country.name }} )</small>
+
+                            <div>
+                                <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a>
+                                    {{p.status}}
+                                </p>
+                            </div>
+
+                            <a class="mr-2" href=" {% url 'companyproduct' p.author.profile.user.id  %} ">
+                                <small>{{p.author.profile.organization }}</small></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-    {% endfor %}
 </div>
 {% endblock %}

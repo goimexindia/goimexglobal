@@ -14,6 +14,7 @@
   padding: 20px;
 }
 
+
 </style>
 <style>
 .scroll-left {
@@ -120,6 +121,7 @@ input[type=text]:focus {
 .categories-section {background-color: powderblue;}
 h1   {color: blue;}
 p    {color: black;}
+
 </style>
 {% include 'sellertab.html' %}
 <br><br>
@@ -768,18 +770,20 @@ p    {color: black;}
 
 <section class="ban-cta-new d-none d-md-block" id="featuredPointSection">
     <!----       onclick="document.getElementById('featuredPointSectionLink').click()">--->
-    <div class="container">
-        <ul>
-            <li><i class="icon1-TRADE-WITH-CONFIDENCE"></i> TRADE WITH CONFIDENCE</li>
-            <li><i class="icon1-VERIFIED-BUYERS"></i> VERIFIED BUYERS</li>
-            <li><i class="icon1-Globe"></i> GLOBAL NETWORK</li>
-            <li><i class="icon1-HELP-CENTER"></i> 24/7 HELP CENTER</li>
-        </ul>
-        <a href="{% url 'membership' %}"></a>
+    <div class="col-md-12">
+        <div class="container">
+            <ul>
+                <li><i class="icon1-TRADE-WITH-CONFIDENCE"></i>Trade with confidence</li>
+                <li><i class="icon1-VERIFIED-BUYERS"></i> Verified Buyers</li>
+                <li><i class="icon1-Globe"></i> Global Network</li>
+                <li><i class="icon1-HELP-CENTER"></i> 24/7 Help Center</li>
+            </ul>
+            <a href="{% url 'membership' %}"></a>
+        </div>
+        <a class="d-none"
+           href='#'
+           id="featuredPointSectionLink"></a>
     </div>
-    <a class="d-none"
-       href='#'
-       id="featuredPointSectionLink"></a>
 </section>
 <div class="container">
     <div class="row">

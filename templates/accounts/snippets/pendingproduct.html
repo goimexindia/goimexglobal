@@ -26,7 +26,7 @@
                                                                        style="height: 60px;" alt=""></td>
                     <td><small>{{ product.title }}<small></small></td>
                     <td>{{ product.keyfeatures|slice:":100"|safe }}</td>
-                    <td><small>{{ product.description|slice:":100"|safe }}</small></td>
+                    <td><small>{{ product.description|striptags|truncatechars:140 }}</small></td>
                     <td><small>{{ product.category}}</small></td>
                     <td>{{p.author}}-{{product.get_status_display}}</td>
                     <td>

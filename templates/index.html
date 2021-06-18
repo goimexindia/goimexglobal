@@ -2,6 +2,7 @@
 {% load custom_tags %}
 
 <!DOCTYPE html>
+
 <html lang="en">
 {% include 'buyerseller/header.html' %}
 <style>
@@ -12,8 +13,6 @@
   margin: 20px;
   padding: 20px;
 }
-</style>
-<style>
 .scroll-left {
  height: 200px;
  overflow: hidden;
@@ -120,48 +119,25 @@ h1   {color: blue;}
 p    {color: black;}
 
 </style>
+
 {% include 'sellertab.html' %}
 <br><br>
 <section class="menu-banner-form">
     <div class="container">
         <div class="row">
-            <div class="abc mx-auto">
-                <form class="form-inline my-3 my-lg-1" action="{% url 'blog-search' %}" method="GET">
-                    <input class="form-control mr-sm-2" type="search"
-                           placeholder="Search here....................." aria-label="Search"
-                           name="search">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Post <i class="fa fa-search"></i>
-                    </button>
-                </form>
+            <div class="categories-section  col-md-4 col-lg-4 p-0">
                 <div class="abc mx-auto" style="background-image: url('static/image/12.jpg');">
-                    <p><strong>Latest name of Posts</strong> : {% show_latest_post%}</p>
+                    <p><strong><center>NEW Tenders Introduced</center></strong> {% show_latest_post%}</p>
                 </div>
             </div>
-            <div class="abc mx-auto">
-
-                <form class="form-inline my-3 my-lg-1" action="{% url 'cat-search' %}" method="GET">
-                    <input class="form-control mr-sm-2" type="search"
-                           placeholder="Search here........................" aria-label="Search"
-                           name="search">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Product <i
-                            class="fa fa-search"></i>
-                    </button>
-                </form>
+            <div class="categories-section  col-md-4 col-lg-4 p-0">
                 <div class="abc mx-auto" style="background-image: url('/static/image/12.jpg');">
-                    <p><strong>Latest name of Products:</strong> {% show_latest_name%}</p>
+                    <p><strong><center>NEW Products Introduced</center></strong> {% show_latest_name%}</p>
                 </div>
             </div>
-            <div class="abc mx-auto">
-                <form class="form-inline my-3 my-lg-1" action="{% url 'allcompany' %}" method="GET">
-                    <input class="form-control mr-sm-2" type="search"
-                           placeholder="Search here........................" aria-label="Search"
-                           name="search">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Company <i
-                            class="fa fa-search"></i>
-                    </button>
-                </form>
+            <div class="categories-section  col-md-4 col-lg-4 p-0">
                 <div class="abc mx-auto" style="background: url('/static/image/12.jpg');">
-                    <p><strong>Latest name of Company:</strong> {% show_latest_company%}</p>
+                    <p><strong><center>NEW Companies Introduced</center></strong> {% show_latest_company%}</p>
                 </div>
             </div>
         </div>

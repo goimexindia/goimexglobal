@@ -95,6 +95,17 @@ class AllProductsView(TemplateView):
         return context
 
 
+class EssentialsView(TemplateView):
+    template_name = "essentials.html"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['allcategories'] = Category.objects.all()
+        categoryid = self.request.GET.get('category')
+        if categoryid:
+            context['allcategories'] = Category.objects.filter(category=categoryid)
+        return context
+
 def catsearch(request):
     search_product = request.GET.get('search')
     if search_product:

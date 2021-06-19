@@ -76,7 +76,7 @@ class EcomerceView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(EcomerceView, self).get_context_data(**kwargs)
         all_products = Product.objects.filter(status=1).order_by("-id")
-        paginator = Paginator(all_products, 16)
+        paginator = Paginator(all_products, 20)
         page_number = self.request.GET.get('page')
         product_list = paginator.get_page(page_number)
         context['product_list'] = product_list
@@ -113,7 +113,7 @@ def catsearch(request):
                                          Q(description__icontains=search_product))
     else:
         product = Product.objects.all().order_by("-created_on")
-    paginator = Paginator(product, 16)  # 3 posts in each page
+    paginator = Paginator(product, 20)  # 3 posts in each page
     page = request.GET.get('page')
     try:
         product_list = paginator.page(page)
@@ -761,7 +761,7 @@ def catsearch(request):
     else:
         product = Product.objects.filter(status=1).order_by("-created_on")
 
-    paginator = Paginator(product, 16)  # 3 posts in each page
+    paginator = Paginator(product, 20)  # 3 posts in each page
     page = request.GET.get('page')
     try:
         product_list = paginator.page(page)

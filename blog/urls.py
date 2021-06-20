@@ -5,6 +5,7 @@ from . import views
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
     path('buyerpost', BuyerPostListView.as_view(), name='blog-buyerhome'),
+    path('buyerpostapp', AppBuyerPostListView.as_view(), name='blog-buyerhomeapp'),
     path('servicepost', ServicePostListView.as_view(), name='blog-servicehome'),
     path('servicepost', ServicePostListView.as_view(), name='blog-servicehome'),
     path('allcompany', views.allcompany, name='allcompany'),

@@ -1,0 +1,268 @@
+{% load static %}
+
+<style type="text/css">
+	@media (min-width: 768px) {
+	  html {
+	    font-size: 16px;
+	  }
+	}
+
+	.pricing-header {
+	  max-width: 700px;
+	}
+
+	.card-deck .card {
+	  min-width: 220px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+<style>
+    .fa {
+    color: #f2dd1d
+}
+
+.rating {
+    margin-left: 37%
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+
+
+
+</style>
+
+<!---- {% include 'blog/snippets/loginheader.html'  ---->
+<div class="col-md-3 col-xl-3 d-flex justify-content-center justify-content-md-start mb-md-0 mb-3">
+    <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd."
+                                                     class="logo w-50 mt-0"
+                                                     src="{%  static  'images/GOIMEX.png' %}"></a>
+</div>
+<header class="site-header">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." class="logo w-50 mt-0"
+                                                         src="{%  static  'images/GOIMEX.png' %}"></a>
+        <a href="{% url 'blog-home' %}"> Sale Offers</a>
+        <a href="{% url 'blog-buyerhome' %}">Buying Leads</a>
+        <a href="{% url 'blog-servicehome' %}">Services Offer</a>
+        <a href="{% url 'post-create' %}">Post Request</a>
+        <a href="{% url 'rfq' %}"> RFQ</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'blog-about' %}">My Dashboard</a>
+        <a href="{% url 'adminhome' %}">MyAdmin</a>
+        <a href="{% url 'profile' %}">My Account</a>
+        {% endif %}
+        <a href="{% url 'ecomerce' %}">My eShop</a>
+        <a href="{% url 'allcompany' %}">Find Companies</a>
+        <a href="{% url 'aboutus' %}">About Us</a>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Menu</span>
+            <ul>
+                {% if catlist %}
+                <li class="nav-item dropdown bg-dark  list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                        <h7>Category</h7>
+                    </a>
+                    <div class="dropdown-menu">
+                        {% for cat in catlist %}
+                        <h5><a class="dropdown-item" href="{% url 'category' cat.category %}">{{cat.category}}</a></h5>
+                        {% endfor %}
+                    </div>
+                </li>
+                {% endif %}
+            </ul>
+
+
+            <div class="mx-auto">
+                <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+                    <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
+                        <input class="form-control mr-sm-2" type="search"
+                               placeholder="Search here........................" aria-label="Search"
+                               name="search">
+                        <h5><select required="" name="type">
+                            <option value="buyer" selected="selected">Buyer</option>
+                            <option value="seller">Seller</option>
+                            <option value="service">Service</option>
+                            <option value="company">Company</option>
+                            <option value="manufacturer">Manufacturer</option>
+
+                        </select></h5>
+                        <label for="cars">-</label>
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    <!-----
+<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+<div class="container">
+
+<div class="col-md-3 col-xl-3 d-flex justify-content-center justify-content-md-start mb-md-0 mb-3">
+    <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." class="logo w-100 mt-0"
+                                                     src="{%  static  'images/logo4.png' %}"></a>
+</div>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+        aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarToggle">
+    <div class="navbar-nav mr-auto">
+        <a class="nav-item nav-link" href="{% url 'blog-home' %}">My Post</a>
+        {% if user.is_authenticated %}
+        <a class="nav-item nav-link" href="{% url 'blog-about' %}">My Dashboard</a>
+        <a class="nav-item nav-link" href="{% url 'adminhome' %}">MyAdmin</a>
+        <a class="nav-item nav-link" href="{% url 'profile' %}">My Account</a>
+        {% endif %}
+        <a class="nav-item nav-link" href="{% url 'ecomerce' %}">My eShop</a>
+        <a class="nav-item nav-link" href="{% url 'allcompany' %}">Find Companies</a>
+    </div>
+    <div class="navbar-nav">
+        {% if user.is_authenticated %}
+        <a class="nav-item nav-link" href="{% url 'aboutus' %}">About Us</a>
+        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+        {% else %}
+        <a class="nav-item nav-link" href="{% url 'aboutus' %}">About Us</a>
+        <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+        <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+        {% endif %}
+        <a class="nav-item nav-link" href="{% url 'mycart'  %}" class="nav-link navbar-link-2 waves-effect">
+            <i class="fa fa-shopping-cart fa-2x"></i>
+        </a>
+
+    </div>
+</div>
+
+</div>
+</div>
+
+<div class="collapse navbar-collapse" id="basicExampleNav">
+
+<ul class="navbar-nav ml-auto">
+    <a href="{% url 'mycart'  %}" class="nav-link navbar-link-2 waves-effect">
+        <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+    </a>
+</ul>
+</div>
+</nav>
+    ----->
+    <script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+
+
+
+
+
+
+
+
+    </script>
+
+</header>
+{% include 'buyerseller/header1.html' %}

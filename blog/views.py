@@ -169,6 +169,9 @@ def searchapp(request):
         return render(request, 'blog/homepostbuy.html',
                       {'posts': post_list, 'catlist': catlist, 'page': page, 'type': type_post})
     else:
+        posts = Post.objects.filter(posttype='service', status=1).filter(
+            Q(title__icontains=search_post) |
+            Q(snippet__icontains=search_post)).order_by("-date_posted")
         return render(request, 'blog/buyerpostapp.html',
                       {'posts': post_list, 'catlist': catlist, 'page': page, 'type': type_post})
 

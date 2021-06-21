@@ -49,6 +49,7 @@
     position: relative;
     z-index: 1
 }
+
 </style>
 
 <style>
@@ -124,151 +125,164 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 
+
 </style>
 
 <div>
     {% include 'blog/snippets/base_css.html' %}
-
-    <!------
-    <section class="inner-banner-leftnav company-index-banner">
-        <div class="mx-auto w-75 text-center">
-            <h1>Buyer / Seller Request Post</h1>
-            <span>Around the World and Grow Your Business</span>
-            <div>
-                <div class="row">
-                    <div class="mx-auto">
-                        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-                            <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
-                                <input class="form-control mr-sm-2" type="search"
-                                       placeholder="Search here........................" aria-label="Search"
-                                       name="search">
-                                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                            </form>
-                        </nav>
+    <div>
+        <div class="row">
+            <div class="mx-auto">
+                <nav class="navbar navbar-expand-sm bg-light navbar-dark">
+                    <form class="form-inline my-2 my-lg-0" action="{% url 'blog-searchapp' %}" method="GET">
+                        <input class="form-control mr-sm-2" type="search"
+                               placeholder="Search here........................" aria-label="Search"
+                               name="search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </nav>
+            </div>
+        </div>
+        <!------
+        <section class="inner-banner-leftnav company-index-banner">
+            <div class="mx-auto w-75 text-center">
+                <h1>Buyer / Seller Request Post</h1>
+                <span>Around the World and Grow Your Business</span>
+                <div>
+                    <div class="row">
+                        <div class="mx-auto">
+                            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                                <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
+                                    <input class="form-control mr-sm-2" type="search"
+                                           placeholder="Search here........................" aria-label="Search"
+                                           name="search">
+                                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                                </form>
+                            </nav>
+                        </div>
                     </div>
                 </div>
+
+
             </div>
+        </section>
 
+    <button class="open-button" onclick="openForm()">TELL US WHAT YOU NEED</button>
 
-        </div>
-    </section>
+    <div class="form-popup" id="myForm">
+        <form action="" class="form-container">
+            <strong>Tell us what you need?</strong>
+            <input type="text" name="input_requirement"
+                   class="contact_input contact_input_name requirement"
+                   placeholder="Requirement (Enter Service /Product Name)" required="required">
+            <input type="text" name="input_name"
+                   class="contact_input contact_input_name inpt"
+                   placeholder="Your Name" required="required">
+            <input type="text" name="input_name1"
+                   class="contact_input contact_input_name inpt"
+                   placeholder="Your eMail" required="required">
+            <input type="text" name="input_name2"
+                   class="contact_input contact_input_name inpt"
+                   placeholder="Contact Number" required="required">
+            <input type="text" name="input_name3"
+                   class="contact_input contact_input_name inpt"
+                   placeholder="Company Name" required="required">
+            <label>I am a</label>
+            <select class="form-control" name="type" required="" aria-required="true">
+                <option value="seller" selected="">Seller</option>
+                <option value="buyer">Buyer</option>
+            </select>
 
-<button class="open-button" onclick="openForm()">TELL US WHAT YOU NEED</button>
+            <button type="submit" class="btn">SUBMIT</button>
+            <button type="button" class="btn cancel btn-sm" onclick="closeForm()">Close</button>
+        </form>
+    </div>
 
-<div class="form-popup" id="myForm">
-    <form action="" class="form-container">
-        <strong>Tell us what you need?</strong>
-        <input type="text" name="input_requirement"
-               class="contact_input contact_input_name requirement"
-               placeholder="Requirement (Enter Service /Product Name)" required="required">
-        <input type="text" name="input_name"
-               class="contact_input contact_input_name inpt"
-               placeholder="Your Name" required="required">
-        <input type="text" name="input_name1"
-               class="contact_input contact_input_name inpt"
-               placeholder="Your eMail" required="required">
-        <input type="text" name="input_name2"
-               class="contact_input contact_input_name inpt"
-               placeholder="Contact Number" required="required">
-        <input type="text" name="input_name3"
-               class="contact_input contact_input_name inpt"
-               placeholder="Company Name" required="required">
-        <label>I am a</label>
-        <select class="form-control" name="type" required="" aria-required="true">
-            <option value="seller" selected="">Seller</option>
-            <option value="buyer">Buyer</option>
-        </select>
-
-        <button type="submit" class="btn">SUBMIT</button>
-        <button type="button" class="btn cancel btn-sm" onclick="closeForm()">Close</button>
-    </form>
-</div>
-
-    <i class="icon-arrow-down"></i>
-    <main role="main" class="container">
-        <div class="row">
-            <div class="left-column col-lg-10  ">
-                {% if messages %}
-                {% for message in messages %}
-                <div class="alert alert-{{message.tags}}">
-                    {{ message }}
-                </div>
-                {% endfor %}
-                {% endif %}
-
-                <style type="text/css">
-                .main{
-                    min-height: 100vh;
-                    height: 100%;
-                }
-                </style>
-                -------->
-                <div class="main">
-                    {% block content %}
-
-                    {% endblock %}
-                </div>
-<!---
-            </div>
-
-            <div class="right-column col-lg-3 d-lg-flex d-none flex-column">
-                <div class="content-section" style="background-color:powderblue;">
-                    <h3>Goimex</h3>
-                    <h5></h5>
-                    <p class='text-muted'><small>Building Relationship For Business Growth</small>
-                        {% if user.is_authenticated %}
-                    <ul class="list-group">
-
-                        <a href="{% url 'blog-home' %}">
-                            <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
-                                Selling Offer
-                            </li>
-                        </a>
-                        <a href="{% url 'blog-buyerhome' %}">
-                            <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
-                                Buying Request
-                            </li>
-                        </a>
-                        <a href="{% url 'post-create' %}">
-                            <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
-                                Post Buy/Sale Offer
-                            </li>
-                        </a>
-                        <a href="{% url 'rfq' %}">
-                            <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
-                                RFQ [Tell suppliers what you need]
-                            </li>
-                        </a>
-                    {% if catlist %}
-                        <li class="nav-item dropdown  list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Category</a>
-
-                            <div class="dropdown-menu">
-                                {% for cat in catlist %}
-                                <a class="dropdown-item" href="{% url 'category' cat.category %}">{{cat.category}}</a>
-                                {% endfor %}
-                            </div>
-                        </li>
-                        {% endif %}
-                        <a href="#">
-                            <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
-                                <strong>Upcoming Events</strong></li>
-                        </a>
-                    </ul>
+        <i class="icon-arrow-down"></i>
+        <main role="main" class="container">
+            <div class="row">
+                <div class="left-column col-lg-10  ">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{message.tags}}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
                     {% endif %}
-                    </p>
-                </div>
-                <div id="black-studio-tinymce-18" class="widget widget_black_studio_tinymce">
-                    <div class="textwidget"><a href="#"
-                                               target="_blank"><img class="aligncenter wp-image-18390 size-full"
-                                                                    src="https://www.connectorsupplier.com/wp-content/uploads/preferred-suppliers.png"
-                                                                    alt="" width="300" height="100"></a></div>
-                </div>
 
+                    <style type="text/css">
+                    .main{
+                        min-height: 100vh;
+                        height: 100%;
+                    }
+                    </style>
+                    -------->
+        <div class="main">
+            {% block content %}
 
-            </div>
---->
+            {% endblock %}
         </div>
+        <!---
+                    </div>
+
+                    <div class="right-column col-lg-3 d-lg-flex d-none flex-column">
+                        <div class="content-section" style="background-color:powderblue;">
+                            <h3>Goimex</h3>
+                            <h5></h5>
+                            <p class='text-muted'><small>Building Relationship For Business Growth</small>
+                                {% if user.is_authenticated %}
+                            <ul class="list-group">
+
+                                <a href="{% url 'blog-home' %}">
+                                    <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
+                                        Selling Offer
+                                    </li>
+                                </a>
+                                <a href="{% url 'blog-buyerhome' %}">
+                                    <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
+                                        Buying Request
+                                    </li>
+                                </a>
+                                <a href="{% url 'post-create' %}">
+                                    <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
+                                        Post Buy/Sale Offer
+                                    </li>
+                                </a>
+                                <a href="{% url 'rfq' %}">
+                                    <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
+                                        RFQ [Tell suppliers what you need]
+                                    </li>
+                                </a>
+                            {% if catlist %}
+                                <li class="nav-item dropdown  list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Category</a>
+
+                                    <div class="dropdown-menu">
+                                        {% for cat in catlist %}
+                                        <a class="dropdown-item" href="{% url 'category' cat.category %}">{{cat.category}}</a>
+                                        {% endfor %}
+                                    </div>
+                                </li>
+                                {% endif %}
+                                <a href="#">
+                                    <li class="list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
+                                        <strong>Upcoming Events</strong></li>
+                                </a>
+                            </ul>
+                            {% endif %}
+                            </p>
+                        </div>
+                        <div id="black-studio-tinymce-18" class="widget widget_black_studio_tinymce">
+                            <div class="textwidget"><a href="#"
+                                                       target="_blank"><img class="aligncenter wp-image-18390 size-full"
+                                                                            src="https://www.connectorsupplier.com/wp-content/uploads/preferred-suppliers.png"
+                                                                            alt="" width="300" height="100"></a></div>
+                        </div>
+
+
+                    </div>
+        --->
+    </div>
 
     </main>
 
@@ -287,6 +301,7 @@ function openForm() {
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
+
 
 
 </script>

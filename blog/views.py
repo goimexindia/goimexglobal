@@ -125,6 +125,54 @@ def search(request):
                       {'posts': post_list, 'catlist': catlist, 'page': page, 'type': type_post})
 
 
+def searchapp(request):
+    catlist = Post.objects.all().distinct('category')
+    search_post = request.GET.get('search')
+    type_post = request.GET.get('type')
+
+    profile = Profile.objects.filter(Q(organization__icontains=search_post) | Q(products__icontains=search_post))
+
+    if search_post:
+        posts = Post.objects.filter(
+            Q(title__icontains=search_post) |
+            Q(snippet__icontains=search_post))
+    else:
+        posts = Post.objects.filter(status=1).order_by("-date_posted")
+
+    if type_post == 'service':
+        posts = Post.objects.filter(posttype='service', status=1).filter(
+            Q(title__icontains=search_post) |
+            Q(snippet__icontains=search_post)).order_by("-date_posted")
+
+    paginator = Paginator(posts, 5)  # 3 posts in each page
+    page = request.GET.get('page')
+    try:
+        post_list = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer deliver the first page
+        post_list = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range deliver last page of results
+        post_list = paginator.page(paginator.num_pages)
+
+    if type_post == 'manufacturer':
+        profile = Profile.objects.filter(
+            Q(organization__icontains=search_post) | Q(products__icontains=search_post)).filter(type='manufacturer')
+        return render(request, 'blog/allcompany.html',
+                      {'posts': post_list, 'catlist': catlist, 'profile': profile, 'page': page, 'type': type_post})
+    if type_post == 'company':
+        profile = Profile.objects.filter(
+            Q(organization__icontains=search_post) | Q(products__icontains=search_post)).exclude(type='manufacturer')
+        return render(request, 'blog/allcompany.html',
+                      {'posts': post_list, 'catlist': catlist, 'profile': profile, 'page': page, 'type': type_post})
+    if type_post == 'buyer':
+        return render(request, 'blog/homepostbuy.html',
+                      {'posts': post_list, 'catlist': catlist, 'page': page, 'type': type_post})
+    else:
+        return render(request, 'blog/buyerpostapp.html',
+                      {'posts': post_list, 'catlist': catlist, 'page': page, 'type': type_post})
+
+
 class PostSearchListView(ListView):
     """
     Display a Blog List page filtered by the search query.

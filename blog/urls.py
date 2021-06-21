@@ -21,6 +21,7 @@ urlpatterns = [
     path('new/', views.new, name='blog-new'),
     path('logout/', views.logout, name='logout'),
     path('search/', views.search, name='blog-search'),
+    path('searchapp/', views.searchapp, name='blog-searchapp'),
     path('pt/<slug:slug>/', views.pt, name='pt'),
     path('like/<int:pk>', views.like, name='like'),
     path('category/<str:cats>/', CategoryView, name='category'),

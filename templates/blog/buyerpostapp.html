@@ -1,4 +1,4 @@
- {% extends "blog/newbaseapp.html" %}
+{% extends "blog/newbaseapp.html" %}
 {% block title %}Request Post{% endblock %}
 {% load static %}
 {% block content %}
@@ -22,36 +22,40 @@
 <br>
 
 {% for post in posts %}
-<article class="media content-section">
+<div class="container">
 
-    <div class="media-body">
-        <div class="article-metadata">
-            <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
-            <small class="text-muted">
-                <a class="mr-2" href="{% url 'category' post.category %}">{{ post.category }}</a>
-            </small>
-            <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
-            <small class="text-mutted">{{ post.author.profile.country.name }}</small>
-            {% if post.posttype == "buyer" %}
-            <h6>Buying Lead from {{ post.author.profile.country.name }}</h6>
+
+    <article class="media content-section">
+
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+                <small class="text-muted">
+                    <a class="mr-2" href="{% url 'category' post.category %}">{{ post.category }}</a>
+                </small>
+                <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                <small class="text-mutted">{{ post.author.profile.country.name }}</small>
+                {% if post.posttype == "buyer" %}
+                <h6>Buying Lead from {{ post.author.profile.country.name }}</h6>
+                {% else %}
+                <a class="mr-2" href="{% url 'category' post.category %}">{{ post.posttype }}</a>
+                {% endif %}
+
+                <!---<small class="text-muted"><a class="btn btn-default btn-xs mt-1 bmb-1" href="#">co.info&rarr;</a></small>---->
+            </div>
+
+            <h5><a class="article-title" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></h5>
+            <p class="article-content"><strong>{{post.snippet|slice:":200"|safe }}</strong></p>
+            <a href="{% url 'post-detail' post.id  %}" class="btn btn-primary btn-sm mt-1 bmb-1">Show More...</a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'pt' post.id  %}" class="btn btn-danger btn-sm mt-1 bmb-1">Contact Now</a>
             {% else %}
-            <a class="mr-2" href="{% url 'category' post.category %}">{{ post.posttype }}</a>
+            <strong><a href="{% url 'login' %}">Login to contact buyers/sellers</a></strong>
             {% endif %}
 
-            <!---<small class="text-muted"><a class="btn btn-default btn-xs mt-1 bmb-1" href="#">co.info&rarr;</a></small>---->
         </div>
-
-        <h5><a class="article-title" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></h5>
-        <p class="article-content"><strong>{{post.snippet|slice:":200"|safe }}</strong></p>
-        <a href="{% url 'post-detail' post.id  %}" class="btn btn-primary btn-sm mt-1 bmb-1">Show More...</a>
-        {% if user.is_authenticated %}
-        <a href="{% url 'pt' post.id  %}" class="btn btn-danger btn-sm mt-1 bmb-1">Contact Now</a>
-        {% else %}
-        <strong><a href="{% url 'login' %}">Login to contact buyers/sellers</a></strong>
-        {% endif %}
-
-    </div>
-</article>
+    </article>
+</div>
 {% endfor %}
 
 
@@ -91,6 +95,7 @@
 
 <script type="text/javascript">
         document.getElementById("id_q").value = "{{query}}"
+
 
 </script>
 

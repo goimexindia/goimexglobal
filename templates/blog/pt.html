@@ -13,9 +13,10 @@
             </div>
 
             <div class="b">
-              <p>  <h3 class="article-title">{{ post.title }}</h3> </p>
-              <p class="intended"> {{ post.content|safe }}</p>
-              <p>{{ post.snippet|safe }}</p>
+                <p>
+                <h3 class="article-title">{{ post.title }}</h3> </p>
+                <p class="intended"> {{ post.content|safe }}</p>
+                <p>{{ post.snippet|safe }}</p>
             </div>
 
 
@@ -36,8 +37,7 @@
                 {% endfor %}
             </div>
             {% endif %}
-        </div>
-        <div class="col-md-8 card mb-4  mt-3 ">
+
             <div class="card-body">
                 {% if new_comment %}
                 <div class="alert alert-success" role="alert">

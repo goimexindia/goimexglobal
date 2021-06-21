@@ -2,63 +2,66 @@
 
 {% block content %}
 <article class="media content-section">
-        <img class="rounded-circle article-img"  src="{{ post.author.profile.img.url }}">
-        <div class="media-body">
-              <div class="article-metadata">
-                 <a class="mr-2" href="#">{{ post.author }}</a>
+    <!------------------
+        <img class="rounded-circle article-img"  src="{{ post.author.profile.img.url }}"> ---------->
+    <div class="media-body">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ post.author }}</a>
                 <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
-              </div>
-              <h2 class="article-title">{{ post.title }}</h2>
-              <div class="b">
-                        {{ post.content|safe }}
-                        {{ post.snippet|safe }}
-              </div>
+            </div>
+            <h2 class="article-title">{{ post.title }}</h2>
+            <div class="b">
+                {{ post.content|safe }}
+                {{ post.snippet|safe }}
+            </div>
         </div>
-  </article>
+    </div>
+</article>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-8 card mb-4  mt-3 ">
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
 
-      <div class="card-body">
- {% if post.author == user %}
-        <h2>{{ comments.count }} messages</h2>
+            <div class="card-body">
+                {% if post.author == user %}
+                <h2>{{ comments.count }} messages</h2>
 
-        {% for comment in comments %}
-        <div class="comments" style="padding: 10px;">
-          <p class="font-weight-bold" style="color:black;">
-            {{ comment.name }}
-            <span class=" text-muted font-weight-normal">
+                {% for comment in comments %}
+                <div class="comments" style="padding: 10px;">
+                    <p class="font-weight-bold" style="color:black;">
+                        {{ comment.name }}
+                        <span class=" text-muted font-weight-normal">
               {{ comment.created_on }}
             </span>
-          </p>
-          {{ comment.body | linebreaks }}
-        </div>
-        {% endfor %}
-      </div>
-{% endif %}
-    </div>
-    <div class="col-md-8 card mb-4  mt-3 ">
-      <div class="card-body">
-        {% if new_comment %}
-        <div class="alert alert-success" role="alert">
-          Your comment is awaiting moderation
-        </div>
-        {% else %}
-        <h3>Leave a message</h3>
-        <form method="post" style="margin-top: 1.3em;">
-          {{ comment_form.as_p }}
-          {% csrf_token %}
-            <div>
-            <p class='text-muted'>By pressing the Button -
-                    I agree to share my details with the company I am interacting.
+                    </p>
+                    {{ comment.body | linebreaks }}
                 </div>
-          <button type="submit" class="btn btn-danger  btn-sm">Send Message</button>
-        </form>
-        {% endif %}
-      </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <div class="card-body">
+                {% if new_comment %}
+                <div class="alert alert-success" role="alert">
+                    Your comment is awaiting moderation
+                </div>
+                {% else %}
+                <h3>Leave a message</h3>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form.as_p }}
+                    {% csrf_token %}
+                    <div>
+                        <p class='text-muted'>By pressing the Button -
+                            I agree to share my details with the company I am interacting.
+                    </div>
+                    <button type="submit" class="btn btn-danger  btn-sm">Send Message</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <div>
     <a class="btn btn-secondary btn-sm mt-1 bmb-1" href="{% url 'blog-home' %}">Back</a>

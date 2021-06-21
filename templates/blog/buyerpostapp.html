@@ -23,28 +23,29 @@
 
 {% for post in posts %}
 <div class="container">
-
-
     <article class="media content-section">
-
         <div class="media-body">
             <div class="article-metadata">
-                <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+                {% if post.profile.organization %}
+                     <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.profile.organization}}</a>
+                {% else %}
+                     <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+                {% endif %}
                 <small class="text-muted">
                     <a class="mr-2" href="{% url 'category' post.category %}">{{ post.category }}</a>
                 </small>
                 <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
                 <small class="text-mutted">{{ post.author.profile.country.name }}</small>
                 {% if post.posttype == "buyer" %}
-                <h6>Buying Lead from {{ post.author.profile.country.name }}</h6>
+                <h5>Buying Lead from {{ post.author.profile.country.name }}</h5>
                 {% else %}
-                <a class="mr-2" href="{% url 'category' post.category %}">{{ post.posttype }}</a>
+                <a class="mr-2" href="{% url 'category' post.category %}"><h5>{{ post.posttype }}</h5></a>
                 {% endif %}
 
                 <!---<small class="text-muted"><a class="btn btn-default btn-xs mt-1 bmb-1" href="#">co.info&rarr;</a></small>---->
             </div>
 
-            <h5><a class="article-title" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></h5>
+            <h4><a class="article-title" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></h4>
             <p class="article-content"><strong>{{post.snippet|slice:":200"|safe }}</strong></p>
             <a href="{% url 'post-detail' post.id  %}" class="btn btn-primary btn-sm mt-1 bmb-1">Show More...</a>
             {% if user.is_authenticated %}

@@ -247,18 +247,18 @@ class BuyerPostListView(ListView):
 class AppBuyerPostListView(ListView):
     model = Post
     template_name = 'blog/buyerpostapp.html'  # <app>/<model>_<viewtype>.html
-    posts = Post.objects.exclude(posttype='service').exclude(posttype='seller').filter(status=1).order_by('-id')
+    posts = Post.objects.filter(status=1).order_by('-id')
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 5
 
     def get_queryset(self):
-        return Post.objects.exclude(posttype='service').exclude(posttype='seller').filter(status=1).order_by('-id')
+        return Post.objects.filter(status=1).order_by('-id')
 
     def get_context_data(self, *args, **kwargs):
         categorylist = Post.objects.all().distinct('category')
         context = super(AppBuyerPostListView, self).get_context_data(**kwargs)
-        posts = Post.objects.exclude(posttype='service').exclude(posttype='seller').filter(status=1).order_by('-id')
+        posts = Post.objects.filter(status=1).order_by('-id')
         paginator = Paginator(posts, 5)
         page_number = self.request.GET.get('page')
         post_list = paginator.get_page(page_number)

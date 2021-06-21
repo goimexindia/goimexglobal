@@ -144,7 +144,6 @@ body {
 
     <div class="container-fluid">
         <div class="row">
-
             <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Menu</span>
             <ul>
                 {% if catlist %}
@@ -160,7 +159,7 @@ body {
                 </li>
                 {% endif %}
             </ul>
-
+<!----------------------------
             <li><i class="fa fa-shopping-cart fa-2x"></i>
                 <a class="nav-item nav-link" href="{% url 'mycart'  %}" class="nav-link navbar-link-2 waves-effect"><h7>My
                     Cart</h7> </a></li>
@@ -181,7 +180,7 @@ body {
                 Sign In</h7></a>
             </li>
             {% endif %}
-
+----------------------------->
             <div class="mx-auto">
                 <nav class="navbar navbar-expand-sm bg-dark navbar-light">
                     <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">

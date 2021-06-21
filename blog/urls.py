@@ -13,6 +13,7 @@ urlpatterns = [
     path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
     # path('category/<str:category>', CategoryPostListView.as_view, name='category-posts'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
+    path('postapp/<int:pk>/', PostDetailViewapp.as_view(), name='post-detailapp'),
     path('post/<int:pk>/update', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete', PostDeleteView.as_view(), name='post-delete'),
     path('post/new/', PostCreateView.as_view(), name='post-create'),

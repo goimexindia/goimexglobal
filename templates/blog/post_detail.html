@@ -11,16 +11,18 @@
 
 <div class="container-fluid mt-3">
     <!-- all products -->
-    <div id='products' class="col-lg-12 mx-auto">
-        <div class="row mx-auto">
-            <div class="row mx-auto"  >
+    <div>
+        <div>
+            <div class="row mx-auto">
                 <article class="media content-section">
+                    <!---
                     <img class="rounded-circle article-img"   alt="{{ post.author }}" src="{{ post.author.profile.img.url }}"
-                         title="{{post.author.profile.bio}}">
+                         title="{{post.author.profile.bio}}"> --->
                     <div class="media-body">
                         <div class="article-metadata">
                             <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
                             <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+
                             {% if object.author == user %}
                             <div>
                                 <a class="btn btn-secondary btn-sm mt-1 bmb-1" href="{% url 'post-update' object.id %}">Update</a>
@@ -31,7 +33,10 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <a href="{{object.image.url}}" target="_blank">
-                                        <img src="{{object.image.url}}"   alt="{{ post.author }}" width="300" height="300" class="img-fluid" style="object-fit: contain;"
+                                        <img src="{{object.image.url}}"
+                                             onerror="this.onerror=null; this.src='/static/images/no_image.jpg'"
+                                             alt="{{ post.author }}" width="300" height="300" class="img-fluid"
+                                             style="object-fit: contain;"
                                              alt=""></a>
                                 </div>
                                 <div class="col-md-4">
@@ -42,7 +47,7 @@
                         </div>
                         <div class="row">
                             <div class="b">
-                                {{ object.content|safe }}
+                              <p class="indented">  {{ object.content|safe }}   </p>
                                 <hr>
                                 {{ object.snippet|safe }}
                             </div>
@@ -68,7 +73,7 @@
     </div>
 </div>
 
-<div class="row mx-auto"  >
+<div class="row mx-auto">
     <article class="media content-section">
         {% include 'blog/snippets/postimages.html' %}
     </article>
@@ -77,29 +82,26 @@
 <hr>
 
 
-<div class="row"  >
-    <div class="col-md-2">
-
+<div class="row">
+    <div>
+        <a class="btn btn-danger btn-sm mt-1 bmb-1" href="{% url 'blog-home' %}">Back</a> &nbsp;&nbsp;&nbsp;
     </div>
-    <div class="col-md-2">
-        <a class="btn btn-danger btn-lg mt-1 bmb-1" href="{% url 'blog-home' %}">Back</a>
-    </div>
-    <div class="col-md-3">
+    <div>
         {% if user.is_authenticated %}
-        <a href="{% url 'pt' post.id  %}" class="btn btn-danger btn-lg mt-1 bmb-1">Contact Now</a>
+        <a href="{% url 'pt' post.id  %}" class="btn btn-danger btn-sm mt-1 bmb-1">Contact Now</a> &nbsp;&nbsp;&nbsp;
         {% else %}
-        <small><a href="{% url 'login' %}">Login to contact buyers/sellers</a></small>
+        <small><a href="{% url 'login' %}">Login to contact buyers/sellers</a></small> &nbsp;&nbsp;&nbsp;
         {% endif %}
     </div>
-    <div class="col-md-3">
+    <div>
         <form action="{% url 'like' post.pk %}" method="POST">
             {% csrf_token %}
             {% if user.is_authenticated %}
             {% if liked %}
-            <button type="submit" , name="post_id" value="{{ post.id }}" , class="btn btn-danger btn-lg">UnLike
+            <button type="submit" , name="post_id" value="{{ post.id }}" , class="btn btn-danger btn-sm">UnLike
             </button>
             {% else %}
-            <button type="submit" , name="post_id" value="{{ post.id }}" , class="btn btn-primary btn-lg">Like
+            <button type="submit" , name="post_id" value="{{ post.id }}" , class="btn btn-primary btn-sm">Like
             </button>
             {% endif %}
             {% else %}

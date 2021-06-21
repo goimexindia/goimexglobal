@@ -267,7 +267,6 @@ class AppBuyerPostListView(ListView):
         return context
 
 
-
 class ServicePostListView(ListView):
     model = Post
     template_name = 'blog/homepostbuy.html'  # <app>/<model>_<viewtype>.html
@@ -350,6 +349,28 @@ class PostDetailView(DetailView):
 
     def get_context_data(self, *args, **kwargs):
         context = super(PostDetailView, self).get_context_data(**kwargs)
+        stuff = get_object_or_404(Post, id=self.kwargs['pk'])
+        total_likes = stuff.total_likes()
+        posts = get_object_or_404(Post, id=self.kwargs['pk'])
+        photos = PostImage.objects.filter(post=posts)
+        posts.view_count += 1
+        posts.save()
+        liked = False
+        if stuff.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
+        context["liked"] = liked
+        context["photos"] = photos
+        context['posts'] = posts
+        return context
+
+
+class PostDetailViewapp(DetailView):
+    template_name = "blog/post_detailsapp.html"
+    model = Post
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(PostDetailViewapp, self).get_context_data(**kwargs)
         stuff = get_object_or_404(Post, id=self.kwargs['pk'])
         total_likes = stuff.total_likes()
         posts = get_object_or_404(Post, id=self.kwargs['pk'])

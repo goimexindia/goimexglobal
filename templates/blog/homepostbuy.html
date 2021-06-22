@@ -35,7 +35,7 @@
             <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
             <small class="text-mutted">{{ post.author.profile.country.name }}</small>
             {% if post.posttype == "buyer" %}
-            <h4>Buying Lead from {{ post.author.profile.country.name }}</h4>
+            <h5>Buying Lead from {{ post.author.profile.country.name }}</h5>
             {% else %}
             <a class="mr-2" href="{% url 'category' post.category %}">{{ post.posttype }}</a>
             {% endif %}
@@ -43,7 +43,7 @@
             <!---<small class="text-muted"><a class="btn btn-default btn-xs mt-1 bmb-1" href="#">co.info&rarr;</a></small>---->
         </div>
 
-        <h2><a class="article-title" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></h2>
+        <h4><a class="article-title" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></h4>
         <p class="article-content">{{post.snippet|slice:":200"|safe }}</p>
         <a href="{% url 'post-detail' post.id  %}" class="btn btn-primary btn-sm mt-1 bmb-1">Show More...</a>
         {% if user.is_authenticated %}

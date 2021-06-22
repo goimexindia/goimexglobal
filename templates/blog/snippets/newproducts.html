@@ -166,7 +166,7 @@ font-weight: 600
                                                 <h5><a class="text-danger text-truncate"
                                                        href="javascript:void(0)"
                                                        title="{{p.title}}">{{p.title}}</a></h5>
-                                                <span>{{product.category}}</span>
+                                                <span>{{p.category}}</span>
                                             </div>
                                             <div class="p-price d-flex flex-row"><span>&#8377;</span>
                                                 <h1>{{p.selling_price}}</h1>
@@ -178,7 +178,7 @@ font-weight: 600
                                             <img src="{{p.image.url}}"  onerror="this.onerror=null; this.src='/static/images/no_image.jpg'">
                                         </div>
                                         <div class="p-about">
-                                            <p>{{p.description|slice:":100"|safe }}</p>
+                                            <p>{{p.description|striptags|truncatechars:140 }}</p>
                                         </div>
                                         <div class="buttons d-flex flex-row gap-3 px-3">
                                             <a href="{% url 'productdetail' p.slug %}"

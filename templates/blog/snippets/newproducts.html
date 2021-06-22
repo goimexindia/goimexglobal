@@ -178,8 +178,7 @@ font-weight: 600
                                             <img src="{{p.image.url}}"  onerror="this.onerror=null; this.src='/static/images/no_image.jpg'">
                                         </div>
                                         <div class="p-about">
-
-                                            <p>{{p.description|safe}}</p>
+                                            <p>{{p.description|slice:":100"|safe }}</p>
                                         </div>
                                         <div class="buttons d-flex flex-row gap-3 px-3">
                                             <a href="{% url 'productdetail' p.slug %}"

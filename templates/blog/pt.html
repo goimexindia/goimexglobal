@@ -12,7 +12,7 @@
                 <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
             </div>
 
-            <div class="b">
+            <div class="card-body">
                 <p>
                 <h3 class="article-title">{{ post.title }}</h3> </p>
                 <p class="intended"> {{ post.content|safe }}</p>
@@ -44,7 +44,7 @@
                     Your comment is awaiting moderation
                 </div>
                 {% else %}
-                <h3>Leave a message</h3>
+                <h3>Leave a message....</h3>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form.as_p }}
                     {% csrf_token %}

@@ -250,7 +250,7 @@ class AppBuyerPostListView(ListView):
     posts = Post.objects.filter(status=1).order_by('-id')
     context_object_name = 'posts'
     ordering = ['-date_posted']
-    paginate_by = 5
+    paginate_by = 10
 
     def get_queryset(self):
         return Post.objects.filter(status=1).order_by('-id')

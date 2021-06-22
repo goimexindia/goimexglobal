@@ -24,8 +24,8 @@
 <br>
 {% for post in posts %}
 <article class="media content-section">
-    <img class="rounded-circle article-img" alt="{{ post.author }}" src="{{ post.author.profile.img.url }}"
-         title="{{post.author.profile.bio}}">
+    <!-----<img class="rounded-circle article-img" alt="{{ post.author }}" src="{{ post.author.profile.img.url }}"
+         title="{{post.author.profile.bio}}">---->
     <div class="media-body">
         <div class="article-metadata">
             <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>

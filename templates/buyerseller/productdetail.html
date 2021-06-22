@@ -81,15 +81,9 @@ img {vertical-align: middle;}
 <style>
     .rating {
     margin-left: 7%
-
-
-
-
-
 </style>
 
 <div class="container">
-
     <div class="card bg-warning text-white">
         <div class="card-header"><h4>{{product.title}}</h4></div>
     </div>
@@ -126,8 +120,8 @@ img {vertical-align: middle;}
                 <small>({{product.category}})</small>
                 <h8></h8>
                 {% if product.marked_price|gt:1 %}
-                    <h6>Selling Price: <strike>Rs. {{product.marked_price}}</strike></h6>
-                    <h6>Our Price: Rs. {{product.selling_price}}</h6>
+                    <h6>Selling Price: <strike>&#8377; {{product.marked_price}}</strike></h6>
+                    <h6>Our Price: &#8377; {{product.selling_price}}</h6>
                     <a href="{% url 'addtocart' product.id %}" class="btn btn-primary">Add To Cart</a>
                 {% endif %}
                 <hr>

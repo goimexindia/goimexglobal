@@ -54,11 +54,13 @@ class HomeView(TemplateView):
         prod = Proddisplay.objects.all().order_by("-id")
         category = Category.objects.all()
         suppliers = Profile.objects.exclude(organization__isnull=True).exclude(type='Buyer').order_by("-id")[:12]
-        products = Product.objects.all().order_by("-id")
-        productss = Product.objects.all().exclude(image__isnull=True).order_by("-id")
+        products = Product.objects.all().order_by("-id")[:12]
+        topproducts = Product.objects.distinct('category').order_by("category")[:12]
+        productss = Product.objects.all().exclude(image__isnull=True).order_by("-id")[:12]
         post = Post.objects.all().order_by("-id")
         context['prod'] = prod
         context['suppliers'] = suppliers
+        context['topproducts'] = topproducts
         context['products'] = products
         context['productss'] = productss
         context['post'] = post

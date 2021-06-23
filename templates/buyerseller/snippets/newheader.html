@@ -22,7 +22,7 @@
                     <a class="nav-item nav-link" href="{% url 'allproducts' %}">All Category</a>
                     <a class="nav-item nav-link" href="{% url 'mycart' %}">View Cart</a>
                     <a class="nav-item nav-link" href="{% url 'cart-create' %}">New Product</a>
-                     <a class="nav-item nav-link" href="{% url 'allessentials' %}">Essentials</a>
+                    <a class="nav-item nav-link" href="{% url 'allessentials' %}">Essentials</a>
                     {% if user.is_authenticated %}
                     <a class="nav-item nav-link" href="{% url 'aboutus' %}">About Us</a>
                     <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
@@ -36,6 +36,7 @@
                     </a>
                 </div>
             </div>
+        </div>
     </nav>
     <br/><br/>
     <div class="container">

@@ -7,6 +7,7 @@ from .views import *
 
 urlpatterns = [
     path("", HomeView.as_view(), name="ecohome"),
+    path("apphome", HomeAppView.as_view(), name="apphome"),
     path('catsearch/', views.catsearch, name='cat-search'),
     path('categorylist', CategoryListView.as_view(), name='category-list'),
     path('adminpostsearch/', views.adminpostsearch, name='adminpost-search'),

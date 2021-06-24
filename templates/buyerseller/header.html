@@ -136,13 +136,13 @@
 
         </div>
         <div class="col-md-4 col-xl-3 d-flex justify-content-center justify-content-md-end mt-md-0 mt-2 header-list">
-            <li><i class="fa fa-shield fa-3x"></i><a href="{% url 'safedeal' %}"><h6>SafeDeal &nbsp;</h6></a></li>
-            <li><i class="fa fa-envelope fa-3x"></i><a href="rfq"><h5>&nbsp &nbsp RFQ &nbsp</h5></a></li>
+            <pi><i class="fa fa-shield fa-2x"></i><a href="{% url 'safedeal' %}"><h6>SafeDeal &nbsp;</h6></a></pi>
+            <pi><i class="fa fa-envelope fa-2x"></i><a href="rfq"><h6>&nbsp  RFQ &nbsp</h6></a></pi>
             {% if user.is_authenticated %}
-            <li><i class="fa fa-user-circle fa-3x"></i><a href="accounts/logout"><h5>Sign Out</h5></a></li>
+            <pi><i class="fa fa-user-circle fa-2x"></i><a href="accounts/logout"><h6>Sign Out</h6></a></pi>
             {% else %}
-            <li><i class="fa fa-user-circle fa-3x"></i> <a href="accounts/login"><h5>&nbsp Sign In</h5></a>
-               </li>
+            <pi><i class="fa fa-user-circle fa-2x"></i> <a href="accounts/login"><h6>&nbsp Sign In</h6></a>
+               </pi>
             {% endif %}
         </div>
         {% include 'headerimages.html' %}

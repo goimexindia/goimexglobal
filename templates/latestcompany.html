@@ -10,9 +10,10 @@
     {% for x in last %}
     <div class="w3-panel w3-card">
         <h6 class="text-truncate">
+                        <i class="{{ x.country.flag_css }}"></i>
             <a href=" {% url 'companyproduct' x.user.id %} "
               title="{{ x.organization}}"> <small>{{ x.organization|striptags|truncatechars:30}}
-             ( {{ x.country.name }} )</small> <i class="{{ x.country.flag_css }}"></i>
+             ( {{ x.country.name }} )</small>
         </a>
         </h6>
     </div>

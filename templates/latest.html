@@ -11,11 +11,13 @@
 <div class="w3-container">
     {% for x in last %}
     <div class="w3-panel w3-card">
-        <h6 class="text-truncate"><a href="{% url 'productdetail' x.slug %}"
+        <h6 class="text-truncate">
+            <i class="{{ x.author.profile.country.flag_css }}"></i>
+            <a href="{% url 'productdetail' x.slug %}"
                                      title="{{ x.title}}"><small> {{ x.title|striptags|truncatechars:30}}</small>
             <small> ( {{ x.author.profile.country.name }} )</small>
             <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
-            <i class="{{ x.author.profile.country.flag_css }}"></i></a>
+            </a>
         </h6>
     </div>
     {% endfor %}

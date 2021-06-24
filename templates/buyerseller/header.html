@@ -17,14 +17,19 @@
 <link href="{% static 'css/responsive.min.css' %}" id="responsiveCss" media="screen and (max-width: 1199px)"
       rel="stylesheet" type="text/css">
 {% include 'blog/snippets/base_css.html' %}
-<body>
+
+
+<body style="background-color:white">
 <div class="container">
     <div class="row">
         <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="75"
                                                          class="logo w-60 mt-1"
                                                          src="{%  static  'images/GOIMEX.png' %}"></a>
-     </div>
+    </div>
 </div>
+
+
+
 
 <div>
     {% if user.is_authenticated %}
@@ -119,7 +124,7 @@
                     <div class="w3-panel w3-card ">
                         {% if user.profile.organization %}
                         <h5><span style="text-transform:uppercase">{{user.profile.organization}}</span></h5>
-                         {% else %}
+                        {% else %}
                         <h5>{{user.username}}</h5>h5>
                         {% endif %}
                     </div>
@@ -128,21 +133,43 @@
             </div>
             {% endif %}
         </div>
+          <div class="mx-auto">
+                <nav class="navbar navbar-expand-sm bg-light navbar-light">
+                    <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
+                        <input class="form-control mr-sm-2" type="search"
+                               placeholder="Search here........................" aria-label="Search"
+                               name="search">
+                        <h5><select required="" name="type">
+                            <option value="buyer" selected="selected">Buyer</option>
+                            <option value="seller">Seller</option>
+                            <option value="service">Service</option>
+                            <option value="company">Company</option>
+                            <option value="manufacturer">Manufacturer</option>
+
+                        </select></h5>
+                        <label for="cars">-</label>
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </nav>
+            </div>
+        <!----
         <div class="col-md-3 col-xl-6 pr-md-0">
-            <marquee behavior="scroll" direction="left"><h6>Virtual Event Hosted By Goimex  will held in
+            <marquee behavior="scroll" direction="left"><h6>Virtual Event Hosted By Goimex will held in
                 Jan
                 2022</h6>
             </marquee>
 
-        </div>
+        </div>----->
+
+
         <div class="col-md-4 col-xl-3 d-flex justify-content-center justify-content-md-end mt-md-0 mt-2 header-list">
             <pi><i class="fa fa-shield fa-2x"></i><a href="{% url 'safedeal' %}"><h6>SafeDeal &nbsp;</h6></a></pi>
-            <pi><i class="fa fa-envelope fa-2x"></i><a href="rfq"><h6>&nbsp  RFQ &nbsp</h6></a></pi>
+            <pi><i class="fa fa-envelope fa-2x"></i><a href="rfq"><h6>&nbsp RFQ &nbsp</h6></a></pi>
             {% if user.is_authenticated %}
-            <pi><i class="fa fa-user-circle fa-2x"></i><a href="accounts/logout"><h6>Sign Out</h6></a></pi>
+            <pi><i class="fa fa-user-circle fa-2x"></i><a href="accounts/logout"><h6>&nbspSign Out</h6></a></pi>
             {% else %}
             <pi><i class="fa fa-user-circle fa-2x"></i> <a href="accounts/login"><h6>&nbsp Sign In</h6></a>
-               </pi>
+            </pi>
             {% endif %}
         </div>
         {% include 'headerimages.html' %}

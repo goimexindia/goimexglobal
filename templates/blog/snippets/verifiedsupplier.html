@@ -72,7 +72,7 @@ body {
                                     <!--Card image-->
                                     <div class="view view-cascade overlay text-center">
                                         <h5 class="card-title"><strong><a
-                                                href="{% url 'companyproduct' p.user.id %}"><span style="text-transform:uppercase">{{p.organization}}</span></a></strong>
+                                                href="{% url 'companyproduct' p.user.id %}"><span style="text-transform:uppercase">{{p.organization|striptags|truncatechars:22 }}</span></a></strong>
                                         </h5>
                                         <small class="text-muted">
                                             <a class="mr-2" href="#">{{p.industry }}</a>
@@ -86,7 +86,7 @@ body {
                                     </div>
                                     <!--Card Body-->
                                     <div class=" text-center">
-                                        <p class="card-text"><small>{{p.bio|striptags|truncatechars:140 }}
+                                        <p class="card-text"><small>{{p.bio|striptags|truncatechars:22 }}
                                             <a href="#">Show
                                                 More........</a> </small></p>
                                         <small>Seller based in ( {{ p.country.name }} )</small>

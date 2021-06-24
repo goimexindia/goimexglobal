@@ -8,7 +8,9 @@
 <body>
 <div class="container">
 {% for x in last %}
-<h5 class="text-truncate"><a href="{% url 'productdetail' x.slug %}"
+<h5 class="text-truncate">
+
+    <a href="{% url 'productdetail' x.slug %}"
                              title="{{ x.title}}"> <small>{{ x.title|striptags}}
     ( {{ x.author.profile.country.name }} )</small>
     <small> ( {{ x.author.profile.organization }} )</small>

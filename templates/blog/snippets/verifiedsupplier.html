@@ -87,8 +87,7 @@ body {
                                     <!--Card Body-->
                                     <div class=" text-center">
                                         <p class="card-text"><small>{{p.bio|striptags|truncatechars:22 }}
-                                            <a href="#">Show
-                                                More........</a> </small></p>
+                                            <a href="#">More..</a> </small></p>
                                         <small>Seller based in ( {{ p.country.name }} )</small>
                                         <a class="mr-2" href=" {% url 'companyproduct' p.user.id  %} ">
                                             <small>{{p.author.profile.organization }}</small></a>

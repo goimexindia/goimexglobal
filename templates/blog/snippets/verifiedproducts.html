@@ -133,7 +133,7 @@ img {
                                 <div class="gallery">
                                     <div class="view view-cascade overlay text-center">
                                         <h6 class="card-title"><strong><a
-                                                href="{% url 'productdetail' p.slug %}">{{p.title}}</a></strong>
+                                                href="{% url 'productdetail' p.slug %}">{{p.title|striptags|truncatechars:22}}</a></strong>
                                         </h6>
 
                                         {% if p.offer %}
@@ -147,7 +147,7 @@ img {
                                             <img class="card-img-top" src="{{p.image.url}}"
                                                  alt="" style="height: 200px; object-fit: contain;">
                                         </a>
-                                        <div class="desc">{{p.keyfeatures}}</div>
+                                        <div class="desc">{{p.keyfeatures|striptags|truncatechars:22}}</div>
                                     </div>
                                 </div>
                             </div>

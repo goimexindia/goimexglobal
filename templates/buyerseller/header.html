@@ -163,12 +163,13 @@
 
 
         <div class="col-md-4 col-xl-3 d-flex justify-content-center justify-content-md-end mt-md-0 mt-2 header-list">
-            <pi><i class="fa fa-shield fa-2x"></i><a href="{% url 'safedeal' %}"><h6>SafeDeal &nbsp;</h6></a></pi>
-            <pi><i class="fa fa-envelope fa-2x"></i><a href="rfq"><h6>&nbsp RFQ &nbsp</h6></a></pi>
+            <pi><i class="fa fa-address-book fa-2x"></i><a href="{% url 'profile' %}"><small>Profile &nbsp;</small></a></pi>
+            <pi><i class="fa fa-shield fa-2x"></i><a href="{% url 'safedeal' %}"><small>SafeDeal &nbsp;</small></a></pi>
+            <pi><i class="fa fa-envelope fa-2x"></i><a href="rfq"><small>&nbsp RFQ &nbsp</small></a></pi>
             {% if user.is_authenticated %}
-            <pi><i class="fa fa-user-circle fa-2x"></i><a href="accounts/logout"><h6>&nbspSign Out</h6></a></pi>
+            <pi><i class="fa fa-user-circle fa-2x"></i><a href="accounts/logout"><small>&nbspSignOut</small></a></pi>
             {% else %}
-            <pi><i class="fa fa-user-circle fa-2x"></i> <a href="accounts/login"><h6>&nbsp Sign In</h6></a>
+            <pi><i class="fa fa-user-circle fa-2x"></i> <a href="accounts/login"><small>SignIn</small></a>
             </pi>
             {% endif %}
         </div>

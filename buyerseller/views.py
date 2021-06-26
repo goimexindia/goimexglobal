@@ -695,7 +695,7 @@ def cat(request):
         data = {}
         products = Product.objects.filter(Q(title__icontains=search_post))
         data['products'] = products
-    data['categories'] = categories
+    data['categories'] = Category.get_all_categories()
     print('you are : ', request.session.get('email'))
     return render(request, 'buyerseller/productcategory.html', data)
 

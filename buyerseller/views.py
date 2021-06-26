@@ -123,6 +123,7 @@ class EcomerceAppView(TemplateView):
         context['product_list'] = product_list
         return context
 
+
 class AllProductsView(TemplateView):
     template_name = "buyerseller/allproducts.html"
 
@@ -145,6 +146,7 @@ class EssentialsView(TemplateView):
         if categoryid:
             context['allcategories'] = Category.objects.filter(category=categoryid)
         return context
+
 
 def catsearch(request):
     search_product = request.GET.get('search')
@@ -716,6 +718,7 @@ class Cat(TemplateView):
         page_number = self.request.GET.get('page')
         product_list = paginator.get_page(page_number)
         context['products'] = product_list
+        context['category'] = categories
         context['categories'] = categories
         return context
 

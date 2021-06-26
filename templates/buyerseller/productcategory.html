@@ -58,28 +58,6 @@
             </div>
         </div>
        <!--------------------------------------->
-    <div>
-    {% load mptt_tags %}
-    <div class = "container">
-        <ul class="root">
-          {% recursetree category %}
-              <li>
-                  <a href="{% url 'category' node.slug %}">{{ node.title }}</a>
-                  {% if not node.is_leaf_node %}
-                      <ul class="children">
-                          {{ children }}
-                      </ul>
-                  {% endif %}
-              </li>
-          {% endrecursetree %}
-        </ul>
-    </div>
-</div>
-
-
-
-
-
         <!-- all products -->
         <div id='products' class="col-lg-9 mx-auto">
             <div class="row mx-auto" style="background-color:powderblue;">

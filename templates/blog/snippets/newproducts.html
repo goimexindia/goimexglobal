@@ -176,11 +176,14 @@ font-weight: 600
                                            title="{{p.title}}">{{p.title|striptags|truncatechars:22}}</a></h5>
                                     <span>{{p.category}}</span>
                                 </div>
+                                {% if p.marked_price|gt:1 %}
                                 <div class="p-price d-flex flex-row"><span>&#8377;</span>
-                                     {% if p.marked_price|gt:1 %}
                                     <h4>{{p.selling_price}}</h4>
-                                    {% endif %}
                                 </div>
+                                {% else %}
+                                <div class="p-price d-flex flex-row"><span>Inquiry</span>
+                                </div>
+                                {% endif %}
                                 <div class="heart"><i class="bx bx-heart"></i></div>
 
                                 <div class="text-center p-image">

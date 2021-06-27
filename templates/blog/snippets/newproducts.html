@@ -1,4 +1,5 @@
 {% load static %}
+{% load custom_tags %}
 <style>
 .card1 {
 width: 350px;
@@ -176,7 +177,9 @@ font-weight: 600
                                     <span>{{p.category}}</span>
                                 </div>
                                 <div class="p-price d-flex flex-row"><span>&#8377;</span>
+                                     {% if p.marked_price|gt:1 %}
                                     <h4>{{p.selling_price}}</h4>
+                                    {% endif %}
                                 </div>
                                 <div class="heart"><i class="bx bx-heart"></i></div>
 
@@ -191,8 +194,16 @@ font-weight: 600
                                 <div class="buttons d-flex flex-row gap-3 px-3">
                                     <a href="{% url 'productdetail' p.slug %}"
                                        class="btn btn-outline-primary w-100">View</a>
-                                    <a href="{% url 'addtocart' p.id %}"
-                                       class="btn btn-outline-primary w-100">Buy Now</a>
+
+                                     {% if p.marked_price|gt:1 %}
+                                <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary btn-block">Buy Now</a>
+                                </p>
+                                {% else %}
+                                <div>
+                                    <p><a href="{% url 'prodinquiry' p.id  %}" class="btn btn-primary">Inquiry</a>
+                                    </p>
+                                </div>
+                                {% endif %}
                                 </div>
                             </div>
                         </div>

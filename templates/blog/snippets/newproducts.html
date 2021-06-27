@@ -146,53 +146,59 @@ width: 140px !important;
 font-weight: 600
 }
 
+
+
 </style>
 <br>
 <hr>
 <br>
 <section class="ft-prd-verfy-sup featuredProductThumbnailComponent">
-    <h2 align="center"><span>Our Top New Introduced <b>Products</b></span></h2><br>
-    <div class="col-md-12">
-        <div class="row">
+    <div class="container">
+        <div class="container mt-5 mb-5">
             <div class="col-md-12">
-                <div class="item">
-                    <div class="row ">
-                        {% for p in topproducts %}
-                        <div class="bg-dark ">
-                            <div class="container d-flex justify-content-center">
-                                <div class="card  p-4">
-                                    <div class="card1">
-                                            <div>
-                                                <h5><a class="text-danger text-truncate"
-                                                       href="javascript:void(0)"
-                                                       title="{{p.title}}">{{p.title}}</a></h5>
-                                                <span>{{p.category}}</span>
-                                            </div>
-                                            <div class="p-price d-flex flex-row"><span>&#8377;</span>
-                                                <h4>{{p.selling_price}}</h4>
-                                            </div>
-                                            <div class="heart"><i class="bx bx-heart"></i></div>
+                <h4 class="lbo-brdr"><span>New Arrivals</span> from Verified Suppliers <i><img
+                        alt="Featured Products from Verified Suppliers" class="lazy"
+                        data-src="{% static 'images/verified-supplier-icon.png' %}"
+                        src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></i> <a
+                        class="viewMore d-none d-md-block" href="{% url 'ecomerce' %}" title="All Company">- View More
+                    -</a></h4>
+            </div>
+            <div class="row g-1">
+                {% for p in topproducts %}
+                <div class="col-md-4">
+                    <div class="container d-flex justify-content-center">
+                        <div class="card  p-4">
+                            <div class="card1">
+                                <div>
+                                    <h5><a class="text-danger text-truncate"
+                                           href="javascript:void(0)"
+                                           title="{{p.title}}">{{p.title|striptags|truncatechars:22}}</a></h5>
+                                    <span>{{p.category}}</span>
+                                </div>
+                                <div class="p-price d-flex flex-row"><span>&#8377;</span>
+                                    <h4>{{p.selling_price}}</h4>
+                                </div>
+                                <div class="heart"><i class="bx bx-heart"></i></div>
 
-                                        <div class="text-center p-image">
+                                <div class="text-center p-image">
 
-                                            <img src="{{p.image.url}}"  onerror="this.onerror=null; this.src='/static/images/no_image.jpg'">
-                                        </div>
-                                        <div class="p-about">
-                                            <p>{{p.description|striptags|truncatechars:140 }}</p>
-                                        </div>
-                                        <div class="buttons d-flex flex-row gap-3 px-3">
-                                            <a href="{% url 'productdetail' p.slug %}"
-                                               class="btn btn-outline-primary w-100">View</a>
-                                            <a href="{% url 'addtocart' p.id %}"
-                                               class="btn btn-outline-primary w-100">Buy Now</a>
-                                        </div>
-                                    </div>
+                                    <img src="{{p.image.url}}"
+                                         onerror="this.onerror=null; this.src='/static/images/no_image.jpg'">
+                                </div>
+                                <div class="p-about">
+                                    <p>{{p.description|striptags|truncatechars:140 }}</p>
+                                </div>
+                                <div class="buttons d-flex flex-row gap-3 px-3">
+                                    <a href="{% url 'productdetail' p.slug %}"
+                                       class="btn btn-outline-primary w-100">View</a>
+                                    <a href="{% url 'addtocart' p.id %}"
+                                       class="btn btn-outline-primary w-100">Buy Now</a>
                                 </div>
                             </div>
                         </div>
-                        {% endfor %}
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>

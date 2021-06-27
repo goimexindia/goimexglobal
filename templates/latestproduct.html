@@ -6,18 +6,20 @@
     <title>Title</title>
 </head>
 <body>
-<div class="container">
-{% for x in last %}
-<h5 class="text-truncate">
-
-    <a href="{% url 'productdetail' x.slug %}"
-                             title="{{ x.title}}"> <small>{{ x.title|striptags}}
-    ( {{ x.author.profile.country.name }} )</small>
-    <small> ( {{ x.author.profile.organization }} )</small>
-    <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
-</a>
-</h5>
-{% endfor %}
+<div class="w3-container">
+    {% for x in last %}
+    <div class="w3-panel w3-card">
+        <h5 class="text-truncate">
+            <i class="{{ x.author.profile.country.flag_css }}"></i>
+            <a href="{% url 'productdetail' x.slug %}"
+               title="{{ x.title}}"> <small>{{ x.title|striptags}}
+                ( {{ x.author.profile.country.name }} )</small>
+                <small> ( {{ x.author.profile.organization }} )</small>
+                <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
+            </a>
+        </h5>
+    </div>
+    {% endfor %}
 </div>
 </body>
 </html>

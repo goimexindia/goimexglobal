@@ -785,8 +785,10 @@ p    {color: black;}
                         <div class="col-md-12">
                             <ul>
                                 {% for p in post %}
+                                <i class="{{ p.author.profile.country.flag_css }}"></i>
                                 <li>
-                                    <a href="{% url 'post-detail' p.id%}" title="{{p.title}}"><span
+
+                                    <a  href="{% url 'post-detail' p.id%}" title="{{p.title}}"><span
                                             class="world-name truncate">{{ p.author.profile.country.name }}</span>
                                         <span
                                                 class="lst-buyer-text truncate">{{p.title|safe}}-{{snippet}}</span>

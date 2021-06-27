@@ -437,7 +437,7 @@ class CustomerOrderDetailView(DetailView):
         return super().dispatch(request, *args, **kwargs)
 
 
-def show_category(request, hierarchy=None):
+def show_category1(request, hierarchy=None):
     category_slug = hierarchy.split('/')
     category_queryset = list(Category.objects.all())
     all_slugs = [x.slug for x in category_queryset]
@@ -454,6 +454,24 @@ def show_category(request, hierarchy=None):
 
     return render(request, "categories.html",
                   {'post_set': parent.post_set.all(), 'sub_categories': parent.children.all()})
+
+
+
+def show_category(request,hierarchy= None):
+    category_slug = hierarchy.split('/')
+    parent = None
+    root = Category.objects.all()
+
+    for slug in category_slug[:-1]:
+        parent = root.get(parent=parent, slug = slug)
+
+    try:
+        instance = Category.objects.get(parent=parent,slug=category_slug[-1])
+    except:
+        instance = get_object_or_404(Post, slug = category_slug[-1])
+        return render(request, "postDetail.html", {'instance':instance})
+    else:
+        return render(request, 'categories.html', {'instance':instance})
 
 
 class CartCreateView(LoginRequiredMixin, CreateView):

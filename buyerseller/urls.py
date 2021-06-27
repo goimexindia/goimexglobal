@@ -1,3 +1,4 @@
+from django.conf.urls import url
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
@@ -10,6 +11,7 @@ urlpatterns = [
     path("apphome", HomeAppView.as_view(), name="apphome"),
     path('catsearch/', views.catsearch, name='cat-search'),
     path('categorylist', CategoryListView.as_view(), name='category-list'),
+    url(r'^category/(?P<hierarchy>.+)/$', views.show_category, name='category'),
     path('adminpostsearch/', views.adminpostsearch, name='adminpost-search'),
     path("ecomerce", EcomerceView.as_view(), name="ecomerce"),
     path("ecomerceapp", EcomerceAppView.as_view(), name="ecomerceapp"),

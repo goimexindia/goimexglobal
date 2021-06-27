@@ -544,3 +544,5 @@ def mfgcompany(request):
     else:
         profile = Profile.objects.exclude(organization__isnull=True).filter(type='manufacturer').order_by("-id")
     return render(request, 'blog/allcompany.html', {'profile': profile})
+
+

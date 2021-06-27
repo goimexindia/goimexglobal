@@ -127,19 +127,31 @@ p    {color: black;}
         <div class="row">
             <div class="categories-section1  col-md-4 col-lg-4 p-0">
                 <div class="abc mx-auto" style="background: url('/static/image/12.jpg');">
-                 <p><h4><center>NEW Tenders Introduced</center></h4> {% show_latest_post%}</p>
+                                        <h4 class="lbo-brdr"><span>New</span> Tenders  <i><img
+                        alt="Featured Products from Verified Suppliers" class="lazy"
+                        data-src="{% static 'images/verified-supplier-icon.png' %}"
+                        src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></i> </h4>
+                    <p> {% show_latest_post%}</p>
                 </div>
             </div>
 
             <div class="categories-section1  col-md-4 col-lg-4 p-0">
                 <div class="abc mx-auto" style="background: url('/static/image/12.jpg');">
-                    <p><h4><center>NEW Products Introduced</center></h4> {% show_latest_name%}</p>
+                    <h4 class="lbo-brdr"><span>New</span> Arrivals  <i><img
+                        alt="Featured Products from Verified Suppliers" class="lazy"
+                        data-src="{% static 'images/verified-supplier-icon.png' %}"
+                        src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></i> </h4>
+                    <p>{% show_latest_name%}</p>
                 </div>
             </div>
 
             <div class="categories-section1  col-md-4 col-lg-4 p-0">
                 <div class="abc mx-auto" style="background: url('/static/image/12.jpg');">
-                    <p><h4><center>NEW Companies Introduced</center></h4> {% show_latest_company%}</p>
+                    <h4 class="lbo-brdr"><span>New</span> Verified Suppliers <i><img
+                        alt="Featured Products from Verified Suppliers" class="lazy"
+                        data-src="{% static 'images/verified-supplier-icon.png' %}"
+                        src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></i> </h4>
+                    <p> {% show_latest_company%}</p>
                 </div>
             </div>
 

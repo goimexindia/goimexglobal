@@ -6,11 +6,15 @@
 
 <div class="container-fluid mt-3">
     <div id='products' class="col-lg-12 mx-auto">
+                    <br>
         <div class="row mx-auto">
             {% for cat in allcategories %}
+            {% if  cat.product_set.all %}
             <div class="card bg-warning text-white">
-                <div class="card-header"><h4>{{cat.title}}</h4></div>
+                <div class="card-header"><h4>{{cat.title|safe}}</h4></div>
             </div>
+
+            {% endif %}
             <div class="row">
                 {% for p in cat.product_set.all %}
                 <div class="col-md-3 card ">

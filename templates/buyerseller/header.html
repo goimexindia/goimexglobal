@@ -29,8 +29,6 @@
 </div>----->
 
 
-
-
 <div>
     {% if user.is_authenticated %}
     <div class="container">
@@ -116,49 +114,49 @@
 <div class="container">
     <div class="row">
 
-       <!-- <div class="col-md-3 col-xl-3 d-flex justify-content-center justify-content-md-start mb-md-0 mb-3">
-            {% if user.profile.organization %}
-            <div class="row">
-                {% if user.is_authenticated %}
-                <a href="{% url 'companyproduct' user.id %}" title="My Company">
-                    <div class="w3-panel w3-card ">
-                        {% if user.profile.organization %}
-                        <h5><span style="text-transform:uppercase">{{user.profile.organization}}</span></h5>
-                        {% else %}
-                        <h5>{{user.username}}</h5>h5>
-                        {% endif %}
-                    </div>
-                </a>
-                {% endif %}
-            </div>
-            {% endif %}
-        </div>---->
+        <!-- <div class="col-md-3 col-xl-3 d-flex justify-content-center justify-content-md-start mb-md-0 mb-3">
+             {% if user.profile.organization %}
+             <div class="row">
+                 {% if user.is_authenticated %}
+                 <a href="{% url 'companyproduct' user.id %}" title="My Company">
+                     <div class="w3-panel w3-card ">
+                         {% if user.profile.organization %}
+                         <h5><span style="text-transform:uppercase">{{user.profile.organization}}</span></h5>
+                         {% else %}
+                         <h5>{{user.username}}</h5>h5>
+                         {% endif %}
+                     </div>
+                 </a>
+                 {% endif %}
+             </div>
+             {% endif %}
+         </div>---->
 
-    <div class="row">
-        <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="50"
-                                                         class="logo w-60 mt-1"
-                                                         src="{%  static  'images/GOIMEX.png' %}"></a>
-    </div>
+        <div class="row">
+            <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="50"
+                                                             class="logo w-60 mt-1"
+                                                             src="{%  static  'images/GOIMEX.png' %}"></a>
+        </div>
 
-          <div class="mx-auto">
-                <nav class="navbar navbar-expand-lg bg-light navbar-light">
-                    <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
-                        <input class="form-control mr-sm-2" type="search"
-                               placeholder="Search here............." aria-label="Search"
-                               name="search">
-                        <h4><select required="" name="type">
-                            <option value="buyer" selected="selected">Buyer</option>
-                            <option value="seller">Seller</option>
-                            <option value="service">Service</option>
-                            <option value="company">Company</option>
-                            <option value="manufacturer">Manufacturer</option>
+        <div class="mx-auto">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light">
+                <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
+                    <input class="form-control mr-sm-2" type="search"
+                           placeholder="Search here............." aria-label="Search"
+                           name="search">
+                    <h4><select required="" name="type">
+                        <option value="buyer" selected="selected">Buyer</option>
+                        <option value="seller">Seller</option>
+                        <option value="service">Service</option>
+                        <option value="company">Company</option>
+                        <option value="manufacturer">Manufacturer</option>
 
-                        </select></h4>
-                        <label for="cars">-</label>
-                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </nav>
-            </div>
+                    </select></h4>
+                    <label for="cars">-</label>
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
+        </div>
         <!----
         <div class="col-md-3 col-xl-6 pr-md-0">
             <marquee behavior="scroll" direction="left"><h6>Virtual Event Hosted By Goimex will held in
@@ -171,16 +169,17 @@
 
         <div class="col-md-4 col-xl-3 d-flex justify-content-center justify-content-md-end mt-md-0 mt-2 header-list">
             <pi><i class="fa fa-address-book fa-2x"></i><a href="{% url 'profile' %}"><small>
-           {% if user.is_authenticated %}
-                 {% if user.profile.organization %}
-                       <span style="text-transform:uppercase">{{user.profile.organization}}</span>&nbsp; &nbsp;
-                        {% else %}
-                        <h5>{{user.username}}</h5>h5>&nbsp; &nbsp;
-                        {% endif %}
-           {% else %}
+                {% if user.is_authenticated %}
+                {% if user.profile.organization %}
+                <span style="text-transform:uppercase">{{user.profile.organization}}</span>&nbsp; &nbsp;
+                {% else %}
+                <h5>{{user.username}}</h5>h5>&nbsp; &nbsp;
+                {% endif %}
+                {% else %}
                 Profile &nbsp;
-            {% endif %} </small></a></pi>
-            <pi><i class="fa fa-shield fa-2x"></i><a href="{% url 'safedeal' %}"><small>Safe<strong>Deal</strong> &nbsp; &nbsp; &nbsp;</small></a></pi>
+                {% endif %} </small></a></pi>
+            <pi><i class="fa fa-shield fa-2x"></i><a href="{% url 'safedeal' %}"><small>Safe<strong>Deal</strong> &nbsp;
+                &nbsp; &nbsp;</small></a></pi>
             <pi><i class="fa fa-envelope fa-2x"></i><a href="rfq"><small>&nbsp; &nbsp; &nbsp; RFQ &nbsp</small></a></pi>
             {% if user.is_authenticated %}
             <pi><i class="fa fa-user-circle fa-2x"></i><a href="accounts/logout"><small>&nbspSignOut</small></a></pi>
@@ -189,6 +188,9 @@
             </pi>
             {% endif %}
         </div>
+
+            <marquee behavior="scroll" direction="left"><h3>Global Platform For Global Trade</h3>
+            </marquee>
         {% include 'headerimages.html' %}
     </div>
 </div>

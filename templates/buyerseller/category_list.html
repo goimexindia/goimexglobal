@@ -1,16 +1,18 @@
-{% extends "blog/newbase.html" %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+{% load custom_tags %}
 {% load mptt_tags %}
 
 {% block title %}List of categories{% endblock %}
 
 {% block content %}
-
 <div>
     <div>
 	<ul>
 	{% recursetree object_list %}
 	    <li>
-		<a href="{{node.get_absolute_url}}">{{node.name}}</a>
+		<a href="#">{{node.title}}</a>
 		{% if not node.is_leaf_node %}
                 <ul class="children">
                     {{ children }}

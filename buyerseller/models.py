@@ -2,6 +2,8 @@ from ckeditor.fields import RichTextField
 from django_countries.fields import CountryField
 from django.db import models
 from django.contrib.auth.models import User
+from social_core.utils import slugify
+
 from accounts.models import Profile
 from PIL import Image
 from crispy_forms.helper import FormHelper
@@ -312,6 +314,15 @@ class Category(MPTTModel):
         for i in range(len(ancestors)):
           slugs.append('/'.join(ancestors[:i+1]))
         return slugs
+
+    def save(self, *args, **kwargs):
+        value = self.title
+        if not self.slug:
+            self.slug = slugify(value, allow_unicode=True)
+        super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('items-by-category', args=[str(self.slug)])
 
 
 class Product(models.Model):

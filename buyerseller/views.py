@@ -456,22 +456,21 @@ def show_category1(request, hierarchy=None):
                   {'post_set': parent.post_set.all(), 'sub_categories': parent.children.all()})
 
 
-
-def show_category(request,hierarchy= None):
+def show_category(request, hierarchy=None):
     category_slug = hierarchy.split('/')
     parent = None
     root = Category.objects.all()
 
     for slug in category_slug[:-1]:
-        parent = root.get(parent=parent, slug = slug)
+        parent = root.get(parent=parent, slug=slug)
 
     try:
-        instance = Category.objects.get(parent=parent,slug=category_slug[-1])
+        instance = Category.objects.get(parent=parent, slug=category_slug[-1])
     except:
-        instance = get_object_or_404(Post, slug = category_slug[-1])
-        return render(request, "postDetail.html", {'instance':instance})
+        instance = get_object_or_404(Post, slug=category_slug[-1])
+        return render(request, "postDetail.html", {'instance': instance})
     else:
-        return render(request, 'categories.html', {'instance':instance})
+        return render(request, 'categories.html', {'instance': instance})
 
 
 class CartCreateView(LoginRequiredMixin, CreateView):
@@ -732,7 +731,7 @@ class Cat(TemplateView):
         context['categories'] = categories
         if categoryID:
             products = Product.get_all_products_by_categoryid(categoryID)
-        paginator = Paginator(products, 8)
+        paginator = Paginator(products, 24)
         page_number = self.request.GET.get('page')
         product_list = paginator.get_page(page_number)
         context['products'] = product_list
@@ -881,7 +880,7 @@ class ProductListView(generic.ListView):
 
 class CategoryListView(generic.ListView):
     model = Category
-    template_name = "buyseller/category_list.html"
+    template_name = "buyerseller/category_list.html"
 
 
 class SafedealCreateView(LoginRequiredMixin, CreateView):
@@ -893,3 +892,29 @@ class SafedealCreateView(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         p = form.save()
         return super().form_valid(form)
+
+
+class ItemsByCategoryView(generic.ListView):
+    ordering = 'id'
+    paginate_by = 10
+    template_name = 'buyerseller/items_by_category.html'
+
+    def __init__(self, **kwargs):
+        super().__init__(kwargs)
+        self.category = Category.objects.get(slug=self.kwargs['slug'])
+
+    def get_queryset(self):
+        # https://docs.djangoproject.com/en/3.1/topics/class-based-views/generic-display/#dynamic-filtering
+        # the following category will also be added to the context data
+        queryset = Product.objects.filter(category=self.category)
+        # need to set ordering to get consistent pagination results
+        queryset = queryset.order_by(self.ordering)
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category'] = self.category
+        return context
+
+
+

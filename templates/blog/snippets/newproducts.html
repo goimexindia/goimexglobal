@@ -127,7 +127,7 @@ bottom: -150px
 }
 
 .card1:hover .buttons {
-animation: buttons 500ms ease-in forwards
+animation: buttons  500ms ease-in forwards
 }
 
 @keyframes buttons {
@@ -143,7 +143,7 @@ bottom: 20px
 .btn {
 height: 50px;
 font-size: 16px;
-width: 140px !important;
+width: 110px !important;
 font-weight: 600
 }
 
@@ -196,14 +196,14 @@ font-weight: 600
                                 </div>
                                 <div class="buttons d-flex flex-row gap-3 px-3">
                                     <a href="{% url 'productdetail' p.slug %}"
-                                       class="btn btn-outline-primary w-100">View</a>
+                                       class="btn btn-sm  btn-outline-primary w-100">View</a>
 
                                      {% if p.marked_price|gt:1 %}
-                                <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary btn-block">Buy Now</a>
+                                <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary btn-sm btn-block">Buy Now</a>
                                 </p>
                                 {% else %}
                                 <div>
-                                    <p><a href="{% url 'prodinquiry' p.id  %}" class="btn btn-primary">Inquiry</a>
+                                    <p><a href="{% url 'prodinquiry' p.id  %}" class="btn btn-small btn-primary">Inquiry</a>
                                     </p>
                                 </div>
                                 {% endif %}

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +9,20 @@
 <body>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div class="w3-container">
+    <div class="abc mx-auto" style="background: url('/static/image/12.jpg');">
+        <h4 class="lbo-brdr"><span>New</span> Verified Suppliers <i><img
+                alt="Featured Products from Verified Suppliers" class="lazy"
+                data-src="{% static 'images/verified-supplier-icon.png' %}"
+                src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></i></h4>
+    </div>
     {% for x in last %}
     <div class="w3-panel w3-card">
         <h6 class="text-truncate">
-                        <i class="{{ x.country.flag_css }}"></i>
+            <i class="{{ x.country.flag_css }}"></i>
             <a href=" {% url 'companyproduct' x.user.id %} "
-              title="{{ x.organization}}"> <small>{{ x.organization|striptags|truncatechars:30}}
-             ( {{ x.country.name }} )</small>
-        </a>
+               title="{{ x.organization}}"> <small>{{ x.organization|striptags|truncatechars:30}}
+                ( {{ x.country.name }} )</small>
+            </a>
         </h6>
     </div>
     {% endfor %}

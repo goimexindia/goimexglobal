@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,12 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 <div class="w3-container">
+     <div class="abc mx-auto" style="background: url('/static/image/12.jpg');">
+                                        <h4 class="lbo-brdr"><span>New</span> Tenders  <i><img
+                        alt="Featured Products from Verified Suppliers" class="lazy"
+                        data-src="{% static 'images/verified-supplier-icon.png' %}"
+                        src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></i> </h4>
+     </div>
     {% for x in last %}
     <div class="w3-panel w3-card">
         <h6 class="text-truncate">

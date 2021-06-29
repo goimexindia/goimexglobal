@@ -20,13 +20,13 @@
 
 
 <body style="background-color:white">
-<div class="container">
+<!-----<div class="container">
     <div class="row">
         <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="75"
                                                          class="logo w-60 mt-1"
                                                          src="{%  static  'images/GOIMEX.png' %}"></a>
     </div>
-</div>
+</div>----->
 
 
 
@@ -48,7 +48,6 @@
                         part of the fastest growing B2B Network</h6><a
                         href="accounts/logout">LOGOUT</a>
                     {% else %}
-
                     <h6 class="mr-3">Join today and be a part of the fastest growing B2B Network</h6><a
                         href="accounts/register">Join Now</a>
                     {% endif %}
@@ -113,10 +112,11 @@
 <div class="logo100">
 
 </div>
+<br>
 <div class="container">
     <div class="row">
 
-        <div class="col-md-3 col-xl-3 d-flex justify-content-center justify-content-md-start mb-md-0 mb-3">
+       <!-- <div class="col-md-3 col-xl-3 d-flex justify-content-center justify-content-md-start mb-md-0 mb-3">
             {% if user.profile.organization %}
             <div class="row">
                 {% if user.is_authenticated %}
@@ -132,21 +132,28 @@
                 {% endif %}
             </div>
             {% endif %}
-        </div>
+        </div>---->
+
+    <div class="row">
+        <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="50"
+                                                         class="logo w-60 mt-1"
+                                                         src="{%  static  'images/GOIMEX.png' %}"></a>
+    </div>
+
           <div class="mx-auto">
-                <nav class="navbar navbar-expand-sm bg-light navbar-light">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light">
                     <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
                         <input class="form-control mr-sm-2" type="search"
-                               placeholder="Search here........................" aria-label="Search"
+                               placeholder="Search here............." aria-label="Search"
                                name="search">
-                        <h5><select required="" name="type">
+                        <h4><select required="" name="type">
                             <option value="buyer" selected="selected">Buyer</option>
                             <option value="seller">Seller</option>
                             <option value="service">Service</option>
                             <option value="company">Company</option>
                             <option value="manufacturer">Manufacturer</option>
 
-                        </select></h5>
+                        </select></h4>
                         <label for="cars">-</label>
                         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
                     </form>
@@ -163,13 +170,22 @@
 
 
         <div class="col-md-4 col-xl-3 d-flex justify-content-center justify-content-md-end mt-md-0 mt-2 header-list">
-            <pi><i class="fa fa-address-book fa-2x"></i><a href="{% url 'profile' %}"><small>Profile &nbsp;</small></a></pi>
-            <pi><i class="fa fa-shield fa-2x"></i><a href="{% url 'safedeal' %}"><small>SafeDeal &nbsp;</small></a></pi>
-            <pi><i class="fa fa-envelope fa-2x"></i><a href="rfq"><small>&nbsp RFQ &nbsp</small></a></pi>
+            <pi><i class="fa fa-address-book fa-2x"></i><a href="{% url 'profile' %}"><small>
+           {% if user.is_authenticated %}
+                 {% if user.profile.organization %}
+                       <span style="text-transform:uppercase">{{user.profile.organization}}</span>&nbsp; &nbsp;
+                        {% else %}
+                        <h5>{{user.username}}</h5>h5>&nbsp; &nbsp;
+                        {% endif %}
+           {% else %}
+                Profile &nbsp;
+            {% endif %} </small></a></pi>
+            <pi><i class="fa fa-shield fa-2x"></i><a href="{% url 'safedeal' %}"><small>Safe<strong>Deal</strong> &nbsp; &nbsp; &nbsp;</small></a></pi>
+            <pi><i class="fa fa-envelope fa-2x"></i><a href="rfq"><small>&nbsp; &nbsp; &nbsp; RFQ &nbsp</small></a></pi>
             {% if user.is_authenticated %}
             <pi><i class="fa fa-user-circle fa-2x"></i><a href="accounts/logout"><small>&nbspSignOut</small></a></pi>
             {% else %}
-            <pi><i class="fa fa-user-circle fa-2x"></i> <a href="accounts/login"><small>SignIn</small></a>
+            <pi><i class="fa fa-user-circle fa-2x"></i> <a href="accounts/login"><small>&nbsp;SignIn</small></a>
             </pi>
             {% endif %}
         </div>

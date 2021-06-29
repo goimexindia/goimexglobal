@@ -178,10 +178,10 @@ font-weight: 600
                                 </div>
                                 {% if p.marked_price|gt:1 %}
                                 <div class="p-price d-flex flex-row"><span>&#8377;</span>
-                                    <h4>{{p.selling_price}}</h4>
+                                    <h4><strong>{{p.selling_price}}/-</strong></h4>
                                 </div>
                                 {% else %}
-                                <div class="p-price d-flex flex-row"><span>Inquiry</span>
+                                <div class="p-price d-flex flex-row"><span style="background-color:cyan;"><strong>Inquiry for trade</strong></span>
                                 </div>
                                 {% endif %}
                                 <div class="heart"><i class="bx bx-heart"></i></div>

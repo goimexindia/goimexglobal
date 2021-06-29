@@ -171,9 +171,9 @@ font-weight: 600
                         <div class="card  p-4">
                             <div class="card1">
                                 <div>
-                                    <h5><a class="text-danger text-truncate"
+                                    <h6><a class="text-danger text-truncate"
                                            href="javascript:void(0)"
-                                           title="{{p.title}}">{{p.title|striptags|truncatechars:29}}</a></h5>
+                                           title="{{p.title}}">{{p.title|striptags|truncatechars:26}}</a></h6>
                                     <span><small>{{p.category}}</small></span>
                                 </div>
                                 {% if p.marked_price|gt:1 %}
@@ -181,7 +181,7 @@ font-weight: 600
                                     <h4><strong>{{p.selling_price}}/-</strong></h4>
                                 </div>
                                 {% else %}
-                                <div class="p-price d-flex flex-row"><span style="background-color:yellow;"><strong>Inquiry</strong></span>
+                                <div class="p-price d-flex flex-row"><span>&#8377; ???/-</span>
                                 </div>
                                 {% endif %}
                                 <div class="heart"><i class="bx bx-heart"></i></div>

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "blog/newbase.html" %}
 {% load crispy_forms_tags %}
 {% block title %}eCommerce{% endblock %}
 {% block content %}
@@ -37,14 +37,12 @@ color:red;
 
 </style>
 <style type="text/css">
-    .company-index-banner{
-        background-image: url("https://www.eworldtrade.com/assets/images/company/company-banner.jpg");
-         background-image: url("https://www.eworldtrade.com/assets/images/company/company-banner.jpg");
+    .company-index-banner1{
+        background-image: url("/static/images/pic91.jpg");
         background-position: center center;
         background-size: cover;
     }
-    .company-join-banner{
-        background-image: linear-gradient(0deg,rgba(230, 29, 36, 0.6),rgba(33, 37, 41, 0.6)), url("https://www.eworldtrade.com/assets/img/disp-banner.jpg");
+    .company-join-banner1{
         background-position: center center;
         background-size: cover;
     }
@@ -56,24 +54,14 @@ color:red;
 </style>
 <link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
 
-<section class="inner-banner-leftnav company-index-banner">
-    <div class="mx-auto w-75 text-center">
-        <div>
-            <div class="text-center">
-                <h1>Premium Memberships <br></h1>
-                <span>Unlimited Business Solutions</span>
-            </div>
-        </div>
-    </div>
-</section>
-
 
 <section class="premium-pricing join-free-packages">
     <div class="container">
         <div class="row">
+            <img src="/static/images/pic91.jpg" alt="Trade World Wide"  style="width:100%;" >
             <div class="col-12 text-center sec-heading d-none d-lg-block d-xl-block">
-                <h3>Our Premium <span>Packages</span></h3>
-                <h6>Premium Features and Ultimate Services</h6>
+             <!---   <h3>Our Premium <span>Packages</span></h3>
+                <h6>Premium Features and Ultimate Services</h6>--->
             </div>
 
             <div class="table-responsive-lg w-100 d-none d-lg-block d-xl-block">

@@ -3,9 +3,16 @@
 {% load custom_tags %}
 {% load mptt_tags %}
 
-{% block title %}List of categories{% endblock %}
 
 {% block content %}
+<div class="row">
+    <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="50"
+                                                     class="logo w-60 mt-1"
+                                                     src="{%  static  'images/GOIMEX.png' %}"></a>
+</div>
+<hr>
+{% block title %}<h3>List of categories</h3>{% endblock %}
+<hr>
 <div class="container-fluid mt-3">
     <div id='products' class="col-lg-12 mx-auto">
         <br>

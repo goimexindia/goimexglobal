@@ -1,7 +1,7 @@
 {% extends "buyerseller/newbase.html" %}
 {% load crispy_forms_tags %}
 {% block title %}eCommerce{% endblock %}
-
+{% load custom_tags %}
 {% block content %}
 
 <div class="container-fluid mt-3">
@@ -37,8 +37,17 @@
                             <a>
                                 <div class="mask rgba-white-slight"></div>
                                 <strong>
-                                    <p class="price"><strike>Price Rs. {{p.marked_price}}</strike> Now
-                                        Rs.{{p.selling_price}}/- </p>
+{% if p.marked_price|gt:1 %}
+                            <strong>
+                                <p class="price"><strike>Price Rs. {{p.marked_price}}</strike> Now
+                                    Rs.{{p.selling_price}}/- </p>
+                            </strong>
+                            {% else %}
+                            <div>
+                                <p><a href="{% url 'prodinquiry' p.id  %}" class="btn btn-primary">Inquiry</a>
+                                </p>
+                            </div>
+                            {% endif %}
                                 </strong>
                             </a>
                         </div>
@@ -56,11 +65,12 @@
                                     More........</a> </small></p>
                             <small>Seller based in ( {{ p.author.profile.country.name }} )</small>
 
-                            <div>
-                                <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a>
-                                    {{p.status}}
-                                </p>
-                            </div>
+                        {% if p.marked_price|gt:1 %}
+                        <div>
+                            <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a> {{p.status}}
+                            </p>
+                        </div>
+                        {% endif %}
 
                             <a class="mr-2" href=" {% url 'companyproduct' p.author.profile.user.id  %} ">
                                 <small>{{p.author.profile.organization }}</small></a>

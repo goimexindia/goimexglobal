@@ -3,7 +3,7 @@
 {% load mptt_tags %}
 {% block title %}Category{% endblock %}
 {% block content %}
-
+{% load custom_tags %}
 <style>
     .fa {
     color: #f2dd1d
@@ -12,6 +12,7 @@
 .rating {
     margin-left: 37%
 }
+
 
 
 </style>
@@ -50,7 +51,8 @@
 <div class="container-fluid mt-3">
     <div class="row">
         <div class="container col-lg-3 mx-auto ">
-            <div class="list-group"   style="background-color:powderblue; width: 300px; height: 1000px; overflow-y: scroll;">
+            <div class="list-group"
+                 style="background-color:powderblue; width: 300px; height: 1000px; overflow-y: scroll;">
                 <a href="{{ request.path }}" class="list-group-item list-group-item-action active">All Products</a>
                 {% for category in categories %}
                 <a href="{{ request.path }}?category={{category.id}}"
@@ -58,7 +60,7 @@
                 {% endfor %}
             </div>
         </div>
-       <!--------------------------------------->
+        <!--------------------------------------->
         <!-- all products -->
         <div id='products' class="col-lg-9 mx-auto">
             <div class="row mx-auto" style="background-color:powderblue;">
@@ -83,7 +85,18 @@
                                  title="{{p.keyfeatures}}"
                                  alt="" style="height: 200px; object-fit: contain;">
                             <div class="mask rgba-white-slight"></div>
-                            <p class="price"><strike> Rs. {{p.marked_price}}</strike> Rs. {{p.selling_price}}/- </p>
+                            {% if p.marked_price|gt:1 %}
+                            <strong>
+                                <p class="price"><strike>Price Rs. {{p.marked_price}}</strike> Now
+                                    Rs.{{p.selling_price}}/- </p>
+                            </strong>
+                            {% else %}
+                            <div>
+                                <p><a href="{% url 'prodinquiry' p.id  %}" class="btn btn-primary">Inquiry</a>
+                                </p>
+                            </div>
+                            {% endif %}
+
                             </a>
                         </div>
                         <!--Card Body-->
@@ -103,8 +116,14 @@
                             <small>Seller based in ( {{ p.author.profile.country.name }} )</small>
                             <div>
                                 {% if p.status == 1 %}
-                                <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a></p>
-                                {% else %}
+                                        {% if p.marked_price|gt:1 %}
+                                        <div>
+                                            <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a>
+
+                                            </p>
+                                        </div>
+                                        {% endif %}
+                                 {% else %}
                                 <p><a href="#" class="btn btn-danger">Comming Soon...</a></p>
                                 {% endif %}
 

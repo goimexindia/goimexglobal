@@ -882,6 +882,13 @@ class CategoryListView(generic.ListView):
     model = Category
     template_name = "buyerseller/category_list.html"
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get the context
+        context = super(CategoryListView, self).get_context_data(**kwargs)
+        # Create any data and add it to the context
+        context['some_data'] = 'This is just some data'
+        return context
+
 
 class SafedealCreateView(LoginRequiredMixin, CreateView):
     template_name = "buyerseller/safedealcreate.html"
@@ -899,13 +906,11 @@ class ItemsByCategoryView(generic.ListView):
     paginate_by = 10
     template_name = 'buyerseller/items_by_category.html'
 
-    def __init__(self, **kwargs):
-        super().__init__(kwargs)
-        self.category = Category.objects.get(slug=self.kwargs['slug'])
 
     def get_queryset(self):
         # https://docs.djangoproject.com/en/3.1/topics/class-based-views/generic-display/#dynamic-filtering
         # the following category will also be added to the context data
+        self.category = Category.objects.get(slug=self.kwargs['slug'])
         queryset = Product.objects.filter(category=self.category)
         # need to set ordering to get consistent pagination results
         queryset = queryset.order_by(self.ordering)
@@ -915,6 +920,3 @@ class ItemsByCategoryView(generic.ListView):
         context = super().get_context_data(**kwargs)
         context['category'] = self.category
         return context
-
-
-

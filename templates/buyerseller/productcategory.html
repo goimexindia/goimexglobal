@@ -15,6 +15,7 @@
 
 
 
+
 </style>
 <link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -116,14 +117,14 @@
                             <small>Seller based in ( {{ p.author.profile.country.name }} )</small>
                             <div>
                                 {% if p.status == 1 %}
-                                        {% if p.marked_price|gt:1 %}
-                                        <div>
-                                            <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a>
+                                {% if p.marked_price|gt:1 %}
+                                <div>
+                                    <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a>
 
-                                            </p>
-                                        </div>
-                                        {% endif %}
-                                 {% else %}
+                                    </p>
+                                </div>
+                                {% endif %}
+                                {% else %}
                                 <p><a href="#" class="btn btn-danger">Comming Soon...</a></p>
                                 {% endif %}
 

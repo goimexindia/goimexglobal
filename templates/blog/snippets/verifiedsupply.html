@@ -61,6 +61,7 @@ height: 0.2px
 
 
 
+
 </style>
 <section class="ft-prd-verfy-sup featuredProductThumbnailComponent">
     <div class="container">
@@ -102,10 +103,14 @@ height: 0.2px
                         <div class="p-details">
 
                             <div class="d-flex justify-content-between align-items-center mx-2">
+                                {% if p.marked_price|gt:1 %}
                                 <h5>
                                     <a href="{% url 'productdetail' p.slug %}">{{p.title|striptags|truncatechars:22}}</a></strong>
-                                 {% if p.marked_price|gt:1 %}
                                 </h5><span> &#8377;{{p.selling_price}}/-</span>
+                                {% else %}
+                                <h5>
+                                    <a href="{% url 'productdetail' p.slug %}">{{p.title|striptags|truncatechars:30}}</a></strong>
+                                </h5>
                                 {% endif %}
                             </div>
                             <!---<div class="mx-2">

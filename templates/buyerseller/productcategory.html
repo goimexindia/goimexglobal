@@ -56,7 +56,7 @@
                 <a href="{{ request.path }}" class="list-group-item list-group-item-action active">All Products</a>
                 {% for category in categories %}
                 <a href="{{ request.path }}?category={{category.id}}"
-                   class="list-group-item list-group-item-action">{{category.title}}</a>
+                   class="list-group-item list-group-item-action">{{category.title}}-({{category.product_count}})</a>
                 {% endfor %}
             </div>
         </div>

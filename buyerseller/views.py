@@ -23,7 +23,7 @@ from django.urls import reverse_lazy, reverse
 from .models import *
 import requests
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
-from django.db.models import Q
+from django.db.models import Q, Count
 
 
 class EcomMixin(object):
@@ -700,7 +700,7 @@ def cat(request):
     if not cart:
         request.session['cart'] = {}
     products = None
-    categories = Category.get_all_categories()
+    categories = Category.get_all_categories().annotate(product_count=Count('product'))
     categoryID = request.GET.get('category')
     if categoryID:
         products = Product.get_all_products_by_categoryid(categoryID)
@@ -714,7 +714,7 @@ def cat(request):
         data = {}
         products = Product.objects.filter(Q(title__icontains=search_post))
         data['products'] = products
-    data['categories'] = Category.get_all_categories()
+    data['categories'] = Category.get_all_categories().annotate(product_count=Count('product'))
     print('you are : ', request.session.get('email'))
     return render(request, 'buyerseller/productcategory.html', data)
 
@@ -725,7 +725,7 @@ class Cat(TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         categoryID = self.request.GET.get('category')
-        categories = Category.objects.all()
+        categories = Category.objects.all().annotate(product_count=Count('product'))
         products = Product.get_all_products()
         context['products'] = products
         context['categories'] = categories

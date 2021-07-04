@@ -118,6 +118,10 @@ input[type=text]:focus {
 h1   {color: blue;}
 p    {color: black;}
 
+
+
+
+
 </style>
 
 {% include 'sellertab.html' %}
@@ -133,7 +137,7 @@ p    {color: black;}
 
             <div class="categories-section1  col-md-4 col-lg-4 p-0">
                 <div class="abc mx-auto" style="background: url('/static/image/12.jpg');">
-                   <div>{% show_latest_name%}</div>
+                    <div>{% show_latest_name%}</div>
                 </div>
             </div>
 
@@ -294,7 +298,8 @@ p    {color: black;}
                                 Products</a></h6>
                             <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
                                    title="Baby Care">Coffe</a></h6>
-                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Confectionery">Confectionery</a>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
+                                   title="Confectionery">Confectionery</a>
                             </h6>
                             <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
                                    title="Baby Care">Diary</a></h6>
@@ -776,7 +781,7 @@ p    {color: black;}
                                 <i class="{{ p.author.profile.country.flag_css }}"></i>
                                 <li>
 
-                                    <a  href="{% url 'post-detail' p.id%}" title="{{p.title}}"><span
+                                    <a href="{% url 'post-detail' p.id%}" title="{{p.title}}"><span
                                             class="world-name truncate">{{ p.author.profile.country.name }}</span>
                                         <span
                                                 class="lst-buyer-text truncate">{{p.title|safe}}-{{snippet}}</span>
@@ -1049,7 +1054,7 @@ p    {color: black;}
             <div class="col-md-6 mt-md-0">
                 <div class="successStoriesComponent pru-section-2" onclick="window.location.href='">
                     <h4><span>Success</span> Stories</h4>
-                   <div class="testimonails-slider owl-carousel owl-theme">
+                    <div class="testimonails-slider owl-carousel owl-theme">
                         <div class="item">
                             <p>We have used conventional B2B platforms previously, like Alibaba, Tradekey etc. But the
                                 buyers that we get from these platforms are not the buyers that the Manufacturer like us
@@ -1149,8 +1154,20 @@ p    {color: black;}
             </div>
         </div>
     </div>
-</section>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <iframe
+                        allow="microphone;"
+                        width="350"
+                        height="430"
+                        src="https://console.dialogflow.com/api-client/demo/embedded/275f99b4-3cc3-4afa-b7d7-1ab2341ae7e4">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- new section add from here -->
 

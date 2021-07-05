@@ -274,12 +274,15 @@ def terms(request):
     return render(request, 'accounts/terms.html', context)
 
 
-def faq(request):
+def faq1(request):
     filename = "faq.pdf"
     filepath = os.path.join(settings.MEDIA_ROOT, "goimex", filename)
     print(filepath)
     return FileResponse(open(filepath, 'rb'), content_type='application/pdf')
 
+def faq(request):
+    context = {}
+    return render(request, 'accounts/snippets/faq.html', context)
 
 def success(request):
     context = {}

@@ -98,6 +98,12 @@ class HomeAppView(TemplateView):
         return context
 
 
+class NewAppView(TemplateView):
+    template_name = "serai.html"
+
+
+
+
 class EcomerceView(TemplateView):
     template_name = "buyerseller/ecomerce.html"
 
@@ -905,7 +911,6 @@ class ItemsByCategoryView(generic.ListView):
     ordering = 'id'
     paginate_by = 10
     template_name = 'buyerseller/items_by_category.html'
-
 
     def get_queryset(self):
         # https://docs.djangoproject.com/en/3.1/topics/class-based-views/generic-display/#dynamic-filtering

@@ -7,9 +7,10 @@ from . import views
 from .views import *
 
 urlpatterns = [
-    path("", HomeView.as_view(), name="ecohome"),
+    path("ecohome", HomeView.as_view(), name="ecohome"),
     path('cat1/<str:slug>/', ItemsByCategoryView.as_view(), name='category-detail'),
     path("apphome", HomeAppView.as_view(), name="apphome"),
+    path("", NewAppView.as_view(), name="newhome"),
     path('catsearch/', views.catsearch, name='cat-search'),
     path('categorylist', CategoryListView.as_view(), name='category-list'),
     url(r'^category/(?P<hierarchy>.+)/$', views.show_category, name='category'),

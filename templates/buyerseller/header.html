@@ -30,6 +30,7 @@
     </div>
 </div>----->
 <div class="s01">
+
     <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
         <section class="top-bar-head-section">
             <div class="container">
@@ -49,15 +50,13 @@
             </div>
         </section>
         <fieldset>
-            <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="50"
-                                                             class="logo w-60 mt-1"
-                                                             src="{%  static  'images/GOIMEX.png' %}"></a>
-            <legend>Fastest Growing B2B Network</legend>
+        <legend>Fastest Growing B2B Network</legend>
         </fieldset>
         <div class="inner-form">
             <div class="input-field first-wrap">
                 <input id="search" name="search" type="text" placeholder="What are you looking for?"/>
-
+</div>
+            <div>
                 <h4><select required="" name="type">
                     <option value="buyer" selected="selected">Buyer</option>
                     <option value="seller">Seller</option>
@@ -101,6 +100,9 @@
     {% endif %}
 </div>
 ---->
+           <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="50"
+                                                             class="logo w-60 mt-1"
+                                                             src="{%  static  'images/GOIMEX.png' %}"></a>
 <section class="top-nav">
     <div class="container">
         <nav class="navbar navbar-expand-md navbar-light">

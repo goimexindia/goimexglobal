@@ -1,4 +1,220 @@
 {% load static %}
+
+<style>
+.main-footer {
+  position: static;
+  left: 0%;
+  top: auto;
+  right: 0%;
+  bottom: 0%;
+  display: block;
+  min-height: auto;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-top: 0.5px solid silver;
+  background-color: #fff;
+  -o-object-fit: none;
+  object-fit: none;
+}
+
+.footer-link {
+  padding-right: 0px;
+  padding-left: 20px;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.footer-link.nav {
+  padding-bottom: 12px;
+  padding-left: 0px;
+  color: hsla(0, 0%, 100%, 0.8);
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.footer-link.nav {
+  padding-bottom: 12px;
+  padding-left: 0px;
+  color: hsla(0, 0%, 100%, 0.8);
+  font-size: 14px;
+  text-decoration: none;
+}
+  .container-6 {
+    padding-right: 20px;
+    padding-left: 20px;
+    border-top: 0.5px solid silver;
+  }
+
+.footer-flex-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 40px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.footer-heading-2 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-link-3 {
+  display: block;
+  margin-bottom: 10px;
+  color: #444;
+  text-decoration: none;
+}
+
+.footer-link-3:hover {
+  text-decoration: underline;
+}
+  .c-quote__text.is--visibility {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .copyright {
+    direction: ltr;
+  }
+
+  .c-section__footer {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .c-footer__image {
+    max-width: 100%;
+  }
+
+  .div-block-133 {
+    width: 150px;
+  }
+
+  .div-block-134 {
+    margin-right: 40px;
+  }
+
+
+
+  .footer-heading-2 {
+    margin-top: 20px;
+  }
+
+.divider {
+  width: 100%;
+  height: 1px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: silver;
+}
+
+.copyright {
+  display: inline-block;
+  float: right;
+  color: #a2a2a2;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: right;
+}
+
+.text_link {
+  display: inline-block;
+  margin-right: 40px;
+  float: left;
+  color: #a0a0a0;
+  font-size: 12px;
+}
+
+.c-section__footer {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.text-block-38 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 12px;
+}
+
+.text-block-39 {
+  padding-bottom: 10px;
+  font-size: 12px;
+}
+
+.c-footer__image {
+  max-width: 50%;
+}
+</style>
+<div class="main-footer">
+    <div class="container-6 w-container">
+        <div class="footer-flex-container">
+            <div "><img
+                    src="{%  static  'images/logonew3.png' %}"
+                    loading="lazy" alt="" class="c-footer__image"></div>
+            <div><h2 class="footer-heading-2">Our solutions</h2>
+                <ul role="list" class="w-list-unstyled">
+                    <li>
+                        <div class="text-block-39">Connect with businesses</div>
+                        <a href="{% url 'faq' %}" class="footer-link-3">Network</a></li>
+                    <li>
+                        <div class="text-block-38">Supply chain solutions</div>
+                        <a href="{% url 'faq' %}" class="footer-link-3">Visibility</a></li>
+                    <li><a href="{% url 'faq' %}" class="footer-link-3">Traceability</a></li>
+                </ul>
+            </div>
+            <div><h2 class="footer-heading-2">Our company</h2>
+                <ul role="list" class="w-list-unstyled">
+                    <li><a href="{% url 'aboutus' %}" class="footer-link-3">About us</a></li>
+                    <li><a href="{% url 'aboutus' %}" class="footer-link-3">Partners</a><a href="{% url 'aboutus' %}"
+                                                                                           class="footer-link-3">Press</a><a
+                            href="{% url 'aboutus' %}" class="footer-link-3">Careers</a><a href="#"
+                                                                                           class="footer-link-3">Help
+                        center</a><a href="{% url 'aboutus' %}" class="footer-link-3">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="div-block-134"><h2 class="footer-heading-2">Insights</h2>
+                <ul role="list" class="w-list-unstyled">
+                    <li><a href="{% url 'ecohome' %}" class="footer-link-3">Articles</a></li>
+                    <li><a href="{% url 'ecohome' %}" class="footer-link-3">Events</a></li>
+                    <li><a href="{% url 'ecohome' %}" class="footer-link-3">Product updates</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="c-footer_copyright w-clearfix">
+            <div class="c-footer_copyright__links w-clearfix">
+                <p class="disclaimer1"><small>All Offers/Products/Company Profiles/Images and other user-posted contents are posted by
+            the user and GOIMEX shall not be detained accountable for any such content.</small></p>
+            </div>
+            <div class="c-footer_copyright__links w-clearfix"><a href="{% url 'terms' %}" target="_blank"
+                                                                 class="text_link">Terms &amp; Policies<br></a>
+                <link rel="prefetch" href="/terms-and-policy/terms-of-use">
+                <a href="{% url 'terms' %}" class="text_link">Privacy policy<br></a>
+            </div>
+            <div class="c-footer_copyright__text w-clearfix">
+                <div class="copyright">©2021 Goimex Global Pvt Limited, all rights reserved.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!----
 <footer>
     <div class="container">
         <div class="row">
@@ -121,7 +337,7 @@
             Copyrights &copy; 2021 All Rights Reserved</a>
         </div>
     </div>
-</footer>
+</footer>------>
 <div class="fixed-premium animated rotatePulse infinite slower">
     <a href="blog/new" title="Premium Services">Premium Services <i class="fa fa-star"></i></a>
 </div>

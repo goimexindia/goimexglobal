@@ -6,6 +6,8 @@
 <meta name="keywords" content="eCommerce, Buyer, Seller, Indian Manufactorer">
 <meta name="author" content="Goimex Global Pvt Ltd.">
 <title>Goimex Global Pvt Ltd</title>
+<link href="{% static 'css/search.css' %}" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"/>
 <link href="{% static 'css/app_min.css' %}" media="all" rel="stylesheet" type="text/css">
 <link href="{% static 'fonts/icomoon1.ttf?smr7yk' %}" as="font" rel="preload" type="font/ttf">
 <link href="{% static 'fonts/fa-solid-900.woff2' %}" rel="preload" type="font/woff2">
@@ -27,6 +29,49 @@
                                                          src="{%  static  'images/GOIMEX.png' %}"></a>
     </div>
 </div>----->
+<div class="s01">
+    <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
+        <section class="top-bar-head-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 d-md-flex justify-content-md-center text-center">
+                        {% if user.is_authenticated %}
+                        <h6 class="mr-3"> Hello, <span style="text-transform:uppercase">{{user.username}}</span> , you
+                            are a
+                            part of the fastest growing B2B Network</h6><a
+                            href="accounts/logout">LOGOUT</a>
+                        {% else %}
+                        <h6 class="mr-3">Join today and be a part of the fastest growing B2B Network</h6><a
+                            href="accounts/register">Join Now</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <fieldset>
+            <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="50"
+                                                             class="logo w-60 mt-1"
+                                                             src="{%  static  'images/GOIMEX.png' %}"></a>
+            <legend>Fastest Growing B2B Network</legend>
+        </fieldset>
+        <div class="inner-form">
+            <div class="input-field first-wrap">
+                <input id="search" name="search" type="text" placeholder="What are you looking for?"/>
+
+                <h4><select required="" name="type">
+                    <option value="buyer" selected="selected">Buyer</option>
+                    <option value="seller">Seller</option>
+                    <option value="service">Service</option>
+                    <option value="company">Company</option>
+                    <option value="manufacturer">Manufacturer</option>
+                </select></h4>
+            </div>
+            <div class="input-field third-wrap">
+                <button class="btn-search" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
 
 
 <div>
@@ -89,17 +134,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'faq' %}">FAQs</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
-                           data-toggle="dropdown" href="javascript:;" id="language-dropdown"><span
-                                class="flag-icon flag-icon-us"></span> English</a>
-                        <div aria-labelledby="language-dropdown" class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0)" title="English"><span
-                                    class="flag-icon flag-icon-us"
-                                    style="background-image: url('static/flags/us.svg')"></span> English</a>
-                            <!-- <a class="dropdown-item" href="javascript:void(0)" title="Chinese"><span class="flag-icon flag-icon-cn"></span> Chinese</a> -->
-                        </div>
-                    </li>
+                    <!---
+                   <li class="nav-item dropdown">
+                      <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                          data-toggle="dropdown" href="javascript:;" id="language-dropdown"><span
+                               class="flag-icon flag-icon-us"></span> English</a>
+                       <div aria-labelledby="language-dropdown" class="dropdown-menu">
+                           <a class="dropdown-item" href="javascript:void(0)" title="English"><span
+                                   class="flag-icon flag-icon-us"
+                                   style="background-image: url('static/flags/us.svg')"></span> English</a>
+                            <a class="dropdown-item" href="javascript:void(0)" title="Chinese"><span class="flag-icon flag-icon-cn"></span> Chinese</a>
+                       </div>
+                   </li>
+           ------->
                 </ul>
             </div>
         </nav>
@@ -165,7 +212,7 @@
             </marquee>
 
         </div>----->
-<hr>
+        <hr>
         <hr>
 
         <div class="col-md-4 col-xl-12 d-flex justify-content-center justify-content-md-end mt-md-0 mt-2 header-list">
@@ -190,13 +237,12 @@
             {% endif %}
         </div>
 
-            <marquee behavior="scroll" direction="left"><h3>Global Platform For Global Trade</h3>
-            </marquee>
+        <marquee behavior="scroll" direction="left"><h3>Global Platform For Global Trade</h3>
+        </marquee>
         {% include 'sellertab.html' %}
         {% include 'headerimages.html' %}
     </div>
 </div>
-
 
 
 <!----

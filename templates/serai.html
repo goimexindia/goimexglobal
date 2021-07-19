@@ -147,29 +147,22 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 --->
 
     <div class="w3-row w3-large w3-light">
-        <div class="w3-col s2">
-            <a href="{% url 'blog-buyerhome' %}" class="w3-button w3-block">Buyers</a>
-        </div>
-        <div class="w3-col s2">
-            <a href="{% url 'blog-servicehome' %}" class="w3-button w3-block">Services</a>
-        </div>
-        <div class="w3-col s2">
-            <a href="{% url 'ecomerce' %}"  class="w3-button w3-block">Products</a>
-        </div>
-        <div class="w3-col s2">
+
+
+        <div class="w3-col s3">
             <a href="{% url 'aboutus' %}"  class="w3-button w3-block">AboutUs</a>
         </div>
-        <div class="w3-col s2">
+        <div class="w3-col s3">
             {% if user.is_authenticated %}
             <a href="accounts/logout"
-               class="w3-button w-nav-link" style="max-width: 1280px;"> <strong>{{user.username}}</strong>&nbsp; &nbsp;SignOut</a>
+               class="w3-button w-nav-link" style="max-width: 1280px;">SignOut</a>
             {% else %}
             <a href="accounts/login"
                class="w3-button w3-block">Login</a>
             {% endif %}
         </div>
-        <div class="w3-col s2">
-             <a href="ecohome"  class="button_primary is--nav w-button">Get started</a>
+        <div class="w3-col s3">
+             <a href="ecohome"  class="button_primary btn-sm is--nav w-button">Get started</a>
         </div>
     </div>
 </div>

@@ -1,0 +1,87 @@
+
+
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+$font-family-sans-serif-2: 'Poppins', sans-serif;
+$font-family-serif: 'Source Serif Pro', serif;
+
+
+
+body {
+	font-family: $font-family-sans-serif;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: $font-family-sans-serif;
+}
+a {
+	transition: .3s all ease;
+	&, &:hover {
+		text-decoration: none!important;
+	}
+}
+.content {
+	height: 70vh;
+}
+
+// footer 6
+.footer-95942 {
+	padding: 7rem 0;
+	font-family: $font-family-sans-serif-2;
+	.nav-links {
+		li {
+			display: block;
+			margin-bottom: 10px;
+			a {
+				font-size: 14px;
+				color: #777;
+				&:hover {
+					color: #4200ff;
+				}
+			}
+		}
+	}
+
+	.social {
+		&.app {
+			font-size: 13px;
+		}
+		li {
+			display: inline-block;
+			a {
+				display: inline-block;
+				padding: 10px;
+				color: #ccc;
+				&:hover {
+					color: #4200ff;
+				}
+			}
+		}
+		&.nav-left {
+			li {
+				&:first-child {
+					a {
+						padding-left: 0px;
+					}
+				}
+			}
+		}	
+		&.nav-right {
+			li {
+				&:last-child {
+					a {
+						padding-right: 0px;
+					}
+				}
+			}
+		}	
+	}
+	h3 {
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}	
+}
+

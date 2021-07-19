@@ -463,6 +463,7 @@ legend {
       align-items: center;
   font-family: 'Poppins', sans-serif;
   background: url("../images/Search_001.png");
+  background: url("static/images/main01.png");
   background-size: cover;
   background-position: center center;
   padding: 15px;

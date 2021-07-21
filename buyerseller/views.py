@@ -102,8 +102,6 @@ class NewAppView(TemplateView):
     template_name = "serai.html"
 
 
-
-
 class EcomerceView(TemplateView):
     template_name = "buyerseller/ecomerce.html"
 

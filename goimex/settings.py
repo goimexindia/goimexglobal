@@ -169,10 +169,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+EMAIL_HOST_USER = 'tushardsoft@gmail.com'
+EMAIL_HOST_PASSWORD = 'crjyzteymdoaaeox'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 django_heroku.settings(locals())
 
@@ -196,3 +196,16 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
 AWS_LOCATION = 'static'
+
+
+DJOSER = {
+    "USER_ID_FIELD": "username",
+    "LOGIN_FIELD": "email",
+    "SEND_ACTIVATION_EMAIL": True,
+    "ACTIVATION_URL": "activate/{uid}/{token}",
+    'SERIALIZERS': {
+        'token_create': 'apps.accounts.serializers.CustomTokenCreateSerializer',
+    },
+}
+
+SITE_NAME = "goimex"

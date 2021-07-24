@@ -44,6 +44,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 
 
+
 </style>
 <style type="text/css">
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
@@ -53,6 +54,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   agent-id="275f99b4-3cc3-4afa-b7d7-1ab2341ae7e4"
   language-code="en"
 ></df-messenger>
+
 
 
 
@@ -165,20 +167,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
             <div class="collapse navbar-collapse fw-bold" id="navbarSupportedContent">
 
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown ms-3">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Our Company
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{% url 'aboutus' %}">About Us</a></li>
-                            <li><a class="dropdown-item" href="{% url 'aboutus' %}">Press</a></li>
-                            <li><a class="dropdown-item" href="{% url 'aboutus' %}">Careers</a></li>
-                            <li><a class="dropdown-item" href="{% url 'aboutus' %}">Help Centers</a></li>
-                            <li><a class="dropdown-item" href="{% url 'aboutus' %}">Contact Us</a></li>
-                        </ul>
-                    </li>
+
                     <li class="nav-item dropdown ms-3">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown"
@@ -202,7 +191,20 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                             <li><a class="dropdown-item" href="{% url 'ecomerce' %}">Events</a></li>
                         </ul>
                     </li>
-
+                    <li class="nav-item dropdown ms-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Our Company
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'aboutus' %}">About Us</a></li>
+                            <li><a class="dropdown-item" href="{% url 'aboutus' %}">Press</a></li>
+                            <li><a class="dropdown-item" href="{% url 'aboutus' %}">Careers</a></li>
+                            <li><a class="dropdown-item" href="{% url 'aboutus' %}">Help Centers</a></li>
+                            <li><a class="dropdown-item" href="{% url 'aboutus' %}">Contact Us</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item ms-3">
                         {% if user.is_authenticated %}
                         <a class="nav-link" href="accounts/logout">Sign Out</a>
@@ -224,8 +226,9 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                 <div class="l-column__item1 w-col w-col-6">
                     <div class="c-hero__text"><h1 class="heading_1 is--hero">Your business Your way</h1>
                         <p class="body_1 is--hero">
-                            When you are on Goimex e-Platform, you will have the details of all the procedures, the stages of the deals,
-                            the transparency of each transactions  and all track records of your business activities.
+                            When you are on Goimex e-Platform, you will have the details of all the procedures, the
+                            stages of the deals,
+                            the transparency of each transactions and all track records of your business activities.
                             We simplify global trade by providing businesses with a platform to connect, trade and
                             provide services.
                         </p><h6 class="heading_6">Explore our
@@ -349,39 +352,38 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     </div>
 
 
-
-
-<section class="container-fluid mt-4">
-    <div class="c-section is--quote">
-        <div class="c-quote">
-            <div class="l-column_2 w-row">
-                <div class="l-column__item1 is--image w-col w-col-4">
-                    <div class="c-quote__image"><img
-                            src="/static/images/sid3.jpg" style="width: 60%; height: 60%"
-                            loading="lazy"
-                            sizes="(max-width: 479px) 96vw, (max-width: 767px) 95vw, (max-width: 991px) 96vw, (max-width: 1279px) 48vw, (max-width: 1919px) 49vw, 900px"
-                            alt="" class="image-66"></div>
-                    <div class="heading_8 is--orange">Mr. Santosh Misal</div>
+    <section class="container-fluid mt-4">
+        <div class="c-section is--quote">
+            <div class="c-quote">
+                <div class="l-column_2 w-row">
+                    <div class="l-column__item1 is--image w-col w-col-4">
+                        <div class="c-quote__image"><img
+                                src="/static/images/sid3.jpg" style="width: 60%; height: 60%"
+                                loading="lazy"
+                                sizes="(max-width: 479px) 96vw, (max-width: 767px) 95vw, (max-width: 991px) 96vw, (max-width: 1279px) 48vw, (max-width: 1919px) 49vw, 900px"
+                                alt="" class="image-66"></div>
+                        <div class="heading_8 is--orange">Mr. Santosh Misal</div>
                         <div class="heading_8 is--orange">Founder, Goimex</div>
-                </div>
-                <div class="l-column__item2 w-col w-col-8">
-                    <div class="c-quote__text w-container"><img
-                            src="https://assets-global.website-files.com/5f0d2d0d89c8d52b174f0b2f/60dbd8b6fc73f9bf09b90e10_svg-quote.svg"
-                            loading="lazy" alt="" class="image-67">
-                        <blockquote class="heading_5 is--quote">Being a comprehensive digital service platform for
-                            Global trade, Goimex.com is committed to tapping business opportunities for suppliers and
-                            buyers, and providing one-stop services for promoting the international trade between the
-                            two sides.Goimex.com is one of the most extensive and reliable web addresses for Global
-                            trade.
-                        </blockquote>
+                    </div>
+                    <div class="l-column__item2 w-col w-col-8">
+                        <div class="c-quote__text w-container"><img
+                                src="https://assets-global.website-files.com/5f0d2d0d89c8d52b174f0b2f/60dbd8b6fc73f9bf09b90e10_svg-quote.svg"
+                                loading="lazy" alt="" class="image-67">
+                            <blockquote class="heading_5 is--quote">Being a comprehensive digital service platform for
+                                Global trade, Goimex.com is committed to tapping business opportunities for suppliers
+                                and
+                                buyers, and providing one-stop services for promoting the international trade between
+                                the
+                                two sides.Goimex.com is one of the most extensive and reliable web addresses for Global
+                                trade.
+                            </blockquote>
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
 
     <div class="c-section is--cta">

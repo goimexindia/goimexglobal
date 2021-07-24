@@ -125,6 +125,7 @@ def search(request):
                       {'posts': post_list, 'catlist': catlist, 'page': page, 'type': type_post})
 
 
+
 def searchapp(request):
     catlist = Post.objects.all().distinct('category')
     search_post = request.GET.get('search')

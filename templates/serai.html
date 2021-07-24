@@ -214,7 +214,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                         {% endif %}
                     </li>
                     <li class="nav-item ms-3">
-                        <a class="btn btn-primary" href="ecohome" role="button">Get Started</a>
+                        <a class="btn btn-primary" href="home" role="button">Get Started</a>
                     </li>
                 </ul>
             </div>
@@ -390,7 +390,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
     <div class="c-section is--cta">
         <div class="c-cta w-container"><h2 class="heading_2 is__center">Not sure how we can help?</h2>
-            <div class="c-cta__buttons is--center"><a href="{% url 'faq' %}" class="button_primary w-button">Compare
+            <div class="c-cta__buttons is--center"><a href="{% url 'membership' %}" class="button_primary w-button">Compare
                 Solutions</a><a href="{% url 'faq' %}" class="button_secondary is--mobile w-button">Get in touch</a>
             </div>
         </div>
@@ -402,17 +402,6 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                 <div class="div-block-133"><img
                         src="{%  static  'images/logonew3.png' %}"
                         loading="lazy" alt="" class="c-footer__image"></div>
-                <div><h2 class="footer-heading-2">Our solutions</h2>
-                    <ul role="list" class="w-list-unstyled">
-                        <li>
-                            <div class="text-block-39">Connect with businesses</div>
-                            <a href="{% url 'faq' %}" class="footer-link-3">Network</a></li>
-                        <li>
-                            <div class="text-block-38">Supply chain solutions</div>
-                            <a href="{% url 'faq' %}" class="footer-link-3">Visibility</a></li>
-                        <li><a href="{% url 'faq' %}" class="footer-link-3">Traceability</a></li>
-                    </ul>
-                </div>
                 <div><h2 class="footer-heading-2">Our company</h2>
                     <ul role="list" class="w-list-unstyled">
                         <li><a href="{% url 'aboutus' %}" class="footer-link-3">About us</a></li>
@@ -426,9 +415,9 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                 </div>
                 <div class="div-block-134"><h2 class="footer-heading-2">Insights</h2>
                     <ul role="list" class="w-list-unstyled">
-                        <li><a href="{% url 'ecohome' %}" class="footer-link-3">Articles</a></li>
-                        <li><a href="{% url 'ecohome' %}" class="footer-link-3">Events</a></li>
-                        <li><a href="{% url 'ecohome' %}" class="footer-link-3">Product updates</a></li>
+                        <li><a href="{% url 'home' %}" class="footer-link-3">Articles</a></li>
+                        <li><a href="{% url 'home' %}" class="footer-link-3">Events</a></li>
+                        <!---<li><a href="{% url 'home' %}" class="footer-link-3">Product updates</a></li>--->
                     </ul>
                 </div>
             </div>

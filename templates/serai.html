@@ -41,11 +41,6 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .mySlides {display:none}
 .w3-tag, .fa {cursor:pointer}
 .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
-
-
-
-
-
 </style>
 <style type="text/css">
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
@@ -257,7 +252,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                     <div class="c-feature__text">
                         <div class="subtitle_1">Connect and trade</div>
                         <h3 class="heading_3 is--orange">Network</h3>
-                        <p class="body_2">Search, find and connect with new buyers and sellers. Gain access to trade
+                        <p class="body_1 is--hero">Search, find and connect with new buyers and sellers. Gain access to trade
                             solutions to help you do business more efficiently.</p></div>
                     <div class="c-cta__buttons"><a
                             href="accounts/login"
@@ -278,7 +273,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                         <div class="c-feature__text">
                             <div class="subtitle_1">Manage your supply chain</div>
                             <h3 class="heading_3 is--orange">Visibility</h3>
-                            <p class="body_2">Get a complete view of your supply chain partners and visualise, analyse
+                            <p class="body_1 is--hero">Get a complete view of your supply chain partners and visualise, analyse
                                 and
                                 verify information in one single place.</p></div>
                         <div class="c-cta__buttons"><a href="{% url 'faq' %}" class="button_primary w-button">Learn
@@ -287,8 +282,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                     <br><br>
                     <div class="c-feature__traceability">
                         <div class="c-feature__text"><h3 class="heading_3 is--orange">Services</h3>
-                            <p class="body_2"> “Services" is created for companies that are interested in discovering
-                                service executors or in promoting their services in the B2B sector.
+                            <p class="body_1 is--hero"><strong>Services</strong> are created for companies that are interested for discovering
+                                service executors or in promoting their services in excellent professional way for  the B2B sector.
                                 We are engaged in End to End solutions of Trade Activities across the Globe.
                             </p></div>
                         <div class="c-cta__buttons"><a href="{% url 'faq' %}" class="button_primary w-button">Learn
@@ -402,15 +397,21 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                 <div class="div-block-133"><img
                         src="{%  static  'images/logonew3.png' %}"
                         loading="lazy" alt="" class="c-footer__image"></div>
-                <div><h2 class="footer-heading-2">Our company</h2>
+                <div><h2 class="footer-heading-2">Our Company</h2>
                     <ul role="list" class="w-list-unstyled">
-                        <li><a href="{% url 'aboutus' %}" class="footer-link-3">About us</a></li>
-                        <li><a href="{% url 'aboutus' %}" class="footer-link-3">Partners</a><a
-                                href="{% url 'aboutus' %}"
-                                class="footer-link-3">Press</a><a
-                                href="{% url 'aboutus' %}" class="footer-link-3">Careers</a><a href="#"
-                                                                                               class="footer-link-3">Help
-                            center</a><a href="{% url 'aboutus' %}" class="footer-link-3">Contact us</a></li>
+                        <li><a href="{% url 'aboutus' %}" class="footer-link-3">Company Overview</a></li>
+                        <li><a href="{% url 'aboutus' %}" class="footer-link-3">Core Features</a>
+                            <a href="{% url 'aboutus' %}"  class="footer-link-3">Our Strength</a>
+                            <a href="{% url 'aboutus' %}" class="footer-link-3">Global Operations</a>
+                            <a href="{% url 'aboutus' %}" class="footer-link-3">Our Partners</a></li>
+                    </ul>
+                </div>
+                 <div><h2 class="footer-heading-2">Our Activities</h2>
+                    <ul role="list" class="w-list-unstyled">
+                        <li><a href="{% url 'aboutus' %}" class="footer-link-3">Press</a>
+                            <a href="{% url 'aboutus' %}" class="footer-link-3">Careers</a>
+                            <a href="{% url 'aboutus' %}"  class="footer-link-3">Help Center</a>
+                            <a href="{% url 'aboutus' %}" class="footer-link-3">Contact us</a></li>
                     </ul>
                 </div>
                 <div class="div-block-134"><h2 class="footer-heading-2">Insights</h2>

@@ -10,6 +10,7 @@ urlpatterns = [
     path("home", HomeView.as_view(), name="home"),
     path('cat1/<str:slug>/', ItemsByCategoryView.as_view(), name='category-detail'),
     path("apphome", HomeAppView.as_view(), name="apphome"),
+    path("serhome", HomeSerView.as_view(), name="serhome"),
     path("", NewAppView.as_view(), name="newhome"),
     path('catsearch/', views.catsearch, name='cat-search'),
     path('categorylist', CategoryListView.as_view(), name='category-list'),

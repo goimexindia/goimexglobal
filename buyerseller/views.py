@@ -98,6 +98,32 @@ class HomeAppView(TemplateView):
         return context
 
 
+
+class HomeSerView(TemplateView):
+    template_name = "buyerseller/snippets/searchbar.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(HomeSerView, self).get_context_data(**kwargs)
+        prod = Proddisplay.objects.all().order_by("-id")
+        category = Category.objects.all()
+        suppliers = Profile.objects.exclude(organization__isnull=True).exclude(type='Buyer').order_by("-id")[:12]
+        products = Product.objects.all().order_by("-id")[:12]
+        topproducts = Product.objects.distinct('category').order_by("category")[:12]
+        productss = Product.objects.all().exclude(image__isnull=True).order_by("-id")[:12]
+        post = Post.objects.all().order_by("-id")
+        context['prod'] = prod
+        context['suppliers'] = suppliers
+        context['topproducts'] = topproducts
+        context['products'] = products
+        context['productss'] = productss
+        context['post'] = post
+        context['category'] = category
+        paginator = Paginator(products, 12)
+        page_number = self.request.GET.get('page')
+        product_list = paginator.get_page(page_number)
+        context['products'] = product_list
+        return context
+
 class NewAppView(TemplateView):
     template_name = "serai.html"
 

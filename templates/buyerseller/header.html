@@ -5,7 +5,7 @@
 <meta name="description" content="Connecting Bussiness to Bussiness, Country to Country">
 <meta name="keywords" content="eCommerce, Buyer, Seller, Indian Manufactorer">
 <meta name="author" content="Goimex Global Pvt Ltd.">
-    <link rel="icon" href='/static/images/gicon.jpg' type="image/x-icon">
+<link rel="icon" href='/static/images/gicon.jpg' type="image/x-icon">
 <title>Goimex Global Pvt Ltd</title>
 <link href="{% static 'css/search.css' %}" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"/>
@@ -40,13 +40,14 @@
       align-items: center;
   font-family: 'Poppins', sans-serif;
   background: url("/static/images/pic5.jpg");
-
   background-size: cover;
   background-position: center center;
   padding: 15px;
 }
 
+
 </style>
+
 <div class="s01">
     <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
         <section class="top-bar-head-section">
@@ -67,26 +68,29 @@
             </div>
         </section>
         <fieldset>
-        <legend>Your business. Your way.</legend>
+            <legend>Your business. Your way.</legend>
         </fieldset>
         <div class="inner-form">
             <div class="input-field first-wrap">
-                <input id="search" name="search" type="text" placeholder="What are you looking for?"/>
-</div>
-           <div class="input-field second-wrap">
-                <h4><select required="" name="type">
+                <input id="search" name="search" type="text" placeholder="What are you looking for?">
+            </div>
+            <div class="input-field first-wrap">
+                <h2><select required="" name="type">
                     <option value="buyer" selected="selected">Buyer</option>
                     <option value="seller">Seller</option>
                     <option value="service">Service</option>
                     <option value="company">Company</option>
                     <option value="manufacturer">Manufacturer</option>
-                </select></h4>
+                </select></h2>
             </div>
             <div class="input-field third-wrap">
-                <button class="btn-search" type="submit"> Search</button>
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"> Search</button>
             </div>
         </div>
     </form>
+
+
+
 </div>
 
 <!----
@@ -117,9 +121,9 @@
     {% endif %}
 </div>
 ---->
-           <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="50"
-                                                             class="logo w-60 mt-1"
-                                                             src="{%  static  'images/GOIMEX.png' %}"></a>
+<a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="50"
+                                                 class="logo w-60 mt-1"
+                                                 src="{%  static  'images/GOIMEX.png' %}"></a>
 <section class="top-nav">
     <div class="container">
         <nav class="navbar navbar-expand-md navbar-light">
@@ -197,32 +201,32 @@
              </div>
              {% endif %}
          </div>---->
-<!----
-        <div class="row">
-            <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="50"
-                                                             class="logo w-60 mt-1"
-                                                             src="{%  static  'images/GOIMEX.png' %}"></a>
-        </div>
+        <!----
+                <div class="row">
+                    <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="50"
+                                                                     class="logo w-60 mt-1"
+                                                                     src="{%  static  'images/GOIMEX.png' %}"></a>
+                </div>
 
-        <div class="mx-auto">
-            <nav class="navbar navbar-expand-lg bg-light navbar-light">
-                <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
-                    <input class="form-control mr-sm-2" type="search"
-                           placeholder="Search here............." aria-label="Search"
-                           name="search">
-                    <h4><select required="" name="type">
-                        <option value="buyer" selected="selected">Buyer</option>
-                        <option value="seller">Seller</option>
-                        <option value="service">Service</option>
-                        <option value="company">Company</option>
-                        <option value="manufacturer">Manufacturer</option>
+                <div class="mx-auto">
+                    <nav class="navbar navbar-expand-lg bg-light navbar-light">
+                        <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
+                            <input class="form-control mr-sm-2" type="search"
+                                   placeholder="Search here............." aria-label="Search"
+                                   name="search">
+                            <h4><select required="" name="type">
+                                <option value="buyer" selected="selected">Buyer</option>
+                                <option value="seller">Seller</option>
+                                <option value="service">Service</option>
+                                <option value="company">Company</option>
+                                <option value="manufacturer">Manufacturer</option>
 
-                    </select></h4>
-                    <label for="cars">-</label>
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </nav>
-        </div>------>
+                            </select></h4>
+                            <label for="cars">-</label>
+                            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </nav>
+                </div>------>
         <!----
         <div class="col-md-3 col-xl-6 pr-md-0">
             <marquee behavior="scroll" direction="left"><h6>Virtual Event Hosted By Goimex will held in
@@ -244,7 +248,7 @@
                 {{user.username}
                 {% endif %}
                 {% else %}
-               &nbsp;My Profile &nbsp;
+                &nbsp;My Profile &nbsp;
                 {% endif %} </strong></a></pi>
             <pi><i class="fa fa-shield fa-2x"></i><a href="{% url 'safedeal' %}"><strong>&nbsp;Safe Deal &nbsp;
                 &nbsp; &nbsp;</strong></a></pi>
@@ -256,11 +260,11 @@
             </pi>
             {% endif %}
         </div>
-<!------
-        <marquee behavior="scroll" direction="left"><h3>Global Platform For Global Trade</h3>
-        </marquee>---->
+        <!------
+                <marquee behavior="scroll" direction="left"><h3>Global Platform For Global Trade</h3>
+                </marquee>---->
         {% include 'sellertab.html' %}
-       <!---- {% include 'headerimages.html' %} --->
+        <!---- {% include 'headerimages.html' %} --->
     </div>
 </div>
 

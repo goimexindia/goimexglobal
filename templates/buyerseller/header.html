@@ -1,4 +1,4 @@
-{% load static %}
+ {% load static %}
 <meta charset="utf-8">
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -104,7 +104,6 @@
     <section class="top-bar-head-section">
         <div class="container">
             <div class="row">
-
                 <div class="col-md-12 d-md-flex justify-content-md-center text-center">
                     {% if user.is_authenticated %}
                     <h6 class="mr-3"> Hello, <span style="text-transform:uppercase">{{user.username}}</span> , you are a
@@ -207,7 +206,6 @@
                                                                      class="logo w-60 mt-1"
                                                                      src="{%  static  'images/GOIMEX.png' %}"></a>
                 </div>
-
                 <div class="mx-auto">
                     <nav class="navbar navbar-expand-lg bg-light navbar-light">
                         <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
@@ -220,7 +218,6 @@
                                 <option value="service">Service</option>
                                 <option value="company">Company</option>
                                 <option value="manufacturer">Manufacturer</option>
-
                             </select></h4>
                             <label for="cars">-</label>
                             <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
@@ -233,7 +230,6 @@
                 Jan
                 2022</h6>
             </marquee>
-
         </div>----->
         <hr>
         <hr>

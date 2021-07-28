@@ -1,0 +1,203 @@
+{% extends "blog/newbase.html" %}
+{% load static %}
+{% static "images" as baseUrl %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{%  static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'contact/styles/contact.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'contact/styles/about.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'contact/styles/contact_responsive.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'contact/styles/about_responsive.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static 'contact/css/style.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'contact/css/bootstrap.min.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'contact/css/main.css' %}"/>
+
+<div class="super_container">
+    <!-- ***** Breadcrumb Area Start ***** -->
+
+    <!-- ***** Breadcrumb Area End ***** -->
+
+    <a class="btn btn-primary  btn-sm btn-block" href="">Simply Amazing Products</a>
+    <!-- Contact -->
+    {% if contact_input_name %}
+    <center>
+        <h2> Thanks {{ contact_input_name }} </h2>
+        <p>We received your email and will respond shortly....</p>
+        <div class="about_image"><img src="{% static 'images/family12.jpg' %}" alt=""></div>
+    </center>
+    <br/><br/><br/><br/><br/><br/>
+    <div class="card card-body">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Ref No</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in dest %}
+            <tr>
+                <td>{{ item.id }}
+                <td>{{ item.date_reg1| date:"F d Y" }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% else %}
+    <div class="contact">
+        <div class="container">
+            <div class="row">
+                <!-- Get in touch -->
+                <div class="col-lg-6">
+                    <div class="contact_content">
+
+                        <div class="contact_title">Get in touch with us</div>
+                        <div class="contact_text">
+                            <p>Your questions and comments are very important to us. </p>
+                            <p>We've got everything covered for your needs.</p>
+                        </div>
+                        <div class="contact_list">
+                            <ul>
+                                <li>
+                                    <div>Offices</div>
+                                    <strong>Registered</strong>
+                                    <div><h6>403, Chawla Complex, Sector 15, CBD Belapur, Navi Mumbai , Maharashtra –
+                                        400 614, India</h6></div>
+                                       <strong>Branch:</strong>
+                                    <strong>1]Kolkata -</strong><h6>Alaktika 2D 902, New Town Rajarhat, Kolkata – 700 156,
+                                    India.</h6>
+                                    <strong>2]Dubai –</strong><h6>Atrium Centre, Khalid Bin Walid Road, Showroom 6 & 7, AL Mankool,
+                                    BUR Dubai, UAE.</h6>
+                                    <strong>3] USA-</strong><h6>2959, Champbellton, Rd SW Atlanta Ga 30311,USA.</h6>
+
+</li>
+
+
+                                <li>
+                                    <div>email:</div>
+                                    <div><h4>global@goimex.com,
+                                     support@goimex.com</h4></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-lg-6">
+                    <div class="contact_form_container">
+                        <form action="#" method="post" id="contact_form" class="contact_form">
+                            {% csrf_token %}
+
+                            <div class="row">
+                                <div class="col-lg-6" style="margin-bottom: 18px">
+                                    <div style="margin-bottom: 18px"><input type="text" name="input_name"
+                                                                            class="contact_input contact_input_name inpt"
+                                                                            placeholder="Your Name" required="required">
+                                        <div class="input_border"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" style="margin-bottom: 18px">
+                                    <div><input type="text" name="contact_input_mobile"
+                                                class="contact_input contact_input_mobile inpt"
+                                                placeholder="Your Mobile No" required="required">
+                                        <div class="input_border"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6" style="margin-bottom: 18px">
+                                    <div><input type="text" name="contact_input_email"
+                                                class="contact_input contact_input_email inpt" placeholder="Your E-mail"
+                                                required="required">
+                                        <div class="input_border"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6" style="margin-bottom: 18px">
+                                    <div><input type="text" name="contact_input_subject"
+                                                class="contact_input contact_input_subject inpt" placeholder="Subject"
+                                                required="required">
+                                        <div class="input_border"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div><textarea name="contact_input" class="contact_textarea contact_input inpt"
+                                           placeholder="Message" required="required"></textarea>
+                                <div class="input_border" style="bottom:3px"></div>
+                            </div>
+                            <button class="contact_button">send</button>
+                            <br><br>
+                            <h4>I agree to receive follow-up calls from the company representatives.</h4>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Map -->
+    <div class="container">
+        <div class="contact_map">
+            <!-- Google Map -->
+            <div class="map">
+                <div id="google_map" class="google_map">
+                    <div class="map_container">
+                        <div id="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.238894872506!2d73.0297796143758!3d19.009191959010035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3801bfeb167%3A0xc4dfa6d1c829b61!2sGoimex%20Global%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1627441211236!5m2!1sen!2sin"
+                                    width="800" height="600" style="border:0;" allowfullscreen=""
+                                    loading="lazy"></iframe>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+<div class="row">
+    <div class="col-xl-12">
+        <div class="hero-cap hero-cap2 text-center">
+            <img src="{% static 'images/what.jpg' %}" alt=""> <a href="https://wa.me/918097803130"
+                                                                 width="100"  frameborder="20"
+                                                                 style="border:20;" allowfullscreen=""
+                                                                 aria-hidden="false" tabindex="0" allowfullscreen><h2>
+            Contact Us on Whatsapp</h2></a>
+        </div>
+    </div>
+
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+    <script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+    <script src="{% static 'plugins/OwlCaro
+</div>
+
+usel2-2.2.1/owl.carousel.js' %}"></script>
+    <script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+    <script src="{% static 'plugins/easing/easing.js' %}"></script>
+    <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'plugins/greensock/TweenMax.min.js' %}"></script>
+    <script src="{% static 'plugins/greensock/TimelineMax.min.js' %}"></script>
+    <script src="{% static 'plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+    <script src="{% static 'plugins/greensock/animation.gsap.min.js' %}"></script>
+    <script src="{% static 'plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+    <script src="{% static 'js/about.js' %}"></script>
+    {% endblock %}
+
+
+</div>

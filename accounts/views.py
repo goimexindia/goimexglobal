@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.mail import send_mail
 from django.db.models import Q
 from django.http import FileResponse
 from django.shortcuts import render, redirect
@@ -14,7 +15,7 @@ from buyerseller.models import Rfq, Customer, Order, Product, Category, Admin, P
 from .forms import *
 from django.contrib.auth.decorators import login_required
 
-from .models import Profile
+from .models import Profile, Contactme
 from django.views.generic import (
     ListView,
     DetailView,
@@ -322,3 +323,50 @@ class AdminCategoryListView(AdminRequiredMixin, ListView):
         cat_list = paginator.get_page(page_number)
         context['allcat'] = cat_list
         return context
+
+
+
+@login_required(login_url='login')
+def contact(request):
+    if request.method == "POST":
+        input_name = request.POST[ 'input_name' ]
+        contact_input_email = request.POST[ 'contact_input_email' ]
+        contact_input_subject = request.POST[ 'contact_input_subject' ]
+        contact_input_mobile = request.POST[ 'contact_input_mobile' ]
+        contact_input = request.POST[ 'contact_input' ]
+        mobile = request.POST[ 'contact_input_mobile' ]
+        subject = "Thank you for contacting Goimex.com."
+        message = "Dear " + input_name + ",\n\n" \
+                  + "We will get in touch with you soon." + "\n\n\n" \
+                  + "Your message details : -" + "\n" \
+                  + "Message From-" + input_name + "\n" \
+                  + "Email:-" + contact_input_email + "\n\n" \
+                  + "Mobile:-" + mobile + "\n\n" \
+                  + "Subject-" + contact_input_subject + "\n\n" \
+                  + "Details-" + contact_input + "\n\n\n" \
+                  + "Warm Regards \n\n From: Goimex Support Team"
+        from_email = settings.EMAIL_HOST_USER
+        to_list = [ contact_input_email, settings.EMAIL_HOST_USER ]
+        send_mail(subject, message, from_email, to_list, fail_silently=True)
+
+        name = request.POST[ 'input_name' ]
+        email = request.POST[ 'contact_input_email' ]
+        subject = request.POST[ 'contact_input_subject' ]
+        message = request.POST[ 'contact_input' ]
+        contactme = Contactme(name=name, email=email, mobile=mobile, subject=subject, message=message)
+        contactme.save()
+        dest = Contactme.objects.filter(name=name, email=email, mobile=mobile, message=message).order_by('-id')[ :1 ]
+
+
+
+        context = {
+            'contact_input_name': input_name,
+            'dest': dest,
+            'header': 'Contact',
+
+        }
+        return render(request, 'contact.html',context )
+    else:
+        context = {
+        }
+        return render(request, "contact.html", context)

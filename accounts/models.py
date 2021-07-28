@@ -5,7 +5,6 @@ from django_countries.fields import CountryField
 from PIL import Image
 from phone_field import PhoneField
 
-
 INDUSTRY = [
     ('AGRICULTURE', 'Agriculture'),
     ('APPAREL', 'Apparel'),
@@ -127,7 +126,7 @@ class Profile(models.Model):
     img1 = models.ImageField(upload_to='pics', verbose_name="Companys/Product Image", default='profile1.png')
     img2 = models.ImageField(upload_to='pics', verbose_name="Companys/Product Image", default='profile1.png')
     img3 = models.ImageField(upload_to='pics', verbose_name="Companys/Product Image", default='profile1.png')
-    img4 =models.ImageField(upload_to='pics', verbose_name="Companys/Product Image", default='profile2.png')
+    img4 = models.ImageField(upload_to='pics', verbose_name="Companys/Product Image", default='profile2.png')
 
     def __str__(self):
         return f'{self.user.username} Profile'
@@ -140,3 +139,12 @@ def save(self, *args, **kwargs):
         output_size = (300, 300)
         img.thumbnail(output_size)
         img.save(self.img.path)
+
+
+class Contactme(models.Model):
+    name = models.CharField(max_length=50, blank=False)
+    email = models.EmailField(max_length=60)
+    mobile = models.CharField(max_length=20)
+    subject = models.CharField(max_length=50)
+    message = models.TextField()
+    date_reg1 = models.DateTimeField(auto_now_add=True)

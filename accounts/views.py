@@ -23,6 +23,8 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
+import razorpay
+from django.views.decorators.csrf import csrf_exempt
 
 
 def login(request):
@@ -281,9 +283,11 @@ def faq1(request):
     print(filepath)
     return FileResponse(open(filepath, 'rb'), content_type='application/pdf')
 
+
 def faq(request):
     context = {}
     return render(request, 'accounts/snippets/faq.html', context)
+
 
 def success(request):
     context = {}
@@ -325,16 +329,15 @@ class AdminCategoryListView(AdminRequiredMixin, ListView):
         return context
 
 
-
 @login_required(login_url='login')
 def contact(request):
     if request.method == "POST":
-        input_name = request.POST[ 'input_name' ]
-        contact_input_email = request.POST[ 'contact_input_email' ]
-        contact_input_subject = request.POST[ 'contact_input_subject' ]
-        contact_input_mobile = request.POST[ 'contact_input_mobile' ]
-        contact_input = request.POST[ 'contact_input' ]
-        mobile = request.POST[ 'contact_input_mobile' ]
+        input_name = request.POST['input_name']
+        contact_input_email = request.POST['contact_input_email']
+        contact_input_subject = request.POST['contact_input_subject']
+        contact_input_mobile = request.POST['contact_input_mobile']
+        contact_input = request.POST['contact_input']
+        mobile = request.POST['contact_input_mobile']
         subject = "Thank you for contacting Goimex.com."
         message = "Dear " + input_name + ",\n\n" \
                   + "We will get in touch with you soon." + "\n\n\n" \
@@ -346,18 +349,16 @@ def contact(request):
                   + "Details-" + contact_input + "\n\n\n" \
                   + "Warm Regards \n\n From: Goimex Support Team"
         from_email = settings.EMAIL_HOST_USER
-        to_list = [ contact_input_email, settings.EMAIL_HOST_USER ]
+        to_list = [contact_input_email, settings.EMAIL_HOST_USER]
         send_mail(subject, message, from_email, to_list, fail_silently=True)
 
-        name = request.POST[ 'input_name' ]
-        email = request.POST[ 'contact_input_email' ]
-        subject = request.POST[ 'contact_input_subject' ]
-        message = request.POST[ 'contact_input' ]
+        name = request.POST['input_name']
+        email = request.POST['contact_input_email']
+        subject = request.POST['contact_input_subject']
+        message = request.POST['contact_input']
         contactme = Contactme(name=name, email=email, mobile=mobile, subject=subject, message=message)
         contactme.save()
-        dest = Contactme.objects.filter(name=name, email=email, mobile=mobile, message=message).order_by('-id')[ :1 ]
-
-
+        dest = Contactme.objects.filter(name=name, email=email, mobile=mobile, message=message).order_by('-id')[:1]
 
         context = {
             'contact_input_name': input_name,
@@ -365,8 +366,78 @@ def contact(request):
             'header': 'Contact',
 
         }
-        return render(request, 'contact.html',context )
+        return render(request, 'contact.html', context)
     else:
         context = {
         }
         return render(request, "contact.html", context)
+
+
+def basicpayment(request):
+    keyid = 'rzp_live_8iKdUKGqRVttUs'
+    keySecret = 'utpgdTG6iY9OXcRVwZ6pepLu'
+    if request.method == "POST":
+        name = request.POST.get('name')
+        amount = 999900
+        client = razorpay.Client(
+            auth=(keyid, keySecret))
+        payment = client.order.create({'amount': amount, 'currency': 'INR',
+                                       'payment_capture': '1'})
+    return render(request, 'accounts/payment.html')
+
+
+def silverpayment(request):
+    keyid = 'rzp_live_8iKdUKGqRVttUs'
+    keySecret = 'utpgdTG6iY9OXcRVwZ6pepLu'
+    if request.method == "POST":
+        name = request.POST.get('name')
+        amount = 1899900
+        client = razorpay.Client(
+            auth=(keyid, keySecret))
+        payment = client.order.create({'amount': amount, 'currency': 'INR',
+                                       'payment_capture': '1'})
+    return render(request, 'accounts/payment1.html')
+
+
+def goldpayment(request):
+    keyid = 'rzp_live_8iKdUKGqRVttUs'
+    keySecret = 'utpgdTG6iY9OXcRVwZ6pepLu'
+    if request.method == "POST":
+        name = request.POST.get('name')
+        amount = 3699900
+        client = razorpay.Client(
+            auth=(keyid, keySecret))
+        payment = client.order.create({'amount': amount, 'currency': 'INR',
+                                       'payment_capture': '1'})
+    return render(request, 'accounts/payment2.html')
+
+
+def paltpayment(request):
+    keyid = 'rzp_live_8iKdUKGqRVttUs'
+    keySecret = 'utpgdTG6iY9OXcRVwZ6pepLu'
+    if request.method == "POST":
+        name = request.POST.get('name')
+        amount = 5499900
+        client = razorpay.Client(
+            auth=(keyid, keySecret))
+        payment = client.order.create({'amount': amount, 'currency': 'INR',
+                                       'payment_capture': '1'})
+    return render(request, 'accounts/payment3.html')
+
+
+def expayment(request):
+    keyid = 'rzp_live_8iKdUKGqRVttUs'
+    keySecret = 'utpgdTG6iY9OXcRVwZ6pepLu'
+    if request.method == "POST":
+        name = request.POST.get('name')
+        amount = 8199900
+        client = razorpay.Client(
+            auth=(keyid, keySecret))
+        payment = client.order.create({'amount': amount, 'currency': 'INR',
+                                       'payment_capture': '1'})
+    return render(request, 'accounts/payment4.html')
+
+
+@csrf_exempt
+def success(request):
+    return render(request, "success.html")

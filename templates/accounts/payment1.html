@@ -1,0 +1,53 @@
+{% extends 'base1.html' %}
+{% block content %}
+<head>
+    <style>
+        .center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+    </style>
+</head>
+
+<div class="center">
+    <form class="text-center border border-light p-5" action="success" method="POST">
+
+        {% csrf_token %}
+        <a href="#"
+           title="">
+            <img src="/static/images/membersilver.png"
+                  style="width: 30%; height: 30%"
+                 alt=""
+                 class="lazy" style="">
+        </a>
+        <p class="h3 mb-3">
+            <i class="fas fa-award"></i> Applied For Silver Membership!!
+        </p>
+        <p class="mb-3">
+            <strong>You have requested for the payment of Rs.18999/-</strong>
+        </p>
+
+        <input type="name" name="name" id="name" required class="form-control mb-4" placeholder="Name">
+
+        <!-- RAZORPAY INTEGRATION HERE -->
+
+        <script src="https://checkout.razorpay.com/v1/checkout.js"
+                data-key='utpgdTG6iY9OXcRVwZ6pepLu'
+                data-amount="18999"
+                data-currency="INR"
+                data-order_id="{{user.id}}"
+        data-buttontext="Pay with Razorpay  "
+        data-name={{user.username}}
+        data-description="SILVER MEMBERSHIP"
+        data-image="/static/images/membersilver.png"
+        data-prefill.name={{user.profile.organization}}
+        data-prefill.email={{user.email}}
+        data-theme.color="#F37254">
+        </script>
+    </form>
+</div>
+</div>
+{% endblock %}

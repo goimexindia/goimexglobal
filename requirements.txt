@@ -63,3 +63,6 @@ urllib3==1.26.4
 whitenoise==5.2.0
 wrapt==1.12.1
 zope.interface==5.4.0
+
+razorpay~=1.2.0
+djoser~=2.1.0

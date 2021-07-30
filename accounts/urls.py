@@ -5,6 +5,12 @@ from .views import CategoryCreateView, AdminCategoryListView
 
 urlpatterns = [
     path('register', views.register, name='register'),
+    path('basicpayement', views.basicpayment, name='basicpayment'),
+    path('silverpayement', views.silverpayment, name='silverpayment'),
+    path('goldpayement', views.goldpayment, name='goldpayment'),
+    path('paltpayement', views.paltpayment, name='paltpayment'),
+    path('expayement', views.expayment, name='expayment'),
+    path('success', views.success, name='success'),
     path('login', views.login, name='login'),
     path('contact', views.contact, name='contact'),
     path('logout', views.logout, name='logout'),

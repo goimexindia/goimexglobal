@@ -422,6 +422,10 @@ def paltpayment(request):
             auth=(keyid, keySecret))
         payment = client.order.create({'amount': amount, 'currency': 'INR',
                                        'payment_capture': '1'})
+        client = razorpay.Client(auth=(os.getenv('razorpaykey'), os.getenv('razorpaysecret')))
+        response = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': 1})
+        print(response)
+        context = {'response': response}
     return render(request, 'accounts/payment3.html')
 
 

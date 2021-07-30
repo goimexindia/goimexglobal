@@ -209,3 +209,7 @@ DJOSER = {
 }
 
 SITE_NAME = "goimex"
+
+razorpaykey ='rzp_live_8iKdUKGqRVttUs'
+
+razorpaysecret = 'utpgdTG6iY9OXcRVwZ6pepLu'

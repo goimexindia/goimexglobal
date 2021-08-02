@@ -44,10 +44,8 @@
   background-position: center center;
   padding: 15px;
 }
-
-
 </style>
-
+<!------
 <div class="s01">
     <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
         <section class="top-bar-head-section">
@@ -88,12 +86,9 @@
             </div>
         </div>
     </form>
+</div>---->
 
 
-
-</div>
-
-<!----
 <div>
     {% if user.is_authenticated %}
     <div class="container">
@@ -119,7 +114,7 @@
     </section>
     {% endif %}
 </div>
----->
+
 <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="50"
                                                  class="logo w-60 mt-1"
                                                  src="{%  static  'images/GOIMEX.png' %}"></a>
@@ -232,27 +227,25 @@
             </marquee>
         </div>----->
         <hr>
-        <hr>
-
-        <div class="col-md-12 col-xl-12 d-flex justify-content-center justify-content-md-end mt-md-0 mt-4 header-list">
-            <pi><i class="fa fa-address-book fa-2x"></i><a href="{% url 'profile' %}"><strong>
+          <div class="col-md-12 col-xl-12 d-flex justify-content-center justify-content-md-end mt-md-0 mt-4 header-list">
+            <pi><i class="fa fa-address-book fa-1x"></i><a href="{% url 'profile' %}"><s10>
                 {% if user.is_authenticated %}
                 {% if user.profile.organization %}
                 <span style="text-transform:uppercase">&nbsp;My Profile</span>&nbsp; &nbsp;
                 <!----{{user.profile.organization}}--->
                 {% else %}
-                {{user.username}}
+                {{user.username}}&nbsp;&nbsp;
                 {% endif %}
                 {% else %}
                 &nbsp;My Profile &nbsp;
-                {% endif %} </strong></a></pi>
-            <pi><i class="fa fa-shield fa-2x"></i><a href="{% url 'safedeal' %}"><strong>&nbsp;Safe Deal &nbsp;
-                &nbsp; &nbsp;</strong></a></pi>
-            <pi><i class="fa fa-envelope fa-2x"></i><a href="rfq"><strong>&nbsp; RFQ &nbsp</strong></a></pi>
+                {% endif %} </s10></a></pi>
+            <pi><i class="fa fa-shield fa-1x"></i><a href="{% url 'safedeal' %}"><s11>&nbsp;Safe Deal &nbsp;
+                &nbsp;</s11></a></pi>
+            <pi><i class="fa fa-envelope fa-1x"></i><a href="rfq"><span>&nbsp;RFQ &nbsp</span></a></pi>
             {% if user.is_authenticated %}
-            <pi><i class="fa fa-user-circle fa-2x"></i><a href="accounts/logout"><strong>&nbspSignOut</strong></a></pi>
+            <pi><i class="fa fa-user-circle fa-1x"></i><a href="accounts/logout"><span>&nbspSignOut</span></a></pi>
             {% else %}
-            <pi><i class="fa fa-user-circle fa-2x"></i> <a href="accounts/login"><strong>&nbsp;SignIn</strong></a>
+            <pi><i class="fa fa-user-circle fa-1x"></i> <a href="accounts/login"><span>&nbsp;SignIn</span></a>
             </pi>
             {% endif %}
         </div>
@@ -264,6 +257,7 @@
     </div>
 </div>
 
+<br>
 
 <!----
  <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd."  class="logo w-60 mt-1"

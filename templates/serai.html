@@ -47,6 +47,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 
 
+
 </style>
 <style type="text/css">
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
@@ -56,6 +57,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   agent-id="275f99b4-3cc3-4afa-b7d7-1ab2341ae7e4"
   language-code="en"
 ></df-messenger>
+
 
 
 
@@ -268,17 +270,17 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                         <p class="body_1 is--hero">Search, find and connect with new buyers and sellers. Gain access to
                             trade
                             solutions to help you do business more efficiently.</p></div>
-                        {% if user.is_authenticated %}
-                                <div class="c-cta__buttons">
-                                    <a href="{% url 'safedeal' %}" class="button_primary w-button">Safe Deal</a>
-                                    <a href="{% url 'faq' %}" class="button_secondary is--mobile w-button">Learn more</a>
-                                </div>
-                        {% else %}
-                                 <div class="c-cta__buttons">
-                                    <a href="accounts/register" class="button_primary w-button">Join Now</a>
-                                    <a href="{% url 'faq' %}" class="button_secondary is--mobile w-button">Learn more</a>
-                                </div>
-                        {% endif %}
+                    {% if user.is_authenticated %}
+                    <div class="c-cta__buttons">
+                        <a href="{% url 'safedeal' %}" class="button_primary w-button">Safe Deal</a>
+                        <a href="{% url 'faq' %}" class="button_secondary is--mobile w-button">Learn more</a>
+                    </div>
+                    {% else %}
+                    <div class="c-cta__buttons">
+                        <a href="accounts/register" class="button_primary w-button">Join Now</a>
+                        <a href="{% url 'faq' %}" class="button_secondary is--mobile w-button">Learn more</a>
+                    </div>
+                    {% endif %}
                 </div>
                 <div class="l-column__item2 w-col w-col-6"><img
                         src="https://assets-global.website-files.com/5f0d2d0d89c8d52b174f0b2f/60daf3f3890f98a0e2678f5c_img-home-network-20210629.png"
@@ -413,6 +415,24 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
             </div>
         </div>
     </div>
+
+    <div class="c-section is--gray wf-section">
+        <div class="c-get_started"><h2 class="heading_2 is__center">How to get started</h2>
+            <div class="c-get_started__list">
+                <div class="c-get_started__item"><h5 class="heading_5 is-center is--orange">Join</h5>
+                    <div class="body_2 is--center">Sign up and create your company profile</div>
+                </div>
+                <div class="c-get_started__item"><h5 class="heading_5 is-center is--orange">Define</h5>
+                    <div class="body_2 is--center">Describe your business, products and sourcing needs</div>
+                </div>
+                <div class="c-get_started__item"><h5 class="heading_5 is-center is--orange">Network</h5>
+                    <div class="body_2 is--center">Connect and trade with new partners</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="main-footer">
         <div class="container-6 w-container">
             <div class="footer-flex-container">

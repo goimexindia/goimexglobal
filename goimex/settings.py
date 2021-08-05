@@ -45,6 +45,14 @@ DEFAULT_APPS = [
     'django_filters',
     'storages',
 
+    "django.contrib.sites",  # new
+    # 3rd party
+    "allauth",  # new
+    "allauth.account",  # new
+    "allauth.socialaccount",  # new
+    # social providers
+    "allauth.socialaccount.providers.github",  # new
+    "allauth.socialaccount.providers.twitter",  # new
 ]
 
 THIRD_PARTY_APPS = [
@@ -61,6 +69,8 @@ LOCAL_APPS = [
     'buyerseller.apps.BuyersellerConfig',
     'accounts.apps.AccountsConfig',
     'blog.apps.BlogConfig',
+    "verify_email.apps.VerifyEmailConfig",
+
 ]
 INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -101,6 +111,7 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.twitter.TwitterOAuth',
     'social_core.backends.github.GithubOAuth2',
     'django.contrib.auth.backends.ModelBackend',
+    "allauth.account.auth_backends.AuthenticationBackend",
 )
 
 WSGI_APPLICATION = 'goimex.wsgi.application'
@@ -190,13 +201,12 @@ AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_S3_HOST = 'us-east-2'  # change to your region
 S3_USE_SIGV4 = True
-#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
 AWS_LOCATION = 'static'
-
 
 DJOSER = {
     "USER_ID_FIELD": "username",
@@ -210,6 +220,10 @@ DJOSER = {
 
 SITE_NAME = "goimex"
 
-razorpaykey ='rzp_live_8iKdUKGqRVttUs'
+razorpaykey = 'rzp_live_GjKslhycUnFK1u'
 
-razorpaysecret = 'utpgdTG6iY9OXcRVwZ6pepLu'
+razorpaysecret = 'mPIsIMS2Guvni2tHu5mkoTJe'
+
+SITE_ID = 1
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_LOGOUT_ON_GET = True

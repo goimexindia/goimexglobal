@@ -20,8 +20,8 @@ from django.conf.urls.static import static
 from accounts import views as accounts_views
 from django.contrib.auth import views as auth_views
 
-
 urlpatterns = [
+    path("accounts/", include("allauth.urls")),  # new
     path('', include('buyerseller.urls')),
     path('blog/', include('blog.urls')),
     path('buyerseller/', include('buyerseller.urls')),
@@ -50,8 +50,8 @@ urlpatterns = [
          ),
          name='password_reset_complete'),
     path('accounts/', include('accounts.urls')),
+    path('verification/', include('verify_email.urls')),
     path('oauth/', include('social_django.urls', namespace='social')),
 ]
 
-urlpatterns = urlpatterns + static(settings.MEDIA_URL,  document_root= settings.MEDIA_ROOT)
-
+urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

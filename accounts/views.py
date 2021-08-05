@@ -26,6 +26,8 @@ from django.views.generic import (
 import razorpay
 from django.views.decorators.csrf import csrf_exempt
 
+from verify_email.email_handler import send_verification_email
+
 
 def login(request):
     if request.method == 'POST':
@@ -60,6 +62,8 @@ def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
+            #inactive_user = send_verification_email(request, form)
+            #print(inactive_user)
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Your account has been created! You are now able to log in')
@@ -373,6 +377,7 @@ def contact(request):
         return render(request, "contact.html", context)
 
 
+@login_required(login_url='login')
 def basicpayment(request):
     keyid = 'rzp_live_8iKdUKGqRVttUs'
     keySecret = 'utpgdTG6iY9OXcRVwZ6pepLu'

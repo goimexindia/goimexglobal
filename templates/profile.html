@@ -96,12 +96,12 @@
                 <li><a href="mailto:care@goimex.com"><i class="fa fa-envelope"
                                                         aria-hidden="true"></i>care@goimex.com</a>
                 </li>
-                <li><a href="tel:+12143829974"><i class="fa fa-phone-square" aria-hidden="true"></i>+91-80978 03130 </a>
+                <li><a href="tel:+918097803130"><i class="fa fa-phone-square" aria-hidden="true"></i>+91-80978 03130 </a>
                 </li>
             </ul>
         </div>
         <div class="col-xs-12 col-sm-7 col-md-7">
-            <a href="javascript:;" class="btnChat"><img
+            <a href="{% url 'contact' %}" class="btnChat"><img
                     src="https://www.eworldtrade.com/2K19/images/member/dashboardbanner2.png" alt="Customer Service"
                     class="img-responsive"></a>
         </div>
@@ -112,14 +112,14 @@
 
         <ul style="display: inline;">
             <li style="display: inline;">Premium Services</li>
-            <li style="display: inline;"><a href="#" title="Gold"><img
+            <li style="display: inline;"><a  href="{% url 'membership' %}"  title="Gold"><img
                     src="https://www.eworldtrade.com/assets/images/service-gold.png" alt="Gold"></a></li>
-            <li style="display: inline;"><a href=#" title="Platinum"><img
+            <li style="display: inline;"><a  href="{% url 'membership' %}"  title="Platinum"><img
                     src="https://www.eworldtrade.com/assets/images/service-platinum.png" alt="Platinum"></a></li>
-            <li style="display: inline;"><a href="#" title="Platinum Plus"><img
+            <li style="display: inline;"><a  href="{% url 'membership' %}"  title="Platinum Plus"><img
                     src="https://www.eworldtrade.com/assets/images/service-platinum-plus.png" alt="Platinum Plus"></a>
             </li>
-            <li style="display: inline;"><a href="#" title="Exclusive"><img
+            <li style="display: inline;"><a  href="{% url 'membership' %}"  title="Exclusive"><img
                     src="https://www.eworldtrade.com/assets/images/service-exclusive.png" alt="Exclusive"></a></li>
         </ul>
     </div>

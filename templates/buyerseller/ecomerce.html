@@ -66,9 +66,9 @@
                             {% endif %}
 
                         </h5>
-                        <small class="text-muted">
+                        <h6 class="text-muted">
                             <a class="mr-2" href="{% url 'productcategory' p.category.id %}">{{ p.category }}</a>
-                        </small>
+                        </h6>
                         <img class="card-img-top" src="{{p.image.url}}"
                              onerror="this.onerror=null; this.src='/static/images/no_image.jpg'"
                              alt="{{p.title}}" style="height: 200px; object-fit: contain;">
@@ -76,10 +76,10 @@
                             <div class="mask rgba-white-slight"></div>
 
                             {% if p.marked_price|gt:1 %}
-                            <strong>
+                            <h6>
                                 <p class="price"><strike>Price Rs. {{p.marked_price}}</strike> Now
-                                    Rs.{{p.selling_price}}/- </p>
-                            </strong>
+                                    <strong> Rs.{{p.selling_price}}/-</strong> </p>
+                            </h6>
                             {% else %}
                             <div>
                                 <p><a href="{% url 'prodinquiry' p.id  %}" class="btn btn-primary">Inquiry</a>
@@ -97,10 +97,10 @@
                             <li><i class="fa fa-star"></i></li>
                             <li><i class="fa fa-star"></i></li>
                         </ul>
-                        <p class="card-text"><small>{{p.description|striptags|truncatechars:140 }}
+                        <p class="card-text"><h7>{{p.description|striptags|truncatechars:140 }}
                             <a href="{% url 'productdetail' p.slug %}">Show
-                                More........</a> </small></p>
-                        <small>Seller based in ( {{ p.author.profile.country.name }} )</small>
+                                More........</a> </h7></p>
+                        <h7>Seller based in ( {{ p.author.profile.country.name }} )</h7>
                         {% if p.marked_price|gt:1 %}
                         <div>
                             <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a> {{p.status}}
@@ -108,7 +108,7 @@
                         </div>
                         {% endif %}
                         <a class="mr-2" href=" {% url 'companyproduct' p.author.profile.user.id  %} ">
-                            <small>{{p.author.profile.organization }}</small></a>
+                            <strong>{{p.author.profile.organization }}</strong></a>
                     </div>
                 </div>
             </div>

@@ -6,13 +6,13 @@
     <img class="rounded-circle article-img" src="{{ product.author.profile.img.url }}">
     <div class="media-body">
         <div class="article-metadata">
-            <a class="mr-2" href="#">{{ product.author }}</a>
-            <small class="text-muted">{{ product.date_posted|date:"F d, Y" }}</small>
+<h4>            <a class="mr-2" href="#">{{ product.author }}</a>
+    <sm class="text-muted">{{ product.date_posted|date:"F d, Y" }}</sm></h4>
         </div>
         <h2 class="article-title">{{ product.title }}</h2>
         <div class="b">
-            {{ product.description|safe }}
-            {{ product.keyfeatures|safe }}
+           <h4> {{ product.description|safe }}
+               {{ product.keyfeatures|safe }} </h4>
         </div>
     </div>
 </article>
@@ -25,7 +25,7 @@
                 <h2>{{ comments.count }} messages</h2>
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
-                    <p class="font-weight-bold" style="color:black;">
+                    <p class="font-weight-bold" style="color:black; ;font-size:18px;">
                         {{ comment.name }}
                         <span class=" text-muted font-weight-normal">{{ comment.created_on }}</span>
                     </p>
@@ -39,7 +39,7 @@
                 </div>
                 {% else %}
                 <h3>Inquiry for {{ product.title }} </h3>
-                <form method="post" style="margin-top: 1.3em;">
+                <form method="post" style="margin-top: 1.3em;font-size:20px;">
                      {% csrf_token %}
                      {{ comment_form.media }}
                      {{ comment_form|crispy }}
@@ -47,7 +47,7 @@
                         <p class='text-muted'>By pressing the Button -
                             I agree to share my details with the company I am interacting.
                     </div>
-                    <button type="submit" class="btn btn-danger  btn-sm">Send Message</button>
+                    <button type="submit" class="btn btn-danger  btn-lg">Send Message</button>
                 </form>
                 {% endif %}
             </div>
@@ -55,7 +55,7 @@
     </div>
 </div>
 <div>
-    <a class="btn btn-secondary btn-sm mt-1 bmb-1" href="#">Back</a>
+  <!---  <a class="btn btn-secondary  mt-1 bmb-1" href="#">Back</a> ---->
 </div>
 
 {% endblock content %}

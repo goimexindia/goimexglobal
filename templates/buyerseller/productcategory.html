@@ -87,10 +87,10 @@
                                  alt="" style="height: 200px; object-fit: contain;">
                             <div class="mask rgba-white-slight"></div>
                             {% if p.marked_price|gt:1 %}
-                            <strong>
-                                <p class="price"><strike>Price Rs. {{p.marked_price}}</strike> Now
-                                    Rs.{{p.selling_price}}/- </p>
-                            </strong>
+
+                                <p style="color:DodgerBlue;" class="price"><strike>Price Rs. {{p.marked_price}}</strike>
+                                   <h6> <strong>Rs.{{p.selling_price}}/- </strong> </h6> </p>
+
                             {% else %}
                             <div>
                                 <p><a href="{% url 'prodinquiry' p.id  %}" class="btn btn-primary">Inquiry</a>
@@ -111,10 +111,11 @@
                                 <li><i class="fa fa-star"></i></li>
                                 <li><i class="fa fa-star"></i></li>
                             </ul>
-                            <p class="card-text"><small>{{p.description|striptags|truncatechars:140 }}
+                            <p class="card-text"><h7>{{p.description|striptags|truncatechars:140 }}
                                 <a href="{% url 'productdetail' p.slug %}">Show
-                                    More........</a> </small></p>
-                            <small>Seller based in ( {{ p.author.profile.country.name }} )</small>
+                                    More........</a> </h7></p>
+                            <h6 style="color:Tomato;">Seller based in ( {{ p.author.profile.country.name }} )</h6>
+
                             <div>
                                 {% if p.status == 1 %}
                                 {% if p.marked_price|gt:1 %}

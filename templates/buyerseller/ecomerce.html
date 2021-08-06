@@ -100,15 +100,15 @@
                         <p class="card-text"><h7>{{p.description|striptags|truncatechars:140 }}
                             <a href="{% url 'productdetail' p.slug %}">Show
                                 More........</a> </h7></p>
-                        <h7>Seller based in ( {{ p.author.profile.country.name }} )</h7>
+                        <h7></h7>
                         {% if p.marked_price|gt:1 %}
                         <div>
-                            <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a> {{p.status}}
+                            <p><a href="{% url 'addtocart' p.id %}" class="btn btn-primary">Add To Cart</a>
                             </p>
                         </div>
                         {% endif %}
                         <a class="mr-2" href=" {% url 'companyproduct' p.author.profile.user.id  %} ">
-                            <strong>{{p.author.profile.organization }}</strong></a>
+                          ( {{ p.author.profile.country.name }} )   <strong>{{p.author.profile.organization }}</strong></a>
                     </div>
                 </div>
             </div>

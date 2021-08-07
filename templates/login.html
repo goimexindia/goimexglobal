@@ -1,6 +1,10 @@
 {% extends "blog/basefile.html" %}
 {% load crispy_forms_tags %}
 {% load static %}
+
+{% load socialaccount %}
+{% providers_media_js %}
+
 {% block content %}
 <div class="content-section">
     <div class="row no-gutters">
@@ -8,10 +12,10 @@
             <div>
                 <a href="#"
                    title="Global B2B Marketplace for Worldwide Manufacturers and Suppliers – Goimex Global">
-                          <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="70"
+                    <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="70"
 
                                                                      src="{%  static  'images/GOIMEX.png' %}"></a>
-                        </a>
+                </a>
                 <br>
             </div>
             <div class="description">
@@ -55,8 +59,14 @@
                     </small>
                 </div>
             </form>
-         </div>
+        </div>
     </div>
+    <button style="font-size: 25px; padding:5px; background-color:red;"><a href="{% provider_login_url 'google' %}"
+                                                                       style="text-decoration:None; color:#fff;">Google
+    Login</a></button>
 </div>
+
+
+
 {% endblock content %}
 

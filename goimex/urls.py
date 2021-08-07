@@ -23,8 +23,9 @@ from django.conf.urls.static import static
 from accounts import views as accounts_views
 from django.contrib.auth import views as auth_views
 from django.contrib import admin
-
 from django_otp.admin import OTPAdminSite
+from django.contrib.sitemaps.views import sitemap
+from buyerseller.urls import sitemaps
 
 admin.site.__class__ = OTPAdminSite
 
@@ -33,6 +34,7 @@ admin.site.site_title = 'Goimex Global Administration'
 
 urlpatterns = [
     path("accounts/", include("allauth.urls")),  # new
+
     path('', include('buyerseller.urls')),
     path('blog/', include('blog.urls')),
     path('buyerseller/', include('buyerseller.urls')),
@@ -63,10 +65,9 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('verification/', include('verify_email.urls')),
     path('oauth/', include('social_django.urls', namespace='social')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+         name='django.contrib.sitemaps.views.sitemap'),
 
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-

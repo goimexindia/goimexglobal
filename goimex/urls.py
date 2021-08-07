@@ -26,7 +26,10 @@ from django.contrib import admin
 
 from django_otp.admin import OTPAdminSite
 
+admin.site.__class__ = OTPAdminSite
 
+admin.site.site_header = 'Goimex Global Administration'
+admin.site.site_title = 'Goimex Global Administration'
 
 urlpatterns = [
     path("accounts/", include("allauth.urls")),  # new

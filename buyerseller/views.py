@@ -1,5 +1,6 @@
 import hierarchy as hierarchy
 from django.contrib.auth import authenticate
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, redirect
@@ -98,7 +99,6 @@ class HomeAppView(TemplateView):
         return context
 
 
-
 class HomeSerView(TemplateView):
     template_name = "buyerseller/snippets/searchbar.html"
 
@@ -123,6 +123,7 @@ class HomeSerView(TemplateView):
         product_list = paginator.get_page(page_number)
         context['products'] = product_list
         return context
+
 
 class NewAppView(TemplateView):
     template_name = "serai.html"
@@ -794,6 +795,7 @@ def prodcomment(request, slug):
                                            'comment_form': comment_form})
 
 
+@login_required(login_url='login')
 def prodinquiry(request, slug):
     template_name = 'buyerseller/prodinquiry.html'
     product = get_object_or_404(Product, id=slug)

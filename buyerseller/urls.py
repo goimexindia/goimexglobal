@@ -10,7 +10,7 @@ from django.contrib.sitemaps.views import sitemap
 from buyerseller.sitemaps import ProductSitemap
 
 sitemaps = {
-    "posts": ProductSitemap,
+    "product": ProductSitemap,
 }
 
 

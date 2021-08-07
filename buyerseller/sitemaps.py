@@ -9,4 +9,5 @@ class ProductSitemap(Sitemap):
     def items(self):
         return Product.objects.filter(status=1)
 
-
+    def lastmod(self, obj):
+        return obj.created_on

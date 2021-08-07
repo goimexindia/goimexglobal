@@ -355,6 +355,9 @@ class Product(models.Model):
     def get_all_products():
         return Product.objects.all()
 
+    class Meta:
+        ordering = ["-created_on"]
+
     @staticmethod
     def get_all_products_by_categoryid(category_id):
         if category_id:

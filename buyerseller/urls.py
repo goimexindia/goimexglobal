@@ -6,8 +6,17 @@ from django.conf.urls.static import static
 from . import views
 from .views import *
 
+from django.contrib.sitemaps.views import sitemap
+from buyerseller.sitemaps import ProductSitemap
+
+sitemaps = {
+    "posts": ProductSitemap,
+}
+
+
 urlpatterns = [
     path("home", HomeView.as_view(), name="home"),
+    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
     path('cat1/<str:slug>/', ItemsByCategoryView.as_view(), name='category-detail'),
     path("apphome", HomeAppView.as_view(), name="apphome"),
     path("serhome", HomeSerView.as_view(), name="serhome"),
@@ -23,6 +32,7 @@ urlpatterns = [
     path('Cart/new/', CartCreateView.as_view(), name='cart-create'),
     path('Cart/<int:pk>/update', CartUpdateView.as_view(), name='cart-update'),
     path('product/<int:pk>/update', ProductUpdateView.as_view(), name='product-update'),
+    path('product/<int:pk>/update', ProductUpdateView.as_view(), name='product_detail'),
     path('Cart/<int:pk>/delete', CartDeleteView.as_view(), name='cart-delete'),
     path('htscode', views.htscode, name='htscode'),
     path('aboutus', views.aboutus, name='aboutus'),

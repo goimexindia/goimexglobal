@@ -44,7 +44,7 @@ DEFAULT_APPS = [
     'django.contrib.humanize',
     'django_filters',
     'storages',
-
+    'django.contrib.sitemaps',
     "django.contrib.sites",  # new
     # 3rd party
     "allauth",  # new

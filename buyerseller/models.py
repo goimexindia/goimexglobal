@@ -305,14 +305,14 @@ class Category(MPTTModel):
 
     def get_slug_list(self):
         try:
-          ancestors = self.get_ancestors(include_self=True)
+            ancestors = self.get_ancestors(include_self=True)
         except:
-          ancestors = []
+            ancestors = []
         else:
-          ancestors = [ i.slug for i in ancestors]
+            ancestors = [i.slug for i in ancestors]
         slugs = []
         for i in range(len(ancestors)):
-          slugs.append('/'.join(ancestors[:i+1]))
+            slugs.append('/'.join(ancestors[:i + 1]))
         return slugs
 
     def save(self, *args, **kwargs):
@@ -366,7 +366,7 @@ class Product(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('product_detail', args=(self.id,))
+        return reverse("product_detail", args=(self.id,))
 
     def get_cat_list(self):
         k = self.category  # for now ignore this instance method

@@ -53,6 +53,8 @@ DEFAULT_APPS = [
     # social providers
     "allauth.socialaccount.providers.github",  # new
     "allauth.socialaccount.providers.twitter",  # new
+    'django_otp',
+    'django_otp.plugins.otp_totp',
 ]
 
 THIRD_PARTY_APPS = [
@@ -84,6 +86,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_otp.middleware.OTPMiddleware',
 ]
 
 ROOT_URLCONF = 'goimex.urls'
@@ -227,3 +231,5 @@ razorpaysecret = 'mPIsIMS2Guvni2tHu5mkoTJe'
 SITE_ID = 1
 ACCOUNT_EMAIL_VERIFICATION = "none"
 ACCOUNT_LOGOUT_ON_GET = True
+
+OTP_TOTP_ISSUER = 'Goimex Global'

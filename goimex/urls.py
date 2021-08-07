@@ -16,11 +16,17 @@ Including another URLconf
 from django.conf.urls import url
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from accounts import views as accounts_views
 from django.contrib.auth import views as auth_views
+from django.contrib import admin
+
+from django_otp.admin import OTPAdminSite
+
+
 
 urlpatterns = [
     path("accounts/", include("allauth.urls")),  # new
@@ -58,4 +64,6 @@ urlpatterns = [
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
 

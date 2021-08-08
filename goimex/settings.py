@@ -234,3 +234,15 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 ACCOUNT_LOGOUT_ON_GET = True
 
 OTP_TOTP_ISSUER = 'Goimex Global'
+
+SOCIALACCOUNT_PROVIDERS = {
+     'google': {
+         'SCOPE': [
+             'profile',
+             'email',
+         ],
+         'AUTH_PARAMS': {
+             'access_type': 'offline',
+         }
+     }
+ }

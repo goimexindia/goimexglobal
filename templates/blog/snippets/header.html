@@ -147,7 +147,7 @@ body {
             <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Menu</span>
             <ul>
                 {% if catlist %}
-                <li class="nav-item dropdown bg-dark  list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
+                <li class="nav-item dropdown bg-light  list-group-item  d-flex flex-column justify-content-between mask rgba-blue-light">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
                         <h7>Category</h7>
                     </a>
@@ -181,8 +181,9 @@ body {
             </li>
             {% endif %}
 ----------------------------->
+
             <div class="mx-auto">
-                <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light">
                     <form class="form-inline my-2 my-lg-0" action="{% url 'blog-search' %}" method="GET">
                         <input class="form-control mr-sm-2" type="search"
                                placeholder="Search here........................" aria-label="Search"

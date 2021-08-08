@@ -11,7 +11,7 @@ from django.views.generic import CreateView
 import os
 from django.conf import settings
 
-
+from blog.models import Post
 from buyerseller.models import Rfq, Customer, Order, Product, Category, Admin, ProdComment
 from .forms import *
 from django.contrib.auth.decorators import login_required

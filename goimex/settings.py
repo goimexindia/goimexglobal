@@ -54,6 +54,7 @@ DEFAULT_APPS = [
     "allauth.socialaccount.providers.github",  # new
     "allauth.socialaccount.providers.twitter",  # new
     "allauth.socialaccount.providers.google",  # new
+    "allauth.socialaccount.providers.facebook",
     'django_otp',
     'django_otp.plugins.otp_totp',
 ]
@@ -236,13 +237,36 @@ ACCOUNT_LOGOUT_ON_GET = True
 OTP_TOTP_ISSUER = 'Goimex Global'
 
 SOCIALACCOUNT_PROVIDERS = {
-     'google': {
-         'SCOPE': [
-             'profile',
-             'email',
-         ],
-         'AUTH_PARAMS': {
-             'access_type': 'offline',
-         }
-     }
- }
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'offline',
+        }
+    },
+    'facebook': {
+        'METHOD': 'oauth2',
+        #'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
+        'SCOPE': ['email', 'public_profile'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'first_name',
+            'last_name',
+            'middle_name',
+            'name',
+            'name_format',
+            'picture',
+            'short_name'
+        ],
+        'EXCHANGE_TOKEN': True,
+       # 'LOCALE_FUNC': 'path.to.callable',
+        'VERIFIED_EMAIL': False,
+        'VERSION': 'v7.0',
+    }
+}
+#373981327441827
+#e0f96aa7c344386c364af165a17afd9a

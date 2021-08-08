@@ -3,7 +3,11 @@
 {% load static %}
 
 {% load socialaccount %}
+
 {% providers_media_js %}
+{% load i18n %}
+
+{% load account socialaccount %}
 
 {% block content %}
 <div class="content-section">
@@ -39,6 +43,7 @@
 
         </div>
         <div class="col-md-6 col-lg-6 col-xl-7 register-form login-page-form">
+
             <form action="login" method="post">
                 {% csrf_token %}
                 <fieldset class="form-group">
@@ -51,6 +56,14 @@
                 <div class="form-group">
                     <button class="btn btn-outline-info" type="submit"><small class="text-muted"></small>Login</button>
                     <hr>
+                    <button style="font-size: 25px; padding:5px; background-color:red;"><a
+                            href="{% provider_login_url 'google' %}"
+                            style="text-decoration:None; color:#fff;">Google
+                        Login</a></button>
+                    <button style="font-size: 25px; padding:5px; background-color:red;"><a
+                            href="{% provider_login_url 'facebook' %}"
+                            style="text-decoration:None; color:#fff;">Facebook
+                        Login</a></button>
                     <small class="text-muted ml-2">
                         <p><strong>By login into this website, you agree to our Terms and that you have read our Data
                             UsePolicy,
@@ -60,8 +73,6 @@
                 </div>
             </form>
         </div>
-         <button style="font-size: 25px; padding:5px; background-color:red;"><a href="{% provider_login_url 'google' %}"
-                                                                       style="text-decoration:None; color:#fff;">Google Login</a></button>
     </div>
     <!----------------------------
           <p><strong>-- OR --</strong></p>
@@ -76,7 +87,6 @@
 
 
 </div>
-
 
 
 {% endblock content %}

@@ -191,6 +191,8 @@ EMAIL_HOST_USER = 'goimexindia@gmail.com'
 EMAIL_HOST_PASSWORD = 'xwzujmsmvonroper'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
+DEFAULT_FROM_EMAIL = 'noreply<no_reply@domain.com>'
+
 django_heroku.settings(locals())
 
 SOCIAL_AUTH_FACEBOOK_KEY = '172084741468627'  # App ID

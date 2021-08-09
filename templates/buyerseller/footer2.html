@@ -27,13 +27,13 @@ ul li a {
             </div>
             <div class="col-sm-6 col-md-3">
                 <div class="widget-title">
-                    <h3 class="mb-4 fs-5 text-secondary text-uppercase">About Shop</h3>
+                    <h3 class="mb-4 fs-5 text-secondary text-uppercase">About Goimex</h3>
                 </div>
                 <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="{% url 'aboutus' %}">Our Strength</a></li>
+                    <li><a href="{% url 'aboutus' %}">Our Partners</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                    <li><a href="{% url 'faq' %}">FAQs</a></li>
                 </ul>
             </div>
             <div class="col-sm-6 col-md-3">
@@ -41,11 +41,12 @@ ul li a {
                     <h3 class="mb-4 fs-5 text-secondary text-uppercase">Our services</h3>
                 </div>
                 <ul>
-                    <li><a href="#">Payment</a></li>
-                    <li><a href="#">Order tracking</a></li>
-                    <li><a href="#">Exchanges & returns</a></li>
-                    <li><a href="#">Delivery</a></li>
-                    <li><a href="#">Terms & conditions</a></li>
+                    <li><a href="{% url 'rgq' %}">RFQ</a></li>
+                    <li><a href="{% url 'post-create' %}">Post Request</a></li>
+                    <li><a  href="{% url 'profile' %}">My Profile</a></li>
+                    <li><a href="{% url 'ecomerce' %}">My eShop</a></li>
+                    <li><a href="{% url 'allcompany' %}">Find Companies</a></li>
+                    <li><a href="{% url 'terms' %}">Terms & conditions</a></li>
                 </ul>
             </div>
             <div class="col-sm-6 col-md-3">

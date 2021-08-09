@@ -53,33 +53,27 @@
                     <label for="password">Password:</label><br>
                     <input type="password" name="password" placeholder="password"><br>
                 </fieldset>
-                <!-----
                 <div class="form-group">
                     <button class="btn btn-outline-info" type="submit"><small class="text-muted"></small>Login</button>
                     <hr>
-                    <div>
-                        <a href="{% provider_login_url 'google' %}" title="Goimex Global Pvt. Ltd."><img
-                                alt="Goimex Global Pvt. Ltd." height="30"
-                                src="{%  static  'images/google.png' %}"></a>
-                    </div>
-                    <div>
-                        <a href="{% provider_login_url 'facebook' %}" title="Goimex Global Pvt. Ltd."><img
-                                alt="Goimex Global Pvt. Ltd." height="30"
-                                src="{%  static  'images/Facebook.png' %}"></a>
-                    </div>
 
+                    <button style="font-size: 25px; padding:5px; background-color:red;"><a
+                            href="{% provider_login_url 'google' %}"
+                            style="text-decoration:None; color:#fff;">Google
+                        Login</a></button>
+                    <button style="font-size: 25px; padding:5px; background-color:red;"><a
+                            href="{% provider_login_url 'facebook' %}"
+                            style="text-decoration:None; color:#fff;">Facebook
+                        Login</a></button>
+                    <small class="text-muted ml-2">
+                        <p><strong>By login into this website, you agree to our Terms and that you have read our Data
+                            UsePolicy,
+                            including our Cookie Use.</strong></p>
+                        <hr>
+                    </small>
                 </div>
------>
             </form>
-
         </div>
-
-        <hr>
-        <p><strong>By login into this website, you agree to our Terms and that you have read our Data
-            UsePolicy,
-            including our Cookie Use.</strong></p>
-        <hr>
-
     </div>
     <!----------------------------
           <p><strong>-- OR --</strong></p>

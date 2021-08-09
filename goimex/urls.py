@@ -64,6 +64,7 @@ urlpatterns = [
          name='password_reset_complete'),
     path('accounts/', include('accounts.urls')),
     path('verification/', include('verify_email.urls')),
+
     path('oauth/', include('social_django.urls', namespace='social')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),

@@ -53,12 +53,13 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
 </script>
 <div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
+        class="fb-like"
+        data-share="true"
+        data-width="450"
+        data-show-faces="true">
 </div>
 </body>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -67,6 +68,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 .mySlides {display:none}
 .w3-tag, .fa {cursor:pointer}
 .w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+
 
 
 
@@ -84,6 +86,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   agent-id="275f99b4-3cc3-4afa-b7d7-1ab2341ae7e4"
   language-code="en"
 ></df-messenger>
+
 
 
 
@@ -240,8 +243,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                             <li><a class="dropdown-item" href="{% url 'aboutus' %}">About Us</a></li>
                             <li><a class="dropdown-item" href="{% url 'aboutus' %}">Press</a></li>
                             <li><a class="dropdown-item" href="{% url 'aboutus' %}">Careers</a></li>
-                            <li><a class="dropdown-item" href="{% url 'contact' %}" >Help Centers</a></li>
-                            <li><a class="dropdown-item" href="{% url 'contact' %}" >Contact Us</a></li>
+                            <li><a class="dropdown-item" href="{% url 'contact' %}">Help Centers</a></li>
+                            <li><a class="dropdown-item" href="{% url 'contact' %}">Contact Us</a></li>
                         </ul>
                     </li>
                     <li class="nav-item ms-3">
@@ -460,18 +463,27 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         </div>
     </div>
 
-{% include 'buyerseller/testimonial.html' %}
+    {% include 'buyerseller/testimonial.html' %}
     <br><br>
     <div class="main-footer">
         <div class="container-6 w-container">
             <div class="footer-flex-container">
                 <div class="div-block-133"><img
                         src="{%  static  'images/logonew3.png' %}"
-                        loading="lazy" alt="" class="c-footer__image"></div>
+                        loading="lazy" alt="" class="c-footer__image">
+                    <lii>
+                        <div>Registered Office</div><strong></strong>
+                        <div><h7>403, Chawla Complex, Sec-15,</h7></div>
+                        <div><h7>CBD Belapur,Navi Mumbai,</h7></div>
+                        <div><h7> Maharashtra – 400 614, India</h7></div>
+                         <div><h7>Help Center-+91-80978-03130</h7></div>
+
+                    </lii>
+                </div>
                 <div><h2 class="footer-heading-2"><strong>Our Company</strong></h2>
                     <ul role="list" class="w-list-unstyled">
                         <li><a href="{% url 'aboutus' %}" class="footer-link-3">Company Overview</a></li>
-                        <li><a  href="{% url 'aboutus' %}"  class="footer-link-3">Core Features</a>
+                        <li><a href="{% url 'aboutus' %}" class="footer-link-3">Core Features</a>
                             <a href="{% url 'aboutus' %}" class="footer-link-3">Our Strength</a>
                             <a href="{% url 'aboutus' %}" class="footer-link-3">Global Operations</a>
                             <a href="{% url 'aboutus' %}" class="footer-link-3">Our Partners</a></li>

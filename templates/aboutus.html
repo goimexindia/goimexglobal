@@ -1,0 +1,352 @@
+{% extends "buyerseller/newbase.html" %}
+{% load crispy_forms_tags %}
+{% block title %}About Us{% endblock %}
+{% block content %}
+{% load static %}
+<style>
+    .fa {
+    color: #f2dd1d
+}
+
+.rating {
+    margin-left: 37%
+}
+</style>
+{% include 'buyerseller/header1.html' %}
+<style>
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.content {
+  margin-left: 75px;
+}
+</style>
+<!---
+<div class="icon-bar">
+  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+  <a href="#" class="google"><i class="fa fa-google"></i></a>
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+</div>--->
+
+<figure>
+    <img src="{% static  'images/overview_banner.jpg' %}" alt="Our Strength">
+</figure>
+<section class="about-col m-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="about-side-nav nav nav-tabs" role="tablist">
+                    <li><a href="#companyOverview" class="" role="tab" data-toggle="tab"><i
+                            class="icon-company-overview-ic"></i> Company Overview</a></li>
+                    <li><a href="#coreFeatures" role="tab" data-toggle="tab" class="" aria-selected="true"><i
+                            class="icon-core-feature-ic"></i> Core Features</a></li>
+
+                    <li><a href="#ourStrength" role="tab" data-toggle="tab" class="" aria-selected="true"><i
+                            class="icon-strength-ic"></i> Our Strength</a></li>
+                    <li><a href="#globalOperations" role="tab" data-toggle="tab" class="" aria-selected="true"><i
+                            class="icon-global-op-ic"></i> Global Operations </a></li>
+                    <li><a href="#ourPartners" role="tab" data-toggle="tab" class="" aria-selected="true"><i
+                            class="icon-partner-ic"></i> Our Partners</a></li>
+                    <li><a href="#trustedReview" role="tab" data-toggle="tab" class="" aria-selected="true"><i
+                            class="icon-trusted-ic"></i> Trusted Review</a></li>
+                    <li><a href="#trustedSuppliers" role="tab" data-toggle="tab" class="active" aria-selected="true"><i
+                            class="icon-strutted-ic"></i> Trusted Suppliers</a></li>
+                </ul>
+            </div>
+            <div class="col-md-8 tab-content mt-3 mt-md-0">
+
+                <div id="companyOverview" class="tab-pane" role="tabpanel">
+
+                    <h4 class="hd-rd-brdr hd-inner-link">Introduction</h4>
+                    <div class="clearfix"></div>
+                    <p>Goimex is a comprehensive B2B marketplace having over expertise in digital branding
+                        and web development. The B2B Marketplace currently caters over many registered users and
+                        briskly expanding its database of manufacturers, suppliers and companies from all over the
+                        world. The digital trading platform is intelligently designed and developed to address fierce
+                        business competition by providing a safe, fast, reliable and authentic medium of trading. Goimex
+                        is integrated with all new advance features and functionalities that have never been offered by
+                        any other B2B portal. To compete with aggressive marketing trends and brand development Goimex
+                        is the only B2B portal helping millions of traders in expressing their presence globally.</p>
+                    <br>
+                    <h4 class="hd-rd-brdr hd-inner-link">Company Overview</h4>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>Goimex is structured to be one of the most transparent global B2B marketplace converging
+                                millions of potential wholesalers, buyers &amp; sellers under one hood. We are committed
+                                to provide authentic, fast and innovative trading solutions with all new and smart
+                                features making trading even effective.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Goimex is a distinguished B2B platform bridging buyers with effective digital solutions
+                                and services for better brand development. We have redefined the global trade with value
+                                added services like Digital Branding, community &amp; reputation management.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                    </div>
+                    <br>
+                    <h4 class="hd-rd-brdr hd-inner-link">Your Key to Success</h4>
+                    <div class="clearfix"></div>
+                    <p>We love making brands your customers to take your business to a global level. goimex.com is
+                        not merely a B2B portal rather it allows selling to the world by connecting authentic buyers and
+                        suppliers featuring exciting services and user-experience. </p>
+                    <br>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h4 class="hd-rd-brdr hd-inner-link">Our <span>Mission</span></h4>
+                            <p>Our mission is to establish a fast and reliable trading platform that would work in the
+                                best interest of buyers and suppliers. The organization is focused in overcoming all B2B
+                                marketplace challenges and loop holes relentlessly, introducing trading transparency and
+                                utmost quality. Delivering unparalleled satisfaction and profitability with guaranteed
+                                productivity is what we seek. </p>
+                        </div>
+                        <div class="col-md-4">
+                            <h4 class="hd-rd-brdr hd-inner-link">Our <span>Vision</span></h4>
+                            <p>In harmony with our core values and stake holders, our goal is to be the largest and
+                                finest B2B marketplace with bunch of incredible features, unsurpassed services and
+                                everlasting support. Acquiring effective digital expertise to help connect traders in
+                                developing unique brand persona. </p>
+                        </div>
+                        <div class="col-md-4">
+                            <h4 class="hd-rd-brdr hd-inner-link">Our <span>Goals</span></h4>
+                            <p>Our goal is to be your ultimate trading partner with safe and innovative trading
+                                solutions. With our well-define structure and effective strategy, Goimex gives an
+                                opportunity to all business partners be it wholesalers, retailers, buyers, sellers,
+                                middlemen to do online safe trade dealings with each other irrelevant of any limitation
+                                to time or place. </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="coreFeatures" class="tab-pane content" role="tabpanel">
+
+                    <!--<h4 class="hd-rd-brdr hd-inner-link mb-2">Comprehensive Business Solutions <span>Core Features</span></h4>-->
+                    <h4 class="hd-rd-brdr hd-inner-link mb-2">Core Features</h4>
+                    <div class="content-row mb-4">
+                        <p>Goimex.com is your true partner in redefining business trends by globalizing your business.
+                            Goimex allows you to instantly connect internationally with potential buyers and suppliers.
+                            The portal provides endless opportunities for premium members to get unlimited access to
+                            huge number of buyers all over the world helping in expanding and boosting business
+                            growth.</p>
+                        <p>Goimex is a distinguishable (business to business) portal with features intelligently crafted
+                            to attract maximum buyer attention through premium features and optimized product postings.
+                            With its vast database each product is exposed to million number of traffic landing on
+                            Goimex.com</p>
+                    </div>
+                    <div class="content-row mb-4">
+                        <h4 class="hd-rd-brdr hd-inner-link">Providing Ways That Help Grow Your Business</h4>
+                        <p>Goimex.com is your relentless partner in designing and executing strategies that are in best
+                            interest according to your goals. Besides our featured-rich B2B services, we love providing
+                            you ways that can become a back bone in your brand development. </p>
+                        <p> Showcasing you product as a premium one is very important but grabbing the right attention
+                            and delivering your voice to the right buyer is more important. With our utmost efforts,
+                            Goimex.com has designed ways for highlighting you product existence over highly dense
+                            mediums, be it social or digital. Grow your business more and rapid with prominent display
+                            of your products on our portal. </p>
+                    </div>
+                    <div class="content-row mb-4">
+                        <h4 class="hd-rd-brdr hd-inner-link">Service Providers</h4>
+                        <p>We allow millions of buyers and suppliers across the globe to showcase and display their
+                            company details and objective for better interactions and business growth. Frequent data
+                            updating and reporting helps a bunch of traders in getting high quality inquires to boost
+                            their business and achieve all new sale records. </p>
+                    </div>
+                    <div class="content-row">
+                        <h4 class="hd-rd-brdr hd-inner-link">What Makes Us Stand Out</h4>
+                        <p>Our smart advertising packages makes you stand out of the crowd, if you are anticipating
+                            strong foots on a B2B marketplace, don’t miss out any of our digital and social services to
+                            be the buyer’s preference at your very first glimpse. </p>
+                    </div>
+                </div>
+
+                <div id="ourStrength" class="tab-pane" role="tabpanel">
+                    <!---                  <figure>
+                                          <img src="{% static  'images/overview_banner.jpg' %}" alt="Our Strength">
+                                      </figure>--->
+                    <!--<h4 class="hd-rd-brdr hd-inner-link mb-5">Comprehensive Business Solutions <span>Our Strength</span></h4>-->
+                    <h4 class="hd-rd-brdr hd-inner-link mb-5">Our Strength</h4>
+                    <div class="content-row">
+                        <h4 class="hd-rd-brdr hd-inner-link mb-3">What We Do Best</h4>
+                        <p>Goimex is intelligently crafted to be a one-stop B2B portal offering comprehensive services,
+                            addressing aggressive competition and catering market loop holes. Providing a profitable and
+                            secure B2B portal with highly transparent transactions is what we seek. We not only connect
+                            buyers and suppliers for trading but we help them built and maintain an everlasting
+                            relationship with a strong digital bond. </p>
+                        <p>Our strength lies in our broad range of operations and our global presence that allows to
+                            operate from multiple regions. We have strong hold over the Chinese market helping us to
+                            generate numerous inquiries as China is the most populated country we are pursuing one of
+                            the leading economies in the world. Our strong market penetration and effective strategies
+                            is a loud success story reflecting our success rate statistically. </p>
+                        <p>Goimex.com is gaining a remarkable reputation internationally and especially in China. It is
+                            among those B2B portal that have set all new trends in the B2B market by ensuring reliable,
+                            genuine and guaranteed inquires. </p>
+                    </div>
+                </div>
+                <div id="globalOperations" class="tab-pane global_operation" role="tabpanel">
+                    <!------
+                    <div class="map_panel" id="mapArea">
+                        <iframe id="globalMap" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13417.450430693558!2d-96.7954577!3d32.7826434!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3a41a8f459b2be47!2sGoimex!5e0!3m2!1sen!2s!4v1496130016477" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                    </div>
+                    ----->
+                    <h4 class="hd-rd-brdr hd-inner-link mt-4 mb-3">We are Expanding to Serve the World <span>Global Operations</span>
+                    </h4>
+                    <div class="content-row mb-4">
+                        <p>
+                            With our continuous efforts and premium services and affiliations with industrial giants, we
+                            are proudly expanding worldwide to deliver our services not just locally but on a global
+                            level setting all new B2B platform.
+                        </p>
+                    </div>
+
+
+                </div>
+                <div id="ourPartners" class="tab-pane become_partner_main" role="tabpanel">
+                    <!---<figure>
+                        <img src="{% static  'images/overview_banner.jpg' %}" alt="Our Strength">
+                    </figure>--->
+                    <h4 class="hd-rd-brdr hd-inner-link">Become <span>Our Partner</span></h4>
+                    <div class="content-row">
+                        <p>
+                            We love working with you to address all of your complexities and allow you cater challenges
+                            furiously. Our partners are highly valuable to us in providing utmost support in the form of
+                            customized ideas and services shaping in stronger relationships.
+                        </p>
+                        {% if user.is_authenticated %}
+
+
+                        {% else %}
+                        <h6 class="mr-3">Join today and be a part of the fastest growing B2B Network</h6><a
+                            href="{% url 'register' %}">Join Now</a>
+                        {% endif %}
+                    </div>
+
+                </div>
+                <div id="trustedReview" class="tab-pane trusted_review" role="tabpanel">
+                    <!--- <figure>
+                         <img src="{% static  'images/overview_banner.jpg' %}" alt="Our Strength">
+                     </figure>--->
+                    <h4 class="hd-rd-brdr hd-inner-link mb-3">Clients Feedback</h4>
+                    <br/><br/>
+                    <div class="trusted_row">
+                        <div class="trusted_person_info">
+
+                            <div class="trusted_person_right">
+                                <h4><span>Daniel Pardhe</span> <br>
+                                    <small class="color-red">RegionalSales Manager</small> - <small>Karina Machine
+                                        Tools</small>
+                                </h4></div>
+                        </div>
+                        <div class="container">
+                            We have used conventional B2B platforms previously, like Alibaba, Tradekey etc. But the
+                            buyers that we get from these platforms are not the buyers that the Manufacturer like us
+                            would be looking for. We realized that our products do not require the conventional B2Bs but
+                            we require the Business Development activities to get in touch with the big Brands or Retail
+                            Chains, which is not possible without Goimex as they are providing human intensive services.
+                            The effect of this service is much better than any B2B.
+                        </div>
+                    </div>
+                    <br/><br/>
+                    <div class="trusted_row">
+                        <div class="trusted_person_info">
+                            <div class="trusted_person_right">
+                                <h4><span>Arun Patil</span> <br>
+                                    <small class="color-red">All Seas General Manager</small> - <small>Patil Cable
+                                        Company</small>
+                                </h4></div>
+                        </div>
+                        <div class="trusted_rev_content">
+                            Patil Cable Company is established in 1993 is a state high-tech enterprise specialized in
+                            R&amp;D and manufacturing photoelectric information. We have use serval B2B companies in
+                            past years but our problem was buyer leave the inquiry but not ...
+                        </div>
+                    </div>
+                    <br/><br/>
+                    <div class="trusted_row">
+                        <div class="trusted_person_info">
+                        </div>
+                    </div>
+                </div>
+                <div id="trustedSuppliers" class="tab-pane product_services active" role="tabpanel">
+                    <!--- <figure>
+                         <img src="{% static  'images/overview_banner.jpg' %}" alt="Our Strength">
+                     </figure>--->
+                    <h4 class="hd-rd-brdr hd-inner-link mb-3">Trusted Suppliers</h4>
+                    <div class="content-row mb-3">
+                        <p>The Salient objective of Goimex.com is to guarantee the authenticity and 100% genuine
+                            trading. We proudly present products by trusted and 100% verified suppliers to ensure
+                            transparency and high-security. We have a bunch of suppliers and exhibitors that are
+                            verified and registered in our giant databases to make every transaction as transparent as
+                            possible without the hindrance of any process either by suppliers or by the buyers. We have
+                            alliances with some of the top-notch manufactures and suppliers that guarantees products
+                            authenticity. </p>
+                    </div>
+                    <div class="content-row mb-3">
+                        <h4 class="hd-rd-brdr hd-inner-link">How to Become Our Trusted Suppliers </h4>
+                        <p>Goimex.com encourages every suppliers at our portal to become a trusted and verified vendor
+                            to gain more buyer attention and generate increased inquires. Simply contact our
+                            representative to prove your physical existence, manufacturing process, prices and location
+                            of operations to get our exclusive label of trusted suppliers verified by our sources. </p>
+                    </div>
+                    <div class="content-row mb-3">
+                        <h4 class="hd-rd-brdr hd-inner-link">How It Will Help Buyers </h4>
+                        <p>One of the most differentiating factor of Goimex.com is its secure trading channel verified
+                            by independently by third parties to assure that each product offered is by a verified and
+                            authentic. The trusted supplier features will help you in searching the most frequent
+                            supplier of your desired product with most number of orders making it easy for you to decide
+                            from a list of suppliers of same product.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'buyerseller/footer1.html' %}
+
+{% endblock %}

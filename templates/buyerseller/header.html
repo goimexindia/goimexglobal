@@ -126,9 +126,9 @@
                     data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
             <div class="navbar-collapse collapse hide" id="nav-top-left">
                 <ul class="navbar-nav left">
-                    <li class="nav-item">
+                   <!--- <li class="nav-item">
                         <a href="{% url 'membership' %}" title="Premium Services"><span><i class="fa fa-star"></i> Premium Services</span></a>
-                    </li>
+                    </li>---->
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'blog-buyerhome' %}" title="Buyers">Buyers</a>
                     </li>
@@ -146,6 +146,9 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'membership' %}">Premium Services</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
                     </li>

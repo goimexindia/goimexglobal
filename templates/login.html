@@ -10,6 +10,10 @@
 {% load account socialaccount %}
 
 {% block content %}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=172084741468627&autoLogAppEvents=1"
+        nonce="go9KkJMr"></script>
 <div class="content-section">
     <div class="row no-gutters">
         <div class="col-md-6 col-lg-6 col-xl-5 d-md-block d-none register-content">
@@ -57,14 +61,17 @@
                     <button class="btn btn-outline-info" type="submit"><small class="text-muted"></small>Login</button>
                     <hr>
 
-                    <button style="font-size: 25px; padding:5px; background-color:red;"><a
+                   <div><button style="font-size: 25px; padding:5px; background-color:red;"><a
                             href="{% provider_login_url 'google' %}"
                             style="text-decoration:None; color:#fff;">Google
-                        Login</a></button>
-                    <button style="font-size: 25px; padding:5px; background-color:red;"><a
+                        Login</a></button></div><br>
+                   <!--- <button style="font-size: 25px; padding:5px; background-color:red;"><a
                             href="{% provider_login_url 'facebook' %}"
                             style="text-decoration:None; color:#fff;">Facebook
-                        Login</a></button>
+                        Login</a></button>--->
+
+                    <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with"
+                         data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
                     <small class="text-muted ml-2">
                         <p><strong>By login into this website, you agree to our Terms and that you have read our Data
                             UsePolicy,

@@ -106,7 +106,7 @@
                         href="accounts/logout">LOGOUT</a>
                     {% else %}
                     <h6 class="mr-3">Join today and be a part of the fastest growing B2B Network</h6><a
-                        href="accounts/register">Join Now</a>
+                        href="{% url 'register' %}">Join Now</a>
                     {% endif %}
                 </div>
             </div>
@@ -242,9 +242,9 @@
                 &nbsp;</s11></a></pi>
             <pi><i class="fa fa-envelope fa-1x"></i><a href="rfq"><span>&nbsp;RFQ &nbsp</span></a></pi>
             {% if user.is_authenticated %}
-            <pi><i class="fa fa-user-circle fa-1x"></i><a href="accounts/logout"><span>&nbspSignOut</span></a></pi>
+            <pi><i class="fa fa-user-circle fa-1x"></i><a href="{% url 'logout' %}"><span>&nbspSignOut</span></a></pi>
             {% else %}
-            <pi><i class="fa fa-user-circle fa-1x"></i> <a href="accounts/login"><span>&nbsp;SignIn</span></a>
+            <pi><i class="fa fa-user-circle fa-1x"></i> <a href="{% url 'login' %}"><span>&nbsp;SignIn</span></a>
             </pi>
             {% endif %}
         </div>

@@ -1,0 +1,39 @@
+{% load static %}
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          rel="stylesheet" type="text/css">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+          rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+          rel="stylesheet" type="text/css">
+<link href="{% static 'css/contactme.css' %}"
+              rel="stylesheet" type="text/css">
+
+
+ <!-- Button trigger modal -->
+<div class="container d-flex justify-content-center">
+    <div class="row">
+        <div class="col-md-12"><button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#exampleModal"> CONTACT US
+            </button>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade mt-3" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content pl-2">
+            <div class="modal-header py-0"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> </div>
+            <div class="container d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="title pl-3 pt-0 pb-3">Contact us</h2>
+                        <div class="form-group col-md-12"> <input type="text" class="form-control" placeholder="Name"> </div>
+                        <div class="form-group col-md-12"> <input type="email" class="form-control" placeholder="E-mail"> </div>
+                        <div class="form-group col-md-12"> <input type="text" class="form-control" placeholder="Message"> </div>
+                        <div class="form-group col-md-12"> <button class="btn btn-dark btn-block">Send</button> </div>
+                    </div>
+                    <div class="col-md-6"> <img src="https://i.imgur.com/hTnBa7t.png" width="100%" height="100%"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

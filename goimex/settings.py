@@ -55,6 +55,7 @@ DEFAULT_APPS = [
     "allauth.socialaccount.providers.twitter",  # new
     "allauth.socialaccount.providers.google",  # new
     "allauth.socialaccount.providers.facebook",
+    "allauth.socialaccount.providers.linkedin",
     'django_otp',
     'django_otp.plugins.otp_totp',
 ]

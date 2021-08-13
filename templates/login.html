@@ -61,14 +61,20 @@
                     <button class="btn btn-outline-info" type="submit"><small class="text-muted"></small>Login</button>
                     <hr>
 
-                   <div><button style="font-size: 25px; padding:5px; background-color:red;"><a
-                            href="{% provider_login_url 'google' %}"
-                            style="text-decoration:None; color:#fff;">Google
-                        Login</a></button></div><br>
-                   <!--- <button style="font-size: 25px; padding:5px; background-color:red;"><a
-                            href="{% provider_login_url 'facebook' %}"
-                            style="text-decoration:None; color:#fff;">Facebook
-                        Login</a></button>--->
+                    <div>
+                        <button style="font-size: 25px; padding:5px; background-color:red;"><a
+                                href="{% provider_login_url 'google' %}"
+                                style="text-decoration:None; color:#fff;">Google
+                            Login</a></button>
+
+                        <button style="font-size: 25px; padding:5px; background-color:red;"><a
+                                href="{% url 'social:begin' backend='linkedin-oauth2' %}"
+                                style="text-decoration:None; color:#fff;">Login with Linkedin</a></button>
+                    </div><br>
+                    <!--- <button style="font-size: 25px; padding:5px; background-color:red;"><a
+                             href="{% provider_login_url 'facebook' %}"
+                             style="text-decoration:None; color:#fff;">Facebook
+                         Login</a></button>--->
 
                     <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with"
                          data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>

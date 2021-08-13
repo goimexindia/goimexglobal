@@ -271,5 +271,16 @@ SOCIALACCOUNT_PROVIDERS = {
         'VERSION': 'v7.0',
     }
 }
-#373981327441827
-#e0f96aa7c344386c364af165a17afd9a
+
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '78ldcikxxgfgfq'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'lHZDaPzUbsW7J9j4'
+
+SOCIAL_AUTH_STRATEGY = 'social.strategies.django_strategy.DjangoStrategy'
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.linkedin.LinkedinOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+
+

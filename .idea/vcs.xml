@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+<<<<<<< HEAD
     <mapping directory="$PROJECT_DIR$/goimex" vcs="Git" />
+=======
+>>>>>>> 2e1e8b5737409de61bd645be68cc5c0a48882f17
   </component>
 </project>

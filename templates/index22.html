@@ -1,0 +1,1193 @@
+{% load static %}
+{% load custom_tags %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+{% include 'buyerseller/header.html' %}
+<style>
+.city {
+  background-color: tomato;
+  color: white;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+}
+.scroll-left {
+ height: 200px;
+ overflow: hidden;
+ position: relative;
+}
+.scroll-left .inner {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);
+ transform:translateX(100%);
+ /* Apply animation to this element */
+ -moz-animation: scroll-left 15s linear infinite;
+ -webkit-animation: scroll-left 15s linear infinite;
+ animation: scroll-left 15s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes scroll-left {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes scroll-left {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes scroll-left {
+ 0%   {
+ -moz-transform: translateX(100%); /* Browser bug fix */
+ -webkit-transform: translateX(100%); /* Browser bug fix */
+ transform: translateX(100%);
+ }
+ 100% {
+ -moz-transform: translateX(-100%); /* Browser bug fix */
+ -webkit-transform: translateX(-100%); /* Browser bug fix */
+ transform: translateX(-100%);
+ }
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.menu-banner-form {background-color: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);}
+.abc {background-color: 	#E6E6FA;}
+.categories-section {background-color: powderblue;}
+h1   {color: blue;}
+p    {color: black;}
+</style>
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="goimex_assistant"
+  agent-id="275f99b4-3cc3-4afa-b7d7-1ab2341ae7e4"
+  language-code="en"
+></df-messenger>
+
+<br><br>
+<section class="menu-banner-form">
+    <div class="container">
+        <div class="row">
+            <div class="categories-section1  col-md-4 col-lg-4 p-0">
+                <div class="abc mx-auto" style="background: url('/static/image/12.jpg');">
+                    <div> {% show_latest_post%}</div>
+                </div>
+            </div>
+
+            <div class="categories-section1  col-md-4 col-lg-4 p-0">
+                <div class="abc mx-auto" style="background: url('/static/image/12.jpg');">
+                    <div>{% show_latest_name%}</div>
+                </div>
+            </div>
+
+            <div class="categories-section1  col-md-4 col-lg-4 p-0">
+                <div class="abc mx-auto" style="background: url('/static/image/12.jpg');">
+                    <div> {% show_latest_company%}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br>
+
+    <br>
+    <div class="container">
+        <div class="categories-section  col-md-4 col-lg-3 p-0">
+            <h4>Categories <i class="fa fa-bars"></i></h4>
+            {% load mptt_tags %}
+            <ul class="category-list">
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Agriculture">Agriculture <i class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
+                                   title="Fresh Flowers And Plants">Fresh Flowers And Plants</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Flowers">Fresh
+                                        Flowers</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Fresh Cut Flowers">Fresh
+                                        Cut Flowers</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Rose">Rose
+                                        Generation Equipment</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Jasmine Flowers">Jasmine
+                                        Flowers</a>
+                                </li>
+                            </ul>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
+                                   title="Irrigation">Irrigation Equipments</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}"
+                                       title="Irrigation">Drip Irrigation Pipe Making Machine</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}"
+                                       title="Irrigation">Chaff Cutter Spare Parts</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}"
+                                       title="Irrigation">Irrigation Pipe Fittings</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}"
+                                       title="Irrigation">Irrigation System Parts</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
+                                   title="Tractor">Tractor & Tractor Parts</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Tractor">Cultivator
+                                        Spare Parts
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}"
+                                       title="Tractor">Tractor Loader</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Tractor">Forged
+                                        Tractor Parts
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Tractor">Tractor
+                                        Replacement Parts
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
+                                   title="Fertilizers">Soil Additives & Fertilizers</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Fertilizers">Fertilizers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}"
+                                       title="Fertilizers">Bio Organic Fertilizerr</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Fertilizers">Organic
+                                        Bio Fertilizers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Fertilizers">Bio
+                                        Fertilizers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Fertilizers">Organic
+                                        Fertilizers
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Food &amp; Beverage">Food &amp; Beverage <i
+                            class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Canned">Canned
+                                Food</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Honey">Honey
+                                Products</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
+                                   title="Seafood">Seafood</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Condiments">Seasonings
+                                Condiments</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Baby Care">Pet
+                                Food</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Food">Slimming
+                                Food</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Snack">Snack
+                                Food</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Drinks">Soft
+                                Drinks</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Tea">Tea</a>
+                            </h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Vegetable">Vegetable
+                                Products</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Alocholic">Alcoholic
+                                Beverage</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Baby Food">Baby
+                                Food</a></h6>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Baked">Baked
+                                Goods</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Baby Care">Baby
+                                Care</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Bean">Bean
+                                Products</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
+                                   title="Baby Care">Coffe</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
+                                   title="Confectionery">Confectionery</a>
+                            </h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
+                                   title="Baby Care">Diary</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Water">Drinking
+                                Water</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Egg">Egg
+                                Products</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Food">Food
+                                Ingredients</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Fruit">Fruit
+                                Products</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Grain">Grain
+                                Products</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Food">Instant
+                                Food</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Meat">Meat
+                                Poultry</a></h6>
+                        </div>
+                    </div>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Appareal &amp; Textiles">Apparel &amp; Textiles <i
+                            class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="Performance" title="Performance Wear">Stage
+                                Dance Wear</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="Bridgegroom Suit">Suits
+                                Tuxedo</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="Denim Shirt">T-Shirts</a>
+                            </h6>
+                            <h6><a class="text-danger text-truncate" href="Performance"
+                                   title="Bra/Panties/Boxers/Shapers/Sexy wear">Underwear</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance"
+                                   title="Dresses/Bridal Accessories/Bridal Grown">Wedding Appareal Accessories</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance"
+                                   title="Dresses/T-Shirt/Underwear/Sweaters/Blouses">Woman Clothing</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Boy Clothing</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Childrens Clothing</a>
+                            </h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Coats</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Costumes</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Dresses</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Ethnic Clothing</a>
+                            </h6>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Garment
+                                Accessories</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Girl Clothing</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Hosiery</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Jacket</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Mens Clothing</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Pants Trousers</a>
+                            </h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Sewing Supplies</a>
+                            </h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Skirts</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Sleepwear</a></h6>
+                            <h6><a class="text-danger text-truncate" href="Performance" title="#">Sportwear</a></h6>
+                        </div>
+                    </div>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Health &amp; Care">Health &amp; Care <i
+                            class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)"
+                                   title="Pharmaceutical Raw Materials">Pharmaceutical Raw Materials</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Pharmaceutical">Pharmaceutical
+                                        Products</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Raw Material">Pharmaceutical
+                                        Raw Material</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Bulk Drugs">Bulk
+                                        Drugs </a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Pharmaceutical Formulations">Pharmaceutical Formulations</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Chemical">Pharmaceutical
+                                        Chemical</a>
+                                </li>
+                            </ul>
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Pharmaceutical">Medicines
+                                Tonics And Drugs</a></h6>
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Pharmaceutical">Health
+                                Care Products</a></h6>
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Pharmaceutical">Dietary
+                                Supplements & Nutraceutical</a></h6>
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Pharmaceutical">Anti
+                                Infective Medicines & Drugs</a></h6>
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Pharmaceutical">Cardiovascular
+                                Medication & Drugs</a></h6>
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Pharmaceutical">Digestive
+                                System Medicines & Drugs</a></h6>
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Pharmaceutical">Nervous
+                                & Brain Drugs</a></h6>
+                        </div>
+
+                    </div>
+                </li>
+                <!-------
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Automobiles &nbsp;&amp; Motorcycles">Automobiles &nbsp;&amp;
+                        Motorcycles <i class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Motorcycle Parts">Motorcycle
+                                Parts</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Motorcycle Tires">Motorcycle
+                                        Tires</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Motorcycle Body Parts">Motorcycle
+                                        Body Parts</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Other Motorcycle Parts">Other
+                                        Motorcycle Parts</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Motorcycle Electrical System">Motorcycle Electrical System</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Motorcycle Engines">Motorcycle
+                                        Engines</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Motorcycle Brakes">Motorcycle
+                                        Brakes</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Motorcycle Transmissions">Motorcycle
+                                        Transmissions</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Motorcycle Wheels">Motorcycle
+                                        Wheels</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Valve Train">Valve
+                                Train</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Intake Exhaust Valve">Intake
+                                        Exhaust Valve</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Camshaft">Camshaft</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Valve Train">Valve
+                                        Train</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Rocker Arm Rocker Shaft">Rocker
+                                        Arm Rocker Shaft</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Valve Tappet">Valve
+                                        Tappet</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Other Auto Parts">Other
+                                        Auto Parts</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Other Auto Valve Train">Other
+                                        Auto Valve Train</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Speaker Horn">Speaker
+                                        Horn</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Chemicals">Chemicals <i class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Paints Coatings">Paints
+                                Coatings</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Building Coating">Building
+                                        Coating</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Car Paint">Car Paint</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Appliance Paint">Appliance
+                                        Paint</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Furniture Paint">Furniture
+                                        Paint</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Boat Paint">Boat Paint</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)"
+                                       title="Electrical Insulating Varnish">Electrical Insulating Varnish</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Plastic Coating">Plastic
+                                        Coating</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Other Paint Coating">Other
+                                        Paint Coating</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Fertilizer">Fertilizer</a>
+                            </h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Organic Fertilizer">Organic
+                                        Fertilizer</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Nitrogen Fertilizer">Nitrogen
+                                        Fertilizer</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Compound Fertilizer">Compound
+                                        Fertilizer</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Potassium Fertilizer">Potassium
+                                        Fertilizer</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Urea">Urea</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Phosphate Fertilizer">Phosphate
+                                        Fertilizer</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Biological Fertilizer">Biological
+                                        Fertilizer</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Other Fertilizers">Other
+                                        Fertilizers</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Food &amp; Beverage">Food &amp; Beverage <i
+                            class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Canned Food">Canned
+                                Food</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Canned Fruit">Canned
+                                        Fruit</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Canned Poultry Meat">Canned
+                                        Poultry Meat</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Canned Seafood">Canned
+                                        Seafood</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Canned Beans">Canned
+                                        Beans</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Honey Products">Honey
+                                Products</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Honey">Honey</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Bee Wax">Bee Wax</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Bee Pollen">Bee Pollen</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Propolis">Propolis</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Royal Jelly">Royal
+                                        Jelly</a>
+                                </li>
+                                <li>
+                                    <a class="text-truncate" href="javascript:void(0)" title="Honey Syrup">Honey
+                                        Syrup</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                ------>
+
+                <li class="menu-cat-more-btn">
+                    <a href="{% url 'cat' %}" title="Categories">View All Categories</a>
+                </li>
+            </ul>
+        </div>
+        <div class="header-banner col-lg-6 col-md-8 pl-0 pr-0 position-relative">
+            <div class="owl-carousel owl-theme owl-drag" id="bannerCarousel">
+                {% for dest in prod %}
+                {% if user.is_authenticated %}
+                <div class="item">
+                    <a href="#"><img class="img-fluid w-100 owl-lazy" title={{dest.desc}} alt="{{dest.desc}}"
+                                     data-src="{{dest.img.url}}"
+                                     src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></a>
+                </div>
+                {% else %}
+                <div class="item">
+                    <a href="#"><img
+                            class="img-fluid w-100 owl-lazy" data-src="{{dest.img.url}}"
+                            src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="></a>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <section>
+            {% if user.is_authenticated %}
+            <div class="home-logged-in-nav col-md-3 d-none d-lg-block">
+                <ul>
+                    <li><a href="{% url 'profile' %}" title="Dashboard">Dashboard</a></li>
+                    <li><a href="{% url 'blog-home' %}" title="Sellers Listing">Seller's Listing</a></li>
+                    <li><a href="{% url 'blog-buyerhome' %}" title="Buyers Listing">Buyer's Listing</a></li>
+                    <li><a href="{% url 'ecomerce' %}" title="All Products">Products</a></li>
+                    <li><a href="{% url 'mybussiness' %}" title="Company Profile">Company Profile</a>
+                    </li>
+                    <li><a href="{% url 'membership' %}" title="Premium Services">Premium
+                        Services</a></li>
+
+                    <li><a href="{% url 'rfq' %}" title="Post RFQ">Post RFQ</a></li>
+                    <li><a href="{% url 'faq' %}" title="Need Help?">FAQs</a></li>
+                </ul>
+            </div>
+            {% else %}
+            <section class="categories-section tell-us-what-you-section quote-now d-md-none d-lg-block d-xl-block">
+                <h6>Tell Us What You <span>NEED</span></h6>
+                <form action="user/basic-signup-n/" id="quoteForm" method="post" name="quoteForm">
+                    <input name="affiliate" type="hidden" value="1"><input name="signup-form" type="hidden" value="yes"><input
+                        name="widget_source" type="hidden" value="quoteForm"><input name="source" type="hidden"
+                                                                                    value="Organic"><input
+                        name="utm_campaign" type="hidden" value=""><input name="utm_medium" type="hidden"
+                                                                          value=""><input name="utm_source"
+                                                                                          type="hidden" value=""><input
+                        name="utm_content" type="hidden" value=""><input name="utm_term" type="hidden" value=""><input
+                        name="ip2loc_ip" type="hidden" value="103.208.71.73"><input name="ip2loc_isp" type="hidden"
+                                                                                    value=""><input name="ip2loc_org"
+                                                                                                    type="hidden"
+                                                                                                    value=""><input
+                        name="ip2loc_country" type="hidden" value="India"><input name="ip2loc_region" type="hidden"
+                                                                                 value="MAHARASHTRA"><input
+                        name="ip2loc_city" type="hidden" value="MUMBAI"> <input name="_token" type="hidden"
+                                                                                value="k5WAhvHR2Dvr1VGQCjuC7WvSC3SsYOPcvniqmr8C">
+                    <input name="quickregister" type="hidden" value="yes"> <input name="password" type="hidden"
+                                                                                  value="nv5z0FSCdL">
+                    <div class="form-row mt-3">
+                        <div class="col-sm-12">
+                            <label>Requirements</label> <input autocomplete="off" class="form-control"
+                                                               name="products_want"
+                                                               placeholder="Enter product/service name" required=""
+                                                               title="Comma seperated keywords" type="text">
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-6">
+                            <label>Name</label> <input autocomplete="name" class="form-control" name="full_name"
+                                                       placeholder="Full Name" required=""
+                                                       title="Please enter your Full Name here" type="text">
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-6">
+                            <label>Email</label> <input autocomplete="email" class="form-control" name="email"
+                                                        placeholder="name@company.com" required=""
+                                                        title="Please enter your Email Address here" type="email">
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-6">
+                            <label>Company</label> <input autocomplete="organization" class="form-control"
+                                                          name="company_name" placeholder="Company Name" required=""
+                                                          title="Please enter your Company Name here" type="text">
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-6">
+                            <label>Phone Number</label> <input class="form-control tel" maxlength="30"
+                                                               name="phone_number" placeholder="Phone / Mobile"
+                                                               required=""
+                                                               title="Please enter your Phone or Mobile Number here"
+                                                               type="tel">
+                        </div>
+                        <div class="col-md-12">
+                            <label>I am a</label> <select class="form-control" name="type" required="">
+                            <option selected value="seller">
+                                Seller
+                            </option>
+                            <option value="buyer">
+                                Buyer
+                            </option>
+                        </select>
+                        </div>
+                        <div class="col-12 form-p-0 text-center">
+                            <button class="btn btn-outline-danger" type="submit">Submit</button>
+                        </div>
+                        <p class="text-center"><span>*</span> To achieve our mission we provide all the necessary
+                            functionalities to buyers and sellers that help them in developing the voice of their
+                            business and to expand worldwide.</p>
+                    </div>
+                </form>
+            </section>
+            {% endif %}
+        </section>
+    </div>
+</section>
+
+
+<section class="ban-cta-new d-none d-md-block" id="featuredPointSection">
+    <!----       onclick="document.getElementById('featuredPointSectionLink').click()">--->
+    <div class="col-md-12">
+        <div class="container">
+            <ul>
+                <li><i class="icon1-TRADE-WITH-CONFIDENCE" ></i>Trade with confidence</li>
+                <li><i class="icon1-VERIFIED-BUYERS"></i> Verified Buyers</li>
+                <li><i class="icon1-Globe"></i> Global Network</li>
+                <li><i class="icon1-HELP-CENTER"></i> 24/7 Help Center</li>
+            </ul>
+            <a href="{% url 'membership' %}"></a>
+        </div>
+        <a class="d-none"
+            href="{% url 'membership' %}"
+           id="featuredPointSectionLink"></a>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <section class="relatedBuyOfferComponent transparent-panel">
+                <h4 class="lbo-brdr  hd-section-inner-link">Latest Buy Offers <a href="{% url 'blog-home' %}"
+                                                                                 title="Related Buy Offers">- View
+                    More -</a></h4>
+                <div class="latest-buyers fixedHeight ticker">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul>
+                                {% for p in post %}
+                                <i class="{{ p.author.profile.country.flag_css }}"></i>
+                                <li>
+
+                                    <a href="{% url 'post-detail' p.id%}" title="{{p.title}}">
+                                        <span
+                                            class="world-name truncate">{{ p.author.profile.country.name }}</span>
+                                        <span
+                                                class="lst-buyer-text truncate">{{p.title|safe}}-{{snippet}}</span>
+                                        <small class="date">{{ p.date_posted|date:"F d, Y" }}</small></a>
+                                </li>
+                                {% endfor %}
+                                <!-----------------
+                                <li>
+                                    <a href="javascript:void(0)" title="Requisite for Face Mask"><i
+                                            class="flag-icon flag-icon flag-icon-vn"></i> <span
+                                            class="world-name truncate">Vietnam</span> <span
+                                            class="lst-buyer-text truncate">Requisite for Face Mask</span> <small
+                                            class="date">09 Mar, 2021</small></a>
+                                </li>
+                                ---------------->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-md-6">
+            <section class="relatedBuyOfferComponent transparent-panel">
+                <h4 class="lbo-brdr  hd-section-inner-link">Latest Products <a href="{% url 'ecomerce' %}"
+                                                                               title="All Products">- View More
+                    -</a>
+                </h4>
+                <div class="latest-buyers fixedHeight ticker">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <marquee behavior="scroll" direction="down" scrolldelay="200">
+                                {% show_latest_product %}
+                            </marquee>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</div>
+</div>
+</section>
+<hr>
+<div class="container">
+    <h3 class="lbo-brdr  hd-section-inner-link">Latest Products By Our verified Suppliers..<a
+            href="{% url 'ecomerce' %}"
+            title="All Products">- View More -</a>
+    </h3>
+</div>
+<div class="scroll-left">
+    <div class="inner">
+        {% for p in productss %}
+        <img src="{{p.image.url}}" alt="Goimex Latest Products" height=100%>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% include 'blog/snippets/verifiedsupplier.html' %}
+<hr>
+<br>
+
+{% include 'blog/snippets/verifiedsupply.html' %}
+
+{% include 'blog/snippets/newproducts.html' %}
+
+{% include 'catnavbar.html' %}
+<!-----
+<sectio class="container">
+        <div class="container">
+    <div class="row">
+        <div class="col-md-6 mt-3">
+            <div class="featured-company-banner owl-carousel owl-theme">
+                {% for p in suppliers %}
+                <figure class="m-0">
+                    <div class="desc"><strong>{{p.organization}}</strong></div>
+                    <a href=" {% url 'companyproduct' p.user.id %} " title="{{p.organization}}">
+                        <picture>
+                            <img alt="{{p.title}}" class="owl-lazy"
+                                 data-src="{{p.img.url}}"
+                                 src="{{p.img.url}}"
+                                 width="600" height="400" style="">
+                        </picture>
+                        <div class="desc">{{p.products}}</div>
+                    </a>
+                </figure>
+                {% endfor %}
+
+            </div>
+        </div>
+        <div class="col-md-6 mt-3">
+            <div class="featured-company-banner owl-carousel owl-theme">
+                {% for p in products %}
+                <figure class="m-0">
+                    <div class="desc"><strong>{{p.title}}</strong></div>
+                    <a href="{% url 'productdetail' p.slug %}" title="{{p.title}}">
+                        <picture>
+                            <img alt="{{p.title}}" class="owl-lazy"
+                                 data-src="{{p.image.url}}"
+                                 src="{{p.image.url}}"
+                                 width="600" height="400" style="">
+                        </picture>
+                        <div class="desc">{{p.keyfeatures}}</div>
+                    </a>
+                </figure>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+        </div>
+</sectio>
+----->
+<section class="container mb-2 mt-5">
+    <div class="box-shadow">
+        <div class="row">
+            <div class="col-md-7">
+                <h3 class="top-heading text-uppercase">Can't find the <span>products</span> that meets your requirement
+                    exactly?</h3>
+                <div class="row">
+                    <div class="col-md-6 pr-md-2">
+                        <div class="connect-buyer text-center">
+                            <img alt="Trade with Confidence" class="lazy"
+                                 data-src="{%  static  'images/quote/trade-with-confidence.svg' %}" height="80"
+                                 src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                 width="80">
+                            <h6 class="text-uppercase">Trade with<br>
+                                <span>Confidence</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-md-2">
+                        <div class="connect-buyer text-center">
+                            <img alt="Free quotes from Sellers" class="lazy"
+                                 data-src="{%  static  'images/quote/free-quotes-from-sellers.svg' %}" height="80"
+                                 src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                 width="80">
+                            <h6 class="text-uppercase">Free quotes from<br>
+                                <span>Sellers</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-md-6 pr-md-2">
+                        <div class="connect-buyer text-center">
+                            <img alt="Verified Connected Buyers" class="lazy"
+                                 data-src="{%  static  'images/quote/verified-connected-buyers.svg' %}" height="80"
+                                 src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                 width="80">
+                            <h6 class="text-uppercase">Verified Connected<br>
+                                <span>Buyers</span></h6>
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-md-2">
+                        <div class="connect-buyer text-center">
+                            <img alt="24/7 Help Center" class="lazy"
+                                 data-src="{%  static  'images/quote/24-7-help-center.svg' %}" height="80"
+                                 src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
+                                 width="80">
+                            <h6 class="text-uppercase">24/7<br>
+                                <span>Help Center</span></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <section class="tell-us-what-you-section productQuoteRegister mt-2">
+                    <h6>Tell Us What You <span>NEED</span></h6>
+                    <form action="user/basic-signup-n/" id="quoteForm1" method="post" name="quoteForm1">
+                        <input name="affiliate" type="hidden" value="1"><input name="signup-form" type="hidden"
+                                                                               value="yes"><input name="widget_source"
+                                                                                                  type="hidden"
+                                                                                                  value="quoteForm1"><input
+                            name="source" type="hidden" value="Organic"><input name="utm_campaign" type="hidden"
+                                                                               value=""><input name="utm_medium"
+                                                                                               type="hidden"
+                                                                                               value=""><input
+                            name="utm_source" type="hidden" value=""><input name="utm_content" type="hidden"
+                                                                            value=""><input name="utm_term"
+                                                                                            type="hidden"
+                                                                                            value=""><input
+                            name="fullpageurl" type="hidden" ><input
+                            name="referrerurl" type="hidden" value=""><input name="pageurl" type="hidden"
+                                                                             value=""><input name="external_refferer"
+                                                                                             type="hidden"
+                                                                                             value=""><input
+                            name="ip2loc_ip" type="hidden" value="103.208.71.73"><input name="ip2loc_isp" type="hidden"
+                                                                                        value=""><input
+                            name="ip2loc_org" type="hidden" value=""><input name="ip2loc_country" type="hidden"
+                                                                            value="India"><input name="ip2loc_region"
+                                                                                                 type="hidden"
+                                                                                                 value="MAHARASHTRA"><input
+                            name="ip2loc_city" type="hidden" value="MUMBAI"> <input name="_token" type="hidden"
+                                                                                    value="k5WAhvHR2Dvr1VGQCjuC7WvSC3SsYOPcvniqmr8C">
+                        <input name="quickregister" type="hidden" value="yes"> <input name="password" type="hidden"
+                                                                                      value="JvbTpmBaZl">
+                        <div class="form-row mt-3">
+                            <div class="col-sm-12">
+                                <label>Requirements</label> <input autocomplete="off" class="form-control"
+                                                                   name="products_want"
+                                                                   placeholder="Enter product/service name" required=""
+                                                                   title="Comma seperated keywords" type="text">
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Name</label> <input autocomplete="name" class="form-control" name="full_name"
+                                                           placeholder="Full Name" required=""
+                                                           title="Please enter your Full Name here" type="text">
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Email</label> <input autocomplete="email" class="form-control" name="email"
+                                                            placeholder="name@company.com" required=""
+                                                            title="Please enter your Email Address here" type="email">
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Company</label> <input autocomplete="organization" class="form-control"
+                                                              name="company_name" placeholder="Company Name" required=""
+                                                              title="Please enter your Company Name here" type="text">
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Phone Number</label> <input class="form-control tel" maxlength="30"
+                                                                   name="phone_number" placeholder="Phone / Mobile"
+                                                                   required=""
+                                                                   title="Please enter your Phone or Mobile Number here"
+                                                                   type="tel">
+                            </div>
+                            <div class="col-md-12">
+                                <label>I am a</label> <select class="form-control" name="type" required="">
+                                <option selected value="seller">
+                                    Seller
+                                </option>
+                                <option value="buyer">
+                                    Buyer
+                                </option>
+                            </select>
+                            </div>
+                            <div class="col-12 form-p-0 text-center">
+                                <button class="btn btn-outline-danger" type="submit">Submit</button>
+                            </div>
+                            <p class="text-center"><span>*</span> To achieve our mission we provide all the necessary
+                                functionalities to buyers and sellers that help them in developing the voice of their
+                                business and to expand worldwide.</p>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pru-section-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4><span>Our Premium</span> Suppliers</h4>
+                <div class="prem-supplier-slider owl-carousel owl-theme" id="featuredSuppliers">
+                    <div class="item">
+                        <ul>
+                            {%for p in suppliers %}
+                            <li>
+                                <a href=" {% url 'companyproduct' p.user.id %} "><img alt="{{p.title}}" class="owl-lazy"
+                                                                                      data-src="{{p.img.url}}"
+                                                                                      height="78" src="data:image/png"
+                                                                                      width="78">
+                                    <small><p>{{p.organization}}</p></small>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-md-0">
+                <div class="successStoriesComponent pru-section-2" onclick="window.location.href='">
+                    <h4><span>Success</span> Stories</h4>
+                    <div class="testimonails-slider owl-carousel owl-theme">
+                        <div class="item">
+                            <p>We have used conventional B2B platforms previously, like Alibaba, Tradekey etc. But the
+                                buyers that we get from these platforms are not the buyers that the Manufacturer like us
+                                would be looking for. </p>
+                            <div class="author-story">
+                                <span><b>Daniel Pardhe</b> RegionalSales Manager - Karina Machine Tools</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <p><small>We realized that our products do not require the conventional B2Bs but we require
+                                the
+                                Business Development activities to get in touch with the big Brands or Retail Chains,
+                                which is not possible without Goimex as they are providing human intensive
+                                services.</small></p>
+                            <div class="author-story">
+
+                                <span><b>Anil D Patil</b> All Seasons - Overseas Sales Manager</span>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <p><small>Patil Cable Company is a state high-tech enterprise specialized in
+                                R&D and manufacturing photoelectric information. We have use serval B2B companies in
+                                past years but our problem was buyer leave the inquiry but now with GOIMEX we are able
+                                to
+                                overcome his problems.</small></p>
+                            <div class="author-story">
+                                <span><b>Abhay P Patil</b> Director</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about-us-section ">
+    <div class="container text-center">
+        <h2>About Goimex</h2>
+        <div class="owl-carousel owl-theme" id="owlAbout">
+            <div class="item">
+                <h3>Global B2B Market place</h3>
+                <p>Goimex is one of the fastest growing online wholesale B2B marketplace place with
+                    innovative features specially developed for traders to reach global level and set new
+                    milestones. To achieve our mission we provide all the necessary functionalities to
+                    buyers and sellers that help them in developing the voice of their business and to
+                    expand worldwide. We have engineered our portal to be highly user-friendly allowing
+                    buyers to connect with sellers quickly. Goimex entered the market with a passion to
+                    address business to business market challenges with the commitment to provide traders
+                    satisfaction by all possible means and provide them a ground for fast, reliable and
+                    transparent trading.</p> <a href="aboutus" id="m_readmore"
+                                                title="Learn More About Us">Learn more about us</a>
+                </p>
+            </div>
+            <div class="item">
+                <p>Through years of experience we have integrated smart ways to connect buyers and sellers across the
+                    globe over a comprehensive digital trading platform. Goimex encourages traders from all
+                    over the world to be the part of an exciting B2B portal packed with incredible features making the
+                    connectivity of genuine buyers with wonderful sellers on a transparent B2B platform with guaranteed
+                    profitability and business expansion opportunities for both parties.</p>
+                <h6>How can Goimex Help Your Business Meet Unparalleled Highs</h6>
+                <p>Goimex is not just an ordinary B2B website that promotes safe trading, but it is based on an
+                    effective principle that is aimed to develop businesses for its partners to let them get maximum
+                    profitability and unstoppable growth with good business exposure. We love to provide and design most
+                    effective and cost friendly one-stop solution packages for your business growth.</p>
+            </div>
+            <div class="item">
+                <p>We have designed our marketplace for anyone to buy and sell products in
+                    bulk quantities and ensuring secure, fast and versatile payment methods. By empowering
+                    millions of people to trade globally Goimex is setting new standards of catering fierce
+                    B2B marketplace challenges and providing a golden opportunity to every entrepreneur to turn
+                    their dreams into reality.</p>
+                <h6>Don’t Miss out to Know What Makes Us “Goimex Global”</h6>
+                <p>We are the only B2B marketplace that guarantees buyers and profitability as we have
+                    shaped innovative strategies for smart trading. To make the overall trading process
+                    authentic our associates constantly verifies seller identities, offerings and physical
+                    existence through an automated process.</p>
+            </div>
+
+            <div class="item">
+                <h6>Choose what Suites Best For You!</h6>
+                <p>As an intelligent business platform we constantly look forward to enhance
+                    our services to help businesses earn more and unveil new market expansion opportunities.
+                    Through our seamless model buyers can explore millions of products at wholesale prices
+                    offered by verified and trusted suppliers. We are intended to provide services to every
+                    members that have never been delivered by any B2B marketplace by ensuring authentic, quality
+                    driven and business boosting mechanism worldwide. Our B2B platform is shaped for every
+                    stakeholder to enjoy win-win marketplace that only guarantees unsurpassed services but
+                    assure quality standards for long lasting business relationships. To make sure that everyone
+                    across every region enjoy our services and develop their own brands with our extensive
+                    digital marketing service. To further help wholesale buyers and suppliers we have created
+                    country exclusive portal......</p>
+                <a href="#" id="m_readmore1"
+                   title="Learn More About Us">Learn more about us</a>
+            </div>
+        </div>
+    </div>
+<!------------------------
+    <section class="pru-section-2">
+        <div style="background-image: url('/static/images/pic91.jpg');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                       <h2>Please feel free to chat on any issues if required</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <iframe
+                                    allow="microphone;"
+                                    width="350"
+                                    height="430"
+                                    src="https://console.dialogflow.com/api-client/demo/embedded/275f99b4-3cc3-4afa-b7d7-1ab2341ae7e4">
+                            </iframe>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>--------------->
+<br>
+    <hr>
+
+    <!-- new section add from here -->
+
+
+    <!-- new section End  here -->
+    <!------
+    {% include 'buyersellertab.html' %}
+    ------>
+    {% include 'buyerseller/footer2.html' %}
+    <br>
+    {% include 'buyerseller/footer.html' %}
+</section>
+
+</html>

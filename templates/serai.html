@@ -1,4 +1,4 @@
- {% load static %}
+{% load static %}
 
 {% load custom_tags %}
 
@@ -56,6 +56,7 @@
    }(document, 'script', 'facebook-jssdk'));
 
 
+
 </script>
 <div
         class="fb-like"
@@ -80,6 +81,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 
 
+
 </style>
 <style type="text/css">
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
@@ -89,6 +91,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   agent-id="275f99b4-3cc3-4afa-b7d7-1ab2341ae7e4"
   language-code="en"
 ></df-messenger>
+
 
 
 
@@ -370,12 +373,14 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                 </div>
                 <div class="l-column__item2 w-col w-col-6">
                     <div class="c-about__text"><h5 class="heading_5">Global trade is unnecessarily complex and
-                        inefficient.</h5><h6 class="heading_7">
-                        <ul role="list" class="c-about__list">
-                            <li class="is--list">Trust is hard to build due to absence of information</li>
-                            <li class="is--list">Most businesses don’t know how to navigate new markets<br></li>
-                            <li class="is--list">Fragmented supply chain data is difficult to integrate</li>
-                        </ul></h6>
+                        inefficient.</h5>
+                        <h6 class="heading_7">
+                            <ul role="list" class="c-about__list">
+                                <li class="is--list">Trust is hard to build due to absence of information</li>
+                                <li class="is--list">Most businesses don’t know how to navigate new markets<br></li>
+                                <li class="is--list">Fragmented supply chain data is difficult to integrate</li>
+                            </ul>
+                        </h6>
                         <div class="divider"></div>
                         <h6 class="heading_6 is--about">With over many years in facilitating supply chains, Goimex is
                             launched to simplify global trade.<br></h6><a href="{% url 'faq' %}"
@@ -441,14 +446,13 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     </section>
 
 
-
-   <!---- <div class="c-section is--cta">
-        <div class="c-cta w-container"><h2 class="heading_2 is__center">Not sure how we can help?</h2>
-            <div class="c-cta__buttons is--center"><a href="{% url 'membership' %}" class="button_primary w-button">Compare
-                Solutions</a><a href="{% url 'contact' %}" class="button_secondary is--mobile w-button">Get in touch</a>
-            </div>
-        </div>
-    </div>--->
+    <!---- <div class="c-section is--cta">
+         <div class="c-cta w-container"><h2 class="heading_2 is__center">Not sure how we can help?</h2>
+             <div class="c-cta__buttons is--center"><a href="{% url 'membership' %}" class="button_primary w-button">Compare
+                 Solutions</a><a href="{% url 'contact' %}" class="button_secondary is--mobile w-button">Get in touch</a>
+             </div>
+         </div>
+     </div>--->
 
     <div class="c-section is--gray wf-section">
         <div class="c-get_started"><h2 class="heading_2 is__center">How to get started</h2>
@@ -506,33 +510,32 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                             <a href="{% url 'contact' %}" class="footer-link-3">Careers</a>
                             <a href="{% url 'contact' %}" class="footer-link-3">Help Center</a>
                             <a href="{% url 'contact' %}" class="footer-link-3">Contact us</a></li>
-                          <a href="https://goimexindia.blogspot.com/" class="social-link">
+                        <a href="https://goimexindia.blogspot.com/" class="social-link">
                             <i class="fab fa-blogger fa-1x">My Blog</i><span></span></a>
                     </ul>
                 </div>
-              <!----  <div><h2 class="footer-heading-2"><strong>Insights</strong></h2>
-                    <ul role="list" class="w-list-unstyled">
-                        <li><a href="{% url 'home' %}" class="footer-link-3">Articles</a></li>
-                        <li><a href="{% url 'home' %}" class="footer-link-3">Events</a></li>
-                        <li><a href="{% url 'home' %}" class="footer-link-3">Product updates</a></li>
-                    </ul>
-                </div>----->
+                <!----  <div><h2 class="footer-heading-2"><strong>Insights</strong></h2>
+                      <ul role="list" class="w-list-unstyled">
+                          <li><a href="{% url 'home' %}" class="footer-link-3">Articles</a></li>
+                          <li><a href="{% url 'home' %}" class="footer-link-3">Events</a></li>
+                          <li><a href="{% url 'home' %}" class="footer-link-3">Product updates</a></li>
+                      </ul>
+                  </div>----->
                 <div><h6 class="footer-heading-2">Follow us</h6>
                     <ul role="list" class="w-list-unstyled">
                         <a href="https://www.facebook.com/people/Goimex-India/100069323912089/"
                            class="social-link"><i
                                 class="fab fa-facebook fa-3x"></i><span></span></a>
-                        <a href="https://twitter.com/Goimex1" class="social-link">
-                            <i class="fab fa-twitter fa-2x"></i><span></span></a>
+
 
                         <a href="https://www.instagram.com/goimex/" class="social-link"><i
                                 class="fab fa-instagram fa-2x"></i><span></span></a>
                         <i class="fa fa-youtube-play" aria-hidden="true"></i>
 
-                          <a href="https://www.linkedin.com/company/goimex/" class="social-link"><i
+                        <a href="https://www.linkedin.com/company/goimex/" class="social-link"><i
                                 class="fab fa-linkedin fa-2x"></i><span></span></a>
                         <i class="fa fa-youtube-play" aria-hidden="true"></i>
-                          <a href="https://youtube.com/channel/UCHkl9HEgOFrj5XeQfEcb2rg" class="social-link"><i
+                        <a href="https://youtube.com/channel/UCHkl9HEgOFrj5XeQfEcb2rg" class="social-link"><i
                                 class="fab fa-youtube fa-2x"></i><span></span></a>
                         <i class="fa fa-youtube-play" aria-hidden="true"></i>
                     </ul>

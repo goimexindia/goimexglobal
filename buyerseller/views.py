@@ -27,6 +27,10 @@ from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 from django.db.models import Q, Count
 
 
+def error_404(request, exception):
+    return render(request, '404.html')
+
+
 class EcomMixin(object):
     def dispatch(self, request, *args, **kwargs):
         cart_id = request.session.get("cart_id")

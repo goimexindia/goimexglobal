@@ -188,16 +188,13 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = 'goimexindia@gmail.com'
-EMAIL_HOST_PASSWORD = 'xwzujmsmvonroper'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 
 DEFAULT_FROM_EMAIL = 'noreply<no_reply@domain.com>'
 
 django_heroku.settings(locals())
 
-SOCIAL_AUTH_FACEBOOK_KEY = '172084741468627'  # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = '5b2c8b8814cc31ea3e131f34b2557a5e'
+
 
 LOGIN_URL = 'login'
 
@@ -207,10 +204,10 @@ AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'goimex-bucket'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 AWS_S3_HOST = 'us-east-2'  # change to your region
 S3_USE_SIGV4 = True
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
@@ -227,11 +224,7 @@ DJOSER = {
     },
 }
 
-SITE_NAME = "goimex"
 
-razorpaykey = 'rzp_live_GjKslhycUnFK1u'
-
-razorpaysecret = 'mPIsIMS2Guvni2tHu5mkoTJe'
 
 SITE_ID = 1
 ACCOUNT_EMAIL_VERIFICATION = "none"
@@ -272,10 +265,6 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '78ldcikxxgfgfq'
-SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'lHZDaPzUbsW7J9j4'
-
-SOCIAL_AUTH_STRATEGY = 'social.strategies.django_strategy.DjangoStrategy'
 
 SOCIAL_AUTH_LINKEDIN_OAUTH2_SCOPE = ['r_basicprofile', 'r_emailaddress']
 SOCIAL_AUTH_LINKEDIN_OAUTH2_FIELD_SELECTORS = ['email-address', 'formatted-name', 'public-profile-url', 'picture-url']

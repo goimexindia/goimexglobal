@@ -1,2 +1,14 @@
 .svn 
 "YOUR-FILE-WITH-SENSITIVE-DATA" 
+# Ignore all text files
+*.txt
+sec.py
+
+# Ignore files related to API keys
+.env
+
+# Ignore SASS config files
+.sass-cache
+
+# Ignore node_modules folder
+node_modules

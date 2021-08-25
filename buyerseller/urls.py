@@ -27,6 +27,7 @@ urlpatterns = [
     path('adminpostsearch/', views.adminpostsearch, name='adminpost-search'),
     path("ecomerce", EcomerceView.as_view(), name="ecomerce"),
     path("ecomerceapp", EcomerceAppView.as_view(), name="ecomerceapp"),
+    path("video", Video.as_view(), name="video"),
     path("all-products/", AllProductsView.as_view(), name="allproducts"),
     path("all-essentials/", EssentialsView.as_view(), name="allessentials"),
     path('Cart/new/', CartCreateView.as_view(), name='cart-create'),

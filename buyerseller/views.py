@@ -146,6 +146,10 @@ class EcomerceView(TemplateView):
         return context
 
 
+class Video(TemplateView):
+    template_name = "directorspeech.html"
+
+
 class EcomerceAppView(TemplateView):
     template_name = "buyerseller/ecomerceapp.html"
 

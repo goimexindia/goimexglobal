@@ -58,6 +58,7 @@
 
 
 
+
 </script>
 <div
         class="fb-like"
@@ -84,6 +85,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
 
 
+
 </style>
 <style type="text/css">
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
@@ -93,6 +95,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   agent-id="275f99b4-3cc3-4afa-b7d7-1ab2341ae7e4"
   language-code="en"
 ></df-messenger>
+
 
 
 
@@ -504,14 +507,16 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
                             <a href="{% url 'aboutus' %}" class="footer-link-3">Our Strength</a>
                             <a href="{% url 'aboutus' %}" class="footer-link-3">Global Operations</a>
                             <a href="{% url 'aboutus' %}" class="footer-link-3">Our Partners</a></li>
+                        <li><a class="footer-link-3" href="{% url 'video' %}">Our Articles</a></li>
                     </ul>
                 </div>
                 <div><h6 class="footer-heading-2">Our Activities</h6>
                     <ul role="list" class="w-list-unstyled">
-                        <li><a href="{% url 'contact' %}" class="footer-link-3">Press</a>
-                            <a href="{% url 'contact' %}" class="footer-link-3">Careers</a>
-                            <a href="{% url 'contact' %}" class="footer-link-3">Help Center</a>
+                        <li><a href="{% url 'video' %}" class="footer-link-3">Press</a>
+                            <a href="{% url 'rfq' %}" class="footer-link-3">RFQ</a>
+                            <a href="{% url 'faq' %}" class="footer-link-3">FAQ's</a>
                             <a href="{% url 'contact' %}" class="footer-link-3">Contact us</a></li>
+                        <a href="{% url 'safedeal' %}" class="footer-link-3">Safe Deal</a></li>
                         <a href="https://goimexindia.blogspot.com/" class="social-link">
                             <i class="fab fa-blogger fa-1x">My Blog</i><span></span></a>
                     </ul>

@@ -5,7 +5,7 @@
 
 <html lang="en">
 {% include 'buyerseller/header.html' %}
-        {% include 'sellertab.html' %}
+{% include 'sellertab.html' %}
 <style>
 .city {
   background-color: tomato;
@@ -118,13 +118,20 @@ input[type=text]:focus {
 .categories-section {background-color: powderblue;}
 h1   {color: blue;}
 p    {color: black;}
+
+
+
+
+
+
+
 </style>
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 <df-messenger
-  intent="WELCOME"
-  chat-title="goimex_assistant"
-  agent-id="275f99b4-3cc3-4afa-b7d7-1ab2341ae7e4"
-  language-code="en"
+        intent="WELCOME"
+        chat-title="goimex_assistant"
+        agent-id="275f99b4-3cc3-4afa-b7d7-1ab2341ae7e4"
+        language-code="en"
 ></df-messenger>
 
 <br><br>
@@ -752,7 +759,7 @@ p    {color: black;}
     <div class="col-md-12">
         <div class="container">
             <ul>
-                <li><i class="icon1-TRADE-WITH-CONFIDENCE" ></i>Trade with confidence</li>
+                <li><i class="icon1-TRADE-WITH-CONFIDENCE"></i>Trade with confidence</li>
                 <li><i class="icon1-VERIFIED-BUYERS"></i> Verified Buyers</li>
                 <li><i class="icon1-Globe"></i> Global Network</li>
                 <li><i class="icon1-HELP-CENTER"></i> 24/7 Help Center</li>
@@ -760,7 +767,7 @@ p    {color: black;}
             <a href="{% url 'membership' %}"></a>
         </div>
         <a class="d-none"
-            href="{% url 'membership' %}"
+           href="{% url 'membership' %}"
            id="featuredPointSectionLink"></a>
     </div>
 </section>
@@ -781,7 +788,7 @@ p    {color: black;}
 
                                     <a href="{% url 'post-detail' p.id%}" title="{{p.title}}">
                                         <span
-                                            class="world-name truncate">{{ p.author.profile.country.name }}</span>
+                                                class="world-name truncate">{{ p.author.profile.country.name }}</span>
                                         <span
                                                 class="lst-buyer-text truncate">{{p.title|safe}}-{{snippet}}</span>
                                         <small class="date">{{ p.date_posted|date:"F d, Y" }}</small></a>
@@ -849,6 +856,8 @@ p    {color: black;}
 {% include 'blog/snippets/newproducts.html' %}
 
 {% include 'catnavbar.html' %}
+
+{% include 'services.html' %}
 <!-----
 <sectio class="container">
         <div class="container">
@@ -960,7 +969,7 @@ p    {color: black;}
                                                                             value=""><input name="utm_term"
                                                                                             type="hidden"
                                                                                             value=""><input
-                            name="fullpageurl" type="hidden" ><input
+                            name="fullpageurl" type="hidden"><input
                             name="referrerurl" type="hidden" value=""><input name="pageurl" type="hidden"
                                                                              value=""><input name="external_refferer"
                                                                                              type="hidden"
@@ -1028,6 +1037,7 @@ p    {color: black;}
     </div>
 </section>
 
+
 <section class="pru-section-2">
     <div class="container">
         <div class="row">
@@ -1073,7 +1083,14 @@ p    {color: black;}
                                 <span><b>Anil D Patil</b> All Seasons - Overseas Sales Manager</span>
                             </div>
                         </div>
-
+                        <div class="item">
+                            <p><small> We recommend goimex services to all my industrial friends if you really
+                                want your business to grow. Goimex will amaze you with the audience they can reach
+                                globally. I sell dairy products to different countries.</small></p>
+                            <div class="author-story">
+                                <span><b>Anjali Sharma</b> Sales Manager - Clear Digital Technology</span>
+                            </div>
+                        </div>
                         <div class="item">
                             <p><small>Patil Cable Company is a state high-tech enterprise specialized in
                                 R&D and manufacturing photoelectric information. We have use serval B2B companies in
@@ -1084,8 +1101,29 @@ p    {color: black;}
                                 <span><b>Abhay P Patil</b> Director</span>
                             </div>
                         </div>
-
-
+                        <div class="item">
+                            <p><small> Goimex.com is a great platform which helped us big time in getting connected
+                                inquiries. Our company is using other famous B2B’s as well but the quality of inquiries
+                                which we get from goimex.com are by far the finest</small></p>
+                            <div class="author-story">
+                                <span><b>Peter Wang</b> Sales Manager - Telecom Estate</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <p><small>Goimex service is good, although we haven’t made a deal. But in terms of the
+                                ability to find potential buyers, the email marketing feedback was good.</small></p>
+                            <div class="author-story">
+                                <span><b>Karl Xie</b> Business Development Manager - Hongkong Kele Industrial Co., Limited</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <p><small>Goimex makes negotiation very easy. I can select the products I want and send
+                                my target prices to the sellers directly. The whole process is very structured and
+                                effective.</small></p>
+                            <div class="author-story">
+                                <span><b>Mohammed Bilal Hussain</b> Owner at Suncity Hypermarkets</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1153,30 +1191,30 @@ p    {color: black;}
             </div>
         </div>
     </div>
-<!------------------------
-    <section class="pru-section-2">
-        <div style="background-image: url('/static/images/pic91.jpg');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                       <h2>Please feel free to chat on any issues if required</h2>
-                    </div>
+    <!------------------------
+        <section class="pru-section-2">
+            <div style="background-image: url('/static/images/pic91.jpg');">
+                <div class="container">
                     <div class="row">
-                        <div class="col-md-6">
-                            <iframe
-                                    allow="microphone;"
-                                    width="350"
-                                    height="430"
-                                    src="https://console.dialogflow.com/api-client/demo/embedded/275f99b4-3cc3-4afa-b7d7-1ab2341ae7e4">
-                            </iframe>
-                            <hr>
+                        <div class="col-md-4">
+                           <h2>Please feel free to chat on any issues if required</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <iframe
+                                        allow="microphone;"
+                                        width="350"
+                                        height="430"
+                                        src="https://console.dialogflow.com/api-client/demo/embedded/275f99b4-3cc3-4afa-b7d7-1ab2341ae7e4">
+                                </iframe>
+                                <hr>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>--------------->
-<br>
+        </section>--------------->
+    <br>
     <hr>
 
     <!-- new section add from here -->

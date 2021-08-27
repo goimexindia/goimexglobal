@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the four columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="container mt-5 mb-5">
+
+</div>
+<section class="container">
+    <h2><span>Our <b>Services</b></span></h2><br>
+    <div class="row">
+        <div class="column" style="background-color:#aaa;">
+            <h2 font="heading" class="css-1v8lbx3">Buy now &amp; PayLater</h2>
+            <a href="#">
+                <div class="css-5f3zjd"><img alt="Buy now &amp; PayLater"
+                                             src="/static/images/service1.jpg"
+                                             class="chakra-image css-1tjfvqk">
+                    <div class="css-xzb49g">
+                        <p font="body" class="css-m018qa">Get 60 days to pay your invoice</p></div>
+                </div>
+            </a>
+        </div>
+        <div class="column" style="background-color:#bbb;">
+            <h2>Inspection Services</h2>
+            <a class=" css-4g6ai3" id="" target="" title="" rel=""
+               href="#">
+                <div class="css-5f3zjd"><img alt="Inspection Services"
+                                             src="/static/images/service2.png"
+                                             class="chakra-image css-1tjfvqk">
+                    <div class="css-xzb49g"><h2 font="heading" class="css-1v8lbx3"></h2>
+                        <p font="body" class="css-m018qa">We’ll help you find what you are looking</p></div>
+                </div>
+            </a>
+        </div>
+        <div class="column" style="background-color:#ccc;">
+            <h2>Multiple quotes</h2>
+            <a class=" css-4g6ai3" id="" target="" title="" rel=""
+               href="#">
+                <div class="css-5f3zjd"><img alt="One free request - Multiple quotes"
+                                             src="/static/images/service3.png"
+                                             class="chakra-image css-1tjfvqk">
+                    <div class="css-xzb49g"><h2 font="heading" class="css-1v8lbx3"></h2>
+                        <p font="body" class="css-m018qa">One free request - Multiple quotes.We source quotes (RFQ) on any product.</p></div>
+                </div>
+            </a>
+        </div>
+        <div class="column" style="background-color:#ddd;">
+            <h2>Smart Freight</h2>
+            <a class=" css-4g6ai3" id="" target="" title="" rel=""
+               href="#">
+                <div class="css-5f3zjd"><img alt="Smart Freight"
+                                             src="/static/images/service4.png"
+                                             class="chakra-image css-1tjfvqk">
+                    <div class="css-xzb49g"><h2 font="heading" class="css-1v8lbx3"></h2>
+                        <p font="body" class="css-m018qa">Easily compare , book and manage freight</p></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -58,7 +58,7 @@ class HomeView(TemplateView):
         context = super(HomeView, self).get_context_data(**kwargs)
         prod = Proddisplay.objects.all().order_by("-id")
         category = Category.objects.all()
-        suppliers = Profile.objects.exclude(organization__isnull=True).exclude(type='Buyer').order_by("-id")[:12]
+        suppliers = Profile.objects.exclude(organization__isnull=True).order_by("-id")[:20]
         products = Product.objects.all().order_by("-id")[:12]
         topproducts = Product.objects.distinct('category').order_by("category")[:12]
         productss = Product.objects.all().exclude(image__isnull=True).order_by("-id")[:12]

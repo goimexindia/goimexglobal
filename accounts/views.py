@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
 from django.db.models import Q
 from django.http import FileResponse
@@ -6,13 +7,18 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from django.core.paginator import Paginator
+from django.template.loader import render_to_string
 from django.urls import reverse_lazy
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.views import View
 from django.views.generic import CreateView
 import os
 from django.conf import settings
+from gitdb.utils.encoding import force_text
 
 from blog.models import Post
 from buyerseller.models import Rfq, Customer, Order, Product, Category, Admin, ProdComment
+from goimex.token import account_activation_token
 from .forms import *
 from django.contrib.auth.decorators import login_required
 
@@ -28,6 +34,7 @@ import razorpay
 from django.views.decorators.csrf import csrf_exempt
 
 from verify_email.email_handler import send_verification_email
+from django.utils.encoding import force_bytes
 
 
 def login(request):
@@ -43,6 +50,26 @@ def login(request):
             return redirect('login')
     else:
         return render(request, 'login.html')
+
+
+class ActivateAccount(View):
+    def get(self, request, uidb64, token, *args, **kwargs):
+        try:
+            uid = force_text(urlsafe_base64_decode(uidb64))
+            user = User.objects.get(pk=uid)
+        except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+            user = None
+
+        if user is not None and account_activation_token.check_token(user, token):
+            user.is_active = True
+            user.profile.email_confirmed = True
+            user.save()
+            login(request, user)
+            messages.success(request, 'Your account have been confirmed.')
+            return redirect('home')
+        else:
+            messages.warning(request, 'The confirmation link was invalid, possibly because it has already been used.')
+            return redirect('home')
 
 
 class AdminRequiredMixin(object):
@@ -62,8 +89,8 @@ def update_user_data(user):
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
-        if form.is_valid():
-           # inactive_user = send_verification_email(request, form)
+        if form.is_valid() and request.recaptcha_is_valid:
+            # inactive_user = send_verification_email(request, form)
             #print(inactive_user)
             form.save()
             username = form.cleaned_data.get('username')
@@ -71,7 +98,7 @@ def register(request):
             return redirect('login')
     else:
         form = UserRegisterForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'register.html', {'form': form, 'recaptcha_site_key':settings.GOOGLE_RECAPTCHA_SITE_KEY}, )
 
 
 def logout(request):
@@ -265,6 +292,7 @@ def dashboard(request):
 def transactions(request):
     context = {}
     return render(request, 'transactions.html', context)
+
 
 def safedeal(request):
     context = {}

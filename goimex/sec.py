@@ -20,3 +20,4 @@ SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '78ldcikxxgfgfq'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'lHZDaPzUbsW7J9j4'
 
 SOCIAL_AUTH_STRATEGY = 'social.strategies.django_strategy.DjangoStrategy'
+

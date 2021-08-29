@@ -1,10 +1,11 @@
 from django.urls import path
 
 from . import views
-from .views import CategoryCreateView, AdminCategoryListView
+from .views import CategoryCreateView, AdminCategoryListView, ActivateAccount
 
 urlpatterns = [
     path('register', views.register, name='register'),
+    path('activate/<uidb64>/<token>/', ActivateAccount.as_view(), name='activate'),
     path('basicpayement', views.basicpayment, name='basicpayment'),
     path('silverpayement', views.silverpayment, name='silverpayment'),
     path('goldpayement', views.goldpayment, name='goldpayment'),

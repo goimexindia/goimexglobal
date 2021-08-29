@@ -63,7 +63,6 @@ class BussinessUpdateForm(forms.ModelForm):
         }
 
 
-
 class CompanyImageForm(forms.ModelForm):
     class Meta:
         model = Profile

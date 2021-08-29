@@ -116,7 +116,7 @@ def register(request):
             else:
                 messages.error(request,
                                'Invalid reCAPTCHA. Please try again.')
-                return redirect('register')
+                return redirect('home')
     else:
         form = UserRegisterForm()
     return render(request, 'register.html', {'form': form, "captcha": FormWithCaptcha,

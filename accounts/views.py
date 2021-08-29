@@ -1,3 +1,6 @@
+import urllib
+
+import secret as secret
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
@@ -32,6 +35,8 @@ from django.views.generic import (
     DeleteView
 )
 import razorpay
+
+import json
 from django.views.decorators.csrf import csrf_exempt
 
 from verify_email.email_handler import send_verification_email
@@ -92,13 +97,26 @@ def register(request):
         form = UserRegisterForm(request.POST)
         get_recaptcha = request.POST.get("g-recaptcha-response")
         print(get_recaptcha)
-        if form.is_valid() and request.recaptcha_is_valid:
-            # inactive_user = send_verification_email(request, form)
-            # print(inactive_user)
-            form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Your account has been created! You are now able to log in')
-            return redirect('login')
+        if form.is_valid():
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            url = 'https://www.google.com/recaptcha/api/siteverify'
+            values = {
+                secret: settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+                'response': recaptcha_response
+            }
+            data = urllib.parse.urlencode(values).encode()
+            req = urllib.request.Request(url, data=data)
+            response = urllib.request.urlopen(req)
+            result = json.loads(response.read().decode())
+            if result['success']:
+                form.save()
+                username = form.cleaned_data.get('username')
+                messages.success(request, f'Your account has been created! You are now able to log in')
+                return redirect('login')
+            else:
+                messages.error(request,
+                               'Invalid reCAPTCHA. Please try again.')
+                return redirect('register')
     else:
         form = UserRegisterForm()
     return render(request, 'register.html', {'form': form, "captcha": FormWithCaptcha,

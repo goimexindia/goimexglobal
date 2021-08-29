@@ -7,27 +7,29 @@
     .grecaptcha-badge {
          opacity:0; !important;
     }
+
 </style>
 
 
 <div class="content-section">
     <div class="row no-gutters">
-        <div>
-            <a href="#"
-               title="Global B2B Marketplace for Worldwide Manufacturers and Suppliers – Goimex Global">
-                <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="70"
-                                                                 src="{%  static  'images/GOIMEX.png' %}"></a>
-            </a>
+        <div class="col-md-6 col-lg-6 col-xl-5 d-md-block d-none register-content">
+            <div>
+                <a href="#"
+                   title="Global B2B Marketplace for Worldwide Manufacturers and Suppliers – Goimex Global">
+                    <a href="/" title="Goimex Global Pvt. Ltd."><img alt="Goimex Global Pvt. Ltd." height="70"
+                                                                     src="{%  static  'images/GOIMEX.png' %}"></a>
+                </a>
+                <hr>
+            </div>
+            <div class="description">
+                <h1 class="main-heading">Welcome to </h1>
+                <h1 class="main-heading">Goimex</h1>
+                <p><h6>To achieve our mission we provide all the necessary functionalities to buyers and sellers that
+                help them in developing the voice of their business and to expand worldwide.</h6></p>
+            </div>
             <hr>
-        </div>
-        <div class="description">
-            <h1 class="main-heading">Welcome to </h1>
-            <h1 class="main-heading">Goimex</h1>
-            <p><h6>To achieve our mission we provide all the necessary functionalities to buyers and sellers that
-            help them in developing the voice of their business and to expand worldwide.</h6></p>
-        </div>
-        <hr>
-        <span class="font18">Before registration read our
+            <span class="font18">Before registration read our
             <a href="{% url 'policy' %}" target="_blank">Privacy Statement</a> and
             <a href="{% url 'terms' %}" target="_blank">Terms &amp; Conditions</a>
 
@@ -45,8 +47,7 @@
                     </ul>
                 </nav>
             </div>
-
-
+        </div>
         <div class="col-lg-6">
 
             <form action="register" method="post">
@@ -55,7 +56,7 @@
                     {{ form|crispy }}
                 </fieldset>
                 {{captcha}}
-            </p>
+                </p>
                 <input type="hidden" id="g-commit -am recaptcha-response" name="g-recaptcha-response">
                 <div class="form-group">
                     <button class="btn btn-outline-info" type="Submit">Sign Up</button>
@@ -68,6 +69,7 @@
         </div>
     </div>
 </div>
+
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
 

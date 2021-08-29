@@ -28,9 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 
-GOOGLE_RECAPTCHA_SITE_KEY = '6LdKMzAcAAAAAFyVW2uC6zqdXgOoEteNyb47HcL4'
 
-GOOGLE_RECAPTCHA_SECRET_KEY = '6LdKMzAcAAAAAE9ybProCjZUJheRM1sZLShHywug'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -72,6 +70,7 @@ THIRD_PARTY_APPS = [
     'crispy_forms',
     "view_breadcrumbs",
     "mptt",
+    "captcha",
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -286,3 +285,11 @@ AUTHENTICATION_BACKENDS = (
     'social.backends.linkedin.LinkedinOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
+
+GOOGLE_RECAPTCHA_SITE_KEY = '6LdKMzAcAAAAAFyVW2uC6zqdXgOoEteNyb47HcL4'
+
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LdKMzAcAAAAAE9ybProCjZUJheRM1sZLShHywug'
+
+
+RECAPTCHA_PUBLIC_KEY = GOOGLE_RECAPTCHA_SECRET_KEY
+RECAPTCHA_PRIVATE_KEY = GOOGLE_RECAPTCHA_SITE_KEY

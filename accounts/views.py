@@ -19,6 +19,7 @@ from gitdb.utils.encoding import force_text
 from blog.models import Post
 from buyerseller.models import Rfq, Customer, Order, Product, Category, Admin, ProdComment
 from goimex.token import account_activation_token
+from templates.my_captcha import FormWithCaptcha
 from .forms import *
 from django.contrib.auth.decorators import login_required
 
@@ -99,7 +100,7 @@ def register(request):
             return redirect('login')
     else:
         form = UserRegisterForm()
-    return render(request, 'register.html', {'form': form, 'recaptcha_site_key':settings.GOOGLE_RECAPTCHA_SITE_KEY}, )
+    return render(request, 'register.html', {'form': form, "captcha": FormWithCaptcha,'recaptcha_site_key':settings.GOOGLE_RECAPTCHA_SITE_KEY}, )
 
 
 def logout(request):

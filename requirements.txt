@@ -30,6 +30,7 @@ django-otp==1.0.6
 django-phone-field==1.8.1
 django-storages==1.11.1
 django-templated-mail==1.1.1
+django-utils-six==2.0
 Django-Verify-Email==1.0.7
 django-view-breadcrumbs==2.1.1
 django-widgets==0.1.16

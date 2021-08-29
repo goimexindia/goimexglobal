@@ -88,28 +88,19 @@ def update_user_data(user):
 
 
 def register(request):
-    if request.method != 'POST':
-        form = UserRegisterForm()
-    else:
+    if request.method == 'POST':
         form = UserRegisterForm(request.POST)
-        #get_recaptcha = request.POST.get("g-recaptcha-response")
-        if form.is_valid():
-            recaptcha_response = request.POST.get('g-recaptcha-response', None)
-            data = {
-                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
-                'response': recaptcha_response
-            }
-            r = request.POST.get('https://www.google.com/recaptcha/api/siteverify', data=data)
-            result = r.json()
-            if result['success']:
-                # inactive_user = send_verification_email(request, form)
-                # print(inactive_user)
-                form.save()
-                username = form.cleaned_data.get('username')
-                messages.success(request, f'Your account has been created! You are now able to log in')
-                return redirect('login')
-            else:
-                raise forms.ValidationError('Captcha Validation Failed.', code='invalid_captcha')
+        get_recaptcha = request.POST.get("g-recaptcha-response")
+        print(get_recaptcha)
+        if form.is_valid() and request.recaptcha_is_valid:
+            # inactive_user = send_verification_email(request, form)
+            # print(inactive_user)
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Your account has been created! You are now able to log in')
+            return redirect('login')
+    else:
+        form = UserRegisterForm()
     return render(request, 'register.html', {'form': form, "captcha": FormWithCaptcha,
                                              'recaptcha_site_key': settings.GOOGLE_RECAPTCHA_SITE_KEY}, )
 

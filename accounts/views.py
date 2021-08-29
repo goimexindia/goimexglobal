@@ -91,13 +91,17 @@ def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         get_recaptcha = request.POST.get("g-recaptcha-response")
-        if form.is_valid() and get_recaptcha:
-            # inactive_user = send_verification_email(request, form)
-            # print(inactive_user)
-            form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Your account has been created! You are now able to log in')
-            return redirect('login')
+        if form.is_valid():
+            if get_recaptcha:
+                # inactive_user = send_verification_email(request, form)
+                # print(inactive_user)
+                form.save()
+                username = form.cleaned_data.get('username')
+                messages.success(request, f'Your account has been created! You are now able to log in')
+                return redirect('login')
+            else:
+                messages.error(request, 'Invalid reCAPTCHA. Please try again.')
+                return redirect('register')
     else:
         form = UserRegisterForm()
     return render(request, 'register.html', {'form': form, "captcha": FormWithCaptcha,

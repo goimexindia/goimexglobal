@@ -22,6 +22,7 @@ from goimex.token import account_activation_token
 from .forms import *
 from django.contrib.auth.decorators import login_required
 
+
 from .models import Profile, Contactme
 from django.views.generic import (
     ListView,

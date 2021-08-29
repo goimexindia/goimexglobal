@@ -3,15 +3,31 @@
 {% load static %}
 {% block title %}Register{% endblock %}
 {% block content %}
+<style>
+    .grecaptcha-badge {
+         opacity:0; !important;
+    }
+</style>
  <script src='https://www.google.com/recaptcha/api.js?render={{recaptcha_site_key}}'></script>
   <script>
     //global grecaptcha
     grecaptcha.ready(function() {
-      grecaptcha.execute('{{recaptcha_site_key}}', {action: "/contact/"}).then(function(token) {
+      grecaptcha.execute('{{recaptcha_site_key}}', {action: "/register/"}).then(function(token) {
         document.getElementById('g-recaptcha-response').value = token;
       });
     });
   </script>
+   <script>
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute('{{recaptcha_site_key}}', {action: 'submit'}).then(function(token) {
+            document.getElementById('g-recaptcha-response').value = token;
+          });
+        });
+      }
+  </script>
+
 <div class="content-section">
     <div class="row no-gutters">
         <div class="col-md-6 col-lg-6 col-xl-5 d-md-block d-none register-content">
@@ -60,7 +76,10 @@
                 </fieldset>
 
                   {{ form.non_field_errors }}
-
+ <p>This site is protected by reCAPTCHA and the Google
+                <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+                <a href="https://policies.google.com/terms">Terms and Conditions</a> apply.
+            </p>
                 <input type="hidden" id="g-commit -am "recaptcha-response" name="g-recaptcha-response">
                 <div class="form-group">
                     <button class="btn btn-outline-info" type="Submit">Sign Up</button>

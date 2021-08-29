@@ -125,6 +125,7 @@ p    {color: black;}
 
 
 
+
 </style>
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 <df-messenger
@@ -169,27 +170,7 @@ p    {color: black;}
                 <li class="submenu">
                     <a href="javascript:void(0)" title="Agriculture">Agriculture <i class="fa fa-angle-right"></i></a>
                     <div class="submenu-row">
-                        <div class="col-md-6">
-                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
-                                   title="Fresh Flowers And Plants">Fresh Flowers And Plants</a></h6>
-                            <ul>
-                                <li>
-                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Flowers">Fresh
-                                        Flowers</a>
-                                </li>
-                                <li>
-                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Fresh Cut Flowers">Fresh
-                                        Cut Flowers</a>
-                                </li>
-                                <li>
-                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Rose">Rose
-                                        Generation Equipment</a>
-                                </li>
-                                <li>
-                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Jasmine Flowers">Jasmine
-                                        Flowers</a>
-                                </li>
-                            </ul>
+                        <div class="col-md-12">
                             <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
                                    title="Irrigation">Irrigation Equipments</a></h6>
                             <ul>
@@ -238,29 +219,43 @@ p    {color: black;}
                             </ul>
                         </div>
 
-                        <div class="col-md-6">
+
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Agriculture">Flowers/Vegetables/Soil<i
+                            class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-12">
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
+                                   title="Fresh Flowers And Plants">Fresh Flowers / Plants / Vegetables</a></h6>
+                            <ul>
+                                <li>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Flowers">Fresh
+                                        Flowers</a>
+                                <a class="text-truncate" href="{% url 'allproducts' %}" title="Flowers">Fresh
+                                    Vegetables</a>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Fresh Cut Flowers">Fresh
+                                        Cut Flowers</a>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Rose">Rose
+                                        Generation Equipment</a>
+                                    <a class="text-truncate" href="{% url 'allproducts' %}" title="Jasmine Flowers">Jasmine
+                                        Flowers</a>
+                                </li>
+                            </ul>
+
                             <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
                                    title="Fertilizers">Soil Additives & Fertilizers</a></h6>
                             <ul>
                                 <li>
                                     <a class="text-truncate" href="{% url 'allproducts' %}" title="Fertilizers">Fertilizers
                                     </a>
-                                </li>
-                                <li>
                                     <a class="text-truncate" href="{% url 'allproducts' %}"
                                        title="Fertilizers">Bio Organic Fertilizerr</a>
-                                </li>
-                                <li>
                                     <a class="text-truncate" href="{% url 'allproducts' %}" title="Fertilizers">Organic
                                         Bio Fertilizers
                                     </a>
-                                </li>
-                                <li>
                                     <a class="text-truncate" href="{% url 'allproducts' %}" title="Fertilizers">Bio
                                         Fertilizers
                                     </a>
-                                </li>
-                                <li>
                                     <a class="text-truncate" href="{% url 'allproducts' %}" title="Fertilizers">Organic
                                         Fertilizers
                                     </a>
@@ -270,8 +265,10 @@ p    {color: black;}
                         </div>
                     </div>
                 </li>
+
+
                 <li class="submenu">
-                    <a href="javascript:void(0)" title="Food &amp; Beverage">Food &amp; Beverage <i
+                    <a href="javascript:void(0)" title="Food &amp; Beverage">Food<i
                             class="fa fa-angle-right"></i></a>
                     <div class="submenu-row">
                         <div class="col-md-6">
@@ -289,14 +286,8 @@ p    {color: black;}
                                 Food</a></h6>
                             <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Snack">Snack
                                 Food</a></h6>
-                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Drinks">Soft
-                                Drinks</a></h6>
-                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Tea">Tea</a>
-                            </h6>
                             <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Vegetable">Vegetable
                                 Products</a></h6>
-                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Alocholic">Alcoholic
-                                Beverage</a></h6>
                             <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Baby Food">Baby
                                 Food</a></h6>
                         </div>
@@ -308,14 +299,10 @@ p    {color: black;}
                             <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Bean">Bean
                                 Products</a></h6>
                             <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
-                                   title="Baby Care">Coffe</a></h6>
-                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
                                    title="Confectionery">Confectionery</a>
                             </h6>
                             <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
                                    title="Baby Care">Diary</a></h6>
-                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Water">Drinking
-                                Water</a></h6>
                             <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Egg">Egg
                                 Products</a></h6>
                             <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Food">Food
@@ -331,11 +318,37 @@ p    {color: black;}
                         </div>
                     </div>
                 </li>
+
                 <li class="submenu">
-                    <a href="javascript:void(0)" title="Appareal &amp; Textiles">Apparel &amp; Textiles <i
+                    <a href="javascript:void(0)" title="Food &amp; Beverage">Beverage <i
                             class="fa fa-angle-right"></i></a>
                     <div class="submenu-row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
+
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Drinks">Soft
+                                Drinks</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Tea">Tea</a>
+                            </h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Alocholic">Alcoholic
+                                Beverage</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
+                                   title="Baby Care">Coffe</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
+                                   title="Confectionery">Confectionery</a>
+                            </h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}"
+                                   title="Baby Care">Diary</a></h6>
+                            <h6><a class="text-danger text-truncate" href="{% url 'allproducts' %}" title="Water">Drinking
+                                Water</a></h6>
+                        </div>
+                </li>
+
+
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Appareal &amp; Textiles">Apparel <i
+                            class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-12">
                             <h6><a class="text-danger text-truncate" href="Performance" title="Performance Wear">Stage
                                 Dance Wear</a></h6>
                             <h6><a class="text-danger text-truncate" href="Performance" title="Bridgegroom Suit">Suits
@@ -357,7 +370,14 @@ p    {color: black;}
                             <h6><a class="text-danger text-truncate" href="Performance" title="#">Ethnic Clothing</a>
                             </h6>
                         </div>
-                        <div class="col-md-6">
+
+                    </div>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Appareal &amp; Textiles">Textiles <i
+                            class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-12">
                             <h6><a class="text-danger text-truncate" href="Performance" title="#">Garment
                                 Accessories</a></h6>
                             <h6><a class="text-danger text-truncate" href="Performance" title="#">Girl Clothing</a></h6>
@@ -375,10 +395,10 @@ p    {color: black;}
                     </div>
                 </li>
                 <li class="submenu">
-                    <a href="javascript:void(0)" title="Health &amp; Care">Health &amp; Care <i
+                    <a href="javascript:void(0)" title="Health &amp; Care">Health<i
                             class="fa fa-angle-right"></i></a>
                     <div class="submenu-row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <h6><a class="text-danger text-truncate" href="javascript:void(0)"
                                    title="Pharmaceutical Raw Materials">Pharmaceutical Raw Materials</a></h6>
                             <ul>
@@ -403,6 +423,18 @@ p    {color: black;}
                                         Chemical</a>
                                 </li>
                             </ul>
+
+                        </div>
+
+                    </div>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0)" title="Health &amp; Care">Care <i
+                            class="fa fa-angle-right"></i></a>
+                    <div class="submenu-row">
+                        <div class="col-md-12">
+                            <h6><a class="text-danger text-truncate" href="javascript:void(0)"
+                                   title="Pharmaceutical Raw Materials">Pharmaceutical Raw Materials</a></h6>
                             <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Pharmaceutical">Medicines
                                 Tonics And Drugs</a></h6>
                             <h6><a class="text-danger text-truncate" href="javascript:void(0)" title="Pharmaceutical">Health
@@ -672,8 +704,8 @@ p    {color: black;}
                     <li><a href="{% url 'ecomerce' %}" title="All Products">Products</a></li>
                     <li><a href="{% url 'mybussiness' %}" title="Company Profile">Company Profile</a>
                     </li>
-                    <li><a href="{% url 'membership' %}" title="Premium Services">Premium
-                        Services</a></li>
+                    <!----<li><a href="{% url 'membership' %}" title="Premium Services">Premium
+                        Services</a></li>---->
 
                     <li><a href="{% url 'rfq' %}" title="Post RFQ">Post RFQ</a></li>
                     <li><a href="{% url 'faq' %}" title="Need Help?">FAQs</a></li>
@@ -1050,10 +1082,10 @@ p    {color: black;}
                             <li>
                                 <a href=" {% url 'companyproduct' p.user.id %} "><img alt="{{p.title}}" class="owl-lazy"
                                                                                       data-src="{{p.img.url}}"
-                                                                                     width:100%; src="data:image/png"
-                                                                                     >
+                                                                                      width:100%; src="data:image/png"
+                                >
                                     <h6><p>{{p.organization}}</p></h6>
-                                     <small><p>{{p.country.name}}</p></small>
+                                    <small><p>{{p.country.name}}</p></small>
                                 </a>
                             </li>
                             {% endfor %}

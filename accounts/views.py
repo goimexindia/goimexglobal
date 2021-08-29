@@ -1,5 +1,4 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.sites import requests
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
 from django.db.models import Q
@@ -100,7 +99,7 @@ def register(request):
                 'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
                 'response': recaptcha_response
             }
-            r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+            r = request.POST.get('https://www.google.com/recaptcha/api/siteverify', data=data)
             result = r.json()
             if result['success']:
                 # inactive_user = send_verification_email(request, form)

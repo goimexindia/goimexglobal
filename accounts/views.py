@@ -89,7 +89,7 @@ def update_user_data(user):
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
-        if form.is_valid() and request.recaptcha_is_valid:
+        if form.is_valid() :
             # inactive_user = send_verification_email(request, form)
             #print(inactive_user)
             form.save()

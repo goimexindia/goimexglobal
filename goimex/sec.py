@@ -16,6 +16,9 @@ razorpaykey = 'rzp_live_GjKslhycUnFK1u'
 razorpaysecret = 'mPIsIMS2Guvni2tHu5mkoTJe'
 
 
+RAZOR_KEY_ID = razorpaykey
+RAZOR_KEY_SECRET = razorpaysecret
+
 SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '78ldcikxxgfgfq'
 SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'lHZDaPzUbsW7J9j4'
 

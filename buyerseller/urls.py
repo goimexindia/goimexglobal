@@ -16,6 +16,7 @@ sitemaps = {
 
 urlpatterns = [
     path("home", HomeView.as_view(), name="home"),
+
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
     path('cat1/<str:slug>/', ItemsByCategoryView.as_view(), name='category-detail'),
     path("apphome", HomeAppView.as_view(), name="apphome"),

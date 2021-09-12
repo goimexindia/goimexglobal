@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
 from django.db.models import Q
-from django.http import FileResponse
+from django.http import FileResponse, HttpResponseBadRequest
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
@@ -41,6 +41,12 @@ from django.views.decorators.csrf import csrf_exempt
 
 from verify_email.email_handler import send_verification_email
 from django.utils.encoding import force_bytes
+
+from django.shortcuts import render
+import razorpay
+from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponseBadRequest
 
 
 def login(request):
@@ -422,8 +428,13 @@ def basicpayment(request):
         client = razorpay.Client(
             auth=(keyid, keySecret))
         payment = client.order.create({'amount': amount, 'currency': 'INR',
-                                       'payment_capture': '1'})
+                                       'payment_capture': '1', 'method': 'card'})
     return render(request, 'accounts/payment.html')
+
+
+@csrf_exempt
+def success(request):
+    return render(request, "accounts/success.html")
 
 
 def silverpayment(request):

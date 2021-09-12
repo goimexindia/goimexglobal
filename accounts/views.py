@@ -425,10 +425,10 @@ def basicpayment(request):
     if request.method == "POST":
         name = request.POST.get('name')
         amount = 999900
-        client = razorpay.Client(
-            auth=(keyid, keySecret))
-        payment = client.order.create({'amount': amount, 'currency': 'INR',
-                                       'payment_capture': '1', 'method': 'card'})
+        order_receipt = 'order_rcptid_11'
+        notes = {'Shipping address': 'Bommanahalli, Bangalore'}
+        client = razorpay.Client(auth=(keyid, keySecret))
+        client.order.create(amount=amount, currency='INR', receipt=order_receipt, notes=notes)
     return render(request, 'accounts/payment.html')
 
 
